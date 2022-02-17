@@ -500,16 +500,53 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: .5em;
   width: 95%;
   margin: 0 auto;
+  margin-top: .5em;
   border-radius: 5px;
 }
 
 .mainContainer div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   background: rgba(199, 177, 152, 0.9);
   margin-bottom: .5em;
   padding: 1em;
-  border-radius: 5px;
+  border-radius: inherit;
+  position: relative;
+}
+
+.buttonsContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: absolute;
+  right: 12px;
+  top: 8px;
+}
+
+.buttonsContainer button {
+  width: 30px;
+  border: none;
+  background: none;
+}
+
+.buttonsContainer button img {
+  width: inherit;
 }
 /*# sourceMappingURL=main.css.map */

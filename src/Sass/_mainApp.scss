@@ -6,20 +6,45 @@ $dark-color: #7A7B7F;
 $fullDark-color: #000;
 $white-color: #fff;
 
+@mixin displaysFlex () {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
 .mainContainer{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    gap: .5em;
     
     width: 95%;
     margin: 0 auto;
+    margin-top: .5em;
     border-radius: 5px;
 
     div {
+        @include displaysFlex();
+
         background: rgba($secondary-color, .9);
         margin-bottom: .5em;
         padding: 1em;
-        border-radius: 5px;
+        border-radius: inherit;
+        position: relative;
+    }
+}
+
+.buttonsContainer {
+    @include displaysFlex();
+    position: absolute;
+    right: 12px;
+    top: 8px;
+    button {
+        
+        width: 30px;
+        border: none;
+        background: none;
+        img {
+            width: inherit;
+        }
     }
 }
