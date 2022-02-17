@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const MainApp = () => {
 
     const notesData = [
@@ -24,12 +23,23 @@ const MainApp = () => {
             content: 'Alimentar Coelhos',
             completed: false
         }
-    ]
+    ];
+
+    const note = notesData.map(value => value.content)
 
     return (
         <section className="mainContainer">
             <div>
-                
+                {note[0]}
+            </div>
+            <div>
+                {note[1]}
+            </div>
+            <div>
+                {note[2]}
+            </div>
+            <div>
+                {note[3]}
             </div>
         </section>
     )

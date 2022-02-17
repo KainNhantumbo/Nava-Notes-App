@@ -12,16 +12,26 @@ body {
 }
 
 .headerContainer {
+    width: 95%;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-color: $secondary-color;
-    box-shadow: 0 1px 3px .5px $primary-color;
+    background: rgba($secondary-color, 1);
+    box-shadow: 0 0 5px 3px rgba($secondary-color, .6);
+    backdrop-filter: blur(10px);
+    margin: 0 auto;
+    margin-top: .5em;
+    border-radius: 5px;
+    &:hover {
+        background: rgba($secondary-color, .2);
+        transition: all .9s ease;
+    }
 
     h1 {
         font-weight: 600;
         margin: 0 auto;
         line-height: 5rem;
+        user-select: none;
     }
     label {
         width: 15em;
@@ -49,14 +59,12 @@ body {
             height: inherit;
             background-color: rgba($secondary-lighter-color, .5);
             border-style: none;
-            border-radius:  3px;
+            border-radius:  0 3px 3px 0;
             cursor: pointer;
-            
-            svg {
-                fill: rgba($primary-color, .5);
-                &:hover {
-                    fill: $primary-color;
-                }
+
+            &:hover {
+                background-color: rgba($primary-color, .3);
+                transition: all .2s ease;
             }
         }
     }

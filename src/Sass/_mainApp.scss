@@ -6,10 +6,20 @@ $dark-color: #7A7B7F;
 $fullDark-color: #000;
 $white-color: #fff;
 
-.mainConatiner {
+.mainContainer{
     display: flex;
     justify-content: center;
     flex-direction: column;
-
+    gap: .5em;
     
+    width: 95%;
+    margin: 0 auto;
+    border-radius: 5px;
+
+    div {
+        background: rgba($secondary-color, .9);
+        margin-bottom: .5em;
+        padding: 1em;
+        border-radius: 5px;
+    }
 }

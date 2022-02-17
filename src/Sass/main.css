@@ -408,6 +408,7 @@ body {
 }
 
 .headerContainer {
+  width: 95%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -418,15 +419,30 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #C7B198;
-  -webkit-box-shadow: 0 1px 3px 0.5px #5A6F7A;
-          box-shadow: 0 1px 3px 0.5px #5A6F7A;
+  background: #c7b198;
+  -webkit-box-shadow: 0 0 5px 3px rgba(199, 177, 152, 0.6);
+          box-shadow: 0 0 5px 3px rgba(199, 177, 152, 0.6);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  margin: 0 auto;
+  margin-top: .5em;
+  border-radius: 5px;
+}
+
+.headerContainer:hover {
+  background: rgba(199, 177, 152, 0.2);
+  -webkit-transition: all .9s ease;
+  transition: all .9s ease;
 }
 
 .headerContainer h1 {
   font-weight: 600;
   margin: 0 auto;
   line-height: 5rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .headerContainer label {
@@ -463,19 +479,17 @@ body {
   height: inherit;
   background-color: rgba(223, 211, 195, 0.5);
   border-style: none;
-  border-radius: 3px;
+  border-radius: 0 3px 3px 0;
   cursor: pointer;
 }
 
-.headerContainer label button svg {
-  fill: rgba(90, 111, 122, 0.5);
+.headerContainer label button:hover {
+  background-color: rgba(90, 111, 122, 0.3);
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
 }
 
-.headerContainer label button svg:hover {
-  fill: #5A6F7A;
-}
-
-.mainConatiner {
+.mainContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -486,5 +500,16 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  gap: .5em;
+  width: 95%;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+.mainContainer div {
+  background: rgba(199, 177, 152, 0.9);
+  margin-bottom: .5em;
+  padding: 1em;
+  border-radius: 5px;
 }
 /*# sourceMappingURL=main.css.map */

@@ -6,7 +6,7 @@ import MainApp from './Components/MainApp';
 function App() {
   return (
     <>
-      <Header />
+      <Header title="Tiny Notes"/>
       {/* <Sidebar /> */}
       <MainApp />
     </>
