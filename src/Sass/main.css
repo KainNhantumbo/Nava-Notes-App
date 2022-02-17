@@ -418,6 +418,8 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: #C7B198;
+  -webkit-box-shadow: 0 1px 3px 0.5px #5A6F7A;
+          box-shadow: 0 1px 3px 0.5px #5A6F7A;
 }
 
 .headerContainer h1 {
@@ -427,32 +429,48 @@ body {
 }
 
 .headerContainer label {
+  width: 15em;
+  height: 1.9em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin: 0 auto;
   margin-bottom: 1em;
+  position: relative;
 }
 
 .headerContainer label input {
+  width: inherit;
   border-style: none;
   border: none;
   border-radius: 3px;
-  margin: 0 auto;
+  padding: 2px 40px 2px 5px;
 }
 
 .headerContainer label input:focus {
-  border: none;
-  -webkit-box-shadow: 0 0 5px 1px rgba(90, 111, 122, 0.9);
-          box-shadow: 0 0 5px 1px rgba(90, 111, 122, 0.9);
+  -webkit-box-shadow: 0 0 5px 3px rgba(90, 111, 122, 0.9);
+          box-shadow: 0 0 5px 3px rgba(90, 111, 122, 0.9);
 }
 
 .headerContainer label button {
-  width: 40px;
-  background-color: rgba(223, 211, 195, 0.9);
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: inherit;
+  background-color: rgba(223, 211, 195, 0.5);
   border-style: none;
   border-radius: 3px;
+  cursor: pointer;
+}
+
+.headerContainer label button svg {
+  fill: rgba(90, 111, 122, 0.5);
+}
+
+.headerContainer label button svg:hover {
+  fill: #5A6F7A;
 }
 /*# sourceMappingURL=main.css.map */

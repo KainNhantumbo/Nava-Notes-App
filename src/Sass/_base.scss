@@ -15,6 +15,7 @@ body {
     justify-content: center;
     flex-direction: column;
     background-color: $secondary-color;
+    box-shadow: 0 1px 3px .5px $primary-color;
 
     h1 {
         font-weight: 600;
@@ -22,25 +23,40 @@ body {
         line-height: 5rem;
     }
     label {
+        width: 15em;
+        height: 1.9em;
         display: flex;
         justify-content: center;
+        margin: 0 auto;
         margin-bottom: 1em;
+        position: relative;
 
         input {
+            width: inherit;
             border-style: none;
             border: none;
             border-radius: 3px;
-            margin: 0 auto;
+            padding: 2px 40px 2px 5px;
             &:focus {
-                border: none;
-                box-shadow: 0 0 5px 1px rgba($primary-color, .9);
+                box-shadow: 0 0 5px 3px rgba($primary-color, .9);
             }
         }
         button {
-            width: 40px;
-            background-color: rgba($secondary-lighter-color, .9);
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: inherit;
+            background-color: rgba($secondary-lighter-color, .5);
             border-style: none;
             border-radius:  3px;
+            cursor: pointer;
+            
+            svg {
+                fill: rgba($primary-color, .5);
+                &:hover {
+                    fill: $primary-color;
+                }
+            }
         }
     }
 } 
