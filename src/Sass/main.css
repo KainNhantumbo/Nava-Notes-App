@@ -426,12 +426,33 @@ body {
   line-height: 5rem;
 }
 
-.searchContainer {
+.headerContainer label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-bottom: 1em;
+}
+
+.headerContainer label input {
+  border-style: none;
+  border: none;
+  border-radius: 3px;
+  margin: 0 auto;
+}
+
+.headerContainer label input:focus {
+  border: none;
+  -webkit-box-shadow: 0 0 5px 1px rgba(90, 111, 122, 0.9);
+          box-shadow: 0 0 5px 1px rgba(90, 111, 122, 0.9);
+}
+
+.headerContainer label button {
+  width: 40px;
+  background-color: rgba(223, 211, 195, 0.9);
+  border-style: none;
+  border-radius: 3px;
 }
 /*# sourceMappingURL=main.css.map */

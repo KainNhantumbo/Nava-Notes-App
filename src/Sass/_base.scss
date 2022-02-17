@@ -21,10 +21,27 @@ body {
         margin: 0 auto;
         line-height: 5rem;
     }
-} 
+    label {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1em;
 
-.searchContainer {
-    display: flex;
-    justify-content: center;
-}
+        input {
+            border-style: none;
+            border: none;
+            border-radius: 3px;
+            margin: 0 auto;
+            &:focus {
+                border: none;
+                box-shadow: 0 0 5px 1px rgba($primary-color, .9);
+            }
+        }
+        button {
+            width: 40px;
+            background-color: rgba($secondary-lighter-color, .9);
+            border-style: none;
+            border-radius:  3px;
+        }
+    }
+} 
 
