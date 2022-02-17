@@ -1,0 +1,30 @@
+$primary-color: #5A6F7A;
+$secondary-color: #C7B198;
+$secondary-lighter-color: #DFD3C3;
+$brown-color: #F0ECE3;
+$dark-color: #7A7B7F;
+$fullDark-color: #000;
+$white-color: #fff;
+
+body {
+    font-family: "PT Sans", 'Montserrat', monospace, sans-serif;
+}
+
+.headerContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: $secondary-color;
+
+    h1 {
+        font-weight: 600;
+        margin: 0 auto;
+        line-height: 5rem;
+    }
+} 
+
+.searchContainer {
+    display: flex;
+    justify-content: center;
+}
+
