@@ -1,6 +1,7 @@
 import React from 'react';
+import Buttons from './Buttons';
 import SvgDelete from '../svgs/x-circle.svg';
-import SvgInfo from '../svgs/exclamation-circle.svg';
+import SvgInfo from '../svgs/information-circle.svg';
 
 const MainApp = () => {
 
@@ -17,7 +18,7 @@ const MainApp = () => {
         },
         {
             id: 2,
-            content: 'Ir ao Churrasco',
+            content: 'Ir ao Churrasco com a familia',
             completed: true
         },
         {
@@ -29,15 +30,14 @@ const MainApp = () => {
     const note = notesData.map(value => value.content);
 
     
-
     return (
         <section className="mainContainer">
             <div>
                 <span>{note[0]}</span>
-                <div className="buttonsContainer">
+                <span className="buttonsContainer">
                     <button><img src={SvgInfo} alt="moreIcon" /></button>
                     <button><img src={SvgDelete} alt="deleteIcon" /></button>
-                </div>
+                </span>
             </div>
             <div>
                 <span>{note[1]}</span>

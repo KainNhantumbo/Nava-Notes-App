@@ -517,11 +517,13 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   background: rgba(199, 177, 152, 0.9);
   margin-bottom: .5em;
   padding: 1em;
   border-radius: inherit;
-  position: relative;
 }
 
 .buttonsContainer {
@@ -535,18 +537,27 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  position: absolute;
-  right: 12px;
-  top: 8px;
+  gap: .5em;
 }
 
 .buttonsContainer button {
-  width: 30px;
+  width: 22px;
+  height: 22px;
   border: none;
-  background: none;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  position: relative;
+  padding: .6em;
+}
+
+.buttonsContainer button:hover {
+  background: white;
 }
 
 .buttonsContainer button img {
   width: inherit;
+  position: absolute;
+  top: calc(50% - 11px);
+  left: calc(50% - 11px);
 }
 /*# sourceMappingURL=main.css.map */

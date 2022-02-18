@@ -24,27 +24,34 @@ $white-color: #fff;
 
     div {
         @include displaysFlex();
-
+        justify-content: space-between;
         background: rgba($secondary-color, .9);
         margin-bottom: .5em;
         padding: 1em;
         border-radius: inherit;
-        position: relative;
     }
 }
 
 .buttonsContainer {
     @include displaysFlex();
-    position: absolute;
-    right: 12px;
-    top: 8px;
+    gap: .5em;
     button {
-        
-        width: 30px;
+        width: 22px;
+        height: 22px;
         border: none;
-        background: none;
+        background: rgba($white-color, .6);
+        border-radius: 50%;
+        position: relative;
+        padding: .6em;
+
+        &:hover {
+            background: rgba($white-color, 1);
+        }
         img {
             width: inherit;
+            position: absolute;
+            top: calc(50% - 11px);
+            left: calc(50% - 11px);
         }
     }
 }
