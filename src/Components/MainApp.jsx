@@ -1,7 +1,6 @@
 import React from 'react';
-import Button from './Buttons';
-import SvgDelete from '../svgs/x-circle.svg';
-import SvgInfo from '../svgs/information-circle.svg';
+import Note from './Note';
+
 
 const MainApp = () => {
 
@@ -32,13 +31,7 @@ const MainApp = () => {
     
     return (
         <section className="mainContainer">
-            <div>
-                <span>{note[0]}</span>
-                <span className="buttonsContainer">
-                    <Button IconSrc={SvgInfo} alt={'info icon'} />
-                    <Button IconSrc={SvgDelete}/>
-                </span>
-            </div>
+            <Note note={note[0]} />
             <div>
                 <span>{note[1]}</span>
             </div>
