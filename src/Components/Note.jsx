@@ -4,13 +4,21 @@ import Button from './Buttons';
 import SvgDelete from '../svgs/x-circle.svg';
 import SvgInfo from '../svgs/information-circle.svg';
 
-const Note = ({note}) => {
+const Note = ({note, extendNote, deleteNote}) => {
     return (
         <div>
             <span>{note}</span>
             <span className="buttonsContainer">
-                <Button IconSrc={SvgInfo} alt={'info icon'} />
-                <Button IconSrc={SvgDelete}/>
+                <Button 
+                    event={extendNote}
+                    iconSrc={SvgInfo} 
+                    alt={'info icon'} 
+                />
+                <Button 
+                    event={deleteNote} 
+                    iconSrc={SvgDelete} 
+                    alt={'delete icon'}
+                />
             </span>
         </div>
     );

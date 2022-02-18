@@ -18,6 +18,18 @@ const NotesPackage = () => {
             id: 2,
             content: 'Ir ao Churrasco com a familia',
             completed: true
+        },{
+            id: 2,
+            content: 'Ir ao Churrasco com a familia',
+            completed: true
+        },{
+            id: 2,
+            content: 'Ir ao Churrasco com a familia',
+            completed: true
+        },{
+            id: 2,
+            content: 'Ir ao Churrasco com a familia',
+            completed: true
         },
         {
             id: 3,
@@ -25,14 +37,19 @@ const NotesPackage = () => {
             completed: false
         }
     ];
-    const note = notesData.map(value => value.content);
     
+
+    function alertar () {
+        return alert('Informacao')
+    }
+
     return (
-        <section className="mainContainer">
-            <Note note={note[0]} />
-            <Note note={note[1]} />
-            <Note note={note[2]} />
-            <Note note={note[3]} />
+        <section className="mainContainer"> 
+            {
+                notesData.map((value, index) => {
+                    return <Note key={index} note={value.content} />
+                })
+            } 
         </section>
     )
 }

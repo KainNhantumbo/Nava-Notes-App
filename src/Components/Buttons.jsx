@@ -1,14 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Buttons = ({IconSrc, alt}) => {
-    return (
-        <button><img src={IconSrc} alt={alt} /></button>
-    );
+const Buttons = ({iconSrc, alt, event}) => {
+    return <button onClick={event}><img src={iconSrc} alt={alt} /></button>;
 }
 
 Buttons.propTypes = {
-    IconSrc: PropTypes.string.isRequired,
+    iconSrc: PropTypes.string.isRequired,
     alt: PropTypes.string
 }
 
