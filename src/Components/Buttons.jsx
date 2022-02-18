@@ -1,12 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Buttons = ({IconSrc, alt}) => {
     return (
-        <span className="buttonsContainer">
-            <button><img src={IconSrc} alt={alt} /></button>
-            <button><img src={IconSrc} alt={alt} /></button>
-        </span>
+        <button><img src={IconSrc} alt={alt} /></button>
     );
+}
+
+Buttons.propTypes = {
+    IconSrc: PropTypes.string.isRequired,
+    alt: PropTypes.string
+}
+
+Buttons.defaultProps = {
+    alt: 'Button icon'
 }
 
 export default Buttons;

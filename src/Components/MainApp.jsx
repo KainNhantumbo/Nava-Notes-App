@@ -1,5 +1,5 @@
 import React from 'react';
-import Buttons from './Buttons';
+import Button from './Buttons';
 import SvgDelete from '../svgs/x-circle.svg';
 import SvgInfo from '../svgs/information-circle.svg';
 
@@ -35,8 +35,8 @@ const MainApp = () => {
             <div>
                 <span>{note[0]}</span>
                 <span className="buttonsContainer">
-                    <button><img src={SvgInfo} alt="moreIcon" /></button>
-                    <button><img src={SvgDelete} alt="deleteIcon" /></button>
+                    <Button IconSrc={SvgInfo} alt={'info icon'} />
+                    <Button IconSrc={SvgDelete}/>
                 </span>
             </div>
             <div>
