@@ -1,8 +1,7 @@
 import React from 'react';
 import Note from './Note';
 
-
-const MainApp = () => {
+const NotesPackage = () => {
 
     const notesData = [
         {
@@ -27,21 +26,14 @@ const MainApp = () => {
         }
     ];
     const note = notesData.map(value => value.content);
-
     
     return (
         <section className="mainContainer">
             <Note note={note[0]} />
-            <div>
-                <span>{note[1]}</span>
-            </div>
-            <div>
-                <span>{note[2]}</span>
-            </div>
-            <div>
-                <span>{note[3]}</span>
-            </div>
+            <Note note={note[1]} />
+            <Note note={note[2]} />
+            <Note note={note[3]} />
         </section>
     )
 }
-export default MainApp;
+export default NotesPackage;
