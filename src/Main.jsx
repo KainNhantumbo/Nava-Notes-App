@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Components/Header';
 import NotesPackage from './Components/NotesPackage';
 import Footer from './Components/Footer';
+import ConfirmModal from './Components/ConfirmModal';
 
 const Main = () => {
 
@@ -43,6 +44,7 @@ const Main = () => {
         <>
             <Header title="Tiny Notes"/>
             <NotesPackage notesData={notesData}/>
+            <ConfirmModal />
             <Footer />
         </>
     );

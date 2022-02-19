@@ -1,4 +1,4 @@
-import react from "react";
+import React from "react";
 import LargerButtons from "./LargerButtons";
 import { HiCog } from 'react-icons/hi';
 import { HiArchive} from 'react-icons/hi';

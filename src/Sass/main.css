@@ -405,6 +405,7 @@ template {
 body {
   font-family: "PT Sans", 'Montserrat', monospace, sans-serif;
   background-color: rgba(223, 211, 195, 0.8);
+  position: relative;
 }
 
 .headerContainer {
@@ -584,7 +585,7 @@ body {
 
 footer {
   width: 100vw;
-  height: 8vh;
+  height: 9vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -675,5 +676,64 @@ footer div span:hover {
   color: #fff;
   -webkit-transition: all .2s ease-out;
   transition: all .2s ease-out;
+}
+
+.modalContainer {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(90, 111, 122, 0.5);
+  z-index: 52;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modalContainer section {
+  width: 25em;
+  height: 15em;
+  background: #fff;
+  border-radius: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2em;
+}
+
+.modalContainer section div {
+  background: #5A6F7A;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.modalContainer section div svg {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: calc(45px - 40px);
+  top: calc(45px - 40px);
+  fill: white;
+}
+
+.modalContainer section span {
+  font-weight: 600;
+  font-size: 1.2rem;
 }
 /*# sourceMappingURL=main.css.map */

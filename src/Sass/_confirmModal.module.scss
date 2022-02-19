@@ -1,0 +1,49 @@
+.modalContainer {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($primary-color, .5);
+    z-index: 52;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    section {
+        width: 25em;
+        height: 15em;
+        background: $white-color;
+        border-radius: 12px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 2em;
+
+        div {
+            background: $primary-color;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            position: relative;
+
+            svg {
+                width: 35px;
+                height: 35px;
+                position: absolute;
+                left: calc(45px - 40px);
+                top: calc(45px - 40px);
+                fill: rgba($white-color, 1);
+            }
+        }
+        span {
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+    }
+
+}
