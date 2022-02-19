@@ -1,0 +1,27 @@
+.buttonsContainer {
+    @include displaysFlex();
+    gap: .5em;
+    button {
+        width: 22px;
+        height: 22px;
+        border: none;
+        background: rgba($white-color, .6);
+        border-radius: 50%;
+        position: relative;
+        padding: .6em;
+
+        &:hover {
+            background: rgba($white-color, 1);
+            transform: scale(1.1, 1.1);
+            transition: all .2s ease-out;
+        }
+        svg {
+            width: inherit;
+            height: inherit;
+            position: absolute;
+            top: calc(50% - 11px);
+            left: calc(50% - 11px);
+            fill: $primary-color;
+        }
+    }
+}

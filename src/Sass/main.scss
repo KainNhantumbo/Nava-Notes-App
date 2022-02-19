@@ -1,4 +1,7 @@
 @import './lib/reset';
 @import './lib/normalize';
 @import './base';
-@import './mainApp';
+@import './header.module';
+@import './main.module';
+@import './buttons.module';
+@import './footer.module';
