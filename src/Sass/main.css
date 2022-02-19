@@ -562,6 +562,7 @@ body {
   border-radius: 50%;
   position: relative;
   padding: .6em;
+  cursor: pointer;
 }
 
 .buttonsContainer button:hover {
@@ -583,7 +584,7 @@ body {
 
 footer {
   width: 100vw;
-  height: 7vh;
+  height: 8vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -605,7 +606,30 @@ footer {
   z-index: 50;
 }
 
-footer button {
+footer div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  margin: auto 0;
+  cursor: pointer;
+}
+
+footer div button {
   width: 22px;
   height: 22px;
   border: none;
@@ -613,12 +637,13 @@ footer button {
   border-radius: 50%;
   position: relative;
   padding: .6em;
-  width: 35px;
-  height: 35px;
-  border-radius: 12px;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  margin: auto 0;
 }
 
-footer button:hover {
+footer div button:hover {
   background: white;
   -webkit-transform: scale(1.1, 1.1);
           transform: scale(1.1, 1.1);
@@ -626,12 +651,27 @@ footer button:hover {
   transition: all .2s ease-out;
 }
 
-footer button svg {
+footer div button svg {
   width: inherit;
   height: inherit;
   position: absolute;
   top: calc(50% - 11px);
   left: calc(50% - 11px);
   fill: #5A6F7A;
+}
+
+footer div button svg {
+  top: calc(50% - 16px);
+  left: calc(50% - 16px);
+}
+
+footer div span {
+  font-weight: 600;
+}
+
+footer div span:hover {
+  color: #fff;
+  -webkit-transition: all .2s ease-out;
+  transition: all .2s ease-out;
 }
 /*# sourceMappingURL=main.css.map */
