@@ -661,8 +661,10 @@ footer div button svg {
 }
 
 footer div button svg {
-  top: calc(50% - 16px);
-  left: calc(50% - 16px);
+  width: 28px;
+  height: 28px;
+  top: calc(50% - 14px);
+  left: calc(50% - 14px);
 }
 
 footer div span {

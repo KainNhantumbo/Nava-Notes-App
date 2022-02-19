@@ -31,30 +31,6 @@ const Main = () => {
             content: '',
             completed: true
         },{
-            title: 'Ir ao Churrasco com a familia',
-            content: '',
-            completed: true
-        },{
-            title: 'Ir ao Churrasco com a familia',
-            content: '',
-            completed: true
-        },{
-            title: 'Ir ao Churrasco com a familia',
-            content: '',
-            completed: true
-        },{
-            title: 'Ir ao Churrasco com a familia',
-            content: '',
-            completed: true
-        },{
-            title: 'Ir ao Churrasco com a familia',
-            content: '',
-            completed: true
-        },{
-            title: 'Ir ao Churrasco com a familia',
-            content: '',
-            completed: true
-        },{
             title: 'Alimentar Coelhos',
             content: '',
             completed: false
