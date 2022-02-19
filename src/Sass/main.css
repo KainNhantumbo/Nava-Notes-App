@@ -715,7 +715,7 @@ footer div span:hover {
   gap: 2em;
 }
 
-.modalContainer section div {
+.modalContainer section .icon {
   background: #5A6F7A;
   width: 45px;
   height: 45px;
@@ -723,7 +723,7 @@ footer div span:hover {
   position: relative;
 }
 
-.modalContainer section div svg {
+.modalContainer section .icon svg {
   width: 35px;
   height: 35px;
   position: absolute;

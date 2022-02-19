@@ -24,7 +24,7 @@
         flex-direction: column;
         gap: 2em;
 
-        div {
+        .icon {
             background: $primary-color;
             width: 45px;
             height: 45px;
@@ -44,6 +44,10 @@
             font-weight: 600;
             font-size: 1.2rem;
         }
-    }
 
+        .actions {
+            
+        }
+    }
+    
 }

@@ -1,16 +1,21 @@
 import React from 'react';
-import {HiTrash} from 'react-icons/hi'
+import HorizontalButtons from './HorizontalButtons';
+import { HiTrash } from 'react-icons/hi';
+
 
 const ConfirmModal = () => {
     return (
         <div className="modalContainer">
             <section>
-                <div>
+                <div className='icon'>
                     <HiTrash/>
                 </div>
                 <span>
                     Do you really want do delete this note?
                 </span>
+                <div className='actions'>
+                    <HorizontalButtons />
+                </div>
             </section>
         </div>
         
