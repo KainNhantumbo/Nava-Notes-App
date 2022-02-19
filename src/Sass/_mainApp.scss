@@ -53,11 +53,13 @@ $white-color: #fff;
             transform: scale(1.1, 1.1);
             transition: all .2s ease-out;
         }
-        img {
+        svg {
             width: inherit;
+            height: inherit;
             position: absolute;
             top: calc(50% - 11px);
             left: calc(50% - 11px);
+            fill: $primary-color;
         }
     }
 }

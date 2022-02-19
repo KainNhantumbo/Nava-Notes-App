@@ -563,10 +563,12 @@ body {
   transition: all .2s ease-out;
 }
 
-.buttonsContainer button img {
+.buttonsContainer button svg {
   width: inherit;
+  height: inherit;
   position: absolute;
   top: calc(50% - 11px);
   left: calc(50% - 11px);
+  fill: #5A6F7A;
 }
 /*# sourceMappingURL=main.css.map */
