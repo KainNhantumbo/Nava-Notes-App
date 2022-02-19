@@ -1,0 +1,19 @@
+footer {
+    width: 100vw;
+    height: 7vh;
+    @include displaysFlex();
+    justify-content: space-evenly;
+    background: rgba($secondary-color, 1);
+    box-shadow: 0 -1px 2px 0.5px rgba($primary-color, .6);
+    position: fixed;
+    bottom: 0;
+    z-index: 50;
+
+    button {
+        @include Buttons();
+        width: 35px;
+        height: 35px;
+        border-radius: 12px;
+    }
+
+}
