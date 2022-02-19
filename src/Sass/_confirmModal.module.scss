@@ -22,18 +22,18 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        gap: 2em;
+        gap: 1.2em;
 
         .icon {
             background: $primary-color;
-            width: 45px;
-            height: 45px;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
             position: relative;
 
             svg {
-                width: 35px;
-                height: 35px;
+                width: 45px;
+                height: 45px;
                 position: absolute;
                 left: calc(45px - 40px);
                 top: calc(45px - 40px);
@@ -44,10 +44,33 @@
             font-weight: 600;
             font-size: 1.2rem;
         }
-
         .actions {
-            
+            display: flex;
+            gap: 1.5em;
+            margin-top: 1em;
+
+            button {
+                @include displaysFlex();
+                padding: .9em 2.9em;
+                border: none;
+                border-radius: 12px;
+                color: $white-color;
+                background: rgba($primary-color, .8);
+                position: relative;
+                &:hover {
+                    background: rgba($secondary-color, .8);
+                    transition: .2s ease-out;
+                    color: $primary-color;
+                }
+
+                svg {
+                    width: 25px;
+                    height: 25px;
+                    position: absolute;
+                    top: 14px;
+                    left: 14px;
+                }
+            }
         }
-    }
-    
+    }  
 }

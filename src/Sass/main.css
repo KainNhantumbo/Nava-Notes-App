@@ -712,20 +712,20 @@ footer div span:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 2em;
+  gap: 1.2em;
 }
 
 .modalContainer section .icon {
   background: #5A6F7A;
-  width: 45px;
-  height: 45px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
   position: relative;
 }
 
 .modalContainer section .icon svg {
-  width: 35px;
-  height: 35px;
+  width: 45px;
+  height: 45px;
   position: absolute;
   left: calc(45px - 40px);
   top: calc(45px - 40px);
@@ -735,5 +735,47 @@ footer div span:hover {
 .modalContainer section span {
   font-weight: 600;
   font-size: 1.2rem;
+}
+
+.modalContainer section .actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.5em;
+  margin-top: 1em;
+}
+
+.modalContainer section .actions button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: .9em 2.9em;
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  background: rgba(90, 111, 122, 0.8);
+  position: relative;
+}
+
+.modalContainer section .actions button:hover {
+  background: rgba(199, 177, 152, 0.8);
+  -webkit-transition: .2s ease-out;
+  transition: .2s ease-out;
+  color: #5A6F7A;
+}
+
+.modalContainer section .actions button svg {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 14px;
+  left: 14px;
 }
 /*# sourceMappingURL=main.css.map */
