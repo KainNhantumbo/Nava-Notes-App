@@ -4,7 +4,7 @@ import Button from './Button';
 import { HiXCircle } from 'react-icons/hi';
 import { HiInformationCircle } from 'react-icons/hi';
 
-const Note = ({note, extendNote, deleteNote}) => {
+const Note = ({note, showNote, deleteNote}) => {
     const deleteIcon =  <HiXCircle />;
     const infoIcon = <HiInformationCircle />;
 
@@ -12,8 +12,8 @@ const Note = ({note, extendNote, deleteNote}) => {
         <div>
             <span>{note}</span>
             <span className="buttonsContainer">
-                <Button event={deleteNote} icon={infoIcon} />
-                <Button event={extendNote} icon={deleteIcon}/>
+                <Button event={showNote} icon={infoIcon} />
+                <Button event={deleteNote} icon={deleteIcon}/>
             </span>
         </div>
     );

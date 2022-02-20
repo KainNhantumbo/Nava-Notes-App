@@ -695,8 +695,9 @@ footer div span:hover {
 }
 
 .modalContainer section {
-  width: 25em;
-  height: 15em;
+  width: 90%;
+  max-width: 400px;
+  height: 14em;
   background: #fff;
   border-radius: 12px;
   display: -webkit-box;
@@ -756,7 +757,7 @@ footer div span:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  padding: .9em 2.9em;
+  padding: .7em 2.9em;
   border: none;
   border-radius: 12px;
   color: #fff;
@@ -775,7 +776,7 @@ footer div span:hover {
   width: 25px;
   height: 25px;
   position: absolute;
-  top: 14px;
+  top: 10px;
   left: 14px;
 }
 /*# sourceMappingURL=main.css.map */

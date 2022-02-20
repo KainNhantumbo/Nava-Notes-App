@@ -11,13 +11,11 @@ const HorizontalButtons = ({ icon, description }) => {
                 { description }
             </span>
         </button>
-    )
+    );
 }
 
 HorizontalButtons.propTypes = {
     description: PropTypes.string.isRequired
 }
 
-
-
-export default HorizontalButtons
+export default HorizontalButtons;
