@@ -14,6 +14,10 @@ const HorizontalButtons = ({ icon, description }) => {
     )
 }
 
+HorizontalButtons.propTypes = {
+    description: PropTypes.string.isRequired
+}
+
 
 
 export default HorizontalButtons

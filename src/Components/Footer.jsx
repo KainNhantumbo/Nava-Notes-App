@@ -1,8 +1,6 @@
 import React from "react";
 import LargerButtons from "./LargerButtons";
-import { HiCog } from 'react-icons/hi';
-import { HiArchive} from 'react-icons/hi';
-import { HiPencilAlt} from 'react-icons/hi';
+import { HiArchive, HiPencilAlt, HiCog  } from 'react-icons/hi';
 
 const footerButtons = () => {
     const cogIcon = <HiCog />;
@@ -32,12 +30,12 @@ const Footer = () => {
     return (
         <footer>
             {
-                data.map(value => {
+                data.map(({ icon, description }, index) => {
                     return (
-                        <div>
-                        <LargerButtons icon={value.icon}/>
+                        <div key={index} data-index={index}>
+                        <LargerButtons icon={icon}/>
                             <span>
-                                {value.description}
+                                {description}
                             </span>
                         </div>
                     );
