@@ -24,7 +24,7 @@ const footerButtons = () => {
     return data;
 }
 
-const Footer = () => {
+const Footer = ({ event }) => {
     const data = footerButtons();
     
     return (
@@ -32,7 +32,7 @@ const Footer = () => {
             {
                 data.map(({ icon, description }, index) => {
                     return (
-                        <div key={index} data-index={index}>
+                        <div onClick={event} key={index} data-index={index}>
                         <LargerButtons icon={icon}/>
                             <span>
                                 {description}

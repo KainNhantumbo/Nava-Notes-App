@@ -1,51 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './Components/Header';
 import NotesPackage from './Components/NotesPackage';
 import Footer from './Components/Footer';
 import ConfirmModal from './Components/ConfirmModal';
+import { retrieveNotes } from './scripts/functions';
 
 const Main = () => {
+    const notesData = retrieveNotes()
+    const [visible, setVisible] = useState(false)
+    const renderConfirmModal = () => {
+        
+    }
+    const removeModal = () => {
 
-    const notesData = [
-        {
-            title: 'Fazer a barba',
-            content: '',
-            completed: false
-        },{
-            title: 'Lavar a roupa',
-            content: '',
-            completed: false
-        },{
-            title: 'Ir ao Churrasco com a familia',
-            content: '',
-            completed: true
-        },{
-            title: 'Ir ao Churrasco com a familia',
-            content: '',
-            completed: true
-        },{
-            title: 'Ir ao Churrasco com a familia',
-            content: '',
-            completed: true
-        },{
-            title: 'Ir ao Churrasco com a familia',
-            content: '',
-            completed: true
-        },{
-            title: 'Alimentar Coelhos',
-            content: '',
-            completed: false
-        }
-    ];
-
-
-    
+    }
+    const handleClick = (e) => {
+        e.preventDefault()
+        e.stopPropagation()
+    }
+    const openRoute = (e) => {
+        console.log(e.target.dataset)
+    }
     return (
         <>
-            <Header title="Tiny Notes"/>
-            <NotesPackage notesData={notesData}/>
-            <ConfirmModal />
-            <Footer />
+            <Header title="Notes"/>
+            <NotesPackage 
+                eventRemoveBtn={handleClick} 
+                notesData={notesData}
+            />
+            <ConfirmModal 
+                removeModal={removeModal}
+                status={renderConfirmModal}
+            />
+            <Footer event={openRoute} />
         </>
     );
 }

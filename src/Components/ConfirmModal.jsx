@@ -1,19 +1,16 @@
-import { useState } from 'react';
 import HorizontalButtons from './HorizontalButtons';
 import { HiExclamation } from 'react-icons/hi';
 import { HiTrash } from 'react-icons/hi';
 import { HiX } from 'react-icons/hi';
 
-const ConfirmModal = () => {
+const ConfirmModal = ({status, removeModal, removeNote}) => {
     const trashIcon =  <HiTrash/>
-    const xIcon = <HiX />
-
-    const [visible, setVisible] = useState(false)
+    const xIcon = <HiX/>
     
     return (
         <>
             {
-                visible === true ? (
+                status === true ? (
                     <div className="modalContainer">
                         <section>
                             <div className='icon'>
@@ -23,8 +20,8 @@ const ConfirmModal = () => {
                                 Do you really want do delete this note?
                             </span>
                             <div className='actions'>
-                                <HorizontalButtons icon={trashIcon} description={'Confirm'}/>
-                                <HorizontalButtons icon={xIcon} description={'Cancel'}/>
+                                <HorizontalButtons onClick={removeNote} icon={trashIcon} description={'Confirm'}/>
+                                <HorizontalButtons onClick={removeModal} icon={xIcon} description={'Cancel'}/>
                             </div>
                         </section>
                     </div>
@@ -33,7 +30,6 @@ const ConfirmModal = () => {
                 )
             }
         </>
-        
     )
 }
 

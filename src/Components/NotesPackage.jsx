@@ -1,7 +1,7 @@
 import React from 'react';
 import Note from './Note';
 
-const NotesPackage = ({notesData, deleteNote, showNote}) => {
+const NotesPackage = ({notesData, eventRemoveBtn, noteDetails}) => {
     return (
         <section className="mainContainer"> 
             {
@@ -9,8 +9,8 @@ const NotesPackage = ({notesData, deleteNote, showNote}) => {
                     return <Note 
                     key={index} 
                     note={value.title}
-                    showNote={showNote}
-                    deleteNote={deleteNote}
+                    noteDetails={noteDetails}
+                    eventRemoveBtn={eventRemoveBtn}
                     />
                 })
             } 
