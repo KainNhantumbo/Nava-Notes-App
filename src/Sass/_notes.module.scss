@@ -26,11 +26,21 @@
     }
 
     .message {
-        z-index: 500;
-        justify-content: space-between;
+        @include displaysFlex();
         background: rgba($white-color, .9);
         margin-bottom: .5em;
         padding: 1em;
         border-radius: inherit;
+
+        svg {
+            color: red;
+            width: 30px;
+            height: 30px;
+            margin: auto 0;
+        }
+        span {
+            text-align: center;
+            font-weight: 600;
+        }
     }
 }

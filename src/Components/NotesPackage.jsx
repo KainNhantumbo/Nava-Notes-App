@@ -8,7 +8,7 @@ const NotesPackage = ({notesData, eventRemoveBtn, noteDetails}) => {
             {
                 notesData.length === 0 || null ? (
                     <EmptyNotesMessage 
-                        message={'Nothing to do... Add some notes!'}
+                        message={`Oh! Looks like we have nothing to show... Add some notes!`}
                     />
                 ):(
                     notesData.map((value, index) => {
