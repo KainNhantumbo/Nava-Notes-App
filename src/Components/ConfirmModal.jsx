@@ -20,8 +20,8 @@ const ConfirmModal = ({status, removeModal, removeNote}) => {
                                 Do you really want do delete this note?
                             </span>
                             <div className='actions'>
-                                <HorizontalButtons onClick={removeNote} icon={trashIcon} description={'Confirm'}/>
-                                <HorizontalButtons onClick={removeModal} icon={xIcon} description={'Cancel'}/>
+                                <HorizontalButtons event={removeNote} icon={trashIcon} description={'Confirm'}/>
+                                <HorizontalButtons event={removeModal} icon={xIcon} description={'Cancel'}/>
                             </div>
                         </section>
                     </div>

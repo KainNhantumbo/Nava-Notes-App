@@ -8,16 +8,19 @@ import { retrieveNotes } from './scripts/functions';
 const Main = () => {
     const notesData = retrieveNotes()
     const [visible, setVisible] = useState(false)
-    const renderConfirmModal = () => {
-        
-    }
-    const removeModal = () => {
 
-    }
-    const handleClick = (e) => {
+    // controla o modal de confirmacao ao deletar nota
+    const renderConfirmModal = (e) => {
         e.preventDefault()
         e.stopPropagation()
+        setVisible(true)
     }
+    const removeModal = (e) => {
+        e.preventDefault()
+        e.stopPropagation()
+        setVisible(false)
+    }
+    
     const openRoute = (e) => {
         console.log(e.target.dataset)
     }
@@ -25,12 +28,12 @@ const Main = () => {
         <>
             <Header title="Notes"/>
             <NotesPackage 
-                eventRemoveBtn={handleClick} 
+                eventRemoveBtn={renderConfirmModal} 
                 notesData={notesData}
             />
             <ConfirmModal 
                 removeModal={removeModal}
-                status={renderConfirmModal}
+                status={visible}
             />
             <Footer event={openRoute} />
         </>

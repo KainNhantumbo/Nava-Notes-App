@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const HorizontalButtons = ({ icon, description }) => {
+const HorizontalButtons = ({ icon, description, event }) => {
     return (
-        <button>
+        <button onClick={event}>
             <div>
                 { icon }
             </div>
