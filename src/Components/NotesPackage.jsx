@@ -6,7 +6,7 @@ const NotesPackage = ({notesData, eventRemoveBtn, noteDetails}) => {
     return (
         <section className="mainContainer">
             {
-                notesData === [] || null ? (
+                notesData.length === 0 || null ? (
                     <EmptyNotesMessage 
                         message={'Nothing to do... Add some notes!'}
                     />
