@@ -4,23 +4,16 @@ import NotesPackage from './Components/NotesPackage';
 import Footer from './Components/Footer';
 import ConfirmModal from './Components/ConfirmModal';
 import { retrieveNotes } from './scripts/functions';
+import { ShowModal } from './scripts/functions';
 
 const Main = () => {
-    var notesData = retrieveNotes()
-    notesData = []
-    const [visible, setVisible] = useState(false)
-
+    const { removeModal, renderConfirmModal, visible } = ShowModal();
+    var notesData = retrieveNotes();
+    notesData = [];
+    
+    console.log(notesData)
     // controla o modal de confirmacao ao deletar nota
-    const renderConfirmModal = (e) => {
-        e.preventDefault()
-        e.stopPropagation()
-        setVisible(true)
-    }
-    const removeModal = (e) => {
-        e.preventDefault()
-        e.stopPropagation()
-        setVisible(false)
-    }
+    
     
     const openRoute = (e) => {
         console.log(e.target.dataset)

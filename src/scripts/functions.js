@@ -1,10 +1,24 @@
-import { useState } from "react/cjs/react.production.min";
+import { useState } from "react";
 
-export default function ShowModal () {
+//controla o comportamento do modal de confirmacao
+export function ShowModal () {
     const [visible, setVisible] = useState(false)
 
-    return {
+    const renderConfirmModal = (e) => {
+        e.preventDefault()
+        e.stopPropagation()
+        setVisible(true)
+    }
+    const removeModal = (e) => {
+        e.preventDefault()
+        e.stopPropagation()
+        setVisible(false)
+    }
 
+    return {
+        renderConfirmModal,
+        removeModal,
+        visible
     }
 }
 
