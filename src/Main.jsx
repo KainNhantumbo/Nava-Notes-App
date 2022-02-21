@@ -6,7 +6,8 @@ import ConfirmModal from './Components/ConfirmModal';
 import { retrieveNotes } from './scripts/functions';
 
 const Main = () => {
-    const notesData = retrieveNotes()
+    var notesData = retrieveNotes()
+    notesData = []
     const [visible, setVisible] = useState(false)
 
     // controla o modal de confirmacao ao deletar nota
