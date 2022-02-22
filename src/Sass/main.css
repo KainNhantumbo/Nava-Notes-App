@@ -541,35 +541,6 @@ body {
           box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.7);
 }
 
-.mainContainer .message {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  background: rgba(255, 255, 255, 0.9);
-  margin-bottom: .5em;
-  padding: 1em;
-  border-radius: inherit;
-}
-
-.mainContainer .message svg {
-  color: red;
-  width: 30px;
-  height: 30px;
-  margin: auto 0;
-}
-
-.mainContainer .message span {
-  text-align: center;
-  font-weight: 600;
-}
-
 .buttonsContainer {
   display: -webkit-box;
   display: -ms-flexbox;
