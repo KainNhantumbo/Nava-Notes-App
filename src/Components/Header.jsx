@@ -1,9 +1,10 @@
 import React from 'react';
 import SearchSvg from '../svgs/search.svg';
+import { HeaderStyled } from '../Styled/styles';
 
 const Header = ({title}) => {
     return (
-        <div className="headerContainer">
+        <HeaderStyled className='headerContainer'>
             <h1>{title}</h1>
             <label htmlFor="search">
                 <input type="text" id="search" placeholder="Search"/>
@@ -11,7 +12,7 @@ const Header = ({title}) => {
                     <img src={SearchSvg} alt="searchIcon" />
                 </button>
             </label>
-        </div>
+        </HeaderStyled>
     );
 }
 
