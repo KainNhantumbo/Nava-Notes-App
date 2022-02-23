@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import Header from './Components/Header';
-import NotesPackage from './Components/NotesPackage';
-import Footer from './Components/Footer';
-import ConfirmModal from './Components/ConfirmModal';
+import Header from './components/Header';
+import NotesPackage from './components/NotesPackage';
+import Footer from './components/Footer';
+import ConfirmModal from './components/ConfirmModal';
 import { retrieveNotes } from './scripts/functions';
 import { ShowModal } from './scripts/functions';
 import styled from 'styled-components';
+import { Route, Link, Switch } from 'react-router-dom';
 
 const Main = () => {
 	const { removeModal, renderConfirmModal, visible } = ShowModal();
