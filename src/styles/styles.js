@@ -1,14 +1,5 @@
-import styled from "styled-components";
-
-const colors = {
-  primaryColor: '90, 111, 122',
-  secondaryColor: '199, 177, 152',
-  secondaryColorLighter: '223, 211, 195',
-  brownColor: '240, 236, 227',
-  darkColor: '240, 236, 227',
-  fullDarkColor: '0, 0, 0',
-  whiteColor: '255, 255, 255'
-}
+import styled from 'styled-components';
+import { colors } from './colors';
 
 export const Message = styled.section`
   display: flex;
@@ -39,8 +30,8 @@ export const HeaderStyled = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background: #C7B198;
-  box-shadow: 0 1px 2px 0.5px rgba($primary-color, .6);
+  background: rgb(${colors.secondaryColor});
+  box-shadow: 0 1px 2px 0.5px rgba(${colors.primaryColor}, .6);
   position: fixed;
   top: 0;
   z-index: 50;
@@ -69,7 +60,7 @@ export const HeaderStyled = styled.div`
       line-height: 5em;
         
       &:focus {
-        box-shadow: 0 0 5px 1px rgba($primary-color, .9);
+        box-shadow: 0 0 5px 1px rgba(${colors.primaryColor} .9);
         outline: none;
       }
       &::placeholder {
@@ -81,13 +72,13 @@ export const HeaderStyled = styled.div`
       right: 0;
       top: 0;
       height: inherit;
-      background-color: rgba($secondary-lighter-color, .5);
+      background-color: rgba(${colors.secondaryColor}, .5);
       border-style: none;
       border-radius:  50%;
       cursor: pointer;
 
       &:hover {
-        background-color: rgba($primary-color, .3);
+        background-color: rgba(${colors.primaryColor}, .3);
         transition: all .2s ease;
       }
     }
