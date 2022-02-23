@@ -2,23 +2,25 @@ import styled from "styled-components";
 
 export const Message = styled.section`
   display: flex;
-  justify-content: flex-start;
-  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background: #fff;
   margin-bottom: .5em;
   padding: 1em;
   border-radius: inherit;
   user-select: none;
+  gap: .8em;
 
-  svg {
-    color: red;
-    width: 30px;
-    height: 30px;
-    margin: auto 0;
+  img {
+    width: 80%;
   }
   span {
     text-align: center;
     font-weight: 600;
+    background-color: #F0ECE3;
+    padding: .5em;
+    border-radius: 10px;
   }
 `;
 
@@ -27,7 +29,7 @@ export const HeaderStyled = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background: rgba($secondary-color, 1);
+  background: #C7B198;
   box-shadow: 0 1px 2px 0.5px rgba($primary-color, .6);
   position: fixed;
   top: 0;

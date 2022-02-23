@@ -1,6 +1,6 @@
 import React from 'react';
 import SearchSvg from '../svgs/search.svg';
-import { HeaderStyled } from '../Styled/styles';
+import { HeaderStyled } from '../styles/styles';
 
 const Header = ({title}) => {
     return (

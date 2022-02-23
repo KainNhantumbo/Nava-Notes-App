@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { IoAlertCircleOutline } from 'react-icons/io5';
-import { Message } from '../Styled/styles';
+import { Message } from '../styles/styles';
+import colleguesImg from '../images/Collegues.png'
 
 const EmptyNotesMessage = ({message}) => {
-   const alertIcon = <IoAlertCircleOutline />;
    return (
       <Message className="message">
-         {alertIcon} 
+         <img src={colleguesImg} alt="people image" />       
          <span>{message}</span>          
       </Message>
    );
