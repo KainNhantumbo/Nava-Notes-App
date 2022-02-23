@@ -1,11 +1,21 @@
 import styled from "styled-components";
 
+const colors = {
+  primaryColor: '90, 111, 122',
+  secondaryColor: '199, 177, 152',
+  secondaryColorLighter: '223, 211, 195',
+  brownColor: '240, 236, 227',
+  darkColor: '240, 236, 227',
+  fullDarkColor: '0, 0, 0',
+  whiteColor: '255, 255, 255'
+}
+
 export const Message = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: #fff;
+  background: rgb(${colors.whiteColor});
   margin-bottom: .5em;
   padding: 1em;
   border-radius: inherit;
@@ -18,7 +28,7 @@ export const Message = styled.section`
   span {
     text-align: center;
     font-weight: 600;
-    background-color: #F0ECE3;
+    background-color: rgba(${colors.brownColor}, .9);
     padding: .5em;
     border-radius: 10px;
   }
