@@ -420,7 +420,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 95%;
-  margin: 9em auto 4em auto;
+  margin: 8em auto 4em auto;
   border-radius: 12px;
 }
 
@@ -493,7 +493,7 @@ body {
 
 footer {
   width: 100vw;
-  height: 10vh;
+  height: 9vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

@@ -54,5 +54,9 @@ export const retrieveNotes = () => {
             completed: false
         }
     ];
-    return notesData
+
+    // sorteia os elementos pelo titulo
+    notesData.sort((a, b) => a.title > b.title);
+
+    return notesData;
 }

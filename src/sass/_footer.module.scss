@@ -1,6 +1,6 @@
 footer {
     width: 100vw;
-    height: 10vh;
+    height: 9vh;
     @include displaysFlex();
     align-items: center;
     justify-content: space-evenly;
@@ -46,5 +46,4 @@ footer {
             letter-spacing: .02rem;
         }
     }
-
 }

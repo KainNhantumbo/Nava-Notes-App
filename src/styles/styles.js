@@ -40,7 +40,7 @@ export const HeaderStyled = styled.div`
   h1 {
     font-weight: 600;
     margin: 0 auto;
-    line-height: 5rem;
+    line-height: 4rem;
     user-select: none;
   }
   label {

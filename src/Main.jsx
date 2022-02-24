@@ -13,7 +13,7 @@ import Settings from './pages/Settings';
 const Main = () => {
 	const { removeModal, renderConfirmModal, visible } = ShowModal();
 	var notesData = retrieveNotes();
-	notesData = [];
+	// notesData = [];
 	
 	console.log(notesData)
 	// controla o modal de confirmacao ao deletar nota
