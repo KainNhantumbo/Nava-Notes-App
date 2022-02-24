@@ -2,6 +2,7 @@ footer {
     width: 100vw;
     height: 10vh;
     @include displaysFlex();
+    align-items: center;
     justify-content: space-evenly;
     background: rgba($secondary-color, 1);
     box-shadow: 0 -1px 2px 0.5px rgba($primary-color, .6);
@@ -14,8 +15,8 @@ footer {
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        margin: auto 0;
         padding: .2em .5em;
+        
         border-radius: 5px;
         cursor: pointer;
 
@@ -27,19 +28,22 @@ footer {
 
         button {
             @include Buttons();
-            width: 32px;
-            height: 32px;
+            width: 30px;
+            height: 30px;
             margin: auto 0;
     
             svg {
-                width: 28px;
-                height: 28px;
-                top: calc(50% - 14px);
-                left: calc(50% - 14px);
+                width: 26px;
+                height: 26px;
+                top: calc(50% - 13px);
+                left: calc(50% - 13px);
             }
         }
         span{
             font-weight: 600;
+            font-size: .8rem;
+            margin-top: .3em;
+            letter-spacing: .02rem;
         }
     }
 

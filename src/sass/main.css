@@ -504,6 +504,9 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
@@ -529,7 +532,6 @@ footer div {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: auto 0;
   padding: .2em .5em;
   border-radius: 5px;
   cursor: pointer;
@@ -551,8 +553,8 @@ footer div button {
   position: relative;
   padding: .6em;
   cursor: pointer;
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   margin: auto 0;
 }
 
@@ -574,14 +576,17 @@ footer div button svg {
 }
 
 footer div button svg {
-  width: 28px;
-  height: 28px;
-  top: calc(50% - 14px);
-  left: calc(50% - 14px);
+  width: 26px;
+  height: 26px;
+  top: calc(50% - 13px);
+  left: calc(50% - 13px);
 }
 
 footer div span {
   font-weight: 600;
+  font-size: .8rem;
+  margin-top: .3em;
+  letter-spacing: .02rem;
 }
 
 .modalContainer {
