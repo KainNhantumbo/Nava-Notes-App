@@ -1,10 +1,11 @@
+import Header from '../components/Header';
+
 export default function AddNote () {
+
 
   return (
     <>
-      <>
-      <p>Add notes</p>
-      </>
+      <Header title={'Add Notes'} />
     </>
   );
 }

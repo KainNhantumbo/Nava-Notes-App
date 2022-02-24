@@ -1,11 +1,11 @@
 import Header from '../components/Header';
+import { SearchBox } from '../components/SearchBox';
 import NotesPackage from '../components/NotesPackage';
 import ConfirmModal from '../components/ConfirmModal';
 import { retrieveNotes } from '../scripts/functions';
 import { ShowModal } from '../scripts/functions';
 
 const Home = () => {
-
   const { removeModal, renderConfirmModal, visible } = ShowModal();
 	var notesData = retrieveNotes();
 	// notesData = [];
@@ -15,7 +15,9 @@ const Home = () => {
 
   return (
     <>
-      <Header title="Notes"/>
+      <Header title="Notes" 
+				child={<SearchBox />}
+			/>
 			<NotesPackage 
 				eventRemoveBtn={renderConfirmModal} 
 				notesData={notesData}
