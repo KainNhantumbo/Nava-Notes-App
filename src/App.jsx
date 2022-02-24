@@ -5,8 +5,7 @@ import Archive from './pages/Archive';
 import Home from './pages/Home';
 import Settings from './pages/Settings';
 
-const Main = () => {
-	
+const Main = () => {	
 	return (
 		<>
 			<Footer />
