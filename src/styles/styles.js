@@ -42,52 +42,52 @@ export const HeaderStyled = styled.div`
     margin: 0 auto;
     line-height: 4rem;
     user-select: none;
-  }
-  label {
-    width: 15em;
-    height: 1.9em;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    margin-bottom: 1em;
-    position: relative;
+  }   
+`;
 
-    input {
-      width: inherit;
-      border-style: none;
-      border: none;
-      border-radius: 15px;
-      padding: 5px 40px 5px 10px;
-      line-height: 5em;
-        
-      &:focus {
-        box-shadow: 0 0 5px 1px rgba(${colors.primaryColor} .9);
-        outline: none;
-      }
-      &::placeholder {
-        font-weight: 600;
-      }
+export const StyledSearch = styled.label`
+  width: 15em;
+  height: 1.9em;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 1em;
+  position: relative;
+
+  input {
+    width: inherit;
+    border-style: none;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 40px 5px 10px;
+    line-height: 5em;
+      
+    &:focus {
+      box-shadow: 0 0 5px 1px rgba(${colors.primaryColor} .9);
+      outline: none;
     }
-    button {
-      position: absolute;
-      right: 0;
-      top: 0;
-      height: inherit;
-      background-color: rgba(${colors.secondaryColor}, .5);
-      border-style: none;
-      border-radius:  50%;
-      cursor: pointer;
+    &::placeholder {
+      font-weight: 600;
+    }
+  }
+  button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: inherit;
+    background-color: rgba(${colors.secondaryColor}, .5);
+    border-style: none;
+    border-radius:  50%;
+    cursor: pointer;
 
-      &:hover {
-        background-color: rgba(${colors.primaryColor}, .3);
-        transition: all .2s ease;
-      }
-
-      svg {
-        padding: .2em;
-        stroke-width: .5px;
-        color: rgb(${colors.primaryColor})
-      }
+    &:hover {
+      background-color: rgba(${colors.primaryColor}, .3);
+      transition: all .2s ease;
+    }
+    svg {
+      padding: .2em;
+      stroke-width: .5px;
+      color: rgb(${colors.primaryColor})
     }
   }
 `;
