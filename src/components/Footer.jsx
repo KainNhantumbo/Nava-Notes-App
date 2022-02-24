@@ -25,6 +25,9 @@ const footerButtons = () => {
             path: '/pages/AddNote'
         }
     ];
+
+    // retorna a ordenacao por descricao
+    data.sort((a, b) => a.description > b.description)
     return data;
 }
 
