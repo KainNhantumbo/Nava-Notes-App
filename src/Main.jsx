@@ -5,8 +5,10 @@ import Footer from './components/Footer';
 import ConfirmModal from './components/ConfirmModal';
 import { retrieveNotes } from './scripts/functions';
 import { ShowModal } from './scripts/functions';
-import styled from 'styled-components';
-import { Route, Link, Switch } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+import AddNote from './pages/AddNote';
+import Archive from './pages/Archive';
+import Settings from './pages/Settings';
 
 const Main = () => {
 	const { removeModal, renderConfirmModal, visible } = ShowModal();
@@ -31,6 +33,11 @@ const Main = () => {
 				status={visible}
 			/>
 			<Footer event={openRoute} />
+			<Routes>
+				<Route path='/pages/AddNote'  element={<AddNote/>} />
+				<Route path='/pages/Archive'  element={<Archive/>} />
+				<Route path='/pages/Settings' element={<Settings/>} />
+			</Routes>
 		</>
 	);
 }

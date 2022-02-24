@@ -3,16 +3,20 @@ import PropTypes from 'prop-types';
 import { Message } from '../styles/styles';
 import colleguesImg from '../images/Collegues.png'
 
-const EmptyNotesMessage = ({message}) => {
+const EmptyNotesMessage = ({message, label}) => {
    return (
-      <Message className="message">
-         <img src={colleguesImg} alt="people image" />       
-         <span>{message}</span>          
+      <Message>
+         <img src={colleguesImg} alt="people image" />     
+         <span> 
+            {label} <br/>
+            {message}
+         </span>          
       </Message>
    );
 }
 
 EmptyNotesMessage.propTypes = {
+   label: PropTypes.string.isRequired,
    message: PropTypes.string.isRequired
 }
 

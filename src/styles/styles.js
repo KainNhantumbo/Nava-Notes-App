@@ -22,6 +22,7 @@ export const Message = styled.section`
     background-color: rgba(${colors.brownColor}, .9);
     padding: .5em;
     border-radius: 10px;
+    line-height: 1.2rem;
   }
 `;
 
@@ -83,4 +84,4 @@ export const HeaderStyled = styled.div`
       }
     }
   }
-`
+`;

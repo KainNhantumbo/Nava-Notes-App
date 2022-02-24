@@ -1,6 +1,6 @@
 footer {
     width: 100vw;
-    height: 9vh;
+    height: 10vh;
     @include displaysFlex();
     justify-content: space-evenly;
     background: rgba($secondary-color, 1);
@@ -8,22 +8,28 @@ footer {
     position: fixed;
     bottom: 0;
     z-index: 50;
-    
 
     div {
-        @include displaysFlex();
+        display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         margin: auto 0;
+        padding: .2em .5em;
+        border-radius: 5px;
         cursor: pointer;
+
+        &:hover {
+            background: #fff;
+            opacity: .9;
+            transition: all .2s ease-out;
+        }
 
         button {
             @include Buttons();
             width: 32px;
             height: 32px;
             margin: auto 0;
-
     
             svg {
                 width: 28px;
@@ -34,10 +40,6 @@ footer {
         }
         span{
             font-weight: 600;
-            &:hover {
-                color: $white-color;
-                transition: all .2s ease-out;
-            }
         }
     }
 
