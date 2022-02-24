@@ -1,13 +1,13 @@
 import React from "react";
 import LargerButtons from "./LargerButtons";
 import { Link } from 'react-router-dom';
-import { HiArchive, HiPencilAlt, HiCog, HiHome  } from 'react-icons/hi';
+import { HiArchive, HiPencilAlt, HiCog, HiHome } from 'react-icons/hi';
 
 const footerButtons = () => {
     const cogIcon = <HiCog />;
     const archiveIcon = <HiArchive />
     const pencilIcon = <HiPencilAlt />
-    const homeIcon = <HiHome/>
+    const homeIcon = <HiHome />
 
     // dados e detalhes de cada botao no footer
     const data = [
@@ -15,10 +15,10 @@ const footerButtons = () => {
             icon: cogIcon,
             description: 'Settings',
             path: '/pages/Settings'
-        },{
+        }, {
             icon: homeIcon,
             description: 'Home',
-            path: '/'
+            path: '/pages/Home'
         },
         {
             icon: archiveIcon,
@@ -33,21 +33,22 @@ const footerButtons = () => {
     ];
 
     // retorna a ordenacao por descricao
-    data.sort((a, b) => a.description > b.description)
+    data.sort((a, b) => a.description > b.description);
+
     return data;
 }
 
-const Footer = ({ event }) => {
+const Footer = () => {
     const data = footerButtons();
-  
+
     return (
         <footer>
             {
-                data.map(({ icon, description, path}, index) => {
+                data.map(({ icon, description, path }, index) => {
                     return (
                         <Link to={path}>
-                            <div onClick={event} key={index} data-index={index}>
-                            <LargerButtons icon={icon}/>
+                            <div key={index} data-index={index}>
+                                <LargerButtons icon={icon} />
                                 <span>
                                     {description}
                                 </span>
