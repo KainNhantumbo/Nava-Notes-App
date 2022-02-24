@@ -91,3 +91,28 @@ export const StyledSearch = styled.label`
     }
   }
 `;
+
+export const StyledTextAreaContainer = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  textarea {
+    width: 90%;
+    max-width: 400px;
+    margin-top: 12vh;
+    border-style: none;
+    background-color: rgb(${colors.whiteColor});
+    border-radius: 12px;
+    resize: none;
+    padding: 10px;
+    line-height: 1.6rem;
+
+    
+    :focus, :hover {
+      border: rgb(${colors.darkColor});
+      box-shadow: 0px 0px 5px 1px rgba(${colors.primaryColor}, .5);
+      outline-color: rgb(${colors.primaryColor});
+    }
+  }
+`;
