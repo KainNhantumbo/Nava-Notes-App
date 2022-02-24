@@ -1,17 +1,15 @@
 import React from 'react';
-import SearchSvg from '../svgs/search.svg';
 import { HeaderStyled } from '../styles/styles';
+import { SearchBox } from './SearchBox';
 
-const Header = ({title}) => {
+const Header = ({title, inputEvent, buttonEvent}) => {
     return (
         <HeaderStyled className='headerContainer'>
             <h1>{title}</h1>
-            <label htmlFor="search">
-                <input type="text" id="search" placeholder="Search"/>
-                <button>
-                    <img src={SearchSvg} alt="searchIcon" />
-                </button>
-            </label>
+            <SearchBox 
+                inputEvent={ inputEvent }
+                buttonEvent={ buttonEvent }
+            />
         </HeaderStyled>
     );
 }

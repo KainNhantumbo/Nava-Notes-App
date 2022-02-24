@@ -82,6 +82,12 @@ export const HeaderStyled = styled.div`
         background-color: rgba(${colors.primaryColor}, .3);
         transition: all .2s ease;
       }
+
+      svg {
+        padding: .2em;
+        stroke-width: .5px;
+        color: rgb(${colors.primaryColor})
+      }
     }
   }
 `;
