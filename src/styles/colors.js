@@ -7,3 +7,9 @@ export const colors = {
   fullDarkColor: '0, 0, 0',
   whiteColor: '255, 255, 255'
 }
+
+export const themePink = {
+  primaryColor: '255, 255, 255',
+  secondaryColor: '36, 14, 56',
+  secondaryColorLighter: '75, 49, 86'
+}
