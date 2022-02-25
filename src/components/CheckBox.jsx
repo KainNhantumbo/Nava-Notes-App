@@ -1,9 +1,9 @@
 import React from 'react';
 
-const CheckBox = () => {
+const CheckBox = ({ event }) => {
   return (  
     <div>
-      <input type="checkbox" />
+      <input onChange={event} type="checkbox" />
     </div>
   );
 }

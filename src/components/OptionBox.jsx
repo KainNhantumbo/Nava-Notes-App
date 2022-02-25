@@ -7,7 +7,9 @@ const OptionBox = ({ text, action }) => {
       <span>
         { text }
       </span>
+      <div>
       { action }
+      </div>
     </div>
   );
 }
@@ -15,7 +17,5 @@ const OptionBox = ({ text, action }) => {
 OptionBox.propTypes = {
   text: PropTypes.string.isRequired
 }
-
-
  
 export default OptionBox;

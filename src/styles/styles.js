@@ -116,3 +116,9 @@ export const StyledTextAreaContainer = styled.section`
     }
   }
 `;
+
+export const SettingsContainer = styled.div`
+  width: 90%;
+  max-width: 400px;
+  margin-top: 12vh;
+`;
