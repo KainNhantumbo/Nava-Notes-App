@@ -35,10 +35,8 @@ const footerButtons = () => {
   // retorna o objecto data ordenado por descricao
   return (
     data.sort((a, b) => {
-      if (a.description > b.description )
-      return true;
-      if (a.description < b.description)
-      return -1;
+      if (a.description > b.description ) return true;
+      if (a.description < b.description) return -1;
     })
   );
 }

@@ -56,7 +56,10 @@ export const retrieveNotes = () => {
     ];
 
     // sorteia os elementos pelo titulo
-    notesData.sort((a, b) => a.title > b.title);
-
-    return notesData;
+    return (
+        notesData.sort((a, b) => {
+          if (a.title > b.title ) return true;
+          if (a.title < b.title) return -1;
+        })
+    );
 }
