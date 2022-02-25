@@ -11,5 +11,6 @@ export const colors = {
 export const themePink = {
   primaryColor: '255, 255, 255',
   secondaryColor: '36, 14, 56',
-  secondaryColorLighter: '75, 49, 86'
+  secondaryColorLighter: '75, 49, 86',
+  lighterColor: '208, 169, 221'
 }

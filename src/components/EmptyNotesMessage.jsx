@@ -6,7 +6,7 @@ import colleguesImg from '../images/Collegues.png'
 const EmptyNotesMessage = ({message, label}) => {
    return (
       <Message>
-         <img src={colleguesImg} alt="people image" />     
+         <img src={colleguesImg} alt="people" />     
          <span> 
             {label} <br/>
             {message}
