@@ -173,16 +173,15 @@ export const SettingsContainer = styled.div`
           transform: scale(1.1);
           border-radius: 50%;
           top: 0;
-          right: 0;
+          left: 0;
           background: rgb(${colors.whiteColor});
           box-shadow:  0 0 5px rgba(${colors.primaryColor}, .5);
           transition: all .5s ease;
         }
 
         :checked::after {
-          left: 0;
-        }
-        
+          transform: scale(1.1) translateX(25px);
+        }  
       }
     }
   }
