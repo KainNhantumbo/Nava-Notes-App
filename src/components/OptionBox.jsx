@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 
 const OptionBox = ({ text, action }) => {
   return ( 
-    <div>
+    <section>
       <span>
         { text }
       </span>
       <div>
       { action }
       </div>
-    </div>
+    </section>
   );
 }
 

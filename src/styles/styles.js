@@ -107,18 +107,83 @@ export const StyledTextAreaContainer = styled.section`
     resize: none;
     padding: 10px;
     line-height: 1.6rem;
+    box-shadow: 0px 0px 5px 1px rgba(${colors.primaryColor}, .5);
 
     
-    :focus, :hover {
+    :focus {
       border: rgb(${colors.darkColor});
-      box-shadow: 0px 0px 5px 1px rgba(${colors.primaryColor}, .5);
-      outline-color: rgb(${colors.primaryColor});
+      box-shadow: 0px 0px 5px 2px rgba(${colors.secondaryColor}, .8);
+      outline: none;
+      transition: all .5s ease;
     }
   }
 `;
 
 export const SettingsContainer = styled.div`
-  width: 90%;
-  max-width: 400px;
-  margin-top: 12vh;
+  display: flex;
+  justify-content: cnter;
+  align-items: center;
+
+  section {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    width: 90%;
+    margin: 0 auto;
+    max-width: 400px;
+    margin-top: 12vh;
+    position: relative;
+    padding: 8px;
+    line-height: 2em;
+    border-radius: 12px;
+    box-shadow: 0 0 5px .1px rgba(${colors.primaryColor}, .5);
+
+    span {
+      color: rgb(${colors.textColor});
+      font-size: 1.1rem;
+      font-weight: 500;
+      padding-left: .5em;
+    }
+
+    div {
+      position: absolute;
+      top: 12px;
+      right: 2em;
+
+      input[type="checkbox"] {
+        position: relative;
+        width: 45px;
+        height: 20px;
+        appearance: none;
+        -moz-appearance: none;
+        background: rgba(${colors.primaryColor}, .1);
+        outline: none;
+        border-radius: 15px;
+        box-shadow: inset 0 0 5px rgba(${colors.fullDarkColor}, .2);
+        transition: .5s ease;
+
+        :checked {
+          background: rgb(${colors.secondaryColor});
+        }
+        ::after {
+          content: '';
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          transform: scale(1.1);
+          border-radius: 50%;
+          top: 0;
+          right: 0;
+          background: rgb(${colors.whiteColor});
+          box-shadow:  0 0 5px rgba(${colors.primaryColor}, .5);
+          transition: all .5s ease;
+        }
+
+        :checked::after {
+          left: 0;
+        }
+        
+      }
+    }
+  }
 `;

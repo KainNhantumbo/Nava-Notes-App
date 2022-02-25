@@ -1,11 +1,7 @@
 import React from 'react';
 
 const CheckBox = ({ event }) => {
-  return (  
-    <div>
-      <input onChange={event} type="checkbox" />
-    </div>
-  );
+  return <input onChange={event} type="checkbox" />;
 }
  
 export default CheckBox;

@@ -1,6 +1,6 @@
 $primary-color: #5A6F7A;
-$secondary-color: #4B3156;
-$secondary-lighter-color: #DFD3C3;
+$secondary-color: #C7B198;
+$background-color: #fff;
 $brown-color: #F0ECE3;
 $dark-color: #7A7B7F;
 $fullDark-color: #000;
@@ -8,6 +8,6 @@ $white-color: #fff;
 
 body {
     font-family: "PT Sans", 'Montserrat', monospace, sans-serif;
-    background-color: rgba($secondary-lighter-color, .8);
+    background-color: $background-color;
     position: relative;
 }
