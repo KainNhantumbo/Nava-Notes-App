@@ -2,6 +2,7 @@ import Header from '../components/Header';
 import { SettingsContainer } from '../styles/SettingsStyles';
 import OptionBox from '../components/OptionBox';
 import CheckBox from '../components/CheckBox';
+import ThemeOptions from '../components/ThemeOptions';
 
 export default function Settings ({ onChangeEvent }) {
 
@@ -13,6 +14,7 @@ export default function Settings ({ onChangeEvent }) {
          action={<CheckBox event={onChangeEvent} />}
         />
       </SettingsContainer>
+      <ThemeOptions />
     </>
   );
 }
