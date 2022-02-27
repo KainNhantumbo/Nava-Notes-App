@@ -6,7 +6,6 @@ import { HiArchive, HiPencilAlt, HiCog, HiHome } from 'react-icons/hi';
 const footerButtons = () => {
   const cogIcon = <HiCog />;
   const archiveIcon = <HiArchive />
-  const pencilIcon = <HiPencilAlt />
   const homeIcon = <HiHome />
 
   // dados e detalhes de cada botao no footer
@@ -18,7 +17,7 @@ const footerButtons = () => {
     }, {
       icon: homeIcon,
       description: 'Home',
-      path: '/pages/Home'
+      path: '/'
     },
     {
       icon: archiveIcon,

@@ -1,23 +1,45 @@
 import Footer from './components/Footer';
 import { Route, Routes } from 'react-router-dom';
-import AddNote from './pages/AddNote';
 import Archive from './pages/Archive';
-import Home from './pages/Home';
 import Settings from './pages/Settings';
 
-const Main = () => {	
+import Header from './components/Header';
+import { SearchBox } from './components/SearchBox';
+import NotesPackage from './components/NotesPackage';
+import ConfirmModal from './components/ConfirmModal';
+import { retrieveNotes } from './scripts/functions';
+import { ShowModal } from './scripts/functions';
+
+const App = () => {
+	const { removeModal, renderConfirmModal, visible } = ShowModal();
+	var notesData = retrieveNotes();
+	// notesData = [];
+	
+	console.log(notesData)
+	// controla o modal de confirmacao ao deletar nota
+
+
 	return (
 		<>
+			<Header title="Notes" 
+				child={<SearchBox />}
+			/>
+			<NotesPackage 
+				eventRemoveBtn={renderConfirmModal} 
+				notesData={notesData}
+			/>
+			<ConfirmModal 
+				removeModal={removeModal}
+				status={visible}
+			/>
 
 			<Footer />
 			<Routes>
-				<Route path='/pages/Home' element={<Home />} />
-				<Route path='/pages/AddNote'  element={<AddNote/>} />
-				<Route path='/pages/Archive'  element={<Archive/>} />
-				<Route path='/pages/Settings' element={<Settings/>} />
+				<Route path='/pages/Archive' element={<Archive />} />
+				<Route path='/pages/Settings' element={<Settings />} />
 			</Routes>
 		</>
 	);
 }
 
-export default Main;
+export default App;
