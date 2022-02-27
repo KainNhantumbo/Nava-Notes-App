@@ -8,6 +8,7 @@ import Settings from './pages/Settings';
 const Main = () => {	
 	return (
 		<>
+
 			<Footer />
 			<Routes>
 				<Route path='/pages/Home' element={<Home />} />

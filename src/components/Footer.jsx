@@ -24,11 +24,6 @@ const footerButtons = () => {
       icon: archiveIcon,
       description: 'Archive',
       path: '/pages/Archive'
-    },
-    {
-      icon: pencilIcon,
-      description: 'Add Note',
-      path: '/pages/AddNote'
     }
   ];
 
