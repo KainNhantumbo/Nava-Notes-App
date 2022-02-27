@@ -1,5 +1,5 @@
 import Header from '../components/Header';
-import { SettingsContainer } from '../styles/styles';
+import { SettingsContainer } from '../styles/SettingsStyles';
 import OptionBox from '../components/OptionBox';
 import CheckBox from '../components/CheckBox';
 

@@ -41,7 +41,7 @@ export const retrieveNotes = () => {
             content: '',
             completed: true
         },{
-            title: 'Ir ao Churrasco com a familia',
+            title: 'Ir ao Churrasco com a familiga',
             content: '',
             completed: true
         },{

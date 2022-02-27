@@ -29,20 +29,35 @@ export const Message = styled.section`
 export const HeaderStyled = styled.div`
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   background: rgb(${colors.secondaryColor});
   box-shadow: 0 1px 2px 0.5px rgba(${colors.primaryColor}, .6);
   position: fixed;
   top: 0;
   z-index: 50;
+  color: rgb(${colors.textColor});
+
+  div {
+    position:  absolute;
+    top: 1em;
+    left: 5em;
+    
+    svg {
+      width: 2em;
+      height: 2em;
+      color: rgb(${colors.primaryColor});
+      transform: rotateY('160 deg');
+    }
+  }
 
   h1 {
     font-weight: 600;
-    margin: 0 auto;
-    line-height: 4rem;
+    line-height: 2rem;
     user-select: none;
-  }   
+    padding-left: .5em;
+    font-size: 1.6rem;
+  }
 `;
 
 export const StyledSearch = styled.label`
@@ -59,36 +74,25 @@ export const StyledSearch = styled.label`
     border-style: none;
     border: none;
     border-radius: 15px;
-    padding: 5px 40px 5px 10px;
+    padding: 2px 5px 5px 28px;
     line-height: 5em;
       
     &:focus {
-      box-shadow: 0 0 5px 1px rgba(${colors.primaryColor} .9);
+      box-shadow: 0 0 5px 1px rgba(${colors.primaryColor}, .7);
       outline: none;
     }
     &::placeholder {
       font-weight: 600;
+      color: rgba(${colors.primaryColor} .9);
     }
   }
-  button {
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: inherit;
-    background-color: rgba(${colors.secondaryColor}, .5);
-    border-style: none;
-    border-radius:  50%;
-    cursor: pointer;
 
-    &:hover {
-      background-color: rgba(${colors.primaryColor}, .3);
-      transition: all .2s ease;
-    }
-    svg {
-      padding: .2em;
-      stroke-width: .5px;
-      color: rgb(${colors.primaryColor})
-    }
+  svg {
+    position: absolute;
+    left: 8px;
+    top: 7px;
+    stroke-width: .5px;
+    color: rgb(${colors.primaryColor});
   }
 `;
 
@@ -115,74 +119,6 @@ export const StyledTextAreaContainer = styled.section`
       box-shadow: 0px 0px 5px 2px rgba(${colors.secondaryColor}, .8);
       outline: none;
       transition: all .5s ease;
-    }
-  }
-`;
-
-export const SettingsContainer = styled.div`
-  display: flex;
-  justify-content: cnter;
-  align-items: center;
-
-  section {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: row;
-    width: 90%;
-    margin: 0 auto;
-    max-width: 400px;
-    margin-top: 12vh;
-    position: relative;
-    padding: 8px;
-    line-height: 2em;
-    border-radius: 12px;
-    box-shadow: 0 0 5px .1px rgba(${colors.primaryColor}, .5);
-
-    span {
-      color: rgb(${colors.textColor});
-      font-size: 1.1rem;
-      font-weight: 500;
-      padding-left: .5em;
-    }
-
-    div {
-      position: absolute;
-      top: 12px;
-      right: 2em;
-
-      input[type="checkbox"] {
-        position: relative;
-        width: 45px;
-        height: 20px;
-        appearance: none;
-        -moz-appearance: none;
-        background: rgba(${colors.primaryColor}, .1);
-        outline: none;
-        border-radius: 15px;
-        box-shadow: inset 0 0 5px rgba(${colors.fullDarkColor}, .2);
-        transition: .5s ease;
-
-        :checked {
-          background: rgb(${colors.secondaryColor});
-        }
-        ::after {
-          content: '';
-          position: absolute;
-          width: 20px;
-          height: 20px;
-          transform: scale(1.1);
-          border-radius: 50%;
-          top: 0;
-          left: 0;
-          background: rgb(${colors.whiteColor});
-          box-shadow:  0 0 5px rgba(${colors.primaryColor}, .5);
-          transition: all .5s ease;
-        }
-
-        :checked::after {
-          transform: scale(1.1) translateX(25px);
-        }  
-      }
     }
   }
 `;

@@ -5,6 +5,7 @@ import ConfirmModal from '../components/ConfirmModal';
 import { retrieveNotes } from '../scripts/functions';
 import { ShowModal } from '../scripts/functions';
 import AddNote from '../components/AddNote';
+import { HiPencil } from 'react-icons/hi';
 
 
 const Home = () => {
@@ -19,6 +20,7 @@ const Home = () => {
     <>
       <Header title="Notes"
         child={<SearchBox />}
+        icon={<HiPencil />}
       />
       <NotesPackage
         eventRemoveBtn={renderConfirmModal}
