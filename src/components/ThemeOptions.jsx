@@ -6,27 +6,33 @@ const ThemeOptions =
 
     return (
       <StyledLabelsContainer>
-        <label htmlFor="defaultTheme">
-          Default Theme
+        <div>
+          <label htmlFor="defaultTheme">
+            Default Theme
+          </label>
           <input type="radio" name="theme"
-          id='defaultTheme'
-           value={defaultTheme} 
+            id='defaultTheme'
+            value={defaultTheme}
           />
-        </label>
-        <label htmlFor="nanaTheme">
-          Nana Theme
+        </div>
+        <div>
+          <label htmlFor="nanaTheme">
+            Nana Theme
+          </label>
           <input type="radio" name="theme"
-          id='nanaTheme' 
-          value={pinkTheme}
+            id='nanaTheme'
+            value={pinkTheme}
           />
-        </label>
-        <label htmlFor="pinkTheme">
-          PinkSleep Theme
-          <input type="radio" name="theme" 
-          id='pinkTheme'
-          value={nanaTheme} 
+        </div>
+        <div>
+          <label htmlFor="pinkTheme">
+            PinkSleep Theme
+          </label>
+          <input type="radio" name="theme"
+            id='pinkTheme'
+            value={nanaTheme}
           />
-        </label>
+        </div>
       </StyledLabelsContainer>
     );
   }
