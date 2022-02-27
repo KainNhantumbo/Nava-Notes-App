@@ -4,8 +4,6 @@ import Archive from './pages/Archive';
 import Settings from './pages/Settings';
 import Home from './pages/Home';
 
-
-
 const App = () => {
 	
 	return (

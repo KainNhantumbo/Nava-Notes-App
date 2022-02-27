@@ -4,6 +4,7 @@ import NotesPackage from '../components/NotesPackage';
 import ConfirmModal from '../components/ConfirmModal';
 import { retrieveNotes } from '../scripts/functions';
 import { ShowModal } from '../scripts/functions';
+import AddNote from '../components/AddNote';
 
 
 const Home = () => {
@@ -11,7 +12,7 @@ const Home = () => {
   var notesData = retrieveNotes();
   // notesData = [];
 
-  console.log(notesData)
+
   // controla o modal de confirmacao ao deletar nota
 
   return (

@@ -37,7 +37,7 @@ const footerButtons = () => {
 
 const Footer = () => {
   const data = footerButtons();
-  console.log(data)
+
   return (
     <footer>
       {
