@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledTextAreaContainer } from '../styles/styles';
+import { StyledTextAreaContainer } from '../styles/textAreaStyles';
 
 const TextArea = () => {
 

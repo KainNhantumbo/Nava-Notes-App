@@ -13,10 +13,7 @@ const Home = () => {
   const { removeModal, renderConfirmModal, visible } = ShowModal();
   var notesData = retrieveNotes();
   // notesData = [];
-
-
   // controla o modal de confirmacao ao deletar nota
-
   return (
     <>
       <Header title="Notes"
