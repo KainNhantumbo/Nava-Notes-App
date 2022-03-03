@@ -6,6 +6,7 @@ import { retrieveNotes } from '../scripts/functions';
 import { ShowModal } from '../scripts/functions';
 import AddNote from '../components/AddNote';
 import { HiPencil } from 'react-icons/hi';
+import AddNoteInterface from '../components/AddNoteInterface';
 
 
 const Home = () => {
@@ -26,6 +27,7 @@ const Home = () => {
         eventRemoveBtn={renderConfirmModal}
         notesData={notesData}
       />
+      <AddNoteInterface />
       <ConfirmModal
         removeModal={removeModal}
         status={visible}
