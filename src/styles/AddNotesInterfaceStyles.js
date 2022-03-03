@@ -2,6 +2,10 @@ import styled from "styled-components";
 import { colors } from "./colors";
 
 export const InterfaceStyles = styled.section`
+  * {
+    box-sizing: border-box;
+  }
+
   width: 100vw;
   height: 100vh;
   z-index: 500;
@@ -51,8 +55,43 @@ export const InterfaceStyles = styled.section`
       font-weight: 600;
       font-size: 1.2rem;
       user-select: none;
-
+      color: rgb(${colors.textColor});
     }
   }
   
+  .toolbar {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 400px;
+    background: rgb(${colors.backgroundColor});
+    border-radius: 0 0 5px 5px;
+    padding: 8px 10px;
+
+    div {
+      display: flex;
+      justify-content: flex-start;
+      gap: .5em;
+
+      button {
+        border-style: none;
+        padding: .4em .5em;
+        border-radius: 5px;
+        background: rgba(${colors.secondaryColor}, .4);
+
+        :hover {
+          background: rgba(${colors.secondaryColor}, .6);
+          transform: scale(1.05);
+          transition: all 100ms ease-out;
+
+        }
+        
+        span {
+          color: rgb(${colors.textColor});
+
+        }
+      }
+    }
+  }
 `;
