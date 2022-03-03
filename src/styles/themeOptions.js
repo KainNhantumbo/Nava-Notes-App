@@ -45,7 +45,7 @@ export const StyledLabelsContainer = styled.section`
       display: grid;
       place-content: center;
 
-      ::before {
+      :checked::before {
         content: '';
         width: 8px;
         height: 8px;

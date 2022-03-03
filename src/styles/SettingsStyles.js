@@ -45,7 +45,7 @@ export const ModeSwitcher = styled.div`
     div {
       position: absolute;
       top: 15px;
-      right: 2em;
+      right: 1em;
 
       input[type="checkbox"] {
         position: relative;
@@ -73,7 +73,7 @@ export const ModeSwitcher = styled.div`
           left: 0;
           background: rgb(${colors.whiteColor});
           box-shadow:  0 0 5px rgba(${colors.primaryColor}, .5);
-          transition: all .5s ease;
+          transition: all .2s ease;
         }
 
         :checked::after {

@@ -31,7 +31,7 @@ export const HeaderStyled = styled.div`
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  background: rgb(${colors.secondaryColor});
+  background: rgba(${colors.secondaryColor});
   box-shadow: 0 1px 2px 0.5px rgba(${colors.primaryColor}, .6);
   position: fixed;
   top: 0;
