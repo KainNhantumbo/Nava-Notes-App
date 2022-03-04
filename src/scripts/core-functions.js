@@ -39,15 +39,13 @@ export const fetchDataFromStorage = (key) => {
   return data;
 }
 
-
 export const retrieveNotes = () => {
-  var notesData = getDataFromStorage('notes')
+  var notesData = getDataFromStorage('notes');
 
   if (!notesData) {
     notesData = [];
-    setDataToStorage('notes', notesData)
+    setDataToStorage('notes', notesData);
   }
-
 
   // sorteia os elementos pelo titulo
   return (

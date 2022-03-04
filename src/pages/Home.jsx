@@ -14,6 +14,7 @@ import { AddNoteButton } from '../styles/styles';
 
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { setDataToStorage } from '../scripts/core-functions';
 
 
 const Home = () => {
@@ -68,7 +69,9 @@ const Home = () => {
     return;
     
     notesData.push(newNote)
-    console.log(newNote)
+
+    // salva a nota no localstorage
+    setDataToStorage('notes', notesData)
     removeAddNoteInterface()
     return notesData;
   }
