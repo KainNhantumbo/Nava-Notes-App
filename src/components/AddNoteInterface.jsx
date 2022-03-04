@@ -6,7 +6,7 @@ import Button from './Button';
 import { HiChevronLeft } from 'react-icons/hi';
 
 const AddNoteInterface = 
-({ status, cancelEvent, saveEvent, titleValue, textValue }) => {
+({ status, interfaceExit, cancelEvent, saveEvent, titleValue, textValue }) => {
   const xIcon = <HiChevronLeft />
 
   return (
@@ -15,7 +15,7 @@ const AddNoteInterface =
         status === true ? (
           <InterfaceStyles>
             <section className='heading'>
-              <LargerButtons icon={xIcon} />
+              <LargerButtons event={interfaceExit} icon={xIcon} />
               <h5> Add a note </h5>
             </section>
             <TextArea 
@@ -24,10 +24,6 @@ const AddNoteInterface =
             />
             <section className='toolbar'>
               <div>
-                <Button 
-                  event={saveEvent} 
-                  description='Save' 
-                />
                 <Button
                   event={cancelEvent}
                   description='Cancel'

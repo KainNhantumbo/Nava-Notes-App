@@ -95,3 +95,32 @@ export const StyledSearch = styled.label`
     color: rgb(${colors.primaryColor});
   }
 `;
+
+export const AddNoteButton = styled.div`
+  position: relative;
+  z-index: 60;
+
+  button {
+    border-style: none;
+    position: absolute;
+    top: -7em;
+    right: 1.2em;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    display: grid;
+    place-content: center;
+
+    :hover {
+      transform: scale(1.05);
+      transition: all .2s ease-out;
+      box-shadow: 0 0 5px rgba(${colors.primaryColor}, .5);
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+      color: rgb(${colors.primaryColor});
+    }
+  }
+`;
