@@ -57,7 +57,8 @@ const Home = () => {
       content: textValue
     }
 
-    
+    if (newNote.title === '' || newNote.content === '')
+    return;
     
     notesData.push(newNote)
     console.log(newNote)
