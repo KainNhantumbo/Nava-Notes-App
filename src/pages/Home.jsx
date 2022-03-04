@@ -1,15 +1,18 @@
 import Header from '../components/Header';
-import { SearchBox } from '../components/SearchBox';
+import Button from '../components/Button';
 import NotesPackage from '../components/NotesPackage';
 import ConfirmModal from '../components/ConfirmModal';
+import AddNoteInterface from '../components/AddNoteInterface';
+
+import { SearchBox } from '../components/SearchBox';
 import { retrieveNotes } from '../scripts/functions';
 import { ShowModal } from '../scripts/functions';
-import AddNote from '../components/AddNote';
 import { HiPencil } from 'react-icons/hi';
-import AddNoteInterface from '../components/AddNoteInterface';
+import { HiPencilAlt } from 'react-icons/hi';
 
 
 const Home = () => {
+  const pencilAlt = <HiPencilAlt/>
   const { removeModal, renderConfirmModal, visible } = ShowModal();
   var notesData = retrieveNotes();
   // notesData = [];
@@ -20,11 +23,13 @@ const Home = () => {
         child={<SearchBox />}
         icon={<HiPencil />}
       />
+      <Button className='addNoteButton' icon={pencilAlt}/>
+      
       <NotesPackage
         eventRemoveBtn={renderConfirmModal}
         notesData={notesData}
       />
-      <AddNoteInterface />
+      {/* <AddNoteInterface /> */}
       <ConfirmModal
         removeModal={removeModal}
         status={visible}
@@ -32,5 +37,7 @@ const Home = () => {
     </>
   );
 }
+
+
 
 export default Home;

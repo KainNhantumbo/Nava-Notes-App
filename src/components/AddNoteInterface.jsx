@@ -3,26 +3,43 @@ import { InterfaceStyles } from '../styles/AddNotesInterfaceStyles';
 import LargerButtons from './LargerButtons'
 import TextArea from './TextArea';
 import Button from './Button';
-import { HiChevronLeft} from 'react-icons/hi';
+import { HiChevronLeft } from 'react-icons/hi';
 
-const AddNoteInterface = () => {
+const AddNoteInterface = 
+({ status, cancelEvent, saveEvent, titleValue, textValue }) => {
   const xIcon = <HiChevronLeft />
+
   return (
-    <InterfaceStyles>
-      <section className='heading'>
-        <LargerButtons icon={xIcon} />
-        <h5> Add a note </h5>
-      </section>
-      <TextArea />
-      <section className='toolbar'>
-        <div>
-          <Button description='Save' />
-          <Button description='Cancel' />
-        </div>
-      </section>
-
-
-    </InterfaceStyles>
+    <>
+      {
+        status === true ? (
+          <InterfaceStyles>
+            <section className='heading'>
+              <LargerButtons icon={xIcon} />
+              <h5> Add a note </h5>
+            </section>
+            <TextArea 
+              titleChangeEvent={titleValue}
+              textChangeEvent={textValue}
+            />
+            <section className='toolbar'>
+              <div>
+                <Button 
+                  event={saveEvent} 
+                  description='Save' 
+                />
+                <Button
+                  event={cancelEvent}
+                  description='Cancel'
+                />
+              </div>
+            </section>
+          </InterfaceStyles>
+        ) : (
+          null
+        )
+      }
+    </>
   );
 }
 
