@@ -13,6 +13,7 @@ import { AddNoteButton } from '../styles/styles';
 
 
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 
 const Home = () => {
@@ -44,15 +45,21 @@ const Home = () => {
     setInterfaceStatus(false);
   };
 
+  // retorna o valor do state
   const getTitleValue = e => setTitleValue(e.target.value);
   const getTextValue = e => setTextValue(e.target.value);
+
+  // reseta os valores do state
   const resetValues = () => {
     setTextValue('');
     setTitleValue('');
   }
-
+  
+  // adiciona nota ao banco de dados
   const saveNote = () => {
+    const id = uuidv4()
     const newNote = {
+      id,
       title: titleValue,
       content: textValue
     }
