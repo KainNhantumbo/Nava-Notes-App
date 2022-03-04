@@ -14,6 +14,7 @@ const NotesPackage = ({ notesData, eventRemoveBtn, noteDetails }) => {
 				) : (
 					notesData.map((value, index) => {
 						return <Note
+							id={value.id}
 							key={index}
 							note={value.title}
 							noteDetails={noteDetails}
