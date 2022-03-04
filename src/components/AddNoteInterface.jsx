@@ -24,6 +24,10 @@ const AddNoteInterface =
             />
             <section className='toolbar'>
               <div>
+                <Button 
+                  event={saveEvent} 
+                  description='Save' 
+                />
                 <Button
                   event={cancelEvent}
                   description='Cancel'

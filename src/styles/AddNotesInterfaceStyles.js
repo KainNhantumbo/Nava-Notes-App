@@ -79,6 +79,7 @@ export const InterfaceStyles = styled.section`
         padding: .4em .5em;
         border-radius: 5px;
         background: rgba(${colors.secondaryColor}, .4);
+        outline: none;
 
         :hover {
           background: rgba(${colors.secondaryColor}, .6);

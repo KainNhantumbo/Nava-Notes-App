@@ -23,21 +23,46 @@ const Home = () => {
 
 
   const [interfaceStatus, setInterfaceStatus] = useState(false);
+  const [textValue, setTextValue ] = useState('');
+  const [titleValue, setTitleValue] =  useState('');
 
   const AddNoteInterfaceCore = () => {
     
   }
-
+  // renderiza a interface para adicionar nota
   const renderAddNoteInterface = () => setInterfaceStatus(true);
-  const removeAddNoteInterface = () => setInterfaceStatus(false);
-
-  const discardNote = () => {
-
+  
+  // remove a interface para adicionar nota
+  const removeAddNoteInterface = () => {
+    resetValues();
     setInterfaceStatus(false);
+  };
+
+  // remove a interface para adicionar nota
+  const discardNote = () => {
+    resetValues();
+    setInterfaceStatus(false);
+  };
+
+  const getTitleValue = e => setTitleValue(e.target.value);
+  const getTextValue = e => setTextValue(e.target.value);
+  const resetValues = () => {
+    setTextValue('');
+    setTitleValue('');
   }
 
   const saveNote = () => {
+    const newNote = {
+      title: titleValue,
+      content: textValue
+    }
+
     
+    
+    notesData.push(newNote)
+    console.log(newNote)
+    removeAddNoteInterface()
+    return notesData;
   }
 
   return (
@@ -60,6 +85,9 @@ const Home = () => {
         notesData={notesData}
       />
       <AddNoteInterface
+        titleValue={e => getTitleValue(e)}
+        textValue={e => getTextValue(e)}
+        saveEvent={saveNote}
         cancelEvent={discardNote}
         interfaceExit={removeAddNoteInterface}
         status={interfaceStatus}

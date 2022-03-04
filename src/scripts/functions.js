@@ -26,32 +26,25 @@ export const retrieveNotes = () => {
     const notesData = [
         {
             title: 'Fazer a barba',
-            content: '',
-            completed: false
+            content: ''
         },{
             title: 'Lavar a roupa',
-            content: '',
-            completed: false
+            content: ''
         },{
             title: 'Ir ao Churrasco com a familia',
-            content: '',
-            completed: true
+            content: ''
         },{
             title: 'Ir ao Churrasco com a familia',
-            content: '',
-            completed: true
+            content: ''
         },{
             title: 'Ir ao Churrasco com a familiga',
-            content: '',
-            completed: true
+            content: ''
         },{
             title: 'Ir ao Churrasco com a familia',
-            content: '',
-            completed: true
+            content: ''
         },{
             title: 'Alimentar Coelhos',
-            content: '',
-            completed: false
+            content: ''
         }
     ];
 
