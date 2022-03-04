@@ -5,8 +5,8 @@ import ConfirmModal from '../components/ConfirmModal';
 import AddNoteInterface from '../components/AddNoteInterface';
 
 import { SearchBox } from '../components/SearchBox';
-import { retrieveNotes } from '../scripts/functions';
-import { ShowModal } from '../scripts/functions';
+import { retrieveNotes } from '../scripts/core-functions';
+import { ShowModal } from '../scripts/core-functions';
 import { HiPencil } from 'react-icons/hi';
 import { HiPencilAlt } from 'react-icons/hi';
 import { AddNoteButton } from '../styles/styles';
