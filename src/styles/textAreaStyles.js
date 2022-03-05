@@ -40,7 +40,7 @@ export const StyledTextAreaContainer = styled.section`
     line-height: 1.6rem;
 
     ::-webkit-scrollbar {
-      background: rgba(${colors.primaryColor}, .8);
+      background: transparent;
       padding: 5px;
       border-radius: 8px;
       width: .5em;
@@ -51,7 +51,7 @@ export const StyledTextAreaContainer = styled.section`
       border-radius: 12px;
 
       :hover {
-        background: rgba(${colors.whiteColor}, .6);
+        background: rgba(${colors.primaryColor}, .6);
       }
     }
   }

@@ -10,17 +10,32 @@
     flex-direction: column;
     width: 95%;
     margin: 8em auto 4em auto;
-    border-radius: 5px;
+    border-radius: 12px;
 
     div {
         @include displaysFlex();
         justify-content: space-between;
-        background: rgba($secondary-color, .9);
+        background: rgba($white-color, .9);
+        box-shadow: 0 0 5px rgba($primary-color, .6);
         margin-bottom: .5em;
         padding: 1em;
         border-radius: inherit;
+        
+    }
+
+    ::-webkit-scrollbar {
+        background: transparent;
+        padding: 5px;
+        border-radius: 8px;
+        width: .2em;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: red;
+        border-radius: 12px;
+
         &:hover {
-            box-shadow: 0 0 2px 2px rgba($white-color, .7);
+            background-color: black;
         }
     }
 }

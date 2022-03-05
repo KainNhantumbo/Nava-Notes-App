@@ -13,11 +13,11 @@ export const StyledLabelsContainer = styled.section`
     flex-direction: row;
     width: 90%;
     max-width: 400px;
-    margin-top: 2vh;
+    margin: .5em 0;
     position: relative;
     padding: 10px 8px;
     line-height: 2em;
-    border-radius: 5px;
+    border-radius: 12px;
     user-select: none;
     box-shadow: 0 0 5px .1px rgba(${colors.primaryColor}, .5);
 

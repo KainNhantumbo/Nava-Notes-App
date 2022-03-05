@@ -6,6 +6,27 @@ $dark-color: #7A7B7F;
 $fullDark-color: #000;
 $white-color: #fff;
 
+html {
+    ::-webkit-scrollbar {
+        background: transparent;
+        padding: 5px;
+        border-radius: 8px;
+        width: .9em;
+        opacity: 0;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: red;
+        opacity: 0.1;
+        border-radius: 12px;
+        
+        &:hover {
+            background-color: black;
+            opacity: 0.2;
+        }
+    }
+}
+
 body {
     font-family: "PT Sans", 'Montserrat', monospace, sans-serif;
     background-color: $background-color;

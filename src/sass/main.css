@@ -402,6 +402,25 @@ template {
   display: none;
 }
 
+html ::-webkit-scrollbar {
+  background: transparent;
+  padding: 5px;
+  border-radius: 8px;
+  width: .9em;
+  opacity: 0;
+}
+
+html ::-webkit-scrollbar-thumb {
+  background: red;
+  opacity: 0.1;
+  border-radius: 12px;
+}
+
+html ::-webkit-scrollbar-thumb:hover {
+  background-color: black;
+  opacity: 0.2;
+}
+
 body {
   font-family: "PT Sans", 'Montserrat', monospace, sans-serif;
   background-color: #fff;
@@ -421,7 +440,7 @@ body {
           flex-direction: column;
   width: 95%;
   margin: 8em auto 4em auto;
-  border-radius: 5px;
+  border-radius: 12px;
 }
 
 .mainContainer div {
@@ -438,15 +457,28 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background: rgba(199, 177, 152, 0.9);
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-box-shadow: 0 0 5px rgba(90, 111, 122, 0.6);
+          box-shadow: 0 0 5px rgba(90, 111, 122, 0.6);
   margin-bottom: .5em;
   padding: 1em;
   border-radius: inherit;
 }
 
-.mainContainer div:hover {
-  -webkit-box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.7);
-          box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.7);
+.mainContainer ::-webkit-scrollbar {
+  background: transparent;
+  padding: 5px;
+  border-radius: 8px;
+  width: .2em;
+}
+
+.mainContainer ::-webkit-scrollbar-thumb {
+  background: red;
+  border-radius: 12px;
+}
+
+.mainContainer ::-webkit-scrollbar-thumb:hover {
+  background-color: black;
 }
 
 .buttonsContainer {
@@ -515,12 +547,14 @@ footer {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  background: #c7b198;
-  -webkit-box-shadow: 0 -1px 2px 0.5px rgba(90, 111, 122, 0.6);
-          box-shadow: 0 -1px 2px 0.5px rgba(90, 111, 122, 0.6);
+  background: #fff;
+  -webkit-box-shadow: 0 0 5px rgba(90, 111, 122, 0.6);
+          box-shadow: 0 0 5px rgba(90, 111, 122, 0.6);
   position: fixed;
   bottom: 0;
   z-index: 50;
+  border-radius: 12px 12px 0 0;
+  padding: .2em 0;
 }
 
 footer div {

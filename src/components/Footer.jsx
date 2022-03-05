@@ -2,6 +2,7 @@ import React from "react";
 import LargerButtons from "./LargerButtons";
 import { Link } from 'react-router-dom';
 import { HiArchive, HiPencilAlt, HiCog, HiHome } from 'react-icons/hi';
+import { FooterStyles } from "../styles/footerStyles";
 
 const footerButtons = () => {
   const cogIcon = <HiCog />;
@@ -38,23 +39,29 @@ const footerButtons = () => {
 const Footer = () => {
   const data = footerButtons();
 
+  const renderFooter = () => {
+    return (
+      data.map(({ icon, description, path }, index) => {
+        return (
+          <Link key={index} to={path}>
+            <div>
+              <LargerButtons icon={icon} />
+              <span>
+                {description}
+              </span>
+            </div>
+          </Link>
+        );
+      })
+    )
+  }
+
   return (
-    <footer>
+    <FooterStyles>
       {
-        data.map(({ icon, description, path }, index) => {
-          return (
-            <Link key={index} to={path}>
-              <div>
-                <LargerButtons icon={icon} />
-                <span>
-                  {description}
-                </span>
-              </div>
-            </Link>
-          );
-        })
+        renderFooter()
       }
-    </footer>
+    </FooterStyles>
   );
 }
 

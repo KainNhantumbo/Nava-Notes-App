@@ -1,18 +1,21 @@
 import styled from 'styled-components';
 import { colors } from './colors';
 
-export const SettingsContainer = styled.div `
-  display: grid;
+export const SettingsContainer = styled.div`
+  .settingsBody {
+    margin-bottom: 15em;
 
-  h2 {
-   color: rgb(${colors.textColor});
-   margin: 0 auto;
-   margin-top: 1.6em;
-   padding: .2em 5em;
-   border: 2px solid rgba(${colors.secondaryColor}, .5);
-   border-radius: 5px;
-   font-weight: 600;
-   background-color: rgb(${colors.backgroundColor});
+    h2 {
+      width: 20%;
+      color: rgb(${colors.textColor});
+      margin: 0 auto;
+      margin-top: 1.6em;
+      padding: .2em 5em;
+      border: 2px solid rgba(${colors.secondaryColor}, .5);
+      border-radius: 5px;
+      font-weight: 600;
+      background-color: rgb(${colors.backgroundColor});
+    }
   }
 `;
 
