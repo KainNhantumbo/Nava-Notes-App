@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from 'uuid';
 
 // salva os dados no localStorage
@@ -18,9 +18,7 @@ export function ShowModal() {
 
   const renderConfirmModal = () => setVisible(true);
   const removeModal = () => setVisible(false);
-  const removeNote = () => {
-    removeModal();
-  }
+  const removeNote = () => removeModal();
 
   return {
     renderConfirmModal,

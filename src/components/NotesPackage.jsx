@@ -2,7 +2,18 @@ import React from 'react';
 import Note from './Note';
 import EmptyNotesMessage from './EmptyNotesMessage';
 
-const NotesPackage = ({ notesData, eventRemoveBtn, noteDetails }) => {
+const NotesPackage = 
+({ notesData, eventRemoveBtn, noteDetails }) => {
+	const renderNotes = notesData.map((value, index) => {
+		return <Note
+			id={value.id}
+			key={index}
+			note={value.title}
+			noteDetails={noteDetails}
+			eventRemoveBtn={eventRemoveBtn}
+		/>
+	});
+
 	return (
 		<section className="mainContainer">
 			{
@@ -11,16 +22,8 @@ const NotesPackage = ({ notesData, eventRemoveBtn, noteDetails }) => {
 						label={'Oh! Looks like we have nothing to show...'}
 						message={`Add some notes!`}
 					/>
-				) : (
-					notesData.map((value, index) => {
-						return <Note
-							id={value.id}
-							key={index}
-							note={value.title}
-							noteDetails={noteDetails}
-							eventRemoveBtn={eventRemoveBtn}
-						/>
-					})
+				) : ( 
+					renderNotes
 				)
 			}
 		</section>
