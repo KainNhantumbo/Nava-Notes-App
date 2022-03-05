@@ -11,11 +11,9 @@ import { HiPencil } from 'react-icons/hi';
 import { HiPencilAlt } from 'react-icons/hi';
 import { AddNoteButton } from '../styles/styles';
 
-
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { setDataToStorage } from '../scripts/core-functions';
-
 
 const Home = () => {
   const pencilAlt = <HiPencilAlt />
@@ -28,9 +26,9 @@ const Home = () => {
   const [textValue, setTextValue ] = useState('');
   const [titleValue, setTitleValue] =  useState('');
 
-  const AddNoteInterfaceCore = () => {
+  // const AddNoteInterfaceCore = () => {
     
-  }
+  // }
   // renderiza a interface para adicionar nota
   const renderAddNoteInterface = () => setInterfaceStatus(true);
   
@@ -58,11 +56,14 @@ const Home = () => {
   
   // adiciona nota ao banco de dados
   const saveNote = () => {
-    const id = uuidv4()
+    const id = uuidv4();
+    const date = new Date().toUTCString();
+
     const newNote = {
       id,
       title: titleValue,
-      content: textValue
+      content: textValue,
+      createdAt: date
     }
 
     if (newNote.title === '' || newNote.content === '')
@@ -75,6 +76,9 @@ const Home = () => {
     removeAddNoteInterface()
     return notesData;
   }
+
+  
+  
 
   return (
     <>
@@ -110,7 +114,5 @@ const Home = () => {
     </>
   );
 }
-
-
 
 export default Home;
