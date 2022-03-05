@@ -34,15 +34,19 @@ export const ModeSwitcher = styled.div`
     position: relative;
     padding: 10px 8px;
     line-height: 2em;
-    border-radius: 5px;
+    border-radius: 12px;
     user-select: none;
-    box-shadow: 0 0 5px .1px rgba(${colors.primaryColor}, .5);
+    box-shadow: 0 0 5px rgba(${colors.primaryColor}, .5);
 
     span {
       color: rgb(${colors.textColor});
       font-size: 1.1rem;
       font-weight: 500;
       padding-left: .5em;
+
+      :hover {
+        color: rgb(${colors.secondaryColor});
+      }
     }
 
     div {
