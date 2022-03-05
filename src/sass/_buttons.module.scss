@@ -7,6 +7,8 @@
     position: relative;
     padding: .6em;
     cursor: pointer;
+    display: grid;
+    place-content: center;
 
     &:hover {
         background: rgba($white-color, 1);
@@ -16,10 +18,9 @@
     svg {
         width: inherit;
         height: inherit;
-        position: absolute;
-        top: calc(50% - 11px);
-        left: calc(50% - 11px);
         fill: $primary-color;
+        user-select: none;
+        pointer-events: none;
     }
 }
 

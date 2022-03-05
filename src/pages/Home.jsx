@@ -77,7 +77,7 @@ const Home = () => {
     return notesData;
   }
 
-  
+  console.log(notesData[1].id);
   
 
   return (

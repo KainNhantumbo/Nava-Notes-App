@@ -472,6 +472,9 @@ body {
   position: relative;
   padding: .6em;
   cursor: pointer;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
 }
 
 .buttonsContainer button:hover {
@@ -485,10 +488,12 @@ body {
 .buttonsContainer button svg {
   width: inherit;
   height: inherit;
-  position: absolute;
-  top: calc(50% - 11px);
-  left: calc(50% - 11px);
   fill: #5A6F7A;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
 }
 
 footer {
@@ -553,6 +558,9 @@ footer div button {
   position: relative;
   padding: .6em;
   cursor: pointer;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
   width: 30px;
   height: 30px;
   margin: auto 0;
@@ -569,10 +577,12 @@ footer div button:hover {
 footer div button svg {
   width: inherit;
   height: inherit;
-  position: absolute;
-  top: calc(50% - 11px);
-  left: calc(50% - 11px);
   fill: #5A6F7A;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
 }
 
 footer div button svg {

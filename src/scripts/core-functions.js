@@ -5,15 +5,10 @@ export function ShowModal() {
   const [visible, setVisible] = useState(false)
 
   const renderConfirmModal = (e) => {
-    e.preventDefault()
-    e.stopPropagation()
-    setVisible(true)
+    const id = e.target.parentNode.parentNode.id;
+    setVisible(true);
   }
-  const removeModal = (e) => {
-    e.preventDefault()
-    e.stopPropagation()
-    setVisible(false)
-  }
+  const removeModal = () => setVisible(false);
 
   return {
     renderConfirmModal,
@@ -29,12 +24,6 @@ export const setDataToStorage = (key, data) => {
 
 //carrega os dados do localStorage
 export const getDataFromStorage = (key) => {
-  const data = JSON.parse(localStorage.getItem(key));
-  return data;
-}
-
-// retorna dados do localStorage
-export const fetchDataFromStorage = (key) => {
   const data = JSON.parse(localStorage.getItem(key));
   return data;
 }
