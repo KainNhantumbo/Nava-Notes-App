@@ -4,10 +4,7 @@ import { useState } from "react";
 export function ShowModal() {
   const [visible, setVisible] = useState(false)
 
-  const renderConfirmModal = (e) => {
-    const id = e.target.parentNode.parentNode.id;
-    setVisible(true);
-  }
+  const renderConfirmModal = () => setVisible(true);
   const removeModal = () => setVisible(false);
 
   return {
@@ -44,3 +41,16 @@ export const retrieveNotes = () => {
     })
   );
 }
+
+// elimina as notas
+export const deleteNote = (e) => {
+  const id = e.target.parentNode.parentNode.id;
+  var notesData = getDataFromStorage('notes');
+
+  for (let i = 0; i < notesData.length; i++) {
+    if (notesData[i].id === id) {
+      notesData.splice([i], 1);
+    }
+  }
+  setDataToStorage('notes', notesData);
+} 

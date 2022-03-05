@@ -14,16 +14,15 @@ import { AddNoteButton } from '../styles/styles';
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { setDataToStorage } from '../scripts/core-functions';
+import { deleteNote } from '../scripts/core-functions';
 
 const Home = () => {
   const pencilAlt = <HiPencilAlt />
   const { removeModal, renderConfirmModal, visible } = ShowModal();
   var notesData = retrieveNotes();
-  // notesData = [];
-
 
   const [interfaceStatus, setInterfaceStatus] = useState(false);
-  const [textValue, setTextValue ] = useState('');
+  const [textValue, setTextValue] = useState('');
   const [titleValue, setTitleValue] =  useState('');
 
   // const AddNoteInterfaceCore = () => {
@@ -77,7 +76,7 @@ const Home = () => {
     return notesData;
   }
 
-  console.log(notesData[1].id);
+  // console.log(notesData[1].id);
   
 
   return (
@@ -95,13 +94,14 @@ const Home = () => {
       </AddNoteButton>
 
       {/* Main body */}
+      {/* renderConfirmModal fica ai no eventRemoveBtn */}
       <NotesPackage
-        eventRemoveBtn={renderConfirmModal}
+        eventRemoveBtn={deleteNote} 
         notesData={notesData}
       />
       <AddNoteInterface
-        titleValue={e => getTitleValue(e)}
-        textValue={e => getTextValue(e)}
+        titleValue={getTitleValue}
+        textValue={getTextValue}
         saveEvent={saveNote}
         cancelEvent={discardNote}
         interfaceExit={removeAddNoteInterface}
