@@ -403,16 +403,12 @@ template {
 }
 
 html ::-webkit-scrollbar {
-  background: transparent;
-  padding: 5px;
-  border-radius: 8px;
-  width: .9em;
-  opacity: 0;
+  background: #5A6F7A;
+  width: .2em;
 }
 
 html ::-webkit-scrollbar-thumb {
-  background: red;
-  opacity: 0.1;
+  background: #C7B198;
   border-radius: 12px;
 }
 
@@ -463,22 +459,6 @@ body {
   margin-bottom: .5em;
   padding: 1em;
   border-radius: inherit;
-}
-
-.mainContainer ::-webkit-scrollbar {
-  background: transparent;
-  padding: 5px;
-  border-radius: 8px;
-  width: .2em;
-}
-
-.mainContainer ::-webkit-scrollbar-thumb {
-  background: red;
-  border-radius: 12px;
-}
-
-.mainContainer ::-webkit-scrollbar-thumb:hover {
-  background-color: black;
 }
 
 .buttonsContainer {

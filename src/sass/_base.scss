@@ -8,16 +8,13 @@ $white-color: #fff;
 
 html {
     ::-webkit-scrollbar {
-        background: transparent;
-        padding: 5px;
-        border-radius: 8px;
-        width: .9em;
-        opacity: 0;
+        background: $primary-color;
+        width: .2em;
+        
     }
 
     ::-webkit-scrollbar-thumb {
-        background: red;
-        opacity: 0.1;
+        background: $secondary-color;
         border-radius: 12px;
         
         &:hover {

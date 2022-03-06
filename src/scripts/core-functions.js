@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import useLocalStorage from 'react-localstorage-hook'
 import { v4 as uuidv4 } from 'uuid';
 
 // salva os dados no localStorage
