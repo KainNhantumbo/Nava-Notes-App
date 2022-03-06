@@ -3,23 +3,20 @@ import { colors } from './colors';
 
 export const SettingsContainer = styled.div`
   .settingsBody {
-    margin-bottom: 15em;
+    margin-bottom: 5em;
+    display: grid;
 
     h2 {
-      width: 20%;
       color: rgb(${colors.textColor});
       margin: 0 auto;
-      margin-top: 1.6em;
-      padding: .2em 5em;
-      border: 2px solid rgba(${colors.secondaryColor}, .5);
-      border-radius: 5px;
-      font-weight: 600;
+      margin-top: 1.2em;
+      font-weight: 500;
       background-color: rgb(${colors.backgroundColor});
     }
   }
 `;
 
-export const ModeSwitcher = styled.div`
+export const ModeSwitcherStyles = styled.div`
   display: flex;
   place-content: center;
 

@@ -61,8 +61,8 @@ export const deleteNote = (e) => {
 export const AddNoteInterfaceCore = () => {
   const notesData = getDataFromStorage('notes');
   const [interfaceStatus, setInterfaceStatus] = useState(false);
-  const [textValue, setTextValue] = useState('');
-  const [titleValue, setTitleValue] = useState('');
+  const [titleValue, setTitleValue] = useState(() => '');
+  const [textValue, setTextValue] = useState(() => '');
 
   // renderiza a interface para adicionar nota
   const renderAddNoteInterface = () => setInterfaceStatus(true);
@@ -85,8 +85,8 @@ export const AddNoteInterfaceCore = () => {
 
   // reseta os valores do state
   const resetValues = () => {
-    setTextValue('');
-    setTitleValue('');
+    setTextValue(() => '');
+    setTitleValue(() => '');
   }
 
   // adiciona nota ao banco de dados

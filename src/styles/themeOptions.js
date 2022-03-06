@@ -21,6 +21,14 @@ export const StyledLabelsContainer = styled.section`
     user-select: none;
     box-shadow: 0 0 5px .1px rgba(${colors.primaryColor}, .5);
 
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+
+    :hover {
+      border-left: 2px solid rgb(${colors.secondaryColor});
+      border-right: 2px solid rgb(${colors.secondaryColor});
+    }
+
     label {
       padding-left: .5em;
 
@@ -53,7 +61,6 @@ export const StyledLabelsContainer = styled.section`
         border-radius: 50%;
         margin: auto;
       }
-
     }
   }
 `;
