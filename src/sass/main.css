@@ -450,6 +450,13 @@ body {
   margin-bottom: .5em;
   padding: 1em;
   border-radius: inherit;
+  position: relative;
+  overflow: hidden;
+}
+
+.mainContainer div span {
+  overflow: hidden;
+  max-width: 75%;
 }
 
 .buttonsContainer {
@@ -463,6 +470,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  position: absolute;
+  top: .8em;
+  right: .8em;
   gap: .5em;
 }
 

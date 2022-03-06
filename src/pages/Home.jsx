@@ -5,7 +5,7 @@ import ConfirmModal from '../components/ConfirmModal';
 import AddNoteInterface from '../components/AddNoteInterface';
 
 import { SearchBox } from '../components/SearchBox';
-import { retrieveNotes } from '../scripts/core-functions';
+
 import { ShowModal } from '../scripts/core-functions';
 import { HiPencil } from 'react-icons/hi';
 import { HiPencilAlt } from 'react-icons/hi';
@@ -17,7 +17,6 @@ import { AddNoteInterfaceCore } from '../scripts/core-functions';
 const Home = () => {
   const pencilAlt = <HiPencilAlt />
   const { removeModal, removeNote, renderConfirmModal, visible } = ShowModal();
-  var notesData = retrieveNotes();
 
   const {
     renderAddNoteInterface,
@@ -46,7 +45,6 @@ const Home = () => {
       {/* Main body */}
       <NotesPackage
         eventRemoveBtn={deleteNote} 
-        notesData={notesData}
       />
       <AddNoteInterface
         titleValue={getTitleValue}

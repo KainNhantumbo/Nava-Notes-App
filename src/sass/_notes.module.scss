@@ -19,6 +19,12 @@
         margin-bottom: .5em;
         padding: 1em;
         border-radius: inherit;
-        
+        position: relative;
+        overflow: hidden;
+
+        span {
+            overflow: hidden;
+            max-width: 75%;
+        }
     }
 }

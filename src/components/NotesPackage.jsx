@@ -1,9 +1,12 @@
 import React from 'react';
 import Note from './Note';
 import EmptyNotesMessage from './EmptyNotesMessage';
+import { retrieveNotes } from '../scripts/core-functions';
 
 const NotesPackage = 
-({ notesData, eventRemoveBtn, noteDetails }) => {
+({ eventRemoveBtn, noteDetails }) => {
+	const notesData = retrieveNotes();
+	
 	const renderNotes = notesData.map((value, index) => {
 		return <Note
 			id={value.id}

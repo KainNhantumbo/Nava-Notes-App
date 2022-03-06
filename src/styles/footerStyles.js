@@ -9,6 +9,7 @@ export const FooterStyles = styled.footer`
   z-index: 50;
   display: grid;
   place-content: center;
+  background-color: rgb(${colors.whiteColor});
 
   section {
     width: 96vw;
@@ -20,7 +21,7 @@ export const FooterStyles = styled.footer`
     box-shadow: 0 0 5px rgba(${colors.primaryColor}, .6);
     
     border-radius: 12px;
-    margin-bottom: .5em;
+    margin-bottom: .8em;
     padding: .2em 0;
 
     div {
@@ -29,13 +30,14 @@ export const FooterStyles = styled.footer`
       justify-content: center;
       flex-direction: column;
       padding: .2em .5em;
-      
-      border-radius: 5px;
       cursor: pointer;
+
+      border-bottom: 2px solid transparent;
 
       &:hover {
         background: rgb(${colors.whiteColor});
         opacity: .9;
+        border-bottom: 2px solid rgb(${colors.secondaryColor});
         transition: all .2s ease-out;
       }
 
