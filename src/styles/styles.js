@@ -26,40 +26,6 @@ export const Message = styled.section`
   }
 `;
 
-export const HeaderStyled = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
-  background: rgba(${colors.secondaryColor});
-  box-shadow: 0 1px 2px 0.5px rgba(${colors.primaryColor}, .6);
-  position: fixed;
-  top: 0;
-  z-index: 50;
-  color: rgb(${colors.textColor});
-
-  div {
-    position:  absolute;
-    top: 1em;
-    left: 5em;
-    
-    svg {
-      width: 2em;
-      height: 2em;
-      color: rgb(${colors.primaryColor});
-      transform: rotateY('160 deg');
-    }
-  }
-
-  h1 {
-    font-weight: 600;
-    line-height: 2rem;
-    user-select: none;
-    padding-left: .5em;
-    font-size: 1.6rem;
-  }
-`;
-
 export const StyledSearch = styled.label`
   width: 15em;
   height: 1.9em;
@@ -102,8 +68,8 @@ export const AddNoteButton = styled.div`
 
   button {
     border-style: none;
-    position: absolute;
-    top: -7em;
+    position: fixed;
+    top: .9em;
     right: 1.2em;
     width: 30px;
     height: 30px;

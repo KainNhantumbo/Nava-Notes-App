@@ -1,15 +1,14 @@
 @mixin displaysFlex () {
+
     display: flex;
     justify-content: flex-start;
     flex-direction: row;
 }
 
 .mainContainer{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
     width: 95%;
-    margin: 8em auto 4em auto;
+    max-width: 400px;
+    margin: 8em auto 5em auto;
     border-radius: 12px;
 
     div {
