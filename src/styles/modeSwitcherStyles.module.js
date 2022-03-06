@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { colors } from './colors';
 
-export const StyledLabelsContainer = styled.section`
+export const ModeSwitcherStyles = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,7 +13,7 @@ export const StyledLabelsContainer = styled.section`
     flex-direction: row;
     width: 90%;
     max-width: 400px;
-    margin: .5em 0;
+    margin-top: 12vh;
     position: relative;
     padding: 10px 8px;
     line-height: 2em;
@@ -37,29 +37,40 @@ export const StyledLabelsContainer = styled.section`
       }
     }
 
-    input[type="radio"] {
-      position: absolute;
-      top: 1em;
-      right: 1em;
-      appearance: none;
-      margin: 0;
-      background: rgb(${colors.backgroundColor});
-
-      width: 20px;
+    input[type="checkbox"] {
+      position: relative;
+      width: 45px;
       height: 20px;
-      border: 2px solid rgb(${colors.secondaryColor});
-      border-radius: 50%;
+      appearance: none;
+      -moz-appearance: none;
+      background: rgba(${colors.primaryColor}, .1);
+      outline: none;
+      border-radius: 15px;
+      box-shadow: inset 0 0 5px rgba(${colors.fullDarkColor}, .2);
+      transition: .5s ease;
+      margin-top: .4em;
+      margin-right: .2em;
 
-      display: grid;
-      place-content: center;
-
-      :checked::before {
-        content: '';
-        width: 8px;
-        height: 8px;
+      :checked {
         background: rgb(${colors.secondaryColor});
+      }
+      
+      ::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        transform: scale(1.1);
         border-radius: 50%;
-        margin: auto;
+        top: 0;
+        left: 0;
+        background: rgb(${colors.whiteColor});
+        box-shadow:  0 0 5px rgba(${colors.primaryColor}, .5);
+        transition: all .2s ease;
+      }
+
+      :checked::after {
+        transform: scale(1.1) translateX(25px);
       }
     }
   }
