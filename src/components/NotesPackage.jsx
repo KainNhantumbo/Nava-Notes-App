@@ -6,7 +6,7 @@ import { retrieveNotes } from '../scripts/core-functions';
 const NotesPackage =
 	({ eventRemoveBtn, noteDetails }) => {
 		const notesData = retrieveNotes();
-		console.log(notesData)
+
 		const renderNotes = notesData.map((value, index) => {
 			return <Note
 				id={value.id}

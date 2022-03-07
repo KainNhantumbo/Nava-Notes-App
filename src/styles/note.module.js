@@ -14,9 +14,26 @@ export const NoteContainer = styled.div`
   position: relative;
   overflow: hidden;
 
-  .noteTitle, .noteContent {
+  .noteTitle {
     overflow: hidden;
     max-width: 75%;
+    padding: .2em 0;
   }
-   
+  
+  .noteContent {
+    margin: .5em 0;
+    word-wrap: break-word;
+    line-height: 1.3rem;
+    max-width: 95%;
+  }
+
+  .noteDate {
+    padding: .5em;
+    font-size: .8rem;
+    background: rgba(${colors.primaryColor}, .1);
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 600;
+    color: rgba(${colors.textColor}, .8);
+  }
 `;
