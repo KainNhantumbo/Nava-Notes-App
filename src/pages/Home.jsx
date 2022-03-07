@@ -2,21 +2,15 @@ import Header from '../components/Header';
 import Button from '../components/Button';
 import NotesPackage from '../components/NotesPackage';
 import ConfirmModal from '../components/ConfirmModal';
-import AddNoteInterface from '../components/AddNoteInterface';
-
+import AddNoteInterface from '../components/AddNoteInterface'
 import { SearchBox } from '../components/SearchBox';
-
-import { ShowModal } from '../scripts/core-functions';
-import { HiPencil } from 'react-icons/hi';
-import { HiPencilAlt } from 'react-icons/hi';
+import { HiPencil, HiPencilAlt } from 'react-icons/hi';
 import { AddNoteButton } from '../styles/styles';
-
-import { deleteNote } from '../scripts/core-functions';
-import { AddNoteInterfaceCore } from '../scripts/core-functions';
+import { deleteNote, AddNoteInterfaceCore, ShowModal } from '../scripts/core-functions';
 
 const Home = () => {
-  const pencilAlt = <HiPencilAlt />
-  const { removeModal, removeNote, renderConfirmModal, visible } = ShowModal();
+  const pencilAlt = <HiPencilAlt />;
+  const { removeModal, removeNote, visible } = ShowModal();
 
   const {
     renderAddNoteInterface,
@@ -30,7 +24,6 @@ const Home = () => {
   
   return (
     <>
-      {/* Header */}
       <Header title="Notes"
         child={<SearchBox />}
         icon={<HiPencil />}
@@ -42,7 +35,6 @@ const Home = () => {
         />
       </AddNoteButton>
 
-      {/* Main body */}
       <NotesPackage
         eventRemoveBtn={deleteNote} 
       />

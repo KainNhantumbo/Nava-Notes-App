@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
+import { timeSetter } from './core-date'
 
 // salva os dados no localStorage
 export const setDataToStorage = (key, data) => {
@@ -91,7 +92,7 @@ export const AddNoteInterfaceCore = () => {
   // adiciona nota ao banco de dados
   const saveNote = () => {
     const id = uuidv4();
-    const date = new Date().toUTCString();
+    const date = timeSetter();
 
     const newNote = {
       id,

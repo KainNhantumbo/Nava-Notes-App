@@ -5,7 +5,6 @@ import Settings from './pages/Settings';
 import Home from './pages/Home';
 
 const App = () => {
-	
 	return (
 		<>
 			<Routes>

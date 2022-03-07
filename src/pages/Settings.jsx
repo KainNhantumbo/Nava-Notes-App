@@ -1,13 +1,10 @@
 import Header from '../components/Header';
 import { SettingsContainer } from '../styles/SettingsStyles';
-
 import ModeSwitcher from '../components/ModeSwitcher';
-
 import ThemeOptions from '../components/ThemeOptions';
 import SortOptions from '../components/SortOptions';
 
-export default function Settings({ onChangeEvent }) {
-
+export default function Settings() {
   return (
     <SettingsContainer>
       <Header title={'Settings'} />

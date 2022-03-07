@@ -1,7 +1,7 @@
 import React from "react";
 import LargerButtons from "./LargerButtons";
 import { Link } from 'react-router-dom';
-import { HiArchive, HiPencilAlt, HiCog, HiHome } from 'react-icons/hi';
+import { HiArchive, HiCog, HiHome } from 'react-icons/hi';
 import { FooterStyles } from "../styles/footerStyles";
 
 const footerButtons = () => {

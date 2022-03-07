@@ -1,6 +1,5 @@
 import React from 'react';
 import { HeaderStyled } from '../styles/headerStyles.module';
-import Button from './Button';
 
 const Header = ({title, child, icon, element }) => {
     return (
