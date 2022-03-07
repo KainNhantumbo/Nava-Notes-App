@@ -430,35 +430,6 @@ body {
   border-radius: 12px;
 }
 
-.mainContainer div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  background: rgba(255, 255, 255, 0.9);
-  -webkit-box-shadow: 0 0 5px rgba(90, 111, 122, 0.6);
-          box-shadow: 0 0 5px rgba(90, 111, 122, 0.6);
-  margin-bottom: .5em;
-  padding: 1em;
-  border-radius: inherit;
-  position: relative;
-  overflow: hidden;
-}
-
-.mainContainer div span {
-  overflow: hidden;
-  max-width: 75%;
-}
-
 .buttonsContainer {
   display: -webkit-box;
   display: -ms-flexbox;
