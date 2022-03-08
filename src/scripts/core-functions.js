@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import { timeSetter } from './core-date'
 
@@ -49,20 +49,23 @@ export const deleteNote = (e) => {
   const id = e.target.parentNode.parentNode.id;
   var notesData = getDataFromStorage('notes');
 
-  const notes = notesData.filter (note => {
-    if (note.id !== id ) {
+  const notes = notesData.filter(note => {
+    if (note.id !== id) {
       return note;
     }
-  })
+  });
 
   setDataToStorage('notes', notes);
+  return {
+    notes
+  }
 }
 
 export const AddNoteInterfaceCore = () => {
   const notesData = getDataFromStorage('notes');
   const [interfaceStatus, setInterfaceStatus] = useState(false);
   const [titleValue, setTitleValue] = useState(() => '');
-  const [textValue, setTextValue] = useState(() => '');
+  const [textValue, setTextValue] = useState(() => ``);
 
   // renderiza a interface para adicionar nota
   const renderAddNoteInterface = () => setInterfaceStatus(true);
@@ -81,7 +84,7 @@ export const AddNoteInterfaceCore = () => {
 
   // retorna o valor do state
   const getTitleValue = e => setTitleValue(e.target.value);
-  const getTextValue = e => setTextValue(e.target.value);
+  const getTextValue = e => setTextValue(`${e.target.value}`);
 
   // reseta os valores do state
   const resetValues = () => {
@@ -102,8 +105,8 @@ export const AddNoteInterfaceCore = () => {
     }
 
     if (newNote.title === '' || newNote.content === '')
-    return;
-    
+      return;
+
     notesData.push(newNote)
 
     // salva a nota no localstorage
@@ -122,3 +125,4 @@ export const AddNoteInterfaceCore = () => {
     saveNote
   }
 }
+

@@ -9,11 +9,11 @@ const Note =
 ({id, note, noteDetails, eventRemoveBtn, noteContent, noteDate}) => {
     const deleteIcon =  <HiXCircle />;
     const infoIcon = <HiInformationCircle />;
-
+    
     return (
         <NoteContainer id={id}>
             <span className='noteTitle'> { note } </span>
-            <div className='noteContent'> { noteContent } </div>
+            <div className='noteContent'> { `${noteContent}` } </div>
             <div className='noteDate'> { noteDate } </div>
             <span className="buttonsContainer">
                 <Button event={noteDetails} icon={infoIcon} />

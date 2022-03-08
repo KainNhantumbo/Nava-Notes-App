@@ -8,12 +8,18 @@ import { HiPencil, HiPencilAlt } from 'react-icons/hi';
 import { AddNoteButton } from '../styles/styles';
 import { deleteNote, AddNoteInterfaceCore, ShowModal } from '../scripts/core-functions';
 
-import { useState } from 'react';
-import { getDataFromStorage } from '../scripts/core-functions';
+import { useState, createContext } from 'react';
+import { retrieveNotes } from '../scripts/core-functions';
+
+// cria uma variavel global de contexto
+export const notesDataContext = createContext();
 
 const Home = () => {
   const pencilAlt = <HiPencilAlt />;
   const { removeModal, removeNote, visible } = ShowModal();
+
+  const data = retrieveNotes('notes');
+  const [notesData, setNotesData] = useState(data);
 
   const {
     renderAddNoteInterface,
@@ -25,24 +31,18 @@ const Home = () => {
     saveNote
   } = AddNoteInterfaceCore();
 
-  const [value, setValue] = useState('')
+  const [value, setValue] = useState('');
   const searchEngine = (e) => {
-    setValue(() => e.target.value)
-    var notesData = getDataFromStorage('notes');
+    setValue(() => e.target.value);
 
     const v = value.trim().toLowerCase();
-
-    if (v !== '') {
-      const newNotesData = notesData.map(element => {
-        if (element.title.toLowerCase().indexOf(v) || element.content.toLowerCase().indexOf(v) != -1) {
-          return element
-        }
-      })
-      console.log(newNotesData)
-    }
-
-
-    console.log(v)
+    const newNotesData = notesData.filter(elements => {
+      if (elements.title.toLowerCase().includes(v) ||
+        elements.content.toLowerCase().includes(v)
+      )
+      return elements;
+    });
+    return newNotesData;
   }
 
   return (
@@ -58,17 +58,19 @@ const Home = () => {
         />
       </AddNoteButton>
 
-      <NotesPackage
-        eventRemoveBtn={deleteNote}
-      />
-      <AddNoteInterface
-        titleValue={getTitleValue}
-        textValue={getTextValue}
-        saveEvent={saveNote}
-        cancelEvent={discardNote}
-        interfaceExit={removeAddNoteInterface}
-        status={interfaceStatus}
-      />
+      <notesDataContext.Provider value={notesData}>
+        <NotesPackage
+          eventRemoveBtn={deleteNote}
+        />
+        <AddNoteInterface
+          titleValue={getTitleValue}
+          textValue={getTextValue}
+          saveEvent={saveNote}
+          cancelEvent={discardNote}
+          interfaceExit={removeAddNoteInterface}
+          status={interfaceStatus}
+        />
+      </notesDataContext.Provider>
       <ConfirmModal
         removeModal={removeModal}
         removeNote={removeNote}
