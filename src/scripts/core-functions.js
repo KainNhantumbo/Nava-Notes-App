@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { v4 as uuidv4 } from 'uuid';
-import { timeSetter } from './core-date'
+import { timeSetter } from './core-date';
 
 // salva os dados no localStorage
 export const setDataToStorage = (key, data) => {
@@ -29,19 +29,51 @@ export function ShowModal() {
   }
 }
 
+// busca notas do localStorage e orndena
 export const retrieveNotes = () => {
   var notesData = getDataFromStorage('notes');
   if (!notesData) {
     notesData = [];
     setDataToStorage('notes', notesData);
   }
-  // sorteia os elementos pelo titulo
-  return (
-    notesData.sort((a, b) => {
-      if (a.title > b.title) return true;
-      if (a.title < b.title) return -1;
-    })
-  );
+  
+  var pattern = 'crescentTitle';
+  return notesData = sortNotes(pattern, notesData);
+}
+
+// sorteia os elementos pelo titulo
+
+const sortNotes = (pattern, notesData) => {
+  switch ( pattern ) {
+    case 'crescentTitle':
+      notesData.sort((a, b) => {
+        if (a.title > b.title) return true;
+        if (a.title < b.title) return -1;
+      });
+      break;
+    case 'decrescentTitle':
+      notesData.sort((a, b) => {
+        if (a.title < b.title) return true;
+        if (a.title > b.title) return -1;
+      });
+      break;
+    case 'firstModification':
+      notesData.sort((a, b) => {
+        if (a.date > b.date) return true;
+        if (a.date < b.date) return -1;
+      });
+      break;
+    case 'lastModification':
+      notesData.sort((a, b) => {
+        if (a.date < b.date) return true;
+        if (a.date > b.date) return -1;
+      });
+      break;
+    default:
+    return notesData;
+  }
+  
+  return notesData;
 }
 
 // elimina as notas
