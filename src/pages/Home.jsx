@@ -31,18 +31,27 @@ const Home = () => {
     saveNote
   } = AddNoteInterfaceCore();
 
-  const [value, setValue] = useState('');
+  const [searchValue, setSearchValue] = useState('');
+  const [seachedNotes, setSearchedNotes] = useState([]);
   const searchEngine = (e) => {
-    setValue(() => e.target.value);
+    setSearchValue(() => e.target.value);
+    
+    const v = searchValue.trim().toLowerCase();
+    if (v !== '') {
+      const newNotesData = notesData.filter (elements => {
+        if (elements.title.toLowerCase().includes(v) || elements.content.toLowerCase().includes(v)) {
+          console.log(elements)
+          return elements;
+        } else {
+          return setSearchedNotes(() => ([]));
+        }
+      });
+      setSearchedNotes(newNotesData);
+      console.log(newNotesData)
 
-    const v = value.trim().toLowerCase();
-    const newNotesData = notesData.filter(elements => {
-      if (elements.title.toLowerCase().includes(v) ||
-        elements.content.toLowerCase().includes(v)
-      )
-      return elements;
-    });
-    return newNotesData;
+    } else {
+      setSearchedNotes(() => ([]));
+    }
   }
 
   return (
@@ -61,6 +70,7 @@ const Home = () => {
       <notesDataContext.Provider value={notesData}>
         <NotesPackage
           eventRemoveBtn={deleteNote}
+          searchedNotes={seachedNotes}
         />
         <AddNoteInterface
           titleValue={getTitleValue}
