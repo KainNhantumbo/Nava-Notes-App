@@ -11,7 +11,7 @@ const SortOptions = () => {
         <input type="radio" name="sort"
           id='defaultSort'
           value='defaultSort'
-          checked='true'
+          
         />
       </div>
       <div>

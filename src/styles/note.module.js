@@ -13,6 +13,7 @@ export const NoteContainer = styled.div`
   border-radius: inherit;
   position: relative;
   overflow: hidden;
+  margin-top: .9em;
 
   .noteTitle {
     overflow: hidden;

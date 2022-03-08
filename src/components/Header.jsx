@@ -1,7 +1,7 @@
 import React from 'react';
 import { HeaderStyled } from '../styles/headerStyles.module';
 
-const Header = ({title, child, icon, element }) => {
+const Header = ({title, child, icon }) => {
     return (
         <HeaderStyled className='headerContainer'>
             <div> { icon } </div>

@@ -31,7 +31,6 @@ export function ShowModal() {
 
 export const retrieveNotes = () => {
   var notesData = getDataFromStorage('notes');
-
   if (!notesData) {
     notesData = [];
     setDataToStorage('notes', notesData);
@@ -50,12 +49,13 @@ export const deleteNote = (e) => {
   const id = e.target.parentNode.parentNode.id;
   var notesData = getDataFromStorage('notes');
 
-  for (let i = 0; i < notesData.length; i++) {
-    if (notesData[i].id === id) {
-      notesData.splice([i], 1);
+  const notes = notesData.filter (note => {
+    if (note.id !== id ) {
+      return note;
     }
-  }
-  setDataToStorage('notes', notesData);
+  })
+
+  setDataToStorage('notes', notes);
 }
 
 export const AddNoteInterfaceCore = () => {
