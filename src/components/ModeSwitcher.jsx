@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { ModeSwitcherStyles } from '../styles/modeSwitcherStyles.module';
 import { modePicker, setDataToStorage } from '../scripts/core-functions';
 
+
 const ModeSwitcher = ({ text, action }) => {
   const modeState = modePicker();
   const [ mode, setMode] = useState(modeState);
@@ -10,7 +11,7 @@ const ModeSwitcher = ({ text, action }) => {
   const themeSwitcher = () => {
     setMode(() => {
       if (mode.value === 'light') {
-        setMode({value: 'dark', checked: true})
+        setMode({value: 'dark', checked: true})        
       } else {
         setMode({value: 'light', checked: false})
       }
