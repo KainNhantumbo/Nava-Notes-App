@@ -7,12 +7,6 @@ const NotesPackage =
 	({ eventRemoveBtn, noteDetails, searchedNotes }) => {
 		const notesData = useContext(notesDataContext);
 		console.log(searchedNotes)
-		let searchedNote = [{
-			d: "eaf23f80-d9f2-4d47-b7ab-f833518eac07",
-			title: "Limpar a casa",
-			content: "De  segunda a sexta, das 08 ás 11 da manhã.",
-			createdAt: "Monday, 7 March 2022 at 18:31"
-		}]
 		
 		const guest = (searchedNotes, notesData) => {
 			if (searchedNotes.length !== 0) 

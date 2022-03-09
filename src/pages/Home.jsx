@@ -36,20 +36,20 @@ const Home = () => {
   const searchEngine = (e) => {
     setSearchValue(() => e.target.value);
     
-    const v = searchValue.trim().toLowerCase();
-    if (v !== '') {
+    const v = searchValue.toLowerCase();
+    if (v.length - 1 >= 2) {
       const newNotesData = notesData.filter (elements => {
         if (elements.title.toLowerCase().includes(v) || elements.content.toLowerCase().includes(v)) {
           console.log(elements)
           return elements;
         } else {
-          return setSearchedNotes(() => ([]));
+          return 
         }
       });
       setSearchedNotes(newNotesData);
       console.log(newNotesData)
 
-    } else {
+    } else if(v.length <= 2) {
       setSearchedNotes(() => ([]));
     }
   }
