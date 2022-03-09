@@ -4,15 +4,35 @@ import { useState, useEffect } from 'react';
 import { setDataToStorage, getDataFromStorage } from '../scripts/core-functions';
 
 const SortOptions = () => {
-  const sortData = getDataFromStorage('sortData')
+  const sortData = getDataFromStorage('sortData');
   const [option, setOption] = useState(sortData);
   useEffect(() => {
     if (option.length !== 0) {
       setDataToStorage('sortData', option)
     }
-  }, [option])
+  }, [option]);
 
-  console.log(option)
+  function checkOption (value) {
+    let status;
+
+    switch ( value ) {
+      case 'crescentTitle':
+        status = 'checked';
+        break;
+      case 'decrescentTitle':
+        status = 'checked';
+        break;
+      case 'firstModification':
+        status = 'checked';
+        break;
+      case 'lastModification':
+        status = 'checked';
+        break;
+      default:
+      return;
+    }
+    return status;
+  }
 
   return (
     <StyledLabelsContainer>

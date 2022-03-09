@@ -40,8 +40,18 @@ export const retrieveNotes = () => {
   return notesData = sortNotes(notesData);
 }
 
-// sorteia os elementos pelo titulo
+// pega o mode escuro ou claro para a aplicacao
+export const modePicker = () => {
+  let mode = getDataFromStorage('modeData');
 
+  if (!mode) {
+    mode = {value: 'light', checked: false};
+    setDataToStorage('modeData', mode)
+  }
+  return mode;
+}
+
+// sorteia os elementos pelo titulo
 const sortNotes = (notesData) => {
   const pattern = getDataFromStorage('sortData');
   if (!pattern) {
