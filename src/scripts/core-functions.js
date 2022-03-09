@@ -37,14 +37,19 @@ export const retrieveNotes = () => {
     setDataToStorage('notes', notesData);
   }
   
-  var pattern = 'crescentTitle';
-  return notesData = sortNotes(pattern, notesData);
+  return notesData = sortNotes(notesData);
 }
 
 // sorteia os elementos pelo titulo
 
-const sortNotes = (pattern, notesData) => {
-  switch ( pattern ) {
+const sortNotes = (notesData) => {
+  const pattern = getDataFromStorage('sortData');
+  if (!pattern) {
+    pattern = {}
+    return setDataToStorage('sortData', pattern);
+  }
+
+  switch ( pattern.value ) {
     case 'crescentTitle':
       notesData.sort((a, b) => {
         if (a.title > b.title) return true;
@@ -72,7 +77,6 @@ const sortNotes = (pattern, notesData) => {
     default:
     return notesData;
   }
-  
   return notesData;
 }
 

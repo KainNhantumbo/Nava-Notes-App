@@ -1,9 +1,19 @@
 import React from 'react';
 import { StyledLabelsContainer } from '../styles/themeOptions';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { setDataToStorage, getDataFromStorage } from '../scripts/core-functions';
 
 const SortOptions = () => {
-  const [option, setOption] = useState()
+  const sortData = getDataFromStorage('sortData')
+  const [option, setOption] = useState(sortData);
+  useEffect(() => {
+    if (option.length !== 0) {
+      setDataToStorage('sortData', option)
+    }
+  }, [option])
+
+  console.log(option)
+
   return (
     <StyledLabelsContainer>
       <div>
@@ -13,8 +23,7 @@ const SortOptions = () => {
         <input type="radio" name="sort"
           id='decrescentTitle'
           value='decrescentTitle'
-          checked={option === 'decrescentTitle'}
-          onChange={e => setOption(e.target.value)}
+          onChange={e => setOption({value: e.target.value, checked: 'checked'})}
         />
       </div>
       <div>
@@ -24,8 +33,7 @@ const SortOptions = () => {
         <input type="radio" name="sort"
           id='crescentTitle'
           value='crescentTitle'
-          checked={option === 'crescentTitle'}
-          onChange={e => setOption(e.target.value)}
+          onChange={e => setOption({value: e.target.value, checked: 'checked'})}
         />
       </div>
       <div>
@@ -35,8 +43,7 @@ const SortOptions = () => {
         <input type="radio" name="sort"
           id='firstModification'
           value='firstModification'
-          checked={option === 'firstModification'}
-          onChange={e => setOption(e.target.value)}
+          onChange={e => setOption({value: e.target.value, checked: 'checked'})}
         />
       </div>
       <div>
@@ -46,8 +53,7 @@ const SortOptions = () => {
         <input type="radio" name="sort"
           id='lastModification'
           value='lastModification'
-          checked={option === 'lastModification'}
-          onChange={e => setOption(e.target.value)}
+          onChange={e => setOption({value: e.target.value, checked: 'checked'})}
         />
       </div>
     </StyledLabelsContainer>
