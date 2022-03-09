@@ -6,10 +6,10 @@ import AddNoteInterface from '../components/AddNoteInterface'
 import { SearchBox } from '../components/SearchBox';
 import { HiPencil, HiPencilAlt } from 'react-icons/hi';
 import { AddNoteButton } from '../styles/styles';
-import { deleteNote, AddNoteInterfaceCore, ShowModal } from '../scripts/core-functions';
+import {  AddNoteInterfaceCore, ShowModal } from '../scripts/core-functions';
 
-import { useState, createContext } from 'react';
-import { retrieveNotes } from '../scripts/core-functions';
+import { useState, createContext, useEffect } from 'react';
+import { retrieveNotes, setDataToStorage } from '../scripts/core-functions';
 
 // cria uma variavel global de contexto
 export const notesDataContext = createContext();
@@ -19,7 +19,6 @@ const Home = () => {
   const { removeModal, removeNote, visible } = ShowModal();
 
   const data = retrieveNotes('notes');
-  const [notesData, setNotesData] = useState(data);
 
   const {
     renderAddNoteInterface,
@@ -37,21 +36,30 @@ const Home = () => {
     setSearchValue(() => e.target.value);
     
     const v = searchValue.toLowerCase();
-    if (v.length - 1 >= 2) {
-      const newNotesData = notesData.filter (elements => {
+    if (v.length >= 2) {
+      const newNotesData = data.filter (elements => {
         if (elements.title.toLowerCase().includes(v) || elements.content.toLowerCase().includes(v)) {
           console.log(elements)
           return elements;
         } else {
-          return 
+          return;
         }
       });
       setSearchedNotes(newNotesData);
-      console.log(newNotesData)
-
-    } else if(v.length <= 2) {
+    } else if (v.length <= 2) {
       setSearchedNotes(() => ([]));
     }
+  }
+
+  const deleteNote = (e) => {
+    const id = e.target.parentNode.parentNode.id;
+    const notes = data.filter(note => {
+      if (note.id !== id) {
+        return note;
+      }
+    });
+  
+    setDataToStorage('notes', notes);
   }
 
   return (
@@ -67,7 +75,7 @@ const Home = () => {
         />
       </AddNoteButton>
 
-      <notesDataContext.Provider value={notesData}>
+      <notesDataContext.Provider value={data}>
         <NotesPackage
           eventRemoveBtn={deleteNote}
           searchedNotes={seachedNotes}

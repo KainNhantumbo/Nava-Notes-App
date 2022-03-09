@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import Note from './Note';
 import EmptyNotesMessage from './EmptyNotesMessage';
 import { notesDataContext } from '../pages/Home';
@@ -6,7 +6,6 @@ import { notesDataContext } from '../pages/Home';
 const NotesPackage =
 	({ eventRemoveBtn, noteDetails, searchedNotes }) => {
 		const notesData = useContext(notesDataContext);
-		console.log(searchedNotes)
 		
 		const guest = (searchedNotes, notesData) => {
 			if (searchedNotes.length !== 0) 

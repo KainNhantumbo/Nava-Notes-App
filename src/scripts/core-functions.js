@@ -77,21 +77,21 @@ const sortNotes = (pattern, notesData) => {
 }
 
 // elimina as notas
-export const deleteNote = (e) => {
-  const id = e.target.parentNode.parentNode.id;
-  var notesData = getDataFromStorage('notes');
+// export const deleteNote = (e) => {
+//   const id = e.target.parentNode.parentNode.id;
+//   var notesData = getDataFromStorage('notes');
 
-  const notes = notesData.filter(note => {
-    if (note.id !== id) {
-      return note;
-    }
-  });
+//   const notes = notesData.filter(note => {
+//     if (note.id !== id) {
+//       return note;
+//     }
+//   });
 
-  setDataToStorage('notes', notes);
-  return {
-    notes
-  }
-}
+//   setDataToStorage('notes', notes);
+//   return {
+//     notes
+//   }
+// }
 
 export const AddNoteInterfaceCore = () => {
   const notesData = getDataFromStorage('notes');
