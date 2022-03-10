@@ -1,11 +1,5 @@
 import styled from 'styled-components';
-import { createGlobalStyle } from 'styled-components';
 import { colors } from './colors';
-
-
-
-
-
 
 export const Message = styled.section`
   display: flex;

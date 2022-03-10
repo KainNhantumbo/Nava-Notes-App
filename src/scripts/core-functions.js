@@ -53,7 +53,7 @@ export const modePicker = () => {
 
 // sorteia os elementos pelo titulo
 const sortNotes = (notesData) => {
-  const pattern = getDataFromStorage('sortData');
+  let pattern = getDataFromStorage('sortData');
   if (!pattern) {
     pattern = {}
     return setDataToStorage('sortData', pattern);
@@ -90,23 +90,7 @@ const sortNotes = (notesData) => {
   return notesData;
 }
 
-// elimina as notas
-// export const deleteNote = (e) => {
-//   const id = e.target.parentNode.parentNode.id;
-//   var notesData = getDataFromStorage('notes');
-
-//   const notes = notesData.filter(note => {
-//     if (note.id !== id) {
-//       return note;
-//     }
-//   });
-
-//   setDataToStorage('notes', notes);
-//   return {
-//     notes
-//   }
-// }
-
+// cria a interface para adicao de notas
 export const AddNoteInterfaceCore = () => {
   const notesData = getDataFromStorage('notes');
   const [interfaceStatus, setInterfaceStatus] = useState(false);
