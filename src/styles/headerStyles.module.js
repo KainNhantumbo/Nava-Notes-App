@@ -7,7 +7,13 @@ export const HeaderStyled = styled.div`
   justify-content: flex-start;
   flex-direction: column;
   background: linear-gradient(120deg, rgb(${colors.secondaryColor}) 12%, rgb(${colors.primaryColor}) 160%);
-  box-shadow: 0 0px 5px rgba(${colors.primaryColor}, .6);
+  box-shadow: 0 0 5px ${() => {
+    if (colors.primaryColor === '135, 86, 112') {
+      return `rgba(${colors.fullDarkColor}, .6)` 
+    } else {
+      return `rgba(${colors.primaryColor}, .6)`
+    }
+  }};
   position: fixed;
   top: 0;
   z-index: 50;
@@ -22,7 +28,13 @@ export const HeaderStyled = styled.div`
     svg {
       width: 1.8em;
       height: 1.8em;
-      color: rgb(${colors.primaryColor});
+      color: ${() => {
+        if (colors.primaryColor === '135, 86, 112') {
+          return `rgba(${colors.fullDarkColor}, .3)`
+        } else {
+          return `rgb(${colors.primaryColor})`
+        }
+      }};
     }
   }
 
@@ -32,5 +44,12 @@ export const HeaderStyled = styled.div`
     user-select: none;
     padding-left: .5em;
     font-size: 1.6rem;
+    color: ${() => {
+      if (colors.primaryColor === '135, 86, 112') {
+        return `rgba(${colors.textColor}, .7)`
+      } else {
+        return `rgba(${colors.textColor})`
+      }
+    }};
   }
 `;

@@ -6,8 +6,14 @@ export const NoteContainer = styled.div`
   justify-content: flex-start;
   justify-content: space-between;
   flex-direction: column;
-  background: rgba(${colors.whiteColor}, 0.9);
-  box-shadow: 0 0 5px rgba(${colors.primaryColor}, 0.6);
+  background: rgba(${colors.whiteColor}, .9);
+  box-shadow: 0 0 5px ${() => {
+    if (colors.primaryColor === '135, 86, 112') {
+      return `rgba(${colors.fullDarkColor}, .6)` 
+    } else {
+      return `rgba(${colors.primaryColor}, .6)`
+    }
+  }};
   margin-bottom: 0.5em;
   padding: 1em;
   border-radius: inherit;
@@ -38,7 +44,13 @@ export const NoteContainer = styled.div`
   .noteDate {
     padding: .5em;
     font-size: .8rem;
-    background: rgba(${colors.primaryColor}, .1);
+    background: ${() => {
+      if (colors.primaryColor === '135, 86, 112') {
+        return `rgba(${colors.primaryColor}, .8)` 
+      } else {
+        return `rgba(${colors.primaryColor}, .1)`
+      }
+    }};
     border-radius: 12px;
     text-align: center;
     font-weight: 600;

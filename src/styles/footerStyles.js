@@ -9,7 +9,13 @@ export const FooterStyles = styled.footer`
   z-index: 50;
   display: grid;
   place-content: center;
-  background-color: rgb(${colors.whiteColor});
+  background-color: ${() => {
+    if (colors.primaryColor === '135, 86, 112') {
+      return `rgba(${colors.backgroundColor}, .8)`
+    } else {
+      return `rgba(${colors.whiteColor})`
+    }
+  }};
 
   section {
     width: 96vw;
@@ -18,7 +24,13 @@ export const FooterStyles = styled.footer`
     align-items: center;
     justify-content: space-evenly;
     background: rgb(${colors.whiteColor});
-    box-shadow: 0 0 5px rgba(${colors.primaryColor}, .6);
+    box-shadow: 0 0 5px ${() => {
+      if (colors.primaryColor === '135, 86, 112') {
+        return `rgba(${colors.fullDarkColor}, .6)` 
+      } else {
+        return `rgba(${colors.primaryColor}, .6)`
+      }
+    }};
     
     border-radius: 12px;
     margin-bottom: .8em;
@@ -37,7 +49,13 @@ export const FooterStyles = styled.footer`
       &:hover {
         background: rgb(${colors.whiteColor});
         opacity: .9;
-        border-bottom: 2px solid rgb(${colors.secondaryColor});
+        border-bottom: 2px solid ${() => {
+          if (colors.primaryColor === '135, 86, 112') {
+            return `rgba(${colors.primaryColor})`
+          } else {
+            return `rgb(${colors.secondaryColor})`
+          }
+        }};
         transition: all .2s ease-out;
       }
 

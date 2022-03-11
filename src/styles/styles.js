@@ -52,7 +52,13 @@ export const StyledSearch = styled.label`
     color: rgb(${colors.textColor});
       
     &:focus {
-      box-shadow: 0 0 5px 1px rgba(${colors.primaryColor}, .7);
+      box-shadow: 0 0 5px ${() => {
+        if (colors.primaryColor === '135, 86, 112') {
+          return `rgba(${colors.fullDarkColor}, .6)` 
+        } else {
+          return `rgba(${colors.primaryColor}, .6)`
+        }
+      }};
       outline: none;
     }
     &::placeholder {
@@ -68,11 +74,11 @@ export const StyledSearch = styled.label`
     stroke-width: .5px;
     color: ${() => {
       if (colors.primaryColor === '135, 86, 112') {
-        return `rgba(${colors.fullDarkColor}, .5)` 
+        return `rgba(${colors.textColor}, .7)` 
       } else {
         return `rgba(${colors.primaryColor})`
       }
-    }};;
+    }};
   }
 `;
 
@@ -90,11 +96,18 @@ export const AddNoteButton = styled.div`
     border-radius: 30px;
     display: grid;
     place-content: center;
+    
 
     :hover {
       transform: scale(1.05);
       transition: all .2s ease-out;
-      box-shadow: 0 0 5px rgba(${colors.primaryColor}, .5);
+      box-shadow: 0 0 5px ${() => {
+        if (colors.primaryColor === '135, 86, 112') {
+          return `rgba(${colors.fullDarkColor}, .6)` 
+        } else {
+          return `rgba(${colors.primaryColor}, .5)`
+        }
+      }};
     }
 
     svg {

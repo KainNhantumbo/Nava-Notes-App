@@ -47,11 +47,23 @@ export const StyledTextAreaContainer = styled.section`
     }
 
     ::-webkit-scrollbar-thumb {
-      background: rgb(${colors.secondaryColor});
+      background: ${() => {
+          if (colors.primaryColor === '135, 86, 112') {
+            return `rgb(${colors.fullDarkColor})`
+          } else {
+            return `rgb(${colors.secondaryColor})`
+          }
+        }};
       border-radius: 12px;
 
       :hover {
-        background: rgba(${colors.primaryColor}, .6);
+        background: ${() => {
+          if (colors.primaryColor === '135, 86, 112') {
+            return `rgba(${colors.fullDarkColor}, .5)`
+          } else {
+            return `rgba(${colors.primaryColor}, .6)`
+          }
+        }};
       }
     }
   }

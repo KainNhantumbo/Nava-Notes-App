@@ -14,11 +14,11 @@ const themeSwitcher = (theme) => {
     return {
       primaryColor: '135, 86, 112',
       secondaryColor: '76, 94, 104',
-      backgroundColor: '37, 38, 41',
+      backgroundColor: '45, 45, 45',
       textColor: '255, 255, 255',
       brownColor: '240, 236, 227',
       fullDarkColor: '0, 0, 0',
-      whiteColor: '83, 84, 87'
+      whiteColor: '62, 65, 69'
     }
   } else {
     return {
@@ -31,7 +31,5 @@ const themeSwitcher = (theme) => {
       whiteColor: '255, 255, 255'
     }
   }
-  
 }
-
-export const colors = themeSwitcher(modeState)
+export const colors = themeSwitcher(modeState);

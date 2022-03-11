@@ -19,21 +19,53 @@ export const StyledLabelsContainer = styled.section`
     line-height: 2em;
     border-radius: 12px;
     user-select: none;
-    box-shadow: 0 0 5px rgba(${colors.primaryColor}, .5);
+    box-shadow: 0 0 5px ${() => {
+      if (colors.primaryColor === '135, 86, 112') {
+        return `rgba(${colors.fullDarkColor}, .6)` 
+      } else {
+        return `rgba(${colors.primaryColor}, .6)`
+      }
+    }};
 
     border-left: 2px solid transparent;
     border-right: 2px solid transparent;
+    background: ${() => {
+      if (colors.primaryColor === '135, 86, 112') {
+        return `rgb(${colors.whiteColor})`
+      } else {
+        return `rgb(${colors.secondaryColor})`
+      }
+    }};
 
     :hover {
-      border-left: 2px solid rgb(${colors.secondaryColor});
-      border-right: 2px solid rgb(${colors.secondaryColor});
+      border-left: 2px solid ${() => {
+        if (colors.primaryColor === '135, 86, 112') {
+          return `rgba(${colors.textColor}, .5)` 
+        } else {
+          return `rgb(${colors.secondaryColor})`
+        }
+      }};
+      border-right: 2px solid ${() => {
+        if (colors.primaryColor === '135, 86, 112') {
+          return `rgba(${colors.textColor}, .5)` 
+        } else {
+          return `rgb(${colors.secondaryColor})`
+        }
+      }};
     }
 
     label {
       padding-left: .5em;
+      color: rgba(${colors.textColor}, .8);
 
       :hover {
-        color: rgb(${colors.secondaryColor});
+        color: ${() => {
+          if (colors.primaryColor === '135, 86, 112') {
+            return `rgba(${colors.textColor}, .5)`
+          } else {
+            return `rgb(${colors.secondaryColor})`
+          }
+        }};
       }
     }
 
@@ -47,7 +79,13 @@ export const StyledLabelsContainer = styled.section`
 
       width: 20px;
       height: 20px;
-      border: 2px solid rgb(${colors.secondaryColor});
+      border: 2px solid ${() => {
+        if (colors.primaryColor === '135, 86, 112') {
+          return `rgba(${colors.textColor}, .8)` 
+        } else {
+          return `rgb(${colors.secondaryColor})`
+        }
+      }};
       border-radius: 50%;
 
       display: grid;
@@ -57,7 +95,13 @@ export const StyledLabelsContainer = styled.section`
         content: '';
         width: 8px;
         height: 8px;
-        background: rgb(${colors.secondaryColor});
+        background: ${() => {
+          if (colors.primaryColor === '135, 86, 112') {
+            return `rgba(${colors.textColor}, .8)`
+          } else {
+            return `rgb(${colors.secondaryColor})`
+          }
+        }};
         border-radius: 50%;
         margin: auto;
       }
