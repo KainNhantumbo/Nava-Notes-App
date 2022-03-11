@@ -33,7 +33,7 @@ export const StyledLabelsContainer = styled.section`
       if (colors.primaryColor === '135, 86, 112') {
         return `rgb(${colors.whiteColor})`
       } else {
-        return `rgb(${colors.secondaryColor})`
+        return `rgb(${colors.backgroundColor})`
       }
     }};
 

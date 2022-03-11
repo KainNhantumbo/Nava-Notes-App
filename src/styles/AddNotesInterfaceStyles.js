@@ -117,7 +117,6 @@ export const InterfaceStyles = styled.section`
         border-style: none;
         padding: .4em .5em;
         border-radius: 5px;
-        /* background: rgba(${colors.secondaryColor}, .4); */
         background: ${() => {
           if (colors.primaryColor === '135, 86, 112') {
             return `rgb(${colors.primaryColor})`

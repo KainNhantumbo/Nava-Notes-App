@@ -33,7 +33,7 @@ export const ModeSwitcherStyles = styled.section`
       if (colors.primaryColor === '135, 86, 112') {
         return `rgb(${colors.whiteColor})`
       } else {
-        return `rgb(${colors.secondaryColor})`
+        return `rgb(${colors.backgroundColor})`
       }
     }};
 
@@ -86,9 +86,9 @@ export const ModeSwitcherStyles = styled.section`
       :checked {
         background: ${() => {
           if (colors.primaryColor === '135, 86, 112') {
-            return `rgba(${colors.primaryColor})`
+            return `rgb(${colors.primaryColor})`
           } else {
-            return `rgba(${colors.primaryColor}, .1)`
+            return `rgb(${colors.secondaryColor})`
           }
         }};
       }

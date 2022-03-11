@@ -9,7 +9,7 @@ export default function Settings() {
     <SettingsContainer>
       <Header title={'Settings'} />
       <div className='settingsBody'>
-        <ModeSwitcher text='Dark Mode' />
+        <ModeSwitcher text='Dark Mode (beta v0.0.3)' />
         <h2> Theme </h2>
         <ThemeOptions />
         <h2> Sort Notes </h2>
