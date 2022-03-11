@@ -6,7 +6,7 @@ import AddNoteInterface from '../components/AddNoteInterface'
 import { SearchBox } from '../components/SearchBox';
 import { HiPencil, HiPencilAlt } from 'react-icons/hi';
 import { AddNoteButton } from '../styles/styles';
-import {  AddNoteInterfaceCore, ShowModal } from '../scripts/core-functions';
+import { AddNoteInterfaceCore, ShowModal } from '../scripts/core-functions';
 
 import { useState, createContext, useEffect } from 'react';
 import { retrieveNotes, setDataToStorage } from '../scripts/core-functions';
@@ -39,7 +39,6 @@ const Home = () => {
     if (v.length >= 2) {
       const newNotesData = data.filter (elements => {
         if (elements.title.toLowerCase().includes(v) || elements.content.toLowerCase().includes(v)) {
-          console.log(elements)
           return elements;
         } else {
           return;

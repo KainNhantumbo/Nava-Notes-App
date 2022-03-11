@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import { timeSetter } from './core-date';
 
@@ -43,9 +43,8 @@ export const retrieveNotes = () => {
 // pega o mode escuro ou claro para a aplicacao
 export const modePicker = () => {
   let mode = getDataFromStorage('modeData');
-
-  if (!mode) {
-    mode = {value: 'light', checked: false};
+  if (!mode || mode === undefined) {
+    mode = 'light';
     setDataToStorage('modeData', mode)
   }
   return mode;
@@ -135,9 +134,8 @@ export const AddNoteInterfaceCore = () => {
     }
 
     if (newNote.title === '' || newNote.content === '')
-      return;
-
-    notesData.push(newNote)
+    return;
+    notesData.push(newNote);
 
     // salva a nota no localstorage
     setDataToStorage('notes', notesData)

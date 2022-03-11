@@ -4,23 +4,32 @@ import { ModeSwitcherStyles } from '../styles/modeSwitcherStyles.module';
 import { modePicker, setDataToStorage } from '../scripts/core-functions';
 
 
-const ModeSwitcher = ({ text, action }) => {
+const ModeSwitcher = ({ text }) => {
   const modeState = modePicker();
-  const [ mode, setMode] = useState(modeState);
+  const [ mode, setMode] = useState(() => modeState);
+  console.log(mode)
 
   const themeSwitcher = () => {
     setMode(() => {
-      if (mode.value === 'light') {
-        setMode({value: 'dark', checked: true})        
+      if (mode === 'light') {
+        setMode('dark')        
       } else {
-        setMode({value: 'light', checked: false})
+        setMode('light')
       }
-    })
+    });
+  }
+  
+  function selectState(modes) {
+    if (modes === 'dark') {
+      return true
+    } else {
+      return false
+    }
   }
   
   useEffect(() => {
     setDataToStorage('modeData', mode)
-  }, [mode])
+  }, [mode]);
 
 
   return (
@@ -31,6 +40,7 @@ const ModeSwitcher = ({ text, action }) => {
         </label>
         <input type="checkbox"
           id='modeswitcher'
+          checked={selectState(mode)}
           onChange={themeSwitcher}
         />
       </div>

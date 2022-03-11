@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { modePicker } from "../scripts/core-functions"
+import { modePicker } from "../scripts/core-functions";
 
 
 
