@@ -20,10 +20,9 @@ export const HeaderStyled = styled.div`
     left: 5em;
     
     svg {
-      width: 2em;
-      height: 2em;
+      width: 1.8em;
+      height: 1.8em;
       color: rgb(${colors.primaryColor});
-      transform: rotateY('160 deg');
     }
   }
 

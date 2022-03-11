@@ -1,12 +1,12 @@
 import React from "react";
 import LargerButtons from "./LargerButtons";
 import { Link } from 'react-router-dom';
-import { HiArchive, HiCog, HiHome } from 'react-icons/hi';
+import { HiCog, HiHome, HiTrash } from 'react-icons/hi';
 import { FooterStyles } from "../styles/footerStyles";
 
 const footerButtons = () => {
   const cogIcon = <HiCog />;
-  const archiveIcon = <HiArchive />
+  const trashIcon = <HiTrash />
   const homeIcon = <HiHome />
 
   // dados e detalhes de cada botao no footer
@@ -21,9 +21,9 @@ const footerButtons = () => {
       path: '/'
     },
     {
-      icon: archiveIcon,
-      description: 'Archive',
-      path: '/pages/Archive'
+      icon: trashIcon,
+      description: 'Trash',
+      path: '/pages/Trash'
     }
   ];
 

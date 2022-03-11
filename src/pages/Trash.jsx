@@ -1,10 +1,10 @@
 import Header from '../components/Header';
 
-export default function Archive () {
+export default function Trash () {
   
   return (
     <>
-      <Header title={'Archived Notes'} />
+      <Header title={'Trash'} />
     </>
   );
 }

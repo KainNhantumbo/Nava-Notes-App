@@ -6,32 +6,32 @@ import { notesDataContext } from '../pages/Home';
 const NotesPackage =
 	({ eventRemoveBtn, noteDetails, searchedNotes }) => {
 		const notesData = useContext(notesDataContext);
-		
+
 		const guest = (searchedNotes, notesData) => {
-			if (searchedNotes.length !== 0) 
-			return (
-				searchedNotes.map((value, index) => {
-					return <Note
-					id={value.id}
-					key={index}
-					note={value.title}
-					noteContent={value.content}
-					noteDate={value.createdAt}
-					noteDetails={noteDetails}
-					eventRemoveBtn={eventRemoveBtn}
-					/>
-				})
-			)
+			if (searchedNotes.length !== 0)
+				return (
+					searchedNotes.map((value, index) => {
+						return <Note
+							id={value.id}
+							key={index}
+							note={value.title}
+							noteContent={value.content}
+							noteDate={value.createdAt}
+							noteDetails={noteDetails}
+							eventRemoveBtn={eventRemoveBtn}
+						/>
+					})
+				)
 			return (
 				notesData.map((value, index) => {
 					return <Note
-					id={value.id}
-					key={index}
-					note={value.title}
-					noteContent={value.content}
-					noteDate={value.createdAt}
-					noteDetails={noteDetails}
-					eventRemoveBtn={eventRemoveBtn}
+						id={value.id}
+						key={index}
+						note={value.title}
+						noteContent={value.content}
+						noteDate={value.createdAt}
+						noteDetails={noteDetails}
+						eventRemoveBtn={eventRemoveBtn}
 					/>
 				})
 			)
