@@ -5,7 +5,7 @@ export const timeSetter = () => {
   const year = new Date().getFullYear();
   const hours = new Date().getHours();
   const minutes = new Date().getMinutes();
-  const minutesSet = normalize(minutes);
+  let minutesSet = normalize(minutes);
   let daySet = null;
   let monthSet = null;
 
@@ -80,12 +80,13 @@ export const timeSetter = () => {
       break;
   }
   const fullDate = `${daySet}, ${date} ${monthSet} ${year} at ${hours}:${minutesSet}`;
+  console.log(fullDate)
   return fullDate;
 }
 
 const normalize = (time) => {
   if (time >= 0 && time < 10) {
-    return 0 + time;
+    return '0' + time;
   } else {
     return time
   }

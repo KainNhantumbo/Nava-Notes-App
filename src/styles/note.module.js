@@ -15,6 +15,7 @@ export const NoteContainer = styled.div`
   overflow: hidden;
   margin-top: .9em;
   border: 1px solid transparent;
+  color: rgba(${colors.textColor}, .9);
 
   :hover {
     border: 1px solid rgba(${colors.primaryColor}, .5);

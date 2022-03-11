@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { ModeSwitcherStyles } from '../styles/modeSwitcherStyles.module';
-import { modePicker, setDataToStorage } from '../scripts/core-functions';
+import { modeDataPicker, setDataToStorage } from '../scripts/core-functions';
 
 
 const ModeSwitcher = ({ text }) => {
-  const modeState = modePicker();
+  const modeState = modeDataPicker();
   const [ mode, setMode] = useState(() => modeState);
-  console.log(mode)
 
   const themeSwitcher = () => {
     setMode(() => {
@@ -19,7 +18,7 @@ const ModeSwitcher = ({ text }) => {
     });
   }
   
-  function selectState(modes) {
+  const selectState = (modes) => {
     if (modes === 'dark') {
       return true
     } else {

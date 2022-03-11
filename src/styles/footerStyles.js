@@ -43,7 +43,7 @@ export const FooterStyles = styled.footer`
 
       button {
         border: none;
-        background: rgba(${colors.whiteColor}, .6);
+        background: rgba(${colors.backgroundColor}, .6);
         border-radius: 50%;
         position: relative;
         padding: .6em;
@@ -74,6 +74,7 @@ export const FooterStyles = styled.footer`
         font-size: .8rem;
         margin-top: .3em;
         letter-spacing: .02rem;
+        color: rgba(${colors.textColor}, .9);
       }
     } 
   }

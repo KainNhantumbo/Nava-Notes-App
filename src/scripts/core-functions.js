@@ -41,7 +41,7 @@ export const retrieveNotes = () => {
 }
 
 // pega o mode escuro ou claro para a aplicacao
-export const modePicker = () => {
+export const modeDataPicker = () => {
   let mode = getDataFromStorage('modeData');
   if (!mode || mode === undefined) {
     mode = 'light';
@@ -50,15 +50,25 @@ export const modePicker = () => {
   return mode;
 }
 
+// recupera os dados de sorteamento do localStorage
+export const sortDataPicker = () => {
+  let data = getDataFromStorage('sortData');
+  if (!data || data === undefined) {
+    data = 'crescentTitle';
+    setDataToStorage('sortData', data)
+  }
+  return data;
+}
+
 // sorteia os elementos pelo titulo
 const sortNotes = (notesData) => {
   let pattern = getDataFromStorage('sortData');
   if (!pattern) {
-    pattern = {}
-    return setDataToStorage('sortData', pattern);
+    pattern = 'crescentTitle';
+    setDataToStorage('sortData', pattern);
   }
 
-  switch ( pattern.value ) {
+  switch (pattern) {
     case 'crescentTitle':
       notesData.sort((a, b) => {
         if (a.title > b.title) return true;

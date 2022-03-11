@@ -1,38 +1,30 @@
 import React from 'react';
 import { StyledLabelsContainer } from '../styles/themeOptions';
 import { useState, useEffect } from 'react';
-import { setDataToStorage, getDataFromStorage } from '../scripts/core-functions';
+import { sortDataPicker, setDataToStorage } from '../scripts/core-functions';
 
 const SortOptions = () => {
-  const sortData = getDataFromStorage('sortData');
-  const [option, setOption] = useState(sortData);
-  useEffect(() => {
-    if (option.length !== 0) {
-      setDataToStorage('sortData', option)
+  const sortData = sortDataPicker();
+  const [value, setValue] = useState(sortData);
+  console.log(value);
+  
+  const selectRadioOption = (pattern) => {
+    if (pattern === 'crescentTitle') {
+      return true;
+    } else if (pattern === 'decrescentTitle') {
+      return true;
+    } else if (pattern === 'firstModification') {
+      return true;
+    } else if (pattern === 'lastModification') {
+      return true;
+    } else {
+      return false;
     }
-  }, [option]);
-
-  function checkOption (value) {
-    let status;
-
-    switch ( value ) {
-      case 'crescentTitle':
-        status = 'checked';
-        break;
-      case 'decrescentTitle':
-        status = 'checked';
-        break;
-      case 'firstModification':
-        status = 'checked';
-        break;
-      case 'lastModification':
-        status = 'checked';
-        break;
-      default:
-      return;
-    }
-    return status;
   }
+
+  useEffect(() => {
+    setDataToStorage('sortData', value);
+  }, [value]);
 
   return (
     <StyledLabelsContainer>
@@ -43,7 +35,7 @@ const SortOptions = () => {
         <input type="radio" name="sort"
           id='decrescentTitle'
           value='decrescentTitle'
-          onChange={e => setOption({value: e.target.value, checked: 'checked'})}
+          onChange={e => setValue(e.target.value)}
         />
       </div>
       <div>
@@ -53,7 +45,7 @@ const SortOptions = () => {
         <input type="radio" name="sort"
           id='crescentTitle'
           value='crescentTitle'
-          onChange={e => setOption({value: e.target.value, checked: 'checked'})}
+          onChange={e => setValue(e.target.value)}
         />
       </div>
       <div>
@@ -63,7 +55,7 @@ const SortOptions = () => {
         <input type="radio" name="sort"
           id='firstModification'
           value='firstModification'
-          onChange={e => setOption({value: e.target.value, checked: 'checked'})}
+          onChange={e => setValue(e.target.value)}
         />
       </div>
       <div>
@@ -73,7 +65,7 @@ const SortOptions = () => {
         <input type="radio" name="sort"
           id='lastModification'
           value='lastModification'
-          onChange={e => setOption({value: e.target.value, checked: 'checked'})}
+          onChange={e => setValue(e.target.value)}
         />
       </div>
     </StyledLabelsContainer>

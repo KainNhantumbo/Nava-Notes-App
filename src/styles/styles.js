@@ -42,14 +42,22 @@ export const StyledSearch = styled.label`
     border-radius: 15px;
     padding: 2px 5px 5px 28px;
     line-height: 5em;
+    background-color: ${() => {
+      if (colors.primaryColor === '135, 86, 112') {
+        return `rgba(${colors.primaryColor}, .8)` 
+      } else {
+        return `rgba(${colors.whiteColor})`
+      }
+    }};
+    color: rgb(${colors.textColor});
       
     &:focus {
       box-shadow: 0 0 5px 1px rgba(${colors.primaryColor}, .7);
       outline: none;
     }
     &::placeholder {
-      font-weight: 600;
-      color: rgba(${colors.primaryColor} .9);
+      font-weight: 500;
+      color: rgba(${colors.textColor}, .9);
     }
   }
 
@@ -58,7 +66,13 @@ export const StyledSearch = styled.label`
     left: 8px;
     top: 7px;
     stroke-width: .5px;
-    color: rgb(${colors.primaryColor});
+    color: ${() => {
+      if (colors.primaryColor === '135, 86, 112') {
+        return `rgba(${colors.fullDarkColor}, .5)` 
+      } else {
+        return `rgba(${colors.primaryColor})`
+      }
+    }};;
   }
 `;
 
