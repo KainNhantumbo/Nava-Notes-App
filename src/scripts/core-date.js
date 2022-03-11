@@ -5,8 +5,11 @@ export const timeSetter = () => {
   const year = new Date().getFullYear();
   const hours = new Date().getHours();
   const minutes = new Date().getMinutes();
+  const minutesSet = normalize(minutes);
   let daySet = null;
   let monthSet = null;
+
+  
 
   switch (day) {
     case 0:
@@ -76,6 +79,14 @@ export const timeSetter = () => {
       monthSet = '';
       break;
   }
-  const fullDate = `${daySet}, ${date} ${monthSet} ${year} at ${hours}:${minutes}`;
+  const fullDate = `${daySet}, ${date} ${monthSet} ${year} at ${hours}:${minutesSet}`;
   return fullDate;
+}
+
+const normalize = (time) => {
+  if (time >= 0 && time < 10) {
+    return 0 + time;
+  } else {
+    return time
+  }
 }

@@ -14,6 +14,12 @@ export const NoteContainer = styled.div`
   position: relative;
   overflow: hidden;
   margin-top: .9em;
+  border: 1px solid transparent;
+
+  :hover {
+    border: 1px solid rgba(${colors.primaryColor}, .5);
+    transition: .2s ease-out;
+  }
 
   .noteTitle {
     overflow: hidden;
