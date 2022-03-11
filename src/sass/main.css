@@ -402,27 +402,6 @@ template {
   display: none;
 }
 
-html ::-webkit-scrollbar {
-  background: #5A6F7A;
-  width: .2em;
-}
-
-html ::-webkit-scrollbar-thumb {
-  background: #C7B198;
-  border-radius: 12px;
-}
-
-html ::-webkit-scrollbar-thumb:hover {
-  background-color: black;
-  opacity: 0.2;
-}
-
-body {
-  font-family: "PT Sans", 'Montserrat', monospace, sans-serif;
-  background-color: #fff;
-  position: relative;
-}
-
 .mainContainer {
   width: 95%;
   max-width: 400px;

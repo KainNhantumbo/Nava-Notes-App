@@ -1,20 +1,8 @@
-import { modePicker } from "../scripts/core-functions"
 import React, { useState, useEffect } from 'react';
+import { modePicker } from "../scripts/core-functions"
 
-const modeState = modePicker();
 
-// export const lightToDark = () => (
-//   {
-//     primaryColor: () => {
-//       if (modeState.value === 'light') {
-//         return '12,234,34'
-//       } else if (modeState.value === 'dark') {
-//         return '0,0,0'
-//       }
-//     }
-//   }
-// )
-// let dark = lightToDark()
+
 
 export const colors = {
   primaryColor: '90, 111, 122',
@@ -32,3 +20,5 @@ export const themePink = {
   secondaryColorLighter: '75, 49, 86',
   lighterColor: '208, 169, 221'
 }
+
+const modeState = modePicker();

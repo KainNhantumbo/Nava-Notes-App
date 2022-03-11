@@ -5,27 +5,3 @@ $brown-color: #F0ECE3;
 $dark-color: #7A7B7F;
 $fullDark-color: #000;
 $white-color: #fff;
-
-html {
-    ::-webkit-scrollbar {
-        background: $primary-color;
-        width: .2em;
-        
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background: $secondary-color;
-        border-radius: 12px;
-        
-        &:hover {
-            background-color: black;
-            opacity: 0.2;
-        }
-    }
-}
-
-body {
-    font-family: "PT Sans", 'Montserrat', monospace, sans-serif;
-    background-color: $background-color;
-    position: relative;
-}
