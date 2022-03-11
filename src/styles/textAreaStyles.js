@@ -28,6 +28,14 @@ export const StyledTextAreaContainer = styled.section`
     padding: 10px;
     color: rgb(${colors.textColor});
     background: rgb(${colors.whiteColor});
+
+    ::placeholder {
+      color: ${() => {
+        if (colors.primaryColor === '135, 86, 112') {
+          return `rgba(${colors.textColor}, .5)`
+        }
+      }};
+    }
   }
 
   input {

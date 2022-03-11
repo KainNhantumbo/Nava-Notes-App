@@ -22,6 +22,7 @@ export const InterfaceStyles = styled.section`
     padding: 15px;
     gap: 2em;
     position: relative;
+    border-radius: 0 0 22px 22px;
 
     button {
       width: 26px;
@@ -34,16 +35,33 @@ export const InterfaceStyles = styled.section`
       outline: none;
       top: .7em;
       left: 2em;
+      background: ${() => {
+        if (colors.primaryColor === '135, 86, 112') {
+          return `rgb(${colors.primaryColor})`
+        }
+      }};
 
       :hover {
-        background-color: rgb(${colors.secondaryColor});
+        background: ${() => {
+          if (colors.primaryColor === '135, 86, 112') {
+            return `rgba(${colors.textColor}, .5)`
+          } else {
+            return `rgb(${colors.secondaryColor})`
+          }
+        }};
       }
 
       svg {
         width: 20px;
         height: 20px;
         stroke-width: 1px;
-        color: rgb(${colors.primaryColor});
+        color: ${() => {
+          if (colors.primaryColor === '135, 86, 112') {
+            return `rgba(${colors.fullDarkColor})`
+          } else {
+            return `rgb(${colors.primaryColor})`
+          }
+        }};
 
         :hover {
           color: rgb(${colors.whiteColor});
@@ -56,6 +74,14 @@ export const InterfaceStyles = styled.section`
       font-size: 1.2rem;
       user-select: none;
       color: rgb(${colors.textColor});
+
+      color: ${() => {
+        if (colors.primaryColor === '135, 86, 112') {
+          return `rgba(${colors.textColor}, .8)`
+        } else {
+          return `rgb(${colors.primaryColor})`
+        }
+      }};
     }
   }
   
@@ -65,9 +91,22 @@ export const InterfaceStyles = styled.section`
     margin: 0 auto;
     width: 90%;
     max-width: 400px;
-    background: rgb(${colors.backgroundColor});
     border-radius: 0 0 5px 5px;
     padding: 8px 10px;
+    box-shadow: 0 0 5px ${() => {
+      if (colors.primaryColor === '135, 86, 112') {
+        return `rgba(${colors.fullDarkColor}, .6)`;
+      } else {
+        return `rgba(${colors.primaryColor}, .6)`;
+      }
+    }};
+    background: ${() => {
+      if (colors.primaryColor === '135, 86, 112') {
+        return `rgb(${colors.backgroundColor})`
+      } else {
+        return `rgb(${colors.whiteColor})`
+      }
+    }};
 
     div {
       display: flex;
@@ -78,18 +117,31 @@ export const InterfaceStyles = styled.section`
         border-style: none;
         padding: .4em .5em;
         border-radius: 5px;
-        background: rgba(${colors.secondaryColor}, .4);
+        /* background: rgba(${colors.secondaryColor}, .4); */
+        background: ${() => {
+          if (colors.primaryColor === '135, 86, 112') {
+            return `rgb(${colors.primaryColor})`
+          } else {
+            return `rgba(${colors.secondaryColor}, .4)`
+          }
+        }};
         outline: none;
+        color: rgba(${colors.textColor}, .8);
 
         :hover {
-          background: rgba(${colors.secondaryColor}, .6);
+          background: ${() => {
+            if (colors.primaryColor !== '135, 86, 112') {
+              return `rgba(${colors.secondaryColor}, .6)`
+            }
+          }};
           transform: scale(1.05);
           transition: all 100ms ease-out;
 
         }
         
         span {
-          color: rgb(${colors.textColor});
+          color: rgba(${colors.textColor}, .8);
+          font-weight: 600;
 
         }
       }

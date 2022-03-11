@@ -30,7 +30,7 @@ const AddNoteInterface =
                 />
                 <Button
                   event={cancelEvent}
-                  description='Cancel'
+                  description='Discard'
                 />
               </div>
             </section>
