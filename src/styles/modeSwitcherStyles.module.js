@@ -19,21 +19,53 @@ export const ModeSwitcherStyles = styled.section`
     line-height: 2em;
     border-radius: 12px;
     user-select: none;
-    box-shadow: 0 0 5px rgba(${colors.primaryColor}, .5);
+    box-shadow: 0 0 5px ${() => {
+    if (colors.primaryColor === '135, 86, 112') {
+        return `rgba(${colors.fullDarkColor}, .6)` 
+      } else {
+        return `rgba(${colors.primaryColor}, .6)`
+      }
+    }};
 
     border-left: 2px solid transparent;
     border-right: 2px solid transparent;
+    background: ${() => {
+      if (colors.primaryColor === '135, 86, 112') {
+        return `rgb(${colors.whiteColor})`
+      } else {
+        return `rgb(${colors.secondaryColor})`
+      }
+    }};
 
     :hover {
-      border-left: 2px solid rgb(${colors.secondaryColor});
-      border-right: 2px solid rgb(${colors.secondaryColor});
+      border-left: 2px solid ${() => {
+        if (colors.primaryColor === '135, 86, 112') {
+          return `rgba(${colors.textColor}, .5)` 
+        } else {
+          return `rgb(${colors.secondaryColor})`
+        }
+      }};
+      border-right: 2px solid ${() => {
+        if (colors.primaryColor === '135, 86, 112') {
+          return `rgba(${colors.textColor}, .5)` 
+        } else {
+          return `rgb(${colors.secondaryColor})`
+        }
+      }};
     }
 
     label {
       padding-left: .5em;
+      color: rgba(${colors.textColor}, .8);
 
       :hover {
-        color: rgb(${colors.secondaryColor});
+        color: ${() => {
+          if (colors.primaryColor === '135, 86, 112') {
+            return `rgba(${colors.textColor}, .5)`
+          } else {
+            return `rgb(${colors.secondaryColor})`
+          }
+        }};
       }
     }
 
@@ -52,7 +84,13 @@ export const ModeSwitcherStyles = styled.section`
       margin-right: .2em;
 
       :checked {
-        background: rgb(${colors.secondaryColor});
+        background: ${() => {
+          if (colors.primaryColor === '135, 86, 112') {
+            return `rgba(${colors.primaryColor})`
+          } else {
+            return `rgba(${colors.primaryColor}, .1)`
+          }
+        }};
       }
       
       ::after {
@@ -64,13 +102,30 @@ export const ModeSwitcherStyles = styled.section`
         border-radius: 50%;
         top: 0;
         left: 0;
-        background: rgb(${colors.whiteColor});
-        box-shadow:  0 0 5px rgba(${colors.primaryColor}, .5);
+        background: ${() => {
+          if (colors.primaryColor === '135, 86, 112') {
+            return `rgba(${colors.secondaryColor}, .8)`
+          } else {
+            return `rgb(${colors.whiteColor})`
+          }
+        }};
+        box-shadow: 0 0 5px ${() => {
+          if (colors.primaryColor === '135, 86, 112') {
+            return `rgba(${colors.fullDarkColor}, .6)` 
+          } else {
+            return `rgba(${colors.primaryColor}, .6)`
+          }
+        }};
         transition: all .2s ease;
       }
 
       :checked::after {
         transform: scale(1.1) translateX(25px);
+        background: ${() => {
+          if (colors.primaryColor === '135, 86, 112') {
+            return `rgba(${colors.whiteColor})`
+          }
+        }};
       }
     }
   }

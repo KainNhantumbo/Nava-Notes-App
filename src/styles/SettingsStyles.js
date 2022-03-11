@@ -8,7 +8,13 @@ export const SettingsContainer = styled.div`
     display: grid;
 
     h2 {
-      color: rgb(${colors.textColor});
+      color: ${() => {
+        if (colors.primaryColor === '135, 86, 112') {
+          return `rgb(${colors.primaryColor})`
+        } else {
+          return `rgb(${colors.textColor})`
+        }
+      }};
       margin: 0 auto;
       margin-top: 1.2em;
       font-weight: 500;
