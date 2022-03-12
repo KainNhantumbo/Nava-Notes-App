@@ -32,6 +32,16 @@ const Trash = () => {
     setDataToStorage('notes', notesData);
     setDataToStorage('trashData', notes);
   }
+
+  const permanentDelete = (e) => {
+    const id = e.target.parentNode.parentNode.id;
+    const trashNotes = trashData.filter(note => {
+      if (note.id !== id) {
+        return note;
+      }
+    });
+    setDataToStorage('trashData', trashNotes);
+  }
   
   return (
     <>
@@ -44,6 +54,7 @@ const Trash = () => {
       />
       <TrashNotesPackage 
         eventRestore={restoreNote}
+        eventDelete={permanentDelete}
       />
     </>
   );

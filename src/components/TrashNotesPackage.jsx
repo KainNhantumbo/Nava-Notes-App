@@ -6,7 +6,7 @@ import { IoMdTrash } from 'react-icons/io';
 import { IoMdRefreshCircle } from 'react-icons/io';
 
 const TrashNotesPackage =
-	({ eventDetete, eventRestore }) => {
+	({ eventDelete, eventRestore }) => {
 		const trashNotes = trashNotesPicker();
 		const restoreIcon = <IoMdRefreshCircle/>;
 		const deleteIcon =  <IoMdTrash/>;
@@ -28,7 +28,7 @@ const TrashNotesPackage =
 								noteContent={value.content}
 								noteDate={value.createdAt}
 								noteDetails={eventRestore}
-								eventRemoveBtn={eventDetete}
+								eventRemoveBtn={eventDelete}
 								firstIcon={restoreIcon}
 								secondIcon={deleteIcon}
 							/>
