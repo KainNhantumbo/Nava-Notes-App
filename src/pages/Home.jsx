@@ -6,7 +6,7 @@ import AddNoteInterface from '../components/AddNoteInterface'
 import { SearchBox } from '../components/SearchBox';
 import { HiPencil, HiPencilAlt } from 'react-icons/hi';
 import { AddNoteButton } from '../styles/styles';
-import { AddNoteInterfaceCore, ShowModal } from '../scripts/core-functions';
+import { AddNoteInterfaceCore, ShowModal, trashNotesPicker } from '../scripts/core-functions';
 
 import { useState, createContext, useEffect } from 'react';
 import { retrieveNotes, setDataToStorage } from '../scripts/core-functions';
@@ -50,15 +50,23 @@ const Home = () => {
     }
   }
 
+  // deleta a nota e a move para o lixo
   const deleteNote = (e) => {
     const id = e.target.parentNode.parentNode.id;
+    const trashNotes = trashNotesPicker();
+    const trash = data.filter(note => {
+      if (note.id === id) {
+        return note;
+      }
+    });
     const notes = data.filter(note => {
       if (note.id !== id) {
         return note;
       }
     });
-  
     setDataToStorage('notes', notes);
+    trashNotes.push(trash[0]);
+    setDataToStorage('trashData', trashNotes);
   }
 
   return (

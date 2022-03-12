@@ -99,7 +99,7 @@ export const HeaderStyled = styled.div`
         if (colors.primaryColor === '135, 86, 112') {
           return `rgba(${colors.textColor}, .7)`
         } else {
-          return `rgb(${colors.secondaryColor})`
+          return `rgb(${colors.primaryColor})`
         }
       }};
     }

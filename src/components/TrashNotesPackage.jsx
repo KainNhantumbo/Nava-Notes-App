@@ -1,25 +1,26 @@
 import React, { useContext } from 'react';
 import Note from './Note';
 import EmptyNotesMessage from './EmptyNotesMessage';
-import { getDataFromStorage } from '../scripts/core-functions';
+import { trashNotesPicker } from '../scripts/core-functions';
 import { IoMdTrash } from 'react-icons/io';
 import { IoMdRefreshCircle } from 'react-icons/io';
 
 const TrashNotesPackage =
 	({ eventDetete, eventRestore }) => {
-		const notesData = getDataFromStorage('notes');
-		const restoreIcon = <IoMdRefreshCircle/>
-		const deleteIcon =  <IoMdTrash/>
+		const trashNotes = trashNotesPicker();
+		const restoreIcon = <IoMdRefreshCircle/>;
+		const deleteIcon =  <IoMdTrash/>;
+		
 		return (
 			<section className="mainContainer">
 				{
-					notesData.length === 0 || null ? (
+					trashNotes.length === 0 || null ? (
 						<EmptyNotesMessage
 							label={'Nothing to show!'}
 							message={`Looks like the trash is empty.`}
 						/>
 					) : (
-						notesData.map((value, index) => {
+						trashNotes.map((value, index) => {
 							return <Note
 								id={value.id}
 								key={index}

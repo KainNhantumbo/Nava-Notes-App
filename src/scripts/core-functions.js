@@ -36,7 +36,6 @@ export const retrieveNotes = () => {
     notesData = [];
     setDataToStorage('notes', notesData);
   }
-  
   return notesData = sortNotes(notesData);
 }
 
@@ -48,6 +47,15 @@ export const modeDataPicker = () => {
     setDataToStorage('modeData', mode)
   }
   return mode;
+}
+
+export const trashNotesPicker = () => {
+  let trash = getDataFromStorage('trashData');
+  if (!trash || trash === undefined) {
+    trash = [];
+    setDataToStorage('trashData', trash)
+  }
+  return trash = sortNotes(trash);
 }
 
 // recupera os dados de sorteamento do localStorage
