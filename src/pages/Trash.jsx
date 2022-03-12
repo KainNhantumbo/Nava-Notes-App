@@ -1,22 +1,36 @@
+import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Button from '../components/Button';
 import TrashNotesPackage from '../components/TrashNotesPackage';
 import { HiFire } from 'react-icons/hi';
-import { trashNotesPicker, setDataToStorage } from '../scripts/core-functions';
+import { trashNotesPicker, retrieveNotes, setDataToStorage } from '../scripts/core-functions';
 
-import React, { useState, useEffect } from 'react';
-
-
-export default function Trash () {
+const Trash = () => {
   const fireIcon = <HiFire/>;
+  const trashData = trashNotesPicker();
+  const notesData = retrieveNotes();
+  console.log(notesData)
 
   const trashReseter = () => {
     var trash = [];
     setDataToStorage('trashData', trash);
   }
 
-  const restoreNote = () => {
-    
+  const restoreNote = (e) => {
+    const id = e.target.parentNode.parentNode.id;
+    const trashNote = trashData.filter(note => {
+      if (note.id === id) {
+        return note;
+      }
+    });
+    const notes = trashData.filter(note => {
+      if (note.id !== id) {
+        return note;
+      }
+    });
+    notesData.push(trashNote[0]);
+    setDataToStorage('notes', notesData);
+    setDataToStorage('trashData', notes);
   }
   
   return (
@@ -28,7 +42,11 @@ export default function Trash () {
           event={trashReseter}  
         />}
       />
-      <TrashNotesPackage />
+      <TrashNotesPackage 
+        eventRestore={restoreNote}
+      />
     </>
   );
 }
+
+export default Trash;
