@@ -1,16 +1,10 @@
 import { modeDataPicker } from "../scripts/core-functions";
 
-export const themePink = {
-  primaryColor: '255, 255, 255',
-  secondaryColor: '36, 14, 56',
-  secondaryColorLighter: '75, 49, 86',
-  lighterColor: '208, 169, 221'
-}
-
 const modeState = modeDataPicker();
 
 const themeSwitcher = (theme) => {
   if (theme === 'dark') {
+    // dark theme
     return {
       primaryColor: '135, 86, 112',
       secondaryColor: '76, 94, 104',
@@ -21,6 +15,7 @@ const themeSwitcher = (theme) => {
       whiteColor: '62, 65, 69'
     }
   } else {
+    // light theme
     return {
       primaryColor: '90, 111, 122',
       secondaryColor: '199, 177, 152',
