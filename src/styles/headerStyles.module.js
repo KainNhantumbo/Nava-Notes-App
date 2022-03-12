@@ -54,9 +54,9 @@ export const HeaderStyled = styled.div`
   }
 
   button {
-    background-color: red;
+    position: relative;
     width: 90%;
-    max-width: 20em;
+    max-width: 15em;
     border-style: none;
     border-radius: 12px;
     margin: 0 auto;
@@ -71,12 +71,12 @@ export const HeaderStyled = styled.div`
       }
     }};
     background-color: ${() => {
-    if (colors.primaryColor === '135, 86, 112') {
-      return `rgba(${colors.backgroundColor}, .8)`
-    } else {
-      return `rgb(${colors.secondaryColor})`
-    }
-  }};
+      if (colors.primaryColor === '135, 86, 112') {
+        return `rgba(${colors.backgroundColor}, .8)`
+      } else {
+        return `rgb(${colors.secondaryColor})`
+      }
+    }};
 
     :hover {
       box-shadow: 0 0 5px ${() => {
@@ -87,6 +87,21 @@ export const HeaderStyled = styled.div`
         }
       }};
       transition: .2s ease-out;
+    }
+
+    svg {
+      position: absolute;
+      left: 10px;
+      top: 5px;
+      width: 20px;
+      height: 20px;
+      color: ${() => {
+        if (colors.primaryColor === '135, 86, 112') {
+          return `rgba(${colors.textColor}, .7)`
+        } else {
+          return `rgb(${colors.secondaryColor})`
+        }
+      }};
     }
   }
 `;

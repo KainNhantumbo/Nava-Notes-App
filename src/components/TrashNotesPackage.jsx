@@ -2,10 +2,14 @@ import React, { useContext } from 'react';
 import Note from './Note';
 import EmptyNotesMessage from './EmptyNotesMessage';
 import { getDataFromStorage } from '../scripts/core-functions';
+import { IoMdTrash } from 'react-icons/io';
+import { IoMdRefreshCircle } from 'react-icons/io';
 
 const TrashNotesPackage =
-	({ eventDetete, eventUndo }) => {
+	({ eventDetete, eventRestore }) => {
 		const notesData = getDataFromStorage('notes');
+		const restoreIcon = <IoMdRefreshCircle/>
+		const deleteIcon =  <IoMdTrash/>
 		return (
 			<section className="mainContainer">
 				{
@@ -22,8 +26,10 @@ const TrashNotesPackage =
 								note={value.title}
 								noteContent={value.content}
 								noteDate={value.createdAt}
-								noteDetails={eventUndo}
+								noteDetails={eventRestore}
 								eventRemoveBtn={eventDetete}
+								firstIcon={restoreIcon}
+								secondIcon={deleteIcon}
 							/>
 						})
 					)

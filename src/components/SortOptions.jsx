@@ -6,20 +6,14 @@ import { sortDataPicker, setDataToStorage } from '../scripts/core-functions';
 const SortOptions = () => {
   const sortData = sortDataPicker();
   const [value, setValue] = useState(sortData);
-  console.log(value);
   
   const selectRadioOption = (pattern) => {
-    if (pattern === 'crescentTitle') {
+    const patterns = ['crescentTitle', 'decrescentTitle', 'firstModification', 'lastModification'];
+    const validate = patterns.forEach(element => {
+      if (element === pattern)
       return true;
-    } else if (pattern === 'decrescentTitle') {
-      return true;
-    } else if (pattern === 'firstModification') {
-      return true;
-    } else if (pattern === 'lastModification') {
-      return true;
-    } else {
-      return false;
-    }
+    });
+    return validate;
   }
 
   useEffect(() => {

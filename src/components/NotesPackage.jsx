@@ -3,8 +3,13 @@ import Note from './Note';
 import EmptyNotesMessage from './EmptyNotesMessage';
 import { notesDataContext } from '../pages/Home';
 
+import { HiXCircle } from 'react-icons/hi';
+import { HiInformationCircle } from 'react-icons/hi';
+
 const NotesPackage =
 	({ eventRemoveBtn, noteDetails, searchedNotes }) => {
+		const deleteIcon =  <HiXCircle />;
+    const infoIcon = <HiInformationCircle />;
 		const notesData = useContext(notesDataContext);
 
 		const guest = (searchedNotes, notesData) => {
@@ -19,6 +24,8 @@ const NotesPackage =
 							noteDate={value.createdAt}
 							noteDetails={noteDetails}
 							eventRemoveBtn={eventRemoveBtn}
+							firstIcon={infoIcon}
+							secondIcon={deleteIcon}
 						/>
 					})
 				)
@@ -32,6 +39,8 @@ const NotesPackage =
 						noteDate={value.createdAt}
 						noteDetails={noteDetails}
 						eventRemoveBtn={eventRemoveBtn}
+						firstIcon={infoIcon}
+						secondIcon={deleteIcon}
 					/>
 				})
 			)

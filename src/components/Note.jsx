@@ -1,14 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from './Button';
-import { HiXCircle } from 'react-icons/hi';
-import { HiInformationCircle } from 'react-icons/hi';
 import { NoteContainer } from '../styles/note.module';
 
 const Note = 
-({id, note, noteDetails, eventRemoveBtn, noteContent, noteDate}) => {
-    const deleteIcon =  <HiXCircle />;
-    const infoIcon = <HiInformationCircle />;
+({id, note, noteDetails, eventRemoveBtn, noteContent, noteDate, firstIcon, secondIcon}) => {
+    
     
     return (
         <NoteContainer id={id}>
@@ -16,8 +13,8 @@ const Note =
             <div className='noteContent'> { `${noteContent}` } </div>
             <div className='noteDate'> { noteDate } </div>
             <span className="buttonsContainer">
-                <Button event={noteDetails} icon={infoIcon} />
-                <Button event={eventRemoveBtn} icon={deleteIcon}/>
+                <Button event={noteDetails} icon={firstIcon} />
+                <Button event={eventRemoveBtn} icon={secondIcon}/>
             </span>
         </NoteContainer>
     );
