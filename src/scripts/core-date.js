@@ -5,89 +5,30 @@ export const timeSetter = () => {
   const year = new Date().getFullYear();
   const hours = new Date().getHours();
   const minutes = new Date().getMinutes();
-  let minutesSet = normalize(minutes);
-  let daySet = null;
-  let monthSet = null;
+  const minutesSet = timeFormatter(minutes);
+  const daySet = dayPicker(day);
+  const monthSet = monthPicker(month);
 
-  
-
-  switch (day) {
-    case 0:
-      daySet = 'Sunday';
-      break;
-    case 1:
-      daySet = 'Monday';
-      break;
-    case 2:
-      daySet = 'Tuesday';
-      break;
-    case 3:
-      daySet = 'Wednesday';
-      break;
-    case 4:
-      daySet = 'Thursday';
-      break;
-    case 5:
-      daySet = 'Friday';
-      break;
-    case 6:
-      daySet = 'Saturday';
-      break;
-    default:
-      daySet = '';
-      break;
-  }
-
-  switch (month) {
-    case 0:
-      monthSet = 'January';
-      break;
-    case 1:
-      monthSet = 'February';
-      break;
-    case 2:
-      monthSet = 'March';
-      break;
-    case 3:
-      monthSet = 'April';
-      break;
-    case 4:
-      monthSet = 'May';
-      break;
-    case 5:
-      monthSet = 'June';
-      break;
-    case 6:
-      monthSet = 'July';
-      break;
-    case 7:
-      monthSet = 'August';
-      break;
-    case 8:
-      monthSet = 'September';
-      break;
-    case 9:
-      monthSet = 'October';
-      break;
-    case 10:
-      monthSet = 'November';
-      break;
-    case 11:
-      monthSet = 'December';
-      break;
-    default:
-      monthSet = '';
-      break;
-  }
   const fullDate = `${daySet}, ${date} ${monthSet} ${year} at ${hours}:${minutesSet}`;
-  console.log(fullDate)
   return fullDate;
 }
 
-const normalize = (time) => {
+const timeFormatter = (time) => {
   if (time >= 0 && time < 10) {
     return '0' + time;
   } else {
     return time
   }
+}
+
+const dayPicker = (day) => {
+  const weeekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+  return weeekdays[day];
+}
+
+const monthPicker = (month) => {
+  const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+  return monthNames[month];
 }
