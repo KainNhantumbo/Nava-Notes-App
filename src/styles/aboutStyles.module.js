@@ -1,0 +1,73 @@
+import styled from 'styled-components';
+import { keyframes } from 'styled-components';
+import { colors } from './colors';
+
+export const AboutContainer = styled.section`
+  @keyframes aboutAnimation {
+    from {
+      border-left: 2px solid ${() => {
+        if (colors.primaryColor === '135, 86, 112') {
+          return `rgba(${colors.textColor}, .5)` 
+        } else {
+          return `rgb(${colors.secondaryColor})`
+        }
+      }};
+      border-right: 2px solid ${() => {
+        if (colors.primaryColor === '135, 86, 112') {
+          return `rgba(${colors.textColor}, .5)` 
+        } else {
+          return `rgb(${colors.secondaryColor})`
+        }
+      }};
+      transition: .5s ease-in-out;
+    }
+
+    to {
+      border-top: 2px solid ${() => {
+        if (colors.primaryColor === '135, 86, 112') {
+          return `rgba(${colors.textColor}, .5)` 
+        } else {
+          return `rgb(${colors.secondaryColor})`
+        }
+      }};
+      border-bottom: 2px solid ${() => {
+        if (colors.primaryColor === '135, 86, 112') {
+          return `rgba(${colors.textColor}, .5)` 
+        } else {
+          return `rgb(${colors.secondaryColor})`
+        }
+      }};
+      transition: .5s ease-in-out;
+    }
+  }
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 90%;
+  max-width: 400px;
+  margin: .5em 0;
+  position: relative;
+  padding: 10px 8px;
+  line-height: 2em;
+  border-radius: 12px;
+  user-select: none;
+  box-shadow: 0 0 5px ${() => {
+    if (colors.primaryColor === '135, 86, 112') {
+      return `rgba(${colors.fullDarkColor}, .6)` 
+    } else {
+      return `rgba(${colors.primaryColor}, .6)`
+    }
+  }};
+
+  border: 2px solid transparent;
+  background: ${() => {
+    if (colors.primaryColor === '135, 86, 112') {
+      return `rgb(${colors.whiteColor})`
+    } else {
+      return `rgb(${colors.backgroundColor})`
+    }
+  }};
+
+  animation: aboutAnimation 2000ms ease-in-out forwards infinite;
+`;

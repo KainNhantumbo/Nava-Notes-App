@@ -151,8 +151,7 @@ export const AddNoteInterfaceCore = () => {
       createdAt: date
     }
 
-    if (newNote.title === '' || newNote.content === '')
-    return;
+    if (newNote.title.length === 0) return;
     notesData.push(newNote);
 
     // salva a nota no localstorage

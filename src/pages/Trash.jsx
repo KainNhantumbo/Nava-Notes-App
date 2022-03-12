@@ -9,7 +9,6 @@ const Trash = () => {
   const fireIcon = <HiFire/>;
   const trashData = trashNotesPicker();
   const notesData = retrieveNotes();
-  console.log(notesData)
 
   const trashReseter = () => {
     var trash = [];

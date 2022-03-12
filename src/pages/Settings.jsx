@@ -3,6 +3,7 @@ import { SettingsContainer } from '../styles/SettingsStyles';
 import ModeSwitcher from '../components/ModeSwitcher';
 import ThemeOptions from '../components/ThemeOptions';
 import SortOptions from '../components/SortOptions';
+import About from '../components/About';
 
 export default function Settings() {
   return (
@@ -14,6 +15,8 @@ export default function Settings() {
         <ThemeOptions />
         <h2> Sort Notes </h2>
         <SortOptions />
+        <h2> About </h2>
+        <About />
       </div>
     </SettingsContainer>
   );
