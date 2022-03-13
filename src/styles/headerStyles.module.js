@@ -22,7 +22,7 @@ export const HeaderStyled = styled.div`
 
   div {
     position:  absolute;
-    top: 1.1em;
+    top: 1em;
     left: .5em;
     
     svg {

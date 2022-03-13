@@ -6,7 +6,7 @@ export const Message = styled.section`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: rgb(${colors.whiteColor});
+  margin-top: 12em;
   margin-bottom: .5em;
   padding: 1em;
   border-radius: inherit;
@@ -19,9 +19,16 @@ export const Message = styled.section`
   span {
     text-align: center;
     font-weight: 600;
-    background-color: rgba(${colors.brownColor}, .9);
-    padding: .5em;
-    border-radius: 10px;
+    color: ${() => {
+      if (colors.primaryColor === '135, 86, 112') {
+        return `rgba(${colors.textColor}, .8)`
+      } else {
+        return `rgba(${colors.textColor}, .8)`
+      }
+    }};
+    background-color: rgba(${colors.secondaryColor}, .5);
+    padding: .5em 1.2em;
+    border-radius: 12px;
     line-height: 1.2rem;
   }
 `;

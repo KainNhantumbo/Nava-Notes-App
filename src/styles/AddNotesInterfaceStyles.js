@@ -88,6 +88,7 @@ export const InterfaceStyles = styled.section`
   .toolbar {
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
     margin: 0 auto;
     width: 90%;
     max-width: 400px;
@@ -115,25 +116,20 @@ export const InterfaceStyles = styled.section`
 
       button {
         border-style: none;
-        padding: .4em .5em;
+        padding: .5em 1em;
         border-radius: 5px;
-        background: ${() => {
-          if (colors.primaryColor === '135, 86, 112') {
-            return `rgb(${colors.primaryColor})`
-          } else {
-            return `rgba(${colors.secondaryColor}, .4)`
-          }
-        }};
+        background: transparent;
         outline: none;
         color: rgba(${colors.textColor}, .8);
 
         :hover {
           background: ${() => {
-            if (colors.primaryColor !== '135, 86, 112') {
-              return `rgba(${colors.secondaryColor}, .6)`
+            if (colors.primaryColor === '135, 86, 112') {
+              return `rgba(${colors.primaryColor}, .3)`
+            } else {
+              return `rgba(${colors.secondaryColor}, .4)`
             }
           }};
-          transform: scale(1.05);
           transition: all 100ms ease-out;
 
         }

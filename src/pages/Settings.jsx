@@ -15,7 +15,7 @@ export default function Settings() {
         icon={cogIcon}
       />
       <div className='settingsBody'>
-        <ModeSwitcher text='Dark Mode (beta v0.0.3)' />
+        <ModeSwitcher text='Dark Mode (beta v0.0.4)' />
         <h2> Theme </h2>
         <ThemeOptions />
         <h2> Sort Notes </h2>
