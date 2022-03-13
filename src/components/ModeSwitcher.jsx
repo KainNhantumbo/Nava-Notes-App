@@ -2,22 +2,23 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { ModeSwitcherStyles } from '../styles/modeSwitcherStyles.module';
 import { modeDataPicker, setDataToStorage } from '../scripts/core-functions';
+import { HiSun } from 'react-icons/hi';
 
 
-const ModeSwitcher = ({ text, icon }) => {
+const ModeSwitcher = ({ text }) => {
   const modeState = modeDataPicker();
-  const [ mode, setMode] = useState(() => modeState);
+  const [mode, setMode] = useState(() => modeState);
 
   const themeSwitcher = () => {
     setMode(() => {
       if (mode === 'light') {
-        setMode('dark')        
+        setMode('dark')
       } else {
         setMode('light')
       }
     });
   }
-  
+
   const selectState = (modes) => {
     if (modes === 'dark') {
       return true
@@ -25,7 +26,7 @@ const ModeSwitcher = ({ text, icon }) => {
       return false
     }
   }
-  
+
   useEffect(() => {
     setDataToStorage('modeData', mode)
   }, [mode]);
@@ -34,9 +35,9 @@ const ModeSwitcher = ({ text, icon }) => {
   return (
     <ModeSwitcherStyles>
       <div>
-        { icon }
         <label htmlFor="modeswitcher">
           {text}
+          <HiSun />
         </label>
         <input type="checkbox"
           id='modeswitcher'

@@ -3,7 +3,7 @@ import { InterfaceStyles } from '../styles/AddNotesInterfaceStyles';
 import LargerButtons from './LargerButtons'
 import TextArea from './TextArea';
 import Button from './Button';
-import { HiChevronLeft } from 'react-icons/hi';
+import { HiChevronLeft, HiSave, HiX } from 'react-icons/hi';
 
 const AddNoteInterface = 
 ({ status, interfaceExit, cancelEvent, saveEvent, titleValue, textValue }) => {
@@ -26,11 +26,13 @@ const AddNoteInterface =
               <div>
                 <Button 
                   event={saveEvent} 
-                  description='Save' 
+                  description='Save'
+                  icon={<HiSave/>}
                 />
                 <Button
                   event={cancelEvent}
                   description='Discard'
+                  icon={<HiX/>}
                 />
               </div>
             </section>

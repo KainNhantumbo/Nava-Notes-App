@@ -115,6 +115,7 @@ export const InterfaceStyles = styled.section`
       gap: .5em;
 
       button {
+        position: relative;
         border-style: none;
         padding: .5em 1em;
         border-radius: 5px;
@@ -131,13 +132,20 @@ export const InterfaceStyles = styled.section`
             }
           }};
           transition: all 100ms ease-out;
+        }
 
+        svg {
+          width: 1.1em;
+          height: 1.1em;
+          position: absolute;
+          top: .55em;
+          right: .6em;
         }
         
         span {
           color: rgba(${colors.textColor}, .8);
           font-weight: 600;
-
+          padding-right: 1em;
         }
       }
     }
