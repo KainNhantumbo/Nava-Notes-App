@@ -4,12 +4,13 @@ import Button from '../components/Button';
 import TrashNotesPackage from '../components/TrashNotesPackage';
 import { HiFire } from 'react-icons/hi';
 import { trashNotesPicker, retrieveNotes, setDataToStorage } from '../scripts/core-functions';
+import { useContext } from 'react';
+import { dataContext } from '../App';
 
 const Trash = () => {
   const fireIcon = <HiFire/>;
-  const trashData = trashNotesPicker();
-  const notesData = retrieveNotes();
-
+  const [ notesData, trashData ] = useContext(dataContext);
+  
   const trashReseter = () => {
     var trash = [];
     setDataToStorage('trashData', trash);

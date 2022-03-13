@@ -8,11 +8,8 @@ import { HiPencil, HiPencilAlt } from 'react-icons/hi';
 import { AddNoteButton } from '../styles/styles';
 import { AddNoteInterfaceCore, ShowModal, trashNotesPicker } from '../scripts/core-functions';
 
-import { useState, createContext, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { retrieveNotes, setDataToStorage } from '../scripts/core-functions';
-
-// cria uma variavel global de contexto
-export const notesDataContext = createContext();
 
 const Home = () => {
   const pencilAlt = <HiPencilAlt />;
@@ -34,10 +31,10 @@ const Home = () => {
   const [seachedNotes, setSearchedNotes] = useState([]);
   const searchEngine = (e) => {
     setSearchValue(() => e.target.value);
-    
+
     const v = searchValue.toLowerCase();
     if (v.length >= 2) {
-      const newNotesData = data.filter (elements => {
+      const newNotesData = data.filter(elements => {
         if (elements.title.toLowerCase().includes(v) || elements.content.toLowerCase().includes(v)) {
           return elements;
         } else {
@@ -82,20 +79,19 @@ const Home = () => {
         />
       </AddNoteButton>
 
-      <notesDataContext.Provider value={data}>
-        <NotesPackage
-          eventRemoveBtn={deleteNote}
-          searchedNotes={seachedNotes}
-        />
-        <AddNoteInterface
-          titleValue={getTitleValue}
-          textValue={getTextValue}
-          saveEvent={saveNote}
-          cancelEvent={discardNote}
-          interfaceExit={removeAddNoteInterface}
-          status={interfaceStatus}
-        />
-      </notesDataContext.Provider>
+      <NotesPackage
+        eventRemoveBtn={deleteNote}
+        searchedNotes={seachedNotes}
+      />
+      <AddNoteInterface
+        titleValue={getTitleValue}
+        textValue={getTextValue}
+        saveEvent={saveNote}
+        cancelEvent={discardNote}
+        interfaceExit={removeAddNoteInterface}
+        status={interfaceStatus}
+      />
+
       <ConfirmModal
         removeModal={removeModal}
         removeNote={removeNote}
