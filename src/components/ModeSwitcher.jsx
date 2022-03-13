@@ -4,7 +4,7 @@ import { ModeSwitcherStyles } from '../styles/modeSwitcherStyles.module';
 import { modeDataPicker, setDataToStorage } from '../scripts/core-functions';
 
 
-const ModeSwitcher = ({ text }) => {
+const ModeSwitcher = ({ text, icon }) => {
   const modeState = modeDataPicker();
   const [ mode, setMode] = useState(() => modeState);
 
@@ -34,6 +34,7 @@ const ModeSwitcher = ({ text }) => {
   return (
     <ModeSwitcherStyles>
       <div>
+        { icon }
         <label htmlFor="modeswitcher">
           {text}
         </label>

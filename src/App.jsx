@@ -11,12 +11,14 @@ import { retrieveNotes, trashNotesPicker, setDataToStorage } from './scripts/cor
 export const dataContext = createContext();
 
 const App = () => {
-	const [trashData, setTrashData] = useState([]);
-  const [notesData, setNotesData ] = useState([]);
+	const data = retrieveNotes();
+	const datatras = trashNotesPicker();
+	const [trashData, setTrashData] = useState(datatras);
+  const [notesData, setNotesData ] = useState(data);
 
   // notesData Hooks
   useEffect(()=> {
-    const data = retrieveNotes();
+    
     // setDataToStorage('trashData', trashData)
     console.log(data)
 		// setNotesData(() => data)
@@ -24,7 +26,7 @@ const App = () => {
 
   // trashData Hooks
   useEffect(()=> {
-    const data = trashNotesPicker();
+    
     console.log(data)
   }, [trashData])
 

@@ -2,11 +2,12 @@ import React from 'react';
 import { StyledLabelsContainer } from '../styles/themeOptions';
 
 const ThemeOptions =
-  ({ defaultTheme, nanaTheme, pinkTheme }) => {
+  ({ defaultTheme, nanaTheme, pinkTheme, icon }) => {
 
     return (
       <StyledLabelsContainer>
         <div>
+          { icon }
           <label htmlFor="defaultTheme">
             Default Theme
           </label>
@@ -16,6 +17,7 @@ const ThemeOptions =
           />
         </div>
         <div>
+          { icon }
           <label htmlFor="nanaTheme">
             Nana Theme
           </label>
@@ -25,6 +27,7 @@ const ThemeOptions =
           />
         </div>
         <div>
+          { icon }
           <label htmlFor="pinkTheme">
             PinkSleep Theme
           </label>

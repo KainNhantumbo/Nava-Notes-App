@@ -3,12 +3,12 @@ import Note from './Note';
 import EmptyNotesMessage from './EmptyNotesMessage';
 import { trashNotesPicker } from '../scripts/core-functions';
 import { IoMdTrash } from 'react-icons/io';
-import { IoMdRefreshCircle } from 'react-icons/io';
+import { HiRefresh } from 'react-icons/hi';
 
 const TrashNotesPackage =
 	({ eventDelete, eventRestore }) => {
 		const trashNotes = trashNotesPicker();
-		const restoreIcon = <IoMdRefreshCircle/>;
+		const restoreIcon = <HiRefresh/>;
 		const deleteIcon =  <IoMdTrash/>;
 		
 		return (

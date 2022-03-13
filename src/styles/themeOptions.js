@@ -55,15 +55,31 @@ export const StyledLabelsContainer = styled.section`
     }
 
     label {
-      padding-left: .5em;
+      padding-left: 2.5em;
       color: rgba(${colors.textColor}, .8);
-
+      position: relative;
+      
       :hover {
         color: ${() => {
           if (colors.primaryColor === '135, 86, 112') {
             return `rgba(${colors.textColor}, .5)`
           } else {
             return `rgb(${colors.secondaryColor})`
+          }
+        }};
+      }
+
+      svg {
+        width: 1.6em;
+        height: 1.6em;
+        position: absolute;
+        top: .4em;
+        left: .5em;
+        color: ${() => {
+          if (colors.primaryColor === '135, 86, 112') {
+            return `rgba(${colors.textColor}, .6)`
+          } else {
+            return `rgb(${colors.primaryColor})`
           }
         }};
       }
