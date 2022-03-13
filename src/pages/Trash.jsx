@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Button from '../components/Button';
 import TrashNotesPackage from '../components/TrashNotesPackage';
 import { HiFire } from 'react-icons/hi';
-import { trashNotesPicker, retrieveNotes, setDataToStorage } from '../scripts/core-functions';
-import { useContext } from 'react';
+import { HiTrash } from 'react-icons/hi';
+import { setDataToStorage } from '../scripts/core-functions';
 import { dataContext } from '../App';
 
 const Trash = () => {
   const fireIcon = <HiFire/>;
+  const trashIcon = <HiTrash />;
   const [ notesData, trashData ] = useContext(dataContext);
   
   const trashReseter = () => {
@@ -51,6 +52,7 @@ const Trash = () => {
           icon={fireIcon}
           event={trashReseter}  
         />}
+        icon={trashIcon}
       />
       <TrashNotesPackage 
         eventRestore={restoreNote}

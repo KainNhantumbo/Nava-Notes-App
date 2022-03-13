@@ -22,15 +22,15 @@ export const HeaderStyled = styled.div`
 
   div {
     position:  absolute;
-    top: 1em;
-    left: 5em;
+    top: 1.1em;
+    left: .5em;
     
     svg {
-      width: 1.8em;
-      height: 1.8em;
+      width: 2em;
+      height: 2em;
       color: ${() => {
         if (colors.primaryColor === '135, 86, 112') {
-          return `rgba(${colors.fullDarkColor}, .3)`
+          return `rgba(${colors.textColor}, .6)`
         } else {
           return `rgb(${colors.primaryColor})`
         }
@@ -42,7 +42,7 @@ export const HeaderStyled = styled.div`
     font-weight: 600;
     line-height: 2rem;
     user-select: none;
-    padding-left: .5em;
+    padding-left: 1.8em;
     font-size: 1.6rem;
     color: ${() => {
       if (colors.primaryColor === '135, 86, 112') {
