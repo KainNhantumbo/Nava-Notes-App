@@ -4,11 +4,12 @@ import EmptyNotesMessage from './EmptyNotesMessage';
 import { dataContext } from '../App';
 import { HiXCircle } from 'react-icons/hi';
 import { HiInformationCircle } from 'react-icons/hi';
+import Greet from './Greet';
 
 const NotesPackage =
 	({ eventRemoveBtn, noteDetails, searchedNotes }) => {
-		const deleteIcon =  <HiXCircle />;
-    const infoIcon = <HiInformationCircle />;
+		const deleteIcon = <HiXCircle />;
+		const infoIcon = <HiInformationCircle />;
 		const [notesData] = useContext(dataContext);
 
 		const guest = (searchedNotes, notesData) => {
@@ -49,6 +50,8 @@ const NotesPackage =
 
 		return (
 			<section className="mainContainer">
+				<Greet />
+				
 				{
 					renderNotes.length === 0 || null ? (
 						<EmptyNotesMessage
