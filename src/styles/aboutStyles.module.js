@@ -70,9 +70,12 @@ export const AboutContainer = styled.section`
         }
       }};
       line-height: 1.6rem;
+
       span {
         padding: 2px 8px;
+        padding-left: 1em;
         border-radius: 12px;
+        position: relative;
         color: ${() => {
           if (colors.primaryColor === '135, 86, 112') {
             return `rgba(${colors.textColor}, .5)`
@@ -80,6 +83,21 @@ export const AboutContainer = styled.section`
             return `rgb(${colors.secondaryColor})`
           }
         }};
+
+        svg {
+          width: 1.2em;
+          height: 1.2em;
+          position: absolute;
+          top: .15em;
+          left: -.4em;
+          color: ${() => {
+            if (colors.primaryColor === '135, 86, 112') {
+              return `rgba(${colors.textColor}, .6)`
+            } else {
+              return `rgb(${colors.primaryColor})`
+            }
+          }};
+        }
       }
     }
 
