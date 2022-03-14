@@ -4,6 +4,7 @@ import ModeSwitcher from '../components/ModeSwitcher';
 import ThemeOptions from '../components/ThemeOptions';
 import SortOptions from '../components/SortOptions';
 import About from '../components/About';
+import UserUI from '../components/UserUI';
 import { HiCog } from 'react-icons/hi';
 
 export default function Settings() {
@@ -15,6 +16,7 @@ export default function Settings() {
         icon={cogIcon}
       />
       <div className='settingsBody'>
+        <UserUI />
         <ModeSwitcher text='Dark Mode (beta v0.0.4)' 
           
         />
