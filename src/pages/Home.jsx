@@ -20,9 +20,9 @@ const Home = () => {
   const [unsortedData, setData ] = useState([]);
   const data = sortNotes(unsortedData);
   useEffect(() => {
-    console.log('Hallo Repeating')
-    setData(() => retrieveNotes('notes'))
-  }, [])
+    console.log('Hallo Repeating');
+    setData(() => retrieveNotes('notes'));
+  }, []);
   
 
   // cria a interface para adicao de notas
@@ -113,6 +113,7 @@ const Home = () => {
     setDataToStorage('notes', notes);
     trashNotes.push(trash[0]);
     setDataToStorage('trashData', trashNotes);
+    setData(() => retrieveNotes('notes'));
   }
 
   return (
