@@ -12,8 +12,8 @@ export const ModeSwitcherStyles = styled.section`
     justify-content: space-between;
     flex-direction: row;
     width: 90%;
+    margin: .5em 0;
     max-width: 400px;
-    margin-top: 12vh;
     position: relative;
     padding: 10px 8px;
     line-height: 2em;

@@ -17,9 +17,9 @@ export default function Settings() {
       />
       <div className='settingsBody'>
         <UserUI />
-        <ModeSwitcher text='Dark Mode (beta v0.0.4)' 
-          
-        />
+
+        <h2> Mode Switcher </h2>
+        <ModeSwitcher text='Dark Mode (beta v0.0.4)' />
         <h2> Theme </h2>
         <ThemeOptions />
         <h2> Sort Notes </h2>

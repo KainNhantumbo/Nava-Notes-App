@@ -8,7 +8,7 @@ const About = () => {
       <div>
         <section>
           <span>
-            Simple Notes App
+          © 2022 Simple Notes App
           </span>
         </section>
         <section>
@@ -25,7 +25,7 @@ const About = () => {
         </section>
         <section>
           <span>
-            github.com/KainNhantumbo
+            <a href="https://github.com/KainNhantumbo">github.com/KainNhantumbo</a>
             <FaGithub />
           </span>
         </section>
