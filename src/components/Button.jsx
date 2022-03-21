@@ -15,6 +15,6 @@ Button.propTypes = {
     icon: PropTypes.object
 }
 
-export default Button
+export default Button;
 
 

@@ -12,23 +12,24 @@ const ModeSwitcher = ({ text }) => {
   const themeSwitcher = () => {
     setMode(() => {
       if (mode === 'light') {
-        setMode('dark')
+        setMode('dark');
       } else {
-        setMode('light')
+        setMode('light');
       }
     });
   }
 
   const selectState = (modes) => {
     if (modes === 'dark') {
-      return true
+      return true;
     } else {
-      return false
+      return false;
     }
   }
 
   useEffect(() => {
-    setDataToStorage('modeData', mode)
+    setDataToStorage('modeData', mode);
+    console.log('sdhaiusd');
   }, [mode]);
 
 

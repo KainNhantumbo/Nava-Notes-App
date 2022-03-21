@@ -1,7 +1,9 @@
 import { modeDataPicker } from "../scripts/core-functions";
 
+// pega o estado do tema
 const modeState = modeDataPicker();
 
+// faz a troca do tema de acordo com estado
 const themeSwitcher = (theme) => {
   if (theme === 'dark') {
     // dark theme
@@ -27,4 +29,5 @@ const themeSwitcher = (theme) => {
     }
   }
 }
+// exporta o objeto cores
 export const colors = themeSwitcher(modeState);

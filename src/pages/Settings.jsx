@@ -8,12 +8,12 @@ import UserUI from '../components/UserUI';
 import { HiCog } from 'react-icons/hi';
 
 export default function Settings() {
-  const cogIcon = <HiCog/>;
+  console.log('state')
   
   return (
     <SettingsContainer>
       <Header title={'Settings'} 
-        icon={cogIcon}
+        icon={<HiCog/>}
       />
       <div className='settingsBody'>
         <UserUI />

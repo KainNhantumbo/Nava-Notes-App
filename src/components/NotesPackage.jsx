@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import Note from './Note';
 import EmptyNotesMessage from './EmptyNotesMessage';
-import { HiXCircle } from 'react-icons/hi';
+import { HiXCircle, HiPaperAirplane } from 'react-icons/hi';
 import { HiInformationCircle } from 'react-icons/hi';
 import Greet from './Greet';
 
@@ -55,6 +55,7 @@ const NotesPackage =
 						<EmptyNotesMessage
 							label={'Oh! Looks like we have nothing to show...'}
 							message={`Add some notes!`}
+							icon={ <HiPaperAirplane/> }
 						/>
 					) : (
 						renderNotes

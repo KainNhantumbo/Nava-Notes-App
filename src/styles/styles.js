@@ -108,6 +108,7 @@ export const StyledSearch = styled.label`
       }
     }};
   }
+  
 `;
 
 export const AddNoteButton = styled.div`

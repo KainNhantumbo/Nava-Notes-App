@@ -3,7 +3,7 @@ import Note from './Note';
 import EmptyNotesMessage from './EmptyNotesMessage';
 import { trashNotesPicker } from '../scripts/core-functions';
 import { IoMdTrash } from 'react-icons/io';
-import { HiRefresh } from 'react-icons/hi';
+import { HiRefresh, HiNewspaper } from 'react-icons/hi';
 
 const TrashNotesPackage =
 	({ eventDelete, eventRestore, trashNotes }) => {
@@ -17,6 +17,7 @@ const TrashNotesPackage =
 						<EmptyNotesMessage
 							label={'Nothing to show!'}
 							message={`Looks like the trash is empty.`}
+							icon={ <HiNewspaper/> }
 						/>
 					) : (
 						trashNotes.map((value, index) => {
