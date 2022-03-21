@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Note from './Note';
 import EmptyNotesMessage from './EmptyNotesMessage';
 import { trashNotesPicker } from '../scripts/core-functions';
@@ -6,8 +6,7 @@ import { IoMdTrash } from 'react-icons/io';
 import { HiRefresh } from 'react-icons/hi';
 
 const TrashNotesPackage =
-	({ eventDelete, eventRestore }) => {
-		const trashNotes = trashNotesPicker();
+	({ eventDelete, eventRestore, trashNotes }) => {
 		const restoreIcon = <HiRefresh/>;
 		const deleteIcon =  <IoMdTrash/>;
 		
