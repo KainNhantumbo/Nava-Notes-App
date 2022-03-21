@@ -15,7 +15,7 @@ const About = () => {
           <span>
             App Version:
             <HiPuzzle />
-          </span> 0.0.7 (beta)
+          </span> 0.0.8 (beta)
         </section>
         <section>
           <span>

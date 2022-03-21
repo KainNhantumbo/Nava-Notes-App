@@ -2,21 +2,45 @@ import styled from 'styled-components';
 import { colors } from './colors';
 
 export const Message = styled.section`
+  position: relative;
   display: flex;
+  width: 12em;
+  height: 12em;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 12em;
+  margin: 0 auto;
+  margin-top: 10em;
   margin-bottom: .5em;
   padding: 1em;
-  border-radius: inherit;
+  border-radius: 50%;
   user-select: none;
   gap: .8em;
+  background-color: ${() => {
+    if (colors.primaryColor === '135, 86, 112') {
+      return `rgba(${colors.textColor}, .1)`
+    } else {
+      return `rgba(${colors.secondaryColor}, .5)`
+    }
+  }};
 
-  img {
-    width: 80%;
+  svg {
+    position: absolute;
+    width: 5em;
+    height: 5em;
+    top: 1.2em;
+    left: calc(12em - 7.5em);
+    color: ${() => {
+      if (colors.primaryColor === '135, 86, 112') {
+        return `rgba(${colors.textColor}, .8)`
+      } else {
+        return `rgb(${colors.primaryColor})`
+      }
+    }};
+    transform: rotate(45deg);
   }
   span {
+    padding-top: 5em;
     text-align: center;
     font-weight: 600;
     color: ${() => {
@@ -26,9 +50,6 @@ export const Message = styled.section`
         return `rgba(${colors.textColor}, .8)`
       }
     }};
-    background-color: rgba(${colors.secondaryColor}, .5);
-    padding: .5em 1.2em;
-    border-radius: 12px;
     line-height: 1.2rem;
   }
 `;

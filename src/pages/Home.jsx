@@ -1,12 +1,11 @@
 import Header from '../components/Header';
 import Button from '../components/Button';
 import NotesPackage from '../components/NotesPackage';
-import ConfirmModal from '../components/ConfirmModal';
 import AddNoteInterface from '../components/AddNoteInterface'
 import { SearchBox } from '../components/SearchBox';
 import { HiPencil, HiPencilAlt } from 'react-icons/hi';
 import { AddNoteButton } from '../styles/styles';
-import { ShowModal, trashNotesPicker } from '../scripts/core-functions';
+import { trashNotesPicker } from '../scripts/core-functions';
 import { v4 as uuidv4 } from 'uuid';
 import { timeSetter } from '../scripts/core-date';
 
@@ -14,16 +13,12 @@ import { useState, useEffect } from 'react';
 import { retrieveNotes, setDataToStorage, sortNotes } from '../scripts/core-functions';
 
 const Home = () => {
-  const { removeModal, removeNote, visible } = ShowModal();
-
   // pega os dados iniciais do localstorage
   const [unsortedData, setData ] = useState([]);
   const data = sortNotes(unsortedData);
   useEffect(() => {
-    console.log('Hallo Repeating');
     setData(() => retrieveNotes('notes'));
   }, []);
-  
 
   // cria a interface para adicao de notas
   const [interfaceStatus, setInterfaceStatus] = useState(false);
@@ -141,12 +136,6 @@ const Home = () => {
         cancelEvent={discardNote}
         interfaceExit={removeAddNoteInterface}
         status={interfaceStatus}
-      />
-
-      <ConfirmModal
-        removeModal={removeModal}
-        removeNote={removeNote}
-        status={visible}
       />
     </>
   );

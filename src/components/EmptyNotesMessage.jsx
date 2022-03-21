@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Message } from '../styles/styles';
 import colleguesImg from '../images/Collegues.png'
+import { HiPaperAirplane } from 'react-icons/hi';
 
 const EmptyNotesMessage = ({message, label}) => {
    return (
       <Message>
-         <img src={colleguesImg} alt="people" />     
+         <HiPaperAirplane/>   
          <span> 
             {label} <br/>
             {message}
