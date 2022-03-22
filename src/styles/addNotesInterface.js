@@ -6,6 +6,18 @@ export const InterfaceStyles = styled.section`
     box-sizing: border-box;
   }
 
+  @keyframes slideUp {
+    from {
+      transform: scale(.9);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  animation: slideUp 300ms ease-out forwards;
+
   width: 100vw;
   height: 100vh;
   z-index: 500;

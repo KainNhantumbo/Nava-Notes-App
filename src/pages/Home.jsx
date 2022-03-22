@@ -118,14 +118,23 @@ const Home = () => {
     setDataToStorage('trashData', trashNotes);
     setData(() => retrieveNotes('notes'));
     setNotificationStatus(() => true);
+    removeNotificationByDelay(notificationStatus);
   }
 
-  // remove a notificacao
+  // remove a notificacao pelo botao
   const removeNotification = () => {
     setNotificationStatus(() => false);
-    // setTimeout(() => {
-    //   setNotificationStatus(() => false);
-    // }, 2000);
+  }
+
+  // remove a notificacao por delay
+  const removeNotificationByDelay = (status) => {
+    if (status === true) {
+      return;
+    } else {  
+      setTimeout(() => {
+        setNotificationStatus(() => false);
+      }, 5000);
+    }
   }
 
   return (
