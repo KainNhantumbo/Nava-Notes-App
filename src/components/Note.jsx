@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from './Button';
-import { NoteContainer } from '../styles/note.module';
+import { NoteContainer } from '../styles/note';
 
 const Note = 
 ({id, note, noteDetails, eventRemoveBtn, noteContent, noteDate, firstIcon, secondIcon}) => {

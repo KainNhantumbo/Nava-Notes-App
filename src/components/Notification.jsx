@@ -1,6 +1,6 @@
 import { HiX } from 'react-icons/hi';
 import Button from './Button';
-import { NotificationContainer } from '../styles/notification.module';
+import { NotificationContainer } from '../styles/notification';
 import PropTypes from 'prop-types';
 
 const Notification = ({ status, btnDescription, btnEvent, textContent, icon }) => {

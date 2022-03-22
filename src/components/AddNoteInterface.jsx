@@ -1,5 +1,5 @@
 import React from 'react';
-import { InterfaceStyles } from '../styles/AddNotesInterfaceStyles';
+import { InterfaceStyles } from '../styles/addNotesInterface';
 import LargerButtons from './LargerButtons'
 import TextArea from './TextArea';
 import Button from './Button';

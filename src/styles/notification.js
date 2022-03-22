@@ -1,7 +1,18 @@
-import { colors } from "./colors";
 import Styled from 'styled-components';
+import { colors } from "./colors";
 
 export const NotificationContainer = Styled.section`
+  @keyframes slideUp {
+    from {
+      transform: translateY(7em);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
   width: 100vw;
   height: 10vh;
   margin-top: 80vh;
@@ -15,6 +26,7 @@ export const NotificationContainer = Styled.section`
   display: grid;
   justify-items: center;
   align-items: center;
+  animation: slideUp 500ms ease-out forwards;
 
   section {
     width: 90%;

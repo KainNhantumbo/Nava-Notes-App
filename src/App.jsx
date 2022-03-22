@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { GlobalStyles } from './styles/globalStyles';
+import { GlobalStyles } from './styles/globalstyles';
 import Trash from './pages/Trash';
 import Settings from './pages/Settings';
 import Home from './pages/Home';

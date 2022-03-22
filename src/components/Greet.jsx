@@ -1,4 +1,4 @@
-import { GreetContainer } from '../styles/greet.module';
+import { GreetContainer } from '../styles/greet';
 
 const Greet = () => {
   const hours = new Date().getHours();

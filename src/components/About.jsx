@@ -1,4 +1,4 @@
-import { AboutContainer } from "../styles/aboutStyles.module";
+import { AboutContainer } from "../styles/about";
 import { HiCode, HiPuzzle } from 'react-icons/hi';
 import { FaGithub } from "react-icons/fa";
 

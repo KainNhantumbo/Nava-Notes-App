@@ -1,4 +1,4 @@
-import { UserUIContainer } from "../styles/useui.module";
+import { UserUIContainer } from "../styles/userUi";
 import { HiUserCircle } from "react-icons/hi";
 import PropTypes from 'prop-types';
 

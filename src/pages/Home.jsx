@@ -158,7 +158,7 @@ const Home = () => {
       />
 
       <Notification
-        status={true}
+        status={notificationStatus}
         textContent={"Moved to trash"}
         btnDescription={"Desmiss"}
         btnEvent={removeNotification}

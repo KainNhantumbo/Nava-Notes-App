@@ -2,7 +2,7 @@ import React from "react";
 import LargerButtons from "./LargerButtons";
 import { Link } from 'react-router-dom';
 import { HiCollection, HiCog, HiTrash } from 'react-icons/hi';
-import { FooterStyles } from "../styles/footerStyles";
+import { FooterStyles } from "../styles/footer";
 
 const footerButtons = () => {
   const cogIcon = <HiCog />;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledTextAreaContainer } from '../styles/textAreaStyles';
+import { StyledTextAreaContainer } from '../styles/textArea';
 
 const TextArea = ({ titleChangeEvent, textChangeEvent }) => {
   return ( 
