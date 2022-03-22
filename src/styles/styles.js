@@ -10,7 +10,7 @@ export const Message = styled.section`
   align-items: center;
   flex-direction: column;
   margin: 0 auto;
-  margin-top: 10em;
+  margin-top: 9em;
   margin-bottom: .5em;
   padding: 1em;
   border-radius: 50%;

@@ -1,8 +1,9 @@
 import { HiX } from 'react-icons/hi';
 import Button from './Button';
 import { NotificationContainer } from '../styles/notification.module';
+import PropTypes from 'prop-types';
 
-const Notification = ({ status, btnDescription, btnEvent, textContent }) => {
+const Notification = ({ status, btnDescription, btnEvent, textContent, icon }) => {
   return (
     <>
       {
@@ -24,6 +25,11 @@ const Notification = ({ status, btnDescription, btnEvent, textContent }) => {
       }
     </>
   )
+}
+
+Notification.propTypes = {
+  textContent: PropTypes.string.isRequired,
+  btnDescription: PropTypes.string.isRequired
 }
 
 export default Notification;

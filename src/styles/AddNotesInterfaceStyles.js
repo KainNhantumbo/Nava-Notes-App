@@ -73,7 +73,6 @@ export const InterfaceStyles = styled.section`
       font-weight: 600;
       font-size: 1.2rem;
       user-select: none;
-      color: rgb(${colors.textColor});
 
       color: ${() => {
         if (colors.primaryColor === '135, 86, 112') {

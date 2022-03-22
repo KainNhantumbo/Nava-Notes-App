@@ -1,15 +1,12 @@
 import React from 'react';
 import Note from './Note';
 import EmptyNotesMessage from './EmptyNotesMessage';
-import { trashNotesPicker } from '../scripts/core-functions';
 import { IoMdTrash } from 'react-icons/io';
-import { HiRefresh, HiNewspaper } from 'react-icons/hi';
+import { HiNewspaper } from 'react-icons/hi';
+import { MdRestore } from 'react-icons/md';
 
 const TrashNotesPackage =
 	({ eventDelete, eventRestore, trashNotes }) => {
-		const restoreIcon = <HiRefresh/>;
-		const deleteIcon =  <IoMdTrash/>;
-		
 		return (
 			<section className="mainContainer">
 				{
@@ -29,14 +26,14 @@ const TrashNotesPackage =
 								noteDate={value.createdAt}
 								noteDetails={eventRestore}
 								eventRemoveBtn={eventDelete}
-								firstIcon={restoreIcon}
-								secondIcon={deleteIcon}
+								firstIcon={<MdRestore/>}
+								secondIcon={<IoMdTrash/>}
 							/>
 						})
 					)
 				}
 			</section>
-		)
+		);
 	}
 
 export default TrashNotesPackage;

@@ -2,9 +2,10 @@ import Header from '../components/Header';
 import Button from '../components/Button';
 import NotesPackage from '../components/NotesPackage';
 import ConfirmModal from '../components/ConfirmModal';
-import AddNoteInterface from '../components/AddNoteInterface'
+import AddNoteInterface from '../components/AddNoteInterface';
+import Notification from '../components/Notification';
 import { SearchBox } from '../components/SearchBox';
-import { HiPencil, HiPencilAlt } from 'react-icons/hi';
+import { HiPencil, HiPencilAlt, HiCheckCircle } from 'react-icons/hi';
 import { AddNoteButton } from '../styles/styles';
 import { ShowModal, trashNotesPicker } from '../scripts/core-functions';
 import { v4 as uuidv4 } from 'uuid';
@@ -15,14 +16,17 @@ import { retrieveNotes, setDataToStorage, sortNotes } from '../scripts/core-func
 
 const Home = () => {
   const { removeModal, removeNote, visible } = ShowModal();
-
+  
+  // estado do componente notificacao
+  const [notificationStatus, setNotificationStatus] = useState(false);
+  
   // pega os dados iniciais do localstorage
-  const [unsortedData, setData ] = useState([]);
+  const [unsortedData, setData] = useState([]);
   const data = sortNotes(unsortedData);
   useEffect(() => {
     setData(() => retrieveNotes('notes'));
   }, []);
-  
+
 
   // cria a interface para adicao de notas
   const [interfaceStatus, setInterfaceStatus] = useState(false);
@@ -113,6 +117,15 @@ const Home = () => {
     trashNotes.push(trash[0]);
     setDataToStorage('trashData', trashNotes);
     setData(() => retrieveNotes('notes'));
+    setNotificationStatus(() => true);
+  }
+
+  // remove a notificacao
+  const removeNotification = () => {
+    setNotificationStatus(() => false);
+    // setTimeout(() => {
+    //   setNotificationStatus(() => false);
+    // }, 2000);
   }
 
   return (
@@ -121,6 +134,7 @@ const Home = () => {
         child={<SearchBox inputEvent={searchEngine} />}
         icon={<HiPencil />}
       />
+      
       <AddNoteButton>
         <Button className='addNoteButton'
           event={renderAddNoteInterface}
@@ -133,6 +147,7 @@ const Home = () => {
         searchedNotes={seachedNotes}
         notesData={data}
       />
+
       <AddNoteInterface
         titleValue={getTitleValue}
         textValue={getTextValue}
@@ -140,6 +155,14 @@ const Home = () => {
         cancelEvent={discardNote}
         interfaceExit={removeAddNoteInterface}
         status={interfaceStatus}
+      />
+
+      <Notification
+        status={true}
+        textContent={"Moved to trash"}
+        btnDescription={"Desmiss"}
+        btnEvent={removeNotification}
+        icon={<HiCheckCircle />}
       />
 
       <ConfirmModal
