@@ -6,7 +6,7 @@ import { HiInformationCircle } from 'react-icons/hi';
 import Greet from './Greet';
 
 const NotesPackage =
-	({ eventRemoveBtn, noteDetails, searchedNotes, notesData }) => {
+	({ eventRemoveBtn, eventDetailsBtn, searchedNotes, notesData }) => {
 		const deleteIcon = <HiXCircle />;
 		const infoIcon = <HiInformationCircle />;
 
@@ -20,7 +20,7 @@ const NotesPackage =
 							note={value.title}
 							noteContent={value.content}
 							noteDate={value.createdAt}
-							noteDetails={noteDetails}
+							eventDetailsBtn={eventDetailsBtn}
 							eventRemoveBtn={eventRemoveBtn}
 							firstIcon={infoIcon}
 							secondIcon={deleteIcon}
@@ -35,7 +35,7 @@ const NotesPackage =
 						note={value.title}
 						noteContent={value.content}
 						noteDate={value.createdAt}
-						noteDetails={noteDetails}
+						eventDetailsBtn={eventDetailsBtn}
 						eventRemoveBtn={eventRemoveBtn}
 						firstIcon={infoIcon}
 						secondIcon={deleteIcon}

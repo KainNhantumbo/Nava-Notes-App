@@ -6,7 +6,7 @@ import Button from './Button';
 import { HiChevronLeft, HiSave, HiX } from 'react-icons/hi';
 
 const EditNotesInterface =
-  ({ status, interfaceExit, exitEvent, updateEvent, titleValue, textValue }) => {
+  ({ status, interfaceExit, exitEvent, updateEvent, titleValue, textValue, textAreaValue, inputValue }) => {
     return (
       <>
         {
@@ -22,6 +22,8 @@ const EditNotesInterface =
               <TextArea
                 titleChangeEvent={titleValue}
                 textChangeEvent={textValue}
+                textAreaValue={textAreaValue}
+                inputValue={inputValue}
               />
               <section className='toolbar'>
                 <div>

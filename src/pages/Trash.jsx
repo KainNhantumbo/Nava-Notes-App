@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Button from '../components/Button';
 import TrashNotesPackage from '../components/TrashNotesPackage';
+import Notification from '../components/Notification';
 import { HiFire } from 'react-icons/hi';
-import { HiTrash } from 'react-icons/hi';
+import { HiTrash, HiCheckCircle } from 'react-icons/hi';
 import { setDataToStorage, sortNotes, trashNotesPicker, retrieveNotes } from '../scripts/core-functions';
 
 const Trash = () => {
@@ -19,6 +20,15 @@ const Trash = () => {
   useEffect(() => {
     setUnsortedTrashData(() => trashNotesPicker());
   }, []);
+
+  // estados componente Notification
+  const [notificationIcon, setNotificationIcon] = useState(() => {
+    return <HiCheckCircle/>;
+  });
+  const [notificationInfo, setNotificationInfo] = useState(() => {
+    return "";
+  });
+  const [notificationStatus, setNotificationStatus] = useState(false);
 
   // apaga permanentemente todas as notas do lixo
   const trashReseter = () => {
@@ -44,6 +54,8 @@ const Trash = () => {
     setDataToStorage('notes', notesData);
     setDataToStorage('trashData', notes);
     setUnsortedTrashData(() => trashNotesPicker());
+    setNotificationStatus(() => true);
+    removeNotificationByDelay(notificationStatus)
   }
 
   const permanentDelete = (e) => {
@@ -56,6 +68,23 @@ const Trash = () => {
     setDataToStorage('trashData', trashNotes);
     setUnsortedTrashData(() => trashNotesPicker());
   }
+
+  // funcoes para gestao de notificao
+    // remove a notificacao pelo botao
+    const removeNotification = () => {
+      setNotificationStatus(() => false);
+    }
+
+    // remove a notificacao por delay
+    const removeNotificationByDelay = (status) => {
+      if (status === true) {
+        return;
+      } else {
+        setTimeout(() => {
+          setNotificationStatus(() => false);
+        }, 3500);
+      }
+    }
   
   return (
     <>
@@ -71,6 +100,14 @@ const Trash = () => {
         eventRestore={restoreNote}
         eventDelete={permanentDelete}
         trashNotes={trashData}
+      />
+
+      <Notification
+        status={notificationStatus}
+        textContent={'Note restored'}
+        btnDescription={'Desmiss'}
+        btnEvent={removeNotification}
+        icon={<HiCheckCircle />}
       />
     </>
   );
