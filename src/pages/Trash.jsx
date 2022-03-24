@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import Button from '../components/Button';
 import TrashNotesPackage from '../components/TrashNotesPackage';
 import Notification from '../components/Notification';
+import { MdDeleteForever } from 'react-icons/md';
 import { HiFire } from 'react-icons/hi';
 import { HiTrash, HiCheckCircle } from 'react-icons/hi';
 import { setDataToStorage, sortNotes, trashNotesPicker, retrieveNotes } from '../scripts/core-functions';
@@ -26,7 +27,7 @@ const Trash = () => {
     return <HiCheckCircle/>;
   });
   const [notificationInfo, setNotificationInfo] = useState(() => {
-    return "";
+    return "Sucess";
   });
   const [notificationStatus, setNotificationStatus] = useState(false);
 
@@ -35,9 +36,14 @@ const Trash = () => {
     var trash = [];
     setDataToStorage('trashData', trash);
     setUnsortedTrashData(() => trashNotesPicker());
+
+    // configuração da notificação
+    configNotification("Trash wiped!", <MdDeleteForever/>);
+    setNotificationStatus(() => true);
+    removeNotificationByDelay(notificationStatus);
   }
 
-  // restaura do lixo a nota selecionada
+  // restaura do lixeira a nota selecionada
   const restoreNote = (e) => {
     const id = e.target.parentNode.parentNode.id;
     const trashNote = trashData.filter(note => {
@@ -54,10 +60,14 @@ const Trash = () => {
     setDataToStorage('notes', notesData);
     setDataToStorage('trashData', notes);
     setUnsortedTrashData(() => trashNotesPicker());
+
+    // configuração da notificação
+    configNotification("Note restaured", <MdDeleteForever/>);
     setNotificationStatus(() => true);
-    removeNotificationByDelay(notificationStatus)
+    removeNotificationByDelay(notificationStatus);
   }
 
+  // apaga permanentemente todas as notas da lixeira
   const permanentDelete = (e) => {
     const id = e.target.parentNode.parentNode.id;
     const trashNotes = trashData.filter(note => {
@@ -67,6 +77,11 @@ const Trash = () => {
     });
     setDataToStorage('trashData', trashNotes);
     setUnsortedTrashData(() => trashNotesPicker());
+
+    // configuração da notificação
+    configNotification("Note deleted.", <HiCheckCircle/>);
+    setNotificationStatus(() => true);
+    removeNotificationByDelay(notificationStatus);
   }
 
   // funcoes para gestao de notificao
@@ -84,6 +99,12 @@ const Trash = () => {
           setNotificationStatus(() => false);
         }, 3500);
       }
+    }
+
+    // seta o icone e descricao da notificação
+    const configNotification = (info, icon) => {
+      setNotificationInfo(() => info);
+      setNotificationIcon(() => icon);
     }
   
   return (
@@ -104,10 +125,10 @@ const Trash = () => {
 
       <Notification
         status={notificationStatus}
-        textContent={'Note restored'}
+        textContent={notificationInfo}
         btnDescription={'Desmiss'}
         btnEvent={removeNotification}
-        icon={<HiCheckCircle />}
+        icon={notificationIcon}
       />
     </>
   );
