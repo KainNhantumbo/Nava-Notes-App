@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import Header from '../components/Header';
 import Button from '../components/Button';
 import NotesPackage from '../components/NotesPackage';
@@ -9,10 +11,8 @@ import { SearchBox } from '../components/SearchBox';
 import { HiPencil, HiPencilAlt, HiCheckCircle } from 'react-icons/hi';
 import { AddNoteButton } from '../styles/styles';
 import { ShowModal, trashNotesPicker } from '../scripts/core-functions';
-import { v4 as uuidv4 } from 'uuid';
 import { timeSetter } from '../scripts/core-date';
 
-import { useState, useEffect } from 'react';
 import { retrieveNotes, setDataToStorage, sortNotes } from '../scripts/core-functions';
 
 const Home = () => {
@@ -74,34 +74,63 @@ const Home = () => {
       data.push(newNote);
 
       // salva a nota no localstorage
-      setDataToStorage('notes', data)
-      removeAddNoteInterface()
+      setDataToStorage('notes', data);
+      removeAddNoteInterface();
       return data;
     }
 
   // interface de edicao e previsualizacao de notas
     const [editInterfaceStatus, setEditInterfaceStatus] = useState(false);
-      
-    // pega a nota para edicao
     const [previewTitle, setPreviewTitle] = useState('');
     const [previewContent, setPreviewContent] = useState('');
+    const [defaultNoteId, setDefaultNoteId] = useState('');
+    const [defaultContetValue, setDefaultContetValue] = useState('');
+    const [defaultTitleValue, setDefaultTitleValue] = useState('');
+  
+    // pega os valores atualizados
+    const getDefaultContentValue = (e) => setDefaultContetValue(e.target.value);
+    const getDefaultTitleValue = (e) => setDefaultTitleValue(e.target.value);
+  
+    // pega a nota para edicao
     const getDefaultNote = (e) => {
       const id = e.target.parentNode.parentNode.id;
       const tempNote = data.filter(element => {
         if (id === element.id)
-        return element
+        return element;
       });
       setPreviewContent(() => tempNote[0].content);
       setPreviewTitle(() => tempNote[0].title);
-      console.log(tempNote[0].title)
+      setDefaultNoteId(() => tempNote[0].id);
+    }
+
+    // salva a nota editada
+    const saveDefaultNote = () => {
+      for (let i = 0; i < data.length; i++) {
+        if (data[i].id === defaultNoteId) {
+          data[i].title = defaultTitleValue;
+          data[i].content = defaultContetValue;
+
+          // verifica a existencia de conteudo da nota
+          // se vazio, salva o conteudo original 
+          if (data[i].title === '' && defaultTitleValue === '') {
+            data[i].title = previewTitle;
+            data[i].content = previewContent;
+          } else if (data[i].content === '') {
+            data[i].content = previewContent;
+          } else if (data[i].title === '') {
+            data[i].title = previewTitle;
+          }
+        }
+      }
+      setDataToStorage('notes', data);
+      setData(() => retrieveNotes('notes'));
+      closeEditInterface();
     }
   
     // renderiza a interface
     const renderEditInterface = (e) => {
       setEditInterfaceStatus(() => true);
       getDefaultNote(e);
-      console.log(previewTitle);
-      console.log(previewContent);
     }
 
     // fecha a interface 
@@ -201,11 +230,14 @@ const Home = () => {
       />
 
       <EditNotesInterface
+        titleValue={getDefaultTitleValue}
+        textValue={getDefaultContentValue}
         exitEvent={closeEditInterface}
         interfaceExit={closeEditInterface}
         status={editInterfaceStatus}
         inputValue={previewTitle}
         textAreaValue={previewContent}
+        updateEvent={saveDefaultNote}
       />
 
       <Notification

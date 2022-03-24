@@ -62,7 +62,7 @@ const Trash = () => {
     setUnsortedTrashData(() => trashNotesPicker());
 
     // configuração da notificação
-    configNotification("Note restaured", <MdDeleteForever/>);
+    configNotification("Note restaured", <HiCheckCircle/>);
     setNotificationStatus(() => true);
     removeNotificationByDelay(notificationStatus);
   }
@@ -79,7 +79,7 @@ const Trash = () => {
     setUnsortedTrashData(() => trashNotesPicker());
 
     // configuração da notificação
-    configNotification("Note deleted.", <HiCheckCircle/>);
+    configNotification("Note deleted.", <MdDeleteForever/>);
     setNotificationStatus(() => true);
     removeNotificationByDelay(notificationStatus);
   }
