@@ -98,33 +98,36 @@ const Home = () => {
         if (id === element.id)
         return element;
       });
-      setPreviewContent(() => tempNote[0].content);
       setPreviewTitle(() => tempNote[0].title);
+      setPreviewContent(() => tempNote[0].content);
       setDefaultNoteId(() => tempNote[0].id);
     }
 
     // salva a nota editada
     const saveDefaultNote = () => {
-      for (let i = 0; i < data.length; i++) {
-        if (data[i].id === defaultNoteId) {
-          data[i].title = defaultTitleValue;
-          data[i].content = defaultContetValue;
-
+      // transforma o array de objetos
+      // insere novos dados na nota se tiver sido atualizada
+      data.map(element => {
+        if (element.id === defaultNoteId) {
           // verifica a existencia de conteudo da nota
           // se vazio, salva o conteudo original 
-          if (data[i].title === '' && defaultTitleValue === '') {
-            data[i].title = previewTitle;
-            data[i].content = previewContent;
-          } else if (data[i].content === '') {
-            data[i].content = previewContent;
-          } else if (data[i].title === '') {
-            data[i].title = previewTitle;
+          if (defaultTitleValue !== '' && defaultContetValue !== '') {
+            element.title = defaultTitleValue;
+            element.content = defaultContetValue;
+          } else if (defaultTitleValue !== '') {
+            element.title = defaultTitleValue;
+          } else if (defaultContetValue !== '') {
+            element.content = defaultContetValue;
           }
         }
-      }
+      });
+
       setDataToStorage('notes', data);
       setData(() => retrieveNotes('notes'));
+      setDefaultNoteId('');
       closeEditInterface();
+      setDefaultTitleValue('');
+      setDefaultContetValue('');
     }
   
     // renderiza a interface

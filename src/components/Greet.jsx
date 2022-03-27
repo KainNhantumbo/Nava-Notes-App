@@ -1,8 +1,12 @@
 import { GreetContainer } from '../styles/greet';
 
-const Greet = () => {
-  const hours = new Date().getHours();
+import { ThemeContext } from "styled-components";
+import { useContext } from "react";
 
+const Greet = () => {
+  const colors = useContext(ThemeContext);
+  const hours = new Date().getHours();
+  
   const setGreetings = () => {
     let message = null;
     if (hours >= 0 && hours <= 12) {
@@ -16,7 +20,7 @@ const Greet = () => {
   }
 
   return ( 
-    <GreetContainer>
+    <GreetContainer { ...colors }>
       <span>
         { setGreetings() }
       </span>

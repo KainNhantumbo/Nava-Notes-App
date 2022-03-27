@@ -29,5 +29,27 @@ const themeSwitcher = (theme) => {
     }
   }
 }
+export const fakeDark = () => {
+  return {
+    primaryColor: '135, 86, 112',
+    secondaryColor: '76, 94, 104',
+    backgroundColor: '45, 45, 45',
+    textColor: '255, 255, 255',
+    brownColor: '240, 236, 227',
+    fullDarkColor: '0, 0, 0',
+    whiteColor: '62, 65, 69'
+  }
+}
+export const fakeLight = () => {
+  return {
+    primaryColor: '90, 111, 122',
+    secondaryColor: '199, 177, 152',
+    backgroundColor: '255, 255, 255',
+    textColor: '48, 51, 57',
+    brownColor: '240, 236, 227',
+    fullDarkColor: '0, 0, 0',
+    whiteColor: '255, 255, 255'
+  }
+}
 // exporta o objeto cores
 export const colors = themeSwitcher(modeState);

@@ -1,6 +1,5 @@
 import { UserUIContainer } from "../styles/userUi";
 import { HiUserCircle } from "react-icons/hi";
-import PropTypes from 'prop-types';
 
 const UserUI = ({ photo, email, username }) => {
   return (
