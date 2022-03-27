@@ -18,7 +18,7 @@ const ModeSwitcher = ({ text }) => {
       }
     });
   }
-
+  
   const selectState = (modes) => {
     if (modes === 'dark') {
       return true;
@@ -26,13 +26,11 @@ const ModeSwitcher = ({ text }) => {
       return false;
     }
   }
-
+  
   useEffect(() => {
     setDataToStorage('modeData', mode);
-    console.log('sdhaiusd');
   }, [mode]);
-
-
+  
   return (
     <ModeSwitcherStyles>
       <div>

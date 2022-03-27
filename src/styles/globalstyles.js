@@ -20,7 +20,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: "PT Sans", 'Montserrat', monospace, sans-serif;
+    font-family: 'PT Sans', 'Montserrat', monospace, sans-serif;
     background-color: rgb(${colors.backgroundColor});
     position: relative;
   }

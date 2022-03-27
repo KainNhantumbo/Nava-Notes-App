@@ -41,11 +41,13 @@ export const StyledTextAreaContainer = styled.section`
   input {
     padding-right: 20px;
     border-radius: 5px 5px 0 0;
+    font-size: 16pt;
   }
 
   textarea {
     resize: none;
     line-height: 1.6rem;
+    font-size: 12pt;
 
     ::-webkit-scrollbar {
       background: transparent;

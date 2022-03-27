@@ -32,6 +32,8 @@ export const NoteContainer = styled.div`
     overflow: hidden;
     max-width: 75%;
     padding: .2em 0;
+    font-size: 14pt;
+    font-weight: 500;
   }
   
   .noteContent {

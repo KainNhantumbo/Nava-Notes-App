@@ -1,13 +1,10 @@
 import { AboutContainer } from "../styles/about";
 import { HiCode, HiPuzzle } from 'react-icons/hi';
 import { FaGithub } from "react-icons/fa";
-import { ThemeContext } from "styled-components";
-import { useContext } from "react";
 
 const About = () => {
-  const colors = useContext(ThemeContext);
   return (
-    <AboutContainer {...colors} >
+    <AboutContainer>
       <div>
         <section>
           <span>

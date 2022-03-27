@@ -1,4 +1,5 @@
 import Styled from 'styled-components';
+import { colors } from './colors';
 
 export const GreetContainer = Styled.section `
   display: grid;
@@ -9,7 +10,7 @@ export const GreetContainer = Styled.section `
     padding: .5em;
     font-size: .8rem;
     text-transform: capitalize;
-    background: ${(colors) => {
+    background: ${() => {
       if (colors.primaryColor === '135, 86, 112') {
         return `rgba(${colors.primaryColor}, .3)` 
       } else {
@@ -19,6 +20,6 @@ export const GreetContainer = Styled.section `
     border-radius: 12px;
     text-align: center;
     font-weight: 600;
-    color: rgba(${colors => colors.textColor}, .8);
+    color: rgba(${colors.textColor}, .8);
   }
 `;
