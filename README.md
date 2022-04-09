@@ -9,19 +9,21 @@ Those are some in app screenshots:
 
 
 ## Features
-- This application can perform all CRUD operations to manipulate note.
+- This application can perform all CRUD operations to manipulate notes.
 
-- Edit created notes. Preserves the note formating structure after saving or updating.
+- Edit created notes. Preserves the note formating structure after saving or updating a note.
 
 - Uses the browser localStorage to save all application data.
 
-- Restore function: you can restore a deleted note, since the a stored in trash.
+- Restore function: you can restore a deleted note, since they are stored in trash after delete.
 
-- Delete all trash notes by one click.
+- Delete permanentilly all trash notes by one click.
+
+- Shows a non intrusive confirmation notification after doing some actions like deleting a note, restoring a note and wipping the trash.
 ## Known issues
 - Switching between dark and light modes requires a page refresh.
 
-- There a only two themes.
+- There are only two themes.
 
 - sort by last or first modifification doesn't work, yet.
 
