@@ -8,14 +8,14 @@ const SortOptions = () => {
   const sortData = sortDataPicker();
   const [value, setValue] = useState(sortData);
 
-  const selectRadioOption = (pattern) => {
-    const patterns = ['crescentTitle', 'decrescentTitle', 'firstModification', 'lastModification'];
-    const validate = patterns.forEach(element => {
-      if (element === pattern)
-        return true;
-    });
-    return validate;
-  }
+  // const selectRadioOption = (pattern) => {
+  //   const patterns = ['crescentTitle', 'decrescentTitle', 'firstModification', 'lastModification'];
+  //   const validate = patterns.forEach(element => {
+  //     if (element === pattern)
+  //       return true;
+  //   });
+  //   return validate;
+  // }
 
   useEffect(() => {
     setDataToStorage('sortData', value);

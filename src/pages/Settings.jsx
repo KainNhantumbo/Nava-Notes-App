@@ -1,7 +1,6 @@
 import Header from '../components/Header';
 import { SettingsContainer } from '../styles/settings';
 import ModeSwitcher from '../components/ModeSwitcher';
-import ThemeOptions from '../components/ThemeOptions';
 import SortOptions from '../components/SortOptions';
 import About from '../components/About';
 import UserUI from '../components/UserUI';

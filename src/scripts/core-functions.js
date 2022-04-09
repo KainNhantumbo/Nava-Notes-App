@@ -79,25 +79,25 @@ export const sortNotes = (notesData) => {
     case 'crescentTitle':
       notesData.sort((a, b) => {
         if (a.title > b.title) return true;
-        if (a.title < b.title) return -1;
+        return -1;
       });
       break;
     case 'decrescentTitle':
       notesData.sort((a, b) => {
         if (a.title < b.title) return true;
-        if (a.title > b.title) return -1;
+        return -1;
       });
       break;
     case 'firstModification':
       notesData.sort((a, b) => {
         if (a.date > b.date) return true;
-        if (a.date < b.date) return -1;
+        return -1;
       });
       break;
     case 'lastModification':
       notesData.sort((a, b) => {
         if (a.date < b.date) return true;
-        if (a.date > b.date) return -1;
+        return -1;
       });
       break;
     default:

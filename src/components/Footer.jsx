@@ -31,7 +31,7 @@ const footerButtons = () => {
   return (
     data.sort((a, b) => {
       if (a.description > b.description) return true;
-      if (a.description < b.description) return -1;
+      return -1;
     })
   );
 }
