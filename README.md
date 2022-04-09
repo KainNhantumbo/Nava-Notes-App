@@ -2,6 +2,7 @@
 Those are some in app screenshots:
 
 ![](./src/img/img5.jpeg 'notes panel in dark mode')
+![](./src/img/img1.jpeg 'add note modal panel in light mode')
 ![](./src/img/img2.jpeg 'settings in light mode')
 ![](./src/img/img3.jpeg 'settings in dark mode')
 ![](./src/img/img4.jpeg 'add a new note modal in dark mode')
@@ -29,9 +30,9 @@ Those are some in app screenshots:
 
 - You can't log into an cloud account to save notes, since the app is using localStorage. If you switch the browser you will not acess the notes. If the browser cache and storage are cleared, all application data and settings will be lost.
 
-## Available scripts for testing this application
-
-In the project directory, you can run:
+## Scripts for testing
+Make sure you have installed **Node.js (v16.0.3 or later recommended) and also comes with npm**.\
+In the project directory, you can run in terminal:
 
 - #### npm start
 
@@ -43,11 +44,11 @@ You may also see any lint errors in the console.
 
 - #### npm run build
 
-Builds the app for production to the `build` folder.\
+Builds the app for production to the **build folder**.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 ## Contact 
-E-mail: [nhantumbok@gmail.com](nhantumbok@gmail.com 'Send an email')  
+E-mail: [nhantumbok@gmail.com](nhantumbok@gmail.com 'Send an email')\
 Github: [https://github.com/KainNhantumbo](https://github.com/KainNhantumbo 'See my github profile')
 
 ## License
