@@ -6,6 +6,8 @@ export const GreetContainer = Styled.section `
   max-width: 15em;
   margin: 0 auto;
 
+  /* ${(props)=> console.log(props.theme)} */
+
   span {
     padding: .5em;
     font-size: .8rem;
