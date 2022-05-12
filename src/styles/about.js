@@ -1,105 +1,60 @@
 import styled from 'styled-components';
-import { colors } from './colors';
 
 export const AboutContainer = styled.section`
-  @keyframes aboutAnimation {
-    from {
-      border: 2px solid ${() => {
-        if (colors.primaryColor === '135, 86, 112') {
-          return `rgb(${colors.primaryColor})`
-        } else {
-          return `rgb(${colors.secondaryColor})`
-        }
-      }};
-      transition: .5s ease-in-out;
-    }
-    
-    to {
-      border: 2px solid ${() => {
-        if (colors.primaryColor === '135, 86, 112') {
-          return `rgba(${colors.textColor}, .8)`
-        } else {
-          return `rgb(${colors.primaryColor})`
-        }
-      }};
-      transition: .5s ease-in-out;
-    }
-  }
+	@keyframes aboutAnimation {
+		from {
+			border: 2px solid rgb(${({ theme }) => theme.primary});
+			transition: 0.5s ease-in-out;
+		}
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+		to {
+			border: 2px solid rgb(${({ theme }) => theme.primary});
+			transition: 0.5s ease-in-out;
+		}
+	}
 
-  div {
-    width: 90%;
-    max-width: 400px;
-    margin: .5em 0;
-    position: relative;
-    padding: 10px 8px;
-    line-height: 2em;
-    border-radius: 12px;
-    color: rgba(${colors.textColor}, .8);
-    border: 2px solid transparent;
-    animation: aboutAnimation 2000ms ease-in-out forwards infinite;
-    user-select: none;
-    box-shadow: 0 0 5px ${() => {
-      if (colors.primaryColor === '135, 86, 112') {
-        return `rgba(${colors.fullDarkColor}, .6)`
-      } else {
-        return `rgba(${colors.primaryColor}, .6)`
-      }
-    }};
-    background: ${() => {
-      if (colors.primaryColor === '135, 86, 112') {
-        return `rgb(${colors.whiteColor})`
-      } else {
-        return `rgb(${colors.backgroundColor})`
-      }
-    }};
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 
-    section {
-      text-align: center;
-      font-weight: 600;
-      color: ${() => {
-        if (colors.primaryColor === '135, 86, 112') {
-          return `rgb(${colors.primaryColor})`
-        } else {
-          return `rgb(${colors.primaryColor})`
-        }
-      }};
-      line-height: 1.6rem;
+	div {
+		width: 90%;
+		max-width: 400px;
+		margin: 0.5em 0;
+		position: relative;
+		padding: 10px 8px;
+		line-height: 2em;
+		border-radius: 12px;
+		color: rgb(${({ theme }) => theme.text});
+		border: 2px solid transparent;
+		animation: aboutAnimation 2000ms ease-in-out forwards infinite;
+		user-select: none;
+		box-shadow: 0 0 5px rgb(${({ theme }) => theme.primary});
+		background: rgb(${({ theme }) => theme.background});
 
-      span {
-        padding: 2px 8px;
-        padding-left: 1em;
-        border-radius: 12px;
-        position: relative;
-        color: ${() => {
-          if (colors.primaryColor === '135, 86, 112') {
-            return `rgba(${colors.textColor}, .5)`
-          } else {
-            return `rgb(${colors.secondaryColor})`
-          }
-        }};
+		section {
+			text-align: center;
+			font-weight: 600;
+			color: rgb(${({theme})=> theme.primary});
+			line-height: 1.6rem;
 
-        svg {
-          width: 1.2em;
-          height: 1.2em;
-          position: absolute;
-          top: .15em;
-          left: -.4em;
-          color: ${() => {
-            if (colors.primaryColor === '135, 86, 112') {
-              return `rgba(${colors.textColor}, .6)`
-            } else {
-              return `rgb(${colors.primaryColor})`
-            }
-          }};
-        }
-      }
-    }
+			span {
+				padding: 2px 8px;
+				padding-left: 1em;
+				border-radius: 12px;
+				position: relative;
+				color: rgb(${({theme})=> theme.text});
 
-  }
-
+				svg {
+					width: 1.2em;
+					height: 1.2em;
+					position: absolute;
+					top: 0.15em;
+					left: -0.4em;
+					color: rgb(${({theme})=> theme.text});
+				}
+			}
+		}
+	}
 `;

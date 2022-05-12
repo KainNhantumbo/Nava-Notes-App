@@ -26,19 +26,17 @@ const App = () => {
 	};
 
 	return (
-		<>
-			<GlobalStyles />
-			<ThemeContext.Provider value={{ changeTheme }}>
-				<ThemeProvider theme={theme}>
-					<Routes>
-						<Route path='/' element={<Home />} />
-						<Route path='/pages/Trash' element={<Trash />} />
-						<Route path='/pages/Settings' element={<Settings />} />
-					</Routes>
-				</ThemeProvider>
-			</ThemeContext.Provider>
-			<Footer />
-		</>
+		<ThemeContext.Provider value={{ changeTheme }}>
+			<ThemeProvider theme={theme}>
+				<GlobalStyles />
+				<Routes>
+					<Route path='/' element={<Home />} />
+					<Route path='/pages/Trash' element={<Trash />} />
+					<Route path='/pages/Settings' element={<Settings />} />
+				</Routes>
+				<Footer />
+			</ThemeProvider>
+		</ThemeContext.Provider>
 	);
 };
 

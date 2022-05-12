@@ -1,19 +1,18 @@
-import { createGlobalStyle } from "styled-components";
-import { colors } from "./colors";
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
   html {
     ::-webkit-scrollbar {
-      background: rgb(${colors.primaryColor});
+      background: rgb(${({ theme }) => theme.primary});
       width: .2em;
     }
 
     ::-webkit-scrollbar-thumb {
-      background: rgb(${colors.secondaryColor});
+      background: rgb(${({ theme }) => theme.secondary});
       border-radius: 12px;
       
       &:hover {
-        background-color: rgba(${colors.fullDarkColor}, .9);
+        background-color: rgb(${({ theme }) => theme.fullDark});
         opacity: 0.2;
       }
     }
@@ -21,7 +20,7 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: 'PT Sans', 'Montserrat', monospace, sans-serif;
-    background-color: rgb(${colors.backgroundColor});
+    background-color:rgb(${({ theme }) => theme.background});
     position: relative;
   }
 `;
