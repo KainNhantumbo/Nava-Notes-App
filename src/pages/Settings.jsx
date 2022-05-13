@@ -11,7 +11,7 @@ export default function Settings() {
 		<SettingsContainer>
 			<Header title={'Settings'} icon={<FaCogs />} />
 			<div className='settingsBody'>
-				<UserUI />
+				{/* <UserUI /> */}
 
 				<h2> Mode Switcher </h2>
 				<ModeSwitcher text='Dark Mode' />

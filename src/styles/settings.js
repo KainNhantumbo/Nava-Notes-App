@@ -5,6 +5,7 @@ export const SettingsContainer = styled.div`
 		margin-top: 0.5em;
 		margin-bottom: 5em;
 		display: grid;
+		padding-top: 80px;
 
 		h2 {
 			color: rgb(${({ theme }) => theme.primary});

@@ -45,10 +45,13 @@ export const InterfaceStyles = styled.section`
 			outline: none;
 			top: 0.7em;
 			left: 2em;
-			background: rgb(${({ theme }) => theme.primary});
+			background: rgb(${({ theme }) => theme.seconday});
 
 			:hover {
 				background: rgb(${({ theme }) => theme.text});
+				svg {
+					color: rgb(${({ theme }) => theme.white});
+				}
 			}
 
 			svg {
@@ -56,15 +59,11 @@ export const InterfaceStyles = styled.section`
 				height: 20px;
 				stroke-width: 1px;
 				color: rgb(${({ theme }) => theme.fullDark});
-
-				:hover {
-					color: rgb(${({ theme }) => theme.white});
-				}
 			}
 		}
 
 		h5 {
-			font-weight: 600;
+			font-weight: 500;
 			font-size: 1.2rem;
 			user-select: none;
 			color: rgb(${({ theme }) => theme.text});
@@ -80,7 +79,6 @@ export const InterfaceStyles = styled.section`
 		max-width: 400px;
 		border-radius: 0 0 5px 5px;
 		padding: 8px 10px;
-		box-shadow: 0 0 5px rgba(${({ theme }) => theme.fullDark}, 0.6);
 		background: rgb(${({ theme }) => theme.background});
 
 		div {

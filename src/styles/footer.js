@@ -16,8 +16,8 @@ export const FooterStyles = styled.footer`
 		display: flex;
 		align-items: center;
 		justify-content: space-evenly;
-		background: rgb(${({theme})=> theme.white});
-		box-shadow: 0 0 5px rgba(${({ theme }) => theme.fullDark}, 0.6);
+		background: rgb(${({ theme }) => theme.white});
+		box-shadow: 0 0 5px rgba(${({ theme }) => theme.shadows});
 		border-radius: 12px;
 		margin-bottom: 0.8em;
 		padding: 0.2em 0;
@@ -40,10 +40,10 @@ export const FooterStyles = styled.footer`
 
 			button {
 				border: none;
-				background: rgb(${({ theme }) => theme.background});
+				background: rgba(${({ theme }) => theme.shadows}, 0.5);
 				border-radius: 50%;
 				position: relative;
-				padding: 0.6em;
+				padding: 5px;
 				cursor: pointer;
 				display: grid;
 				place-content: center;
@@ -57,10 +57,8 @@ export const FooterStyles = styled.footer`
 				}
 
 				svg {
-					width: 26px;
-					height: 26px;
-					top: calc(50% - 13px);
-					left: calc(50% - 13px);
+					width: 20px;
+					height: 20px;
 					fill: rgb(${({ theme }) => theme.primary});
 					user-select: none;
 					pointer-events: none;

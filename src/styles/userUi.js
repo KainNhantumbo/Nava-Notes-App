@@ -9,10 +9,8 @@ export const UserUIContainer = styled.section`
 		display: flex;
 		justify-content: flex-start;
 		flex-direction: row;
-
 		width: 90%;
 		max-width: 400px;
-		margin-top: 12vh;
 		padding: 10px 8px;
 		line-height: 2em;
 		border-radius: 12px;
@@ -51,7 +49,7 @@ export const UserUIContainer = styled.section`
 				padding: 0.2em 0.5em;
 				border-radius: 5px;
 				:hover {
-					background-color: rgb(${({ theme }) => theme.background});
+					background-color: rgb(${({ theme }) => theme.shadows});
 				}
 			}
 		}

@@ -1,13 +1,10 @@
-# Notes App
-Those are some in app screenshots:
+# Nava Notes App
+**Deployed version is now ready for usage and running at [https://github.com/KainNhantumbo](https://github.com/KainNhantumbo 'See my github profile')**  
+  
+These are some in app screenshots:
 
-![](./src/img/img5.jpeg 'notes panel in dark mode')
-![](./src/img/img1.jpeg 'add note modal panel in light mode')
-![](./src/img/img2.jpeg 'settings in light mode')
-![](./src/img/img3.jpeg 'settings in dark mode')
-![](./src/img/img4.jpeg 'add a new note modal in dark mode')
-![](./src/img/img7.jpeg 'trash panel in light mode')
-
+![](./src/assets/capture00.jpeg 'App in light mode')
+![](./src/assets/capture01.jpeg 'App in dark mode')
 
 ## Features
 - This application can perform all CRUD operations to manipulate notes.
@@ -21,10 +18,13 @@ Those are some in app screenshots:
 - Delete permanentilly all trash notes by one click.
 
 - Shows a non intrusive confirmation notification after doing some actions like deleting a note, restoring a note and wipping the trash.
-## Known issues
-- Switching between dark and light modes requires a page refresh.
 
-- There are only two themes.
+## Version 1.0.0 (naftar) Changelog
+- Refreshing page to change themes is now fixed.
+- Improved appearence app colors in both dark and light themes.
+- Adopted better responsive design layout to be fine and reliable to 280px. 
+- Abandoned **PT Sans** font, and switched to **Roboto Slab** for better readbility (thanks to community).
+## Known issues
 
 - sort by last or first modifification doesn't work, yet.
 
@@ -34,22 +34,30 @@ Those are some in app screenshots:
 Make sure you have installed **Node.js (v16.0.3 or later recommended) and also comes with npm**.\
 In the project directory, you can run in terminal:
 
-- #### npm start
-
+```bash
+ npm start
+```
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-- #### npm run build
+```bash
+npm run build
+```
 
 Builds the app for production to the **build folder**.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 ## Contact 
 E-mail: [nhantumbok@gmail.com](nhantumbok@gmail.com 'Send an email')\
-Github: [https://github.com/KainNhantumbo](https://github.com/KainNhantumbo 'See my github profile')
+Github: [https://github.com/KainNhantumbo](https://github.com/KainNhantumbo 'See my github profile')  
+Portifolio: [https://portifolio-dev-kainnhantumbo.vercel.app](https://portifolio-dev-kainnhantumbo.vercel.app 'See my github profile')
+
+### If you like this project, please leave a star on this repository so I can continue improving this app.  
+### Greetings, Kain Nhantumbo from Mozambique.
+
 
 ## License
 Licensed under MIT License, Copyright &copy; 2022 Kain Nhantumbo.

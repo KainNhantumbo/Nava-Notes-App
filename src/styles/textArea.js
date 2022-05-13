@@ -9,11 +9,11 @@ export const StyledTextAreaContainer = styled.section`
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	margin-top: 12vh;
+	margin-top: 80px;
 
 	:focus {
 		border: rgb(${({ theme }) => theme.primary});
-		box-shadow: 0px 0px 5px 2px rgba(${({ theme }) => theme.secondary}, 0.8);
+		box-shadow: 0px 0px 5px 2px rgb(${({ theme }) => theme.shadows});
 		outline: none;
 		transition: all 0.5s ease;
 	}
@@ -29,7 +29,7 @@ export const StyledTextAreaContainer = styled.section`
 		background: rgb(${({ theme }) => theme.white});
 
 		::placeholder {
-			color: rgb(${({ theme }) => theme.text});
+			color: rgba(${({ theme }) => theme.text}, .7);
 		}
 	}
 
