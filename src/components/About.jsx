@@ -8,14 +8,14 @@ const About = () => {
       <div>
         <section>
           <span>
-          &copy; 2022 Nava Notes App
+          Copyright &copy; 2022 Nava Notes App
           </span>
         </section>
         <section>
           <span>
             App Version:
             <HiPuzzle />
-          </span> 0.0.9 (beta)
+          </span> 1.0.0 (Naftar)
         </section>
         <section>
           <span>

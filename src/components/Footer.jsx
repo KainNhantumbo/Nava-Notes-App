@@ -3,6 +3,7 @@ import LargerButtons from "./LargerButtons";
 import { Link } from 'react-router-dom';
 import { HiCollection, HiCog, HiTrash } from 'react-icons/hi';
 import { FooterStyles } from "../styles/footer";
+import { FaCogs } from 'react-icons/fa';
 
 const footerButtons = () => {
   const cogIcon = <HiCog />;
@@ -12,7 +13,7 @@ const footerButtons = () => {
   // dados e detalhes de cada botao no footer
   const data = [
     {
-      icon: cogIcon,
+      icon: <FaCogs/>,
       description: 'Settings',
       path: '/pages/Settings'
     }, {

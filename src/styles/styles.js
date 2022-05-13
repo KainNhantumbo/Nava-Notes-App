@@ -51,7 +51,7 @@ export const StyledSearch = styled.label`
 		border-radius: 15px;
 		padding: 2px 5px 5px 28px;
 		line-height: 5em;
-		background-color: rgba(${({ theme }) => theme.primary}, 0.8);
+		background-color: rgba(${({ theme }) => theme.inner}, 0.8);
 		color: rgb(${({ theme }) => theme.text});
 
 		&:focus {
@@ -87,11 +87,12 @@ export const AddNoteButton = styled.div`
 		border-radius: 30px;
 		display: grid;
 		place-content: center;
+		background: rgb(${({ theme }) => theme.inner});
 
 		:hover {
 			transform: scale(1.05);
 			transition: all 0.2s ease-out;
-			box-shadow: 0 0 5px rgba(${({ theme }) => theme.fullDark}, 0.6);
+			box-shadow: 0 0 5px rgb(${({ theme }) => theme.white});
 		}
 
 		svg {

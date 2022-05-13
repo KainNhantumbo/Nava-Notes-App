@@ -4,25 +4,24 @@ import ModeSwitcher from '../components/ModeSwitcher';
 import SortOptions from '../components/SortOptions';
 import About from '../components/About';
 import UserUI from '../components/UserUI';
-import { HiCog } from 'react-icons/hi';
+import { FaCogs } from 'react-icons/fa';
 
 export default function Settings() {
-  return (
-    <SettingsContainer>
-      <Header title={'Settings'} 
-        icon={<HiCog/>}
-      />
-      <div className='settingsBody'>
-        <UserUI />
+	return (
+		<SettingsContainer>
+			<Header title={'Settings'} icon={<FaCogs />} />
+			<div className='settingsBody'>
+				<UserUI />
 
-        <h2> Mode Switcher </h2>
-        <ModeSwitcher text='Dark Mode (beta: requires reload)' />
+				<h2> Mode Switcher </h2>
+				<ModeSwitcher text='Dark Mode' />
 
-        <h2> Sort Notes </h2>
-        <SortOptions />
-        <h2> About </h2>
-        <About />
-      </div>
-    </SettingsContainer>
-  );
+				<h2> Sort Notes </h2>
+				<SortOptions />
+
+				<h2> About </h2>
+				<About />
+			</div>
+		</SettingsContainer>
+	);
 }

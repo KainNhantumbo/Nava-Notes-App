@@ -8,7 +8,8 @@ import AddNoteInterface from '../components/AddNoteInterface';
 import EditNotesInterface from '../components/EditNotesInterface'
 import Notification from '../components/Notification';
 import { SearchBox } from '../components/SearchBox';
-import { HiPencil, HiPencilAlt, HiCheckCircle } from 'react-icons/hi';
+import { HiCheckCircle } from 'react-icons/hi';
+import { FaEdit, FaFeather, FaPaperPlane } from 'react-icons/fa';
 import { AddNoteButton } from '../styles/styles';
 import { ShowModal, trashNotesPicker } from '../scripts/core-functions';
 import { timeSetter } from '../scripts/core-date';
@@ -206,13 +207,13 @@ const Home = () => {
     <>
       <Header title="Notes"
         child={<SearchBox inputEvent={searchEngine} />}
-        icon={<HiPencil />}
+        icon={<FaEdit />}
       />
 
       <AddNoteButton>
         <Button className='addNoteButton'
           event={renderAddNoteInterface}
-          icon={<HiPencilAlt />}
+          icon={<FaFeather />}
         />
       </AddNoteButton>
 

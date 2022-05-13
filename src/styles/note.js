@@ -6,7 +6,7 @@ export const NoteContainer = styled.div`
 	justify-content: space-between;
 	flex-direction: column;
 	background: rgb(${({ theme }) => theme.white});
-	box-shadow: 0 0 5px rgba(${({ theme }) => theme.fullDark}, 0.6);
+	box-shadow: 0 0 10px rgba(${({ theme }) => theme.shadows});
 	margin-bottom: 0.5em;
 	padding: 1em;
 	border-radius: inherit;
@@ -39,10 +39,10 @@ export const NoteContainer = styled.div`
 	.noteDate {
 		padding: 0.5em;
 		font-size: 0.8rem;
-		background: rgba(${({ theme }) => theme.primary}, 0.8);
+		background: rgb(${({ theme }) => theme.shadows});
 		border-radius: 12px;
 		text-align: center;
-		font-weight: 600;
+		font-weight: 500;
 		color: rgb(${({ theme }) => theme.text});
 	}
 `;
