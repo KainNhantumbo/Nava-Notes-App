@@ -1,5 +1,5 @@
 # Nava Notes App
-**Deployed version is now ready for usage and running at [https://github.com/KainNhantumbo](https://github.com/KainNhantumbo 'See my github profile')**  
+**Deployed version is now ready for usage and running at [https://nava-notes-app.vercel.app](https://nava-notes-app.vercel.app 'Use app')**  
   
 These are some in app screenshots:
 
