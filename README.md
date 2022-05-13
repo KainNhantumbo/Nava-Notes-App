@@ -22,7 +22,7 @@ These are some in app screenshots:
 ## Version 1.0.0 (naftar) Changelog
 - Refreshing page to change themes is now fixed.
 - Improved appearence app colors in both dark and light themes.
-- Adopted better responsive design layout to be fine and reliable to 280px. 
+- Adopted better responsive design layout to be suitable and reliable to 280px, so everyone can enjoy it. 
 - Abandoned **PT Sans** font, and switched to **Roboto Slab** for better readbility (thanks to community).
 ## Known issues
 
@@ -55,8 +55,8 @@ E-mail: [nhantumbok@gmail.com](nhantumbok@gmail.com 'Send an email')\
 Github: [https://github.com/KainNhantumbo](https://github.com/KainNhantumbo 'See my github profile')  
 Portifolio: [https://portifolio-dev-kainnhantumbo.vercel.app](https://portifolio-dev-kainnhantumbo.vercel.app 'See my github profile')
 
-### If you like this project, please leave a star on this repository so I can continue improving this app.  
-### Greetings, Kain Nhantumbo from Mozambique.
+### If you like this project, please consider leaving a star on this repository so I can continue improving this app.  
+### With kindest regards, Kain Nhantumbo from Mozambique.
 
 
 ## License
