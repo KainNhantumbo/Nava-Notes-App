@@ -8,31 +8,6 @@ import { ThemeContext } from '../App';
 const ModeSwitcher = ({ text }) => {
 	const { changeTheme } = useContext(ThemeContext);
 
-  // const modeState = modeDataPicker();
-  // const [mode, setMode] = useState(() => modeState);
-
-  // const themeSwitcher = () => {
-  //   setMode(() => {
-  //     if (mode === 'light') {
-  //       setMode('dark');
-  //     } else {
-  //       setMode('light');
-  //     }
-  //   });
-  // }
-  
-  // const selectState = (modes) => {
-  //   if (modes === 'dark') {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // }
-  
-  // useEffect(() => {
-  //   setDataToStorage('modeData', mode);
-  // }, [mode]);
-
 	return (
 		<ModeSwitcherStyles>
 			<div>
@@ -40,7 +15,7 @@ const ModeSwitcher = ({ text }) => {
 					{text}
 					<HiSun />
 				</label>
-				<input type='checkbox' id='modeswitcher'  onChange={changeTheme} />
+				<input type='checkbox' id='modeswitcher' onChange={changeTheme} />
 			</div>
 		</ModeSwitcherStyles>
 	);

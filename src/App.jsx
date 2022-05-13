@@ -4,25 +4,25 @@ import Trash from './pages/Trash';
 import Settings from './pages/Settings';
 import Home from './pages/Home';
 import Footer from './components/Footer';
-import { setDataToStorage, modeDataPicker } from './scripts/core-functions';
 import { ThemeProvider } from 'styled-components';
-import React, { useState, useEffect, createContext } from 'react';
+import React, { useState, createContext } from 'react';
 import { darkTheme, lightTheme } from './styles/colors';
 
 export const ThemeContext = createContext();
 
 const App = () => {
 	const [theme, setTheme] = useState(lightTheme);
+	const [mode, setMode] = useState('light');
 
 	// changes the theme
 	const changeTheme = () => {
-		setTheme(() => {
-			if (theme === lightTheme) {
-				return darkTheme;
-			}
-			return lightTheme;
-		});
-		console.log(theme);
+		if (mode === 'dark') {
+			setMode(() => 'light');
+			setTheme(() => lightTheme);
+			return;
+		}
+		setMode(() => 'dark');
+		setTheme(() => darkTheme);
 	};
 
 	return (

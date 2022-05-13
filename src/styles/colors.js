@@ -20,12 +20,14 @@ export const lightTheme = {
 	white: '255, 255, 255',
 };
 
-export const colors = {
-	primaryColor: '90, 111, 122',
-	secondaryColor: '199, 177, 152',
-	backgroundColor: '255, 255, 255',
-	textColor: '48, 51, 57',
-	brownColor: '240, 236, 227',
-	fullDarkColor: '0, 0, 0',
-	whiteColor: '255, 255, 255',
+export const dark = {
+	primary: '108, 161, 246',
+	secondary: '64, 52, 82',
+	hover: '223, 235, 248',
+	font: '178, 177, 185',
+	inner: '55, 55, 55',
+	text: '240, 240,240',
+	shadows: '25, 25, 28',
+	background: '32, 33, 36',
+	backgroundAlt: '41, 42, 46',
 };
