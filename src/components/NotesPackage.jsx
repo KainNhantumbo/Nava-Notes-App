@@ -1,4 +1,3 @@
-import React, { useContext } from 'react';
 import Note from './Note';
 import EmptyNotesMessage from './EmptyNotesMessage';
 import { HiXCircle, HiPaperAirplane } from 'react-icons/hi';

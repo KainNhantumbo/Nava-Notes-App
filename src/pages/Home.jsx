@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, createContext } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Header from '../components/Header';
 import Button from '../components/Button';
@@ -7,14 +7,16 @@ import ConfirmModal from '../components/ConfirmModal';
 import AddNoteInterface from '../components/AddNoteInterface';
 import EditNotesInterface from '../components/EditNotesInterface'
 import Notification from '../components/Notification';
-import { SearchBox } from '../components/SearchBox';
 import { HiCheckCircle } from 'react-icons/hi';
-import { FaEdit, FaFeather, FaPaperPlane } from 'react-icons/fa';
+import { FaFeather } from 'react-icons/fa';
 import { AddNoteButton } from '../styles/styles';
 import { ShowModal, trashNotesPicker } from '../scripts/core-functions';
 import { timeSetter } from '../scripts/core-date';
 
 import { retrieveNotes, setDataToStorage, sortNotes } from '../scripts/core-functions';
+
+// search component context
+export const searchContext = createContext()
 
 const Home = () => {
   const { removeModal, removeNote, visible } = ShowModal();
@@ -112,12 +114,12 @@ const Home = () => {
         if (element.id === defaultNoteId) {
           // verifica a existencia de conteudo da nota
           // se vazio, salva o conteudo original 
-          if (defaultTitleValue !== '' && defaultContetValue !== '') {
+          if (defaultTitleValue && defaultContetValue) {
             element.title = defaultTitleValue;
             element.content = defaultContetValue;
-          } else if (defaultTitleValue !== '') {
+          } else if (defaultTitleValue) {
             element.title = defaultTitleValue;
-          } else if (defaultContetValue !== '') {
+          } else if (defaultContetValue) {
             element.content = defaultContetValue;
           }
         }
@@ -143,21 +145,20 @@ const Home = () => {
     };
 
   // pesquisa de notas 
-    const [searchValue, setSearchValue] = useState('');
     const [seachedNotes, setSearchedNotes] = useState([]);
     const searchEngine = (e) => {
-      setSearchValue(() => e.target.value);
-      const v = searchValue.toLowerCase();
-      if (v.length >= 2) {
-        const newNotesData = data.filter(elements => {
-          if (elements.title.toLowerCase().includes(v) || elements.content.toLowerCase().includes(v)) {
-            return elements;
-          } else {
-            return;
-          }
-        });
-        setSearchedNotes(newNotesData);
-      } else if (v.length <= 2) {
+      const value = e.target.value.toLowerCase();
+      const newNotesData = data.filter(elements => {
+        const notesTitle = elements.title.toLowerCase()
+        const notesContent = elements.content.toLowerCase()
+        if (notesTitle.includes(value) || notesContent.includes(value)) {
+          return elements;
+        } 
+        return;
+      });
+      setSearchedNotes(newNotesData);
+      
+      if (value.length < 1) {
         setSearchedNotes(() => ([]));
       }
     }
@@ -205,10 +206,9 @@ const Home = () => {
   // renderizacao de componentes
   return (
     <>
-      <Header title="Notes"
-        child={<SearchBox inputEvent={searchEngine} />}
-        icon={<FaEdit />}
-      />
+      <searchContext.Provider value={{searchEngine}}>
+        <Header />
+      </searchContext.Provider>
 
       <AddNoteButton>
         <Button className='addNoteButton'
