@@ -1,15 +1,11 @@
 import React from "react";
 import LargerButtons from "./LargerButtons";
 import { Link } from 'react-router-dom';
-import { HiCollection, HiCog, HiTrash } from 'react-icons/hi';
+import { HiCollection, HiTrash } from 'react-icons/hi';
 import { FooterStyles } from "../styles/footer";
 import { FaCogs } from 'react-icons/fa';
 
 const footerButtons = () => {
-  const cogIcon = <HiCog />;
-  const trashIcon = <HiTrash />
-  const homeIcon = <HiCollection />
-
   // dados e detalhes de cada botao no footer
   const data = [
     {
@@ -17,12 +13,12 @@ const footerButtons = () => {
       description: 'Settings',
       path: '/pages/Settings'
     }, {
-      icon: homeIcon,
+      icon: <HiCollection/>,
       description: 'Home',
       path: '/'
     },
     {
-      icon: trashIcon,
+      icon: <HiTrash/>,
       description: 'Trash',
       path: '/pages/Trash'
     }
