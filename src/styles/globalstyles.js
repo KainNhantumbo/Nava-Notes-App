@@ -23,4 +23,8 @@ export const GlobalStyles = createGlobalStyle`
     background-color:rgb(${({ theme }) => theme.background});
     position: relative;
   }
+
+  #root {
+    position: relative;
+  }
 `;

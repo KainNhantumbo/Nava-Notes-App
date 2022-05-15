@@ -1,7 +1,7 @@
 import HorizontalButtons from './HorizontalButtons';
-import { HiExclamation, HiX } from 'react-icons/hi';
+import { HiX } from 'react-icons/hi';
 import { ModalContainer } from '../styles/confirmModal';
-import { FaTrash } from 'react-icons/fa';
+import { FaExclamationCircle, FaTrash } from 'react-icons/fa';
 
 const ConfirmModal = ({ status, removeModal, action }) => {
 	const trashIcon = <FaTrash />;
@@ -11,11 +11,11 @@ const ConfirmModal = ({ status, removeModal, action }) => {
 		<>
 			{status === true ? (
 				<ModalContainer>
-					<div className='modalContainer'>
+					<div className='container'>
 						<div className='icon'>
-							<HiExclamation />
+							<FaExclamationCircle />
 						</div>
-						<span>Do you really want do delete this note?</span>
+						<span className={'info'}>Do you really want to delete?</span>
 						<div className='actions'>
 							<HorizontalButtons
 								event={action}
