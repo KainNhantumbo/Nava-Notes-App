@@ -5,8 +5,10 @@ import TrashNotesPackage from '../components/TrashNotesPackage';
 import Notification from '../components/Notification';
 import { MdDeleteForever } from 'react-icons/md';
 import { HiFire } from 'react-icons/hi';
-import { HiTrash, HiCheckCircle } from 'react-icons/hi';
+import { HiCheckCircle } from 'react-icons/hi';
 import { setDataToStorage, sortNotes, trashNotesPicker, retrieveNotes } from '../scripts/core-functions';
+import { FaTrashAlt } from 'react-icons/fa';
+import ConfirmModal from '../components/ConfirmModal';
 
 const Trash = () => {
   // pega as notas do localstorage
@@ -26,9 +28,7 @@ const Trash = () => {
   const [notificationIcon, setNotificationIcon] = useState(() => {
     return <HiCheckCircle/>;
   });
-  const [notificationInfo, setNotificationInfo] = useState(() => {
-    return "Sucess";
-  });
+  const [notificationInfo, setNotificationInfo] = useState("Sucess");
   const [notificationStatus, setNotificationStatus] = useState(false);
 
   // apaga permanentemente todas as notas do lixo
@@ -62,7 +62,7 @@ const Trash = () => {
     setUnsortedTrashData(() => trashNotesPicker());
 
     // configuração da notificação
-    configNotification("Note restaured", <HiCheckCircle/>);
+    configNotification("Note restored", <HiCheckCircle/>);
     setNotificationStatus(() => true);
     removeNotificationByDelay(notificationStatus);
   }
@@ -92,13 +92,11 @@ const Trash = () => {
 
     // remove a notificacao por delay
     const removeNotificationByDelay = (status) => {
-      if (status === true) {
-        return;
-      } else {
-        setTimeout(() => {
-          setNotificationStatus(() => false);
-        }, 3500);
-      }
+      if (status) return;
+      
+      setTimeout(() => {
+        setNotificationStatus(() => false);
+      }, 3500);
     }
 
     // seta o icone e descricao da notificação
@@ -115,7 +113,7 @@ const Trash = () => {
           icon={<HiFire/>}
           event={trashReseter}  
         />}
-        icon={<HiTrash />}
+        icon={<FaTrashAlt />}
       />
       <TrashNotesPackage 
         eventRestore={restoreNote}
@@ -130,6 +128,8 @@ const Trash = () => {
         btnEvent={removeNotification}
         icon={notificationIcon}
       />
+
+      <ConfirmModal status={true} />
     </>
   );
 }

@@ -80,7 +80,7 @@ export const NotificationContainer = Styled.section`
         height: 1.1em;
         position: absolute;
         top: .6em;
-        left: 4.6em;
+        left: 5.2em;
       }
     }
   }

@@ -3,7 +3,7 @@ import LargerButtons from "./LargerButtons";
 import { Link } from 'react-router-dom';
 import { HiCollection, HiTrash } from 'react-icons/hi';
 import { FooterStyles } from "../styles/footer";
-import { FaCogs } from 'react-icons/fa';
+import { FaCogs, FaTrash, FaTrashAlt } from 'react-icons/fa';
 
 const footerButtons = () => {
   // dados e detalhes de cada botao no footer
@@ -18,7 +18,7 @@ const footerButtons = () => {
       path: '/'
     },
     {
-      icon: <HiTrash/>,
+      icon: <FaTrashAlt/>,
       description: 'Trash',
       path: '/pages/Trash'
     }

@@ -1,36 +1,38 @@
 import HorizontalButtons from './HorizontalButtons';
-import { HiExclamation } from 'react-icons/hi';
-import { HiTrash } from 'react-icons/hi';
-import { HiX } from 'react-icons/hi';
+import { HiExclamation, HiX } from 'react-icons/hi';
+import { ModalContainer } from '../styles/confirmModal';
+import { FaTrash } from 'react-icons/fa';
 
-const ConfirmModal = ({ status, removeModal, removeNote }) => {
-  const trashIcon = <HiTrash />
-  const xIcon = <HiX />
+const ConfirmModal = ({ status, removeModal, action }) => {
+	const trashIcon = <FaTrash />;
+	const xIcon = <HiX />;
 
-  return (
-    <>
-      {
-        status === true ? (
-          <div className="modalContainer">
-            <section>
-              <div className='icon'>
-                <HiExclamation />
-              </div>
-              <span>
-                Do you really want do delete this note?
-              </span>
-              <div className='actions'>
-                <HorizontalButtons event={removeNote} icon={trashIcon} description={'Confirm'} />
-                <HorizontalButtons event={removeModal} icon={xIcon} description={'Cancel'} />
-              </div>
-            </section>
-          </div>
-        ) : (
-          null
-        )
-      }
-    </>
-  )
-}
+	return (
+		<>
+			{status === true ? (
+				<ModalContainer>
+					<div className='modalContainer'>
+						<div className='icon'>
+							<HiExclamation />
+						</div>
+						<span>Do you really want do delete this note?</span>
+						<div className='actions'>
+							<HorizontalButtons
+								event={action}
+								icon={trashIcon}
+								description={'Confirm'}
+							/>
+							<HorizontalButtons
+								event={removeModal}
+								icon={xIcon}
+								description={'Cancel'}
+							/>
+						</div>
+					</div>
+				</ModalContainer>
+			) : null}
+		</>
+	);
+};
 
 export default ConfirmModal;
