@@ -4,31 +4,17 @@ import { HiXCircle, HiPaperAirplane } from 'react-icons/hi';
 import { HiInformationCircle } from 'react-icons/hi';
 import Greet from './Greet';
 
-const NotesPackage =
-	({ eventRemoveBtn, eventDetailsBtn, searchedNotes, notesData }) => {
-		const deleteIcon = <HiXCircle />;
-		const infoIcon = <HiInformationCircle />;
-
-		const guest = (searchedNotes, notesData) => {
-			if (searchedNotes.length !== 0)
+const NotesPackage = ({
+	eventRemoveBtn,
+	eventDetailsBtn,
+	searchedNotes,
+	notesData,
+}) => {
+	const guest = (searchedNotes, notesData) => {
+		if (searchedNotes.length !== 0)
+			return searchedNotes.map((value, index) => {
 				return (
-					searchedNotes.map((value, index) => {
-						return <Note
-							id={value.id}
-							key={index}
-							note={value.title}
-							noteContent={value.content}
-							noteDate={value.createdAt}
-							eventDetailsBtn={eventDetailsBtn}
-							eventRemoveBtn={eventRemoveBtn}
-							firstIcon={infoIcon}
-							secondIcon={deleteIcon}
-						/>
-					})
-				)
-			return (
-				notesData.map((value, index) => {
-					return <Note
+					<Note
 						id={value.id}
 						key={index}
 						note={value.title}
@@ -36,32 +22,45 @@ const NotesPackage =
 						noteDate={value.createdAt}
 						eventDetailsBtn={eventDetailsBtn}
 						eventRemoveBtn={eventRemoveBtn}
-						firstIcon={infoIcon}
-						secondIcon={deleteIcon}
+						firstIcon={<HiInformationCircle />}
+						secondIcon={<HiXCircle />}
 					/>
-				})
-			)
-		}
+				);
+			});
+		return notesData.map((value, index) => {
+			return (
+				<Note
+					id={value.id}
+					key={index}
+					note={value.title}
+					noteContent={value.content}
+					noteDate={value.createdAt}
+					eventDetailsBtn={eventDetailsBtn}
+					eventRemoveBtn={eventRemoveBtn}
+					firstIcon={<HiInformationCircle />}
+					secondIcon={<HiXCircle />}
+				/>
+			);
+		});
+	};
 
-		const renderNotes = guest(searchedNotes, notesData);
+	const renderNotes = guest(searchedNotes, notesData);
 
-		return (
-			<section className="mainContainer">
-				<Greet />
-				
-				{
-					renderNotes.length === 0 || null ? (
-						<EmptyNotesMessage
-							label={'Oh! Looks like we have nothing to show...'}
-							message={`Add some notes!`}
-							icon={ <HiPaperAirplane/> }
-						/>
-					) : (
-						renderNotes
-					)
-				}
-			</section>
-		)
-	}
+	return (
+		<section className='mainContainer'>
+			<Greet />
+
+			{renderNotes.length === 0 || null ? (
+				<EmptyNotesMessage
+					label={'Oh! Looks like we have nothing to show...'}
+					message={`Add some notes!`}
+					icon={<HiPaperAirplane />}
+				/>
+			) : (
+				renderNotes
+			)}
+		</section>
+	);
+};
 
 export default NotesPackage;

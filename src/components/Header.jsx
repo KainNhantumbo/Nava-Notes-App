@@ -1,16 +1,12 @@
 import React from 'react';
-import { FaEdit } from 'react-icons/fa';
 import { HeaderStyled } from '../styles/header';
-import SearchBox from './SearchBox';
 
-const Header = () => {
+const Header = ({ title, child, icon }) => {
 	return (
 		<HeaderStyled className='headerContainer'>
-			<div>
-				<FaEdit />
-			</div>
-			<h1>Notes</h1>
-			<SearchBox />
+			<div>{icon}</div>
+			<h1>{title}</h1>
+			{child}
 		</HeaderStyled>
 	);
 };

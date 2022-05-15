@@ -8,11 +8,11 @@ import AddNoteInterface from '../components/AddNoteInterface';
 import EditNotesInterface from '../components/EditNotesInterface'
 import Notification from '../components/Notification';
 import { HiCheckCircle } from 'react-icons/hi';
-import { FaFeather } from 'react-icons/fa';
+import { FaEdit, FaFeather } from 'react-icons/fa';
 import { AddNoteButton } from '../styles/styles';
 import { ShowModal, trashNotesPicker } from '../scripts/core-functions';
 import { timeSetter } from '../scripts/core-date';
-
+import SearchBox from '../components/SearchBox';
 import { retrieveNotes, setDataToStorage, sortNotes } from '../scripts/core-functions';
 
 // search component context
@@ -206,8 +206,10 @@ const Home = () => {
   // renderizacao de componentes
   return (
     <>
-      <searchContext.Provider value={{searchEngine}}>
-        <Header />
+      <searchContext.Provider value={searchEngine}>
+        <Header title={'Notes'} child={<SearchBox/>} 
+          icon={<FaEdit/>}        
+        />
       </searchContext.Provider>
 
       <AddNoteButton>

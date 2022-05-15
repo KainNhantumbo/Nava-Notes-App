@@ -4,7 +4,7 @@ import { searchContext } from '../pages/Home';
 import { useContext } from 'react';
 
 export default function SearchBox() {
-	const { searchEngine } = useContext(searchContext);
+	const searchEngine = useContext(searchContext);
 	return (
 		<StyledSearch htmlFor='search'>
 			<input
