@@ -50,9 +50,9 @@ export const ModalContainer = styled.div`
 		gap: 20px;
 	}
 
-  .info {
-    font-weight: 500;
-  }
+	.info {
+		font-weight: 500;
+	}
 
 	.actions {
 		display: flex;

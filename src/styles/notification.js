@@ -51,7 +51,7 @@ export const NotificationContainer = Styled.section`
 
     span {
       padding-left: 2em;
-      font-weight: 600;
+      font-weight: 500;
       color: rgb(${({ theme }) => theme.text});
     }
 
