@@ -17,7 +17,6 @@ import ConfirmModal from '../components/ConfirmModal';
 
 const Trash = () => {
 	// confirm modal states
-	const [confirmAction, setConfirmAction] = useState(null);
 	const [modalState, setModalState] = useState(false);
 
 	// pega as notas do localstorage
@@ -45,7 +44,6 @@ const Trash = () => {
 		var trash = [];
 		setDataToStorage('trashData', trash);
 		setUnsortedTrashData(() => trashNotesPicker());
-		console.log('reset');
 		// configuração da notificação
 		configNotification('Trash wiped!', <MdDeleteForever />);
 		setNotificationStatus(() => true);
@@ -113,8 +111,6 @@ const Trash = () => {
 		setNotificationInfo(() => info);
 		setNotificationIcon(() => icon);
 	};
-
-	console.log(modalState);
 
 	return (
 		<>

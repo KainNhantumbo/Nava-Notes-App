@@ -15,7 +15,7 @@ const About = () => {
           <span>
             App Version:
             <HiPuzzle />
-          </span> 1.0.0 (Naftar)
+          </span> 1.0.1 (Naftar)
         </section>
         <section>
           <span>

@@ -19,6 +19,11 @@ These are some in app screenshots:
 
 - Shows a non intrusive confirmation notification after doing some actions like deleting a note, restoring a note and wipping the trash.
 
+
+## Version 1.0.1 (naftar) Changelog
+- Added a confirmation dialog when trying to wipe the trash.
+- Minor styling bugs fixed.
+
 ## Version 1.0.0 (naftar) Changelog
 - Refreshing page to change themes is now fixed.
 - Improved appearence app colors in both dark and light themes.

@@ -29,7 +29,7 @@ const Home = () => {
   const data = sortNotes(unsortedData);
   useEffect(() => {
     setData(() => retrieveNotes('notes'));
-  }, []);
+  } ,[]);
 
   // cria a interface para criacao de novas notas
     const [interfaceStatus, setInterfaceStatus] = useState(false);
