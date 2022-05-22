@@ -23,6 +23,7 @@ These are some in app screenshots:
 ## Version 1.1.0 change log
 - Upgraded react to version 18.0.0.
 - Switched CRA to Vite as development Engine.
+- Theme preferences are now saved on localstorage. 
 
 ## Version 1.0.1 change log
 - Added a confirmation dialog when trying to wipe the trash.
@@ -34,9 +35,7 @@ These are some in app screenshots:
 - Adopted better responsive design layout to be suitable and reliable to 280px, so everyone can enjoy it. 
 - Abandoned **PT Sans** font, and switched to **Roboto Slab** for better readbility (thanks to community).
 ## Known issues
-
 - sort by last or first modifification doesn't work, yet.
-
 - You can't log into an cloud account to save notes, since the app is using localStorage. If you switch the browser you will not acess the notes. If the browser cache and storage are cleared, all application data and settings will be lost.
 
 ## Scripts for testing
@@ -44,7 +43,7 @@ Make sure you have installed **Node.js (v16.0.3 or later recommended) and also c
 In the project directory, you can run in terminal:
 
 ```bash
- npm start
+ npm run dev
 ```
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
