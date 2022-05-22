@@ -6,6 +6,13 @@ import { ThemeContext } from '../App';
 const ModeSwitcher = ({ text }) => {
 	const { changeTheme } = useContext(ThemeContext);
 
+	// defines the checkbox state based on saved theme
+	const checkboxState = () => {
+		const mode = JSON.parse(localStorage.getItem('mode'));
+		if (mode === 'light') return false;
+		return true;
+	};
+
 	return (
 		<ModeSwitcherStyles>
 			<div>
@@ -13,7 +20,12 @@ const ModeSwitcher = ({ text }) => {
 					{text}
 					<HiSun />
 				</label>
-				<input type='checkbox' id='modeswitcher' onChange={changeTheme} />
+				<input
+					type='checkbox'
+					id='modeswitcher'
+					onChange={changeTheme}
+					checked={checkboxState()}
+				/>
 			</div>
 		</ModeSwitcherStyles>
 	);

@@ -11,18 +11,32 @@ import { darkTheme, lightTheme } from './styles/colors';
 export const ThemeContext = createContext();
 
 const App = () => {
-	const [theme, setTheme] = useState(lightTheme);
-	const [mode, setMode] = useState('light');
+	// picks theme configuration from localStorage
+	const themeDataPicker = () => {
+		let themeMode = JSON.parse(localStorage.getItem('mode'));
+		if (!themeMode || themeMode === undefined) {
+			themeMode = 'light';
+			localStorage.setItem('mode', JSON.stringify(themeMode));
+		}
+		return themeMode;
+	};
+	const themeData = themeDataPicker();
+	const [theme, setTheme] = useState(() => {
+		if (themeData == 'light') {
+			return lightTheme;
+		}
+		return darkTheme;
+	});
 
 	// changes the theme
 	const changeTheme = () => {
-		if (mode === 'dark') {
-			setMode(() => 'light');
-			setTheme(() => lightTheme);
+		if (themeData === 'light') {
+			setTheme(() => darkTheme);
+			localStorage.setItem('mode', JSON.stringify('dark'));
 			return;
 		}
-		setMode(() => 'dark');
-		setTheme(() => darkTheme);
+		setTheme(() => lightTheme);
+		localStorage.setItem('mode', JSON.stringify('light'));
 	};
 
 	return (
