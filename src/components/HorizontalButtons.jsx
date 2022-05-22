@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const HorizontalButtons = ({ icon, description, event }) => {
     return (
@@ -8,10 +7,6 @@ const HorizontalButtons = ({ icon, description, event }) => {
             <span> { description } </span>
         </button>
     );
-}
-
-HorizontalButtons.propTypes = {
-    description: PropTypes.string.isRequired
 }
 
 export default HorizontalButtons;

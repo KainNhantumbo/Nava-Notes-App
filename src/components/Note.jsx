@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import Button from './Button';
 import { NoteContainer } from '../styles/note';
 
@@ -17,10 +16,6 @@ const Note =
             </span>
         </NoteContainer>
     );
-}
-
-Note.propTypes = {
-    note: PropTypes.string.isRequired
 }
 
 export default Note;
