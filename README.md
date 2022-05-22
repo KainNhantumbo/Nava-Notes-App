@@ -20,12 +20,15 @@ These are some in app screenshots:
 - Shows a non intrusive confirmation notification after doing some actions like deleting a note, restoring a note and wipping the trash.
 
 
+## Version 1.1.0 change log
+- Upgraded react to version 18.0.0.
+- Switched CRA to Vite as development Engine.
 
-## Version 1.0.1 (naftar) Changelog
+## Version 1.0.1 change log
 - Added a confirmation dialog when trying to wipe the trash.
 - Minor styling bugs fixed.
 
-## Version 1.0.0 (naftar) Changelog
+## Version 1.0.0 change log
 - Refreshing page to change themes is now fixed.
 - Improved appearence app colors in both dark and light themes.
 - Adopted better responsive design layout to be suitable and reliable to 280px, so everyone can enjoy it. 
