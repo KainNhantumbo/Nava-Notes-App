@@ -38,16 +38,6 @@ export const retrieveNotes = () => {
   return notesData;
 }
 
-// pega o mode escuro ou claro para a aplicacao
-export const modeDataPicker = () => {
-  let mode = getDataFromStorage('modeData');
-  if (!mode || mode === undefined) {
-    mode = 'light';
-    setDataToStorage('modeData', mode)
-  }
-  return mode;
-}
-
 export const trashNotesPicker = () => {
   let trash = getDataFromStorage('trashData');
   if (!trash || trash === undefined) {

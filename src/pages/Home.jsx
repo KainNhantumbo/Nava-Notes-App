@@ -70,7 +70,8 @@ const Home = () => {
         id,
         title: titleValue,
         content: textValue,
-        createdAt: date
+        createdAt: date,
+        date: new Date().toISOString()
       }
 
       if (newNote.title.length === 0) return;
