@@ -1,6 +1,5 @@
 import Button from './Button';
 import { NoteContainer } from '../styles/note';
-import { HiInformationCircle, HiXCircle } from 'react-icons/hi';
 
 const Note = ({
 	id,
@@ -9,6 +8,8 @@ const Note = ({
 	eventRemoveBtn,
 	noteContent,
 	noteDate,
+	firstIcon,
+	secondIcon,
 }) => {
 	return (
 		<NoteContainer id={id}>
@@ -16,8 +17,8 @@ const Note = ({
 			<div className='noteContent'> {`${noteContent}`} </div>
 			<div className='noteDate'> {noteDate} </div>
 			<span className='buttonsContainer'>
-				<Button event={eventDetailsBtn} icon={<HiInformationCircle />} />
-				<Button event={eventRemoveBtn} icon={<HiXCircle />} />
+				<Button event={eventDetailsBtn} icon={firstIcon} />
+				<Button event={eventRemoveBtn} icon={secondIcon} />
 			</span>
 		</NoteContainer>
 	);
