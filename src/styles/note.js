@@ -73,8 +73,8 @@ export const NoteContainer = styled.div`
 				transition: all 0.2s ease-out;
 			}
 			svg {
-				width: inherit;
-				height: inherit;
+				width: 20px;
+				height: 20px;
 				fill: rgb(${({ theme }) => theme.primary});
 				user-select: none;
 				pointer-events: none;

@@ -1,10 +1,6 @@
 import Note from './Note';
 import EmptyNotesMessage from './EmptyNotesMessage';
-import {
-	HiXCircle,
-	HiPaperAirplane,
-	HiInformationCircle,
-} from 'react-icons/hi';
+import { HiPaperAirplane, TiTrash, TiEdit } from 'react-icons/all';
 import Greet from './Greet';
 
 const NotesPackage = ({
@@ -25,8 +21,8 @@ const NotesPackage = ({
 						noteDate={value.updatedAt}
 						eventDetailsBtn={eventDetailsBtn}
 						eventRemoveBtn={eventRemoveBtn}
-						firstIcon={<HiInformationCircle />}
-						secondIcon={<HiXCircle />}
+						firstIcon={<TiEdit />}
+						secondIcon={<TiTrash />}
 					/>
 				);
 			});
@@ -40,8 +36,8 @@ const NotesPackage = ({
 					noteDate={value.updatedAt}
 					eventDetailsBtn={eventDetailsBtn}
 					eventRemoveBtn={eventRemoveBtn}
-					firstIcon={<HiInformationCircle />}
-					secondIcon={<HiXCircle />}
+					firstIcon={<TiEdit />}
+					secondIcon={<TiTrash />}
 				/>
 			);
 		});

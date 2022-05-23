@@ -1,9 +1,7 @@
 import React from 'react';
 import Note from './Note';
 import EmptyNotesMessage from './EmptyNotesMessage';
-import { IoMdTrash } from 'react-icons/io';
-import { HiNewspaper } from 'react-icons/hi';
-import { MdRestore } from 'react-icons/md';
+import { HiNewspaper, BiHistory, TiTrash } from 'react-icons/all';
 
 const TrashNotesPackage =
 	({ eventDelete, eventRestore, trashNotes }) => {
@@ -26,8 +24,8 @@ const TrashNotesPackage =
 								noteDate={value.updatedAt}
 								eventDetailsBtn={eventRestore}
 								eventRemoveBtn={eventDelete}
-								firstIcon={<MdRestore/>}
-								secondIcon={<IoMdTrash/>}
+								firstIcon={<BiHistory/>}
+								secondIcon={<TiTrash/>}
 							/>
 						})
 					)

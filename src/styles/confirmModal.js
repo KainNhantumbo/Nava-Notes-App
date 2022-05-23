@@ -53,6 +53,7 @@ export const ModalContainer = styled.div`
 	.info {
 		color: rgb(${({ theme }) => theme.text});
 		font-weight: 500;
+		user-select: none;
 	}
 
 	.actions {
