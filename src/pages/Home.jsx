@@ -70,7 +70,7 @@ const Home = () => {
         id,
         title: titleValue,
         content: textValue,
-        createdAt: date,
+        updatedAt: date,
         date: new Date().toISOString()
       }
 
@@ -109,6 +109,7 @@ const Home = () => {
 
     // salva a nota editada
     const saveEditedNote = () => {
+      const date = timeSetter();
       // transforma o array de objetos
       // insere novos dados na nota se tiver sido atualizada
       data.map(element => {
@@ -123,7 +124,8 @@ const Home = () => {
           } else if (defaultContetValue) {
             element.content = defaultContetValue;
           }
-          element.date = new Date().toISOString()
+          element.updatedAt = date;
+          element.date = new Date().toISOString();
         }
       });
     console.log(data)

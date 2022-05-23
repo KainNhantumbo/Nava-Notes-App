@@ -45,4 +45,40 @@ export const NoteContainer = styled.div`
 		font-weight: 500;
 		color: rgb(${({ theme }) => theme.text});
 	}
+
+	.buttonsContainer {
+		display: flex;
+		justify-content: flex-start;
+		flex-direction: row;
+		position: absolute;
+		top: 0.8em;
+		right: 0.8em;
+		gap: 0.5em;
+
+		button {
+			width: 22px;
+			height: 22px;
+			border: none;
+			background: rgba(${({ theme }) => theme.shadows}, 0.5);
+			border-radius: 50%;
+			position: relative;
+			padding: 10px;
+			cursor: pointer;
+			display: grid;
+			place-content: center;
+
+			&:hover {
+				background-color: rgba(${({ theme }) => theme.primary}, 0.5);
+				transform: scale(1.1, 1.1);
+				transition: all 0.2s ease-out;
+			}
+			svg {
+				width: inherit;
+				height: inherit;
+				fill: rgb(${({ theme }) => theme.primary});
+				user-select: none;
+				pointer-events: none;
+			}
+		}
+	}
 `;

@@ -1,7 +1,6 @@
 import Note from './Note';
 import EmptyNotesMessage from './EmptyNotesMessage';
-import { HiXCircle, HiPaperAirplane } from 'react-icons/hi';
-import { HiInformationCircle } from 'react-icons/hi';
+import { HiPaperAirplane } from 'react-icons/hi';
 import Greet from './Greet';
 
 const NotesPackage = ({
@@ -19,11 +18,9 @@ const NotesPackage = ({
 						key={index}
 						note={value.title}
 						noteContent={value.content}
-						noteDate={value.createdAt}
+						noteDate={value.updatedAt}
 						eventDetailsBtn={eventDetailsBtn}
 						eventRemoveBtn={eventRemoveBtn}
-						firstIcon={<HiInformationCircle />}
-						secondIcon={<HiXCircle />}
 					/>
 				);
 			});
@@ -34,11 +31,9 @@ const NotesPackage = ({
 					key={index}
 					note={value.title}
 					noteContent={value.content}
-					noteDate={value.createdAt}
+					noteDate={value.updatedAt}
 					eventDetailsBtn={eventDetailsBtn}
 					eventRemoveBtn={eventRemoveBtn}
-					firstIcon={<HiInformationCircle />}
-					secondIcon={<HiXCircle />}
 				/>
 			);
 		});
