@@ -108,7 +108,7 @@ const Home = () => {
     }
 
     // salva a nota editada
-    const saveDefaultNote = () => {
+    const saveEditedNote = () => {
       // transforma o array de objetos
       // insere novos dados na nota se tiver sido atualizada
       data.map(element => {
@@ -123,9 +123,10 @@ const Home = () => {
           } else if (defaultContetValue) {
             element.content = defaultContetValue;
           }
+          element.date = new Date().toISOString()
         }
       });
-
+    console.log(data)
       setDataToStorage('notes', data);
       setData(() => retrieveNotes('notes'));
       setDefaultNoteId('');
@@ -244,7 +245,7 @@ const Home = () => {
         status={editInterfaceStatus}
         inputValue={previewTitle}
         textAreaValue={previewContent}
-        updateEvent={saveDefaultNote}
+        updateEvent={saveEditedNote}
       />
 
       <Notification
