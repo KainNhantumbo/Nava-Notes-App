@@ -128,7 +128,6 @@ const Home = () => {
           element.date = new Date().toISOString();
         }
       });
-    console.log(data)
       setDataToStorage('notes', data);
       setData(() => retrieveNotes('notes'));
       setDefaultNoteId('');
