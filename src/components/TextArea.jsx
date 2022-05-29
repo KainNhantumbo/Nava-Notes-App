@@ -6,15 +6,14 @@ const TextArea = ({ titleChangeEvent, textChangeEvent, textAreaValue, inputValue
     <StyledTextAreaContainer>
       <input type="text"
         placeholder='Title...'
-        defaultValue={inputValue}
+        value={inputValue}
         onChange={titleChangeEvent}
       />
       <textarea name="textArea" cols="30" rows="12"
         placeholder='Type a new note here...'
         onChange={textChangeEvent}
-        defaultValue={textAreaValue}
-      >
-      </textarea>
+        value={textAreaValue}
+      />
     </StyledTextAreaContainer>
   );
 }
