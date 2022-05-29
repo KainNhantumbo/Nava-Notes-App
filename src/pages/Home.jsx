@@ -210,7 +210,7 @@ const Home = () => {
 
 			<Notification
 				status={notificationStatus}
-				textContent={'Moved to trash'}
+				textContent={'Recicled'}
 				btnDescription={'Desmiss'}
 				btnEvent={removeNotification}
 				icon={<HiCheckCircle />}

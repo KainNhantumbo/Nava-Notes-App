@@ -42,10 +42,10 @@ export const NotificationContainer = Styled.section`
 
     svg {
       position: absolute;
-      top: .4em;
-      left: 1em;
-      width: 35px;
-      height: 35px;
+      top: 12px;
+      left: 8px;
+      width: 25px;
+      height: 25px;
       color: rgb(${({ theme }) => theme.text});
     }
 

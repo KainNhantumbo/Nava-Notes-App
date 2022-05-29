@@ -45,7 +45,7 @@ const Trash = () => {
 		setDataToStorage('trashData', trash);
 		setUnsortedTrashData(() => trashNotesPicker());
 		// configuração da notificação
-		configNotification('Trash wiped!', <MdDeleteForever />);
+		configNotification('Wiped!', <MdDeleteForever />);
 		setNotificationStatus(() => true);
 		removeNotificationByDelay(notificationStatus);
 	};
@@ -53,7 +53,7 @@ const Trash = () => {
 	// restaura do lixeira a nota selecionada
 	const restoreNote = (e) => {
 		const id = e.target.parentNode.parentNode.id;
-		const trashNote = trashData.filter((note) => {
+		const [trash_note] = trashData.filter((note) => {
 			if (note.id === id) {
 				return note;
 			}
@@ -63,13 +63,13 @@ const Trash = () => {
 				return note;
 			}
 		});
-		notesData.push(trashNote[0]);
+		notesData.push(trash_note);
 		setDataToStorage('notes', notesData);
 		setDataToStorage('trashData', notes);
 		setUnsortedTrashData(() => trashNotesPicker());
 
 		// configuração da notificação
-		configNotification('Note restored', <HiCheckCircle />);
+		configNotification('Restored', <HiCheckCircle />);
 		setNotificationStatus(() => true);
 		removeNotificationByDelay(notificationStatus);
 	};
@@ -86,27 +86,22 @@ const Trash = () => {
 		setUnsortedTrashData(() => trashNotesPicker());
 
 		// configuração da notificação
-		configNotification('Note deleted.', <MdDeleteForever />);
+		configNotification('Deleted', <MdDeleteForever />);
 		setNotificationStatus(() => true);
 		removeNotificationByDelay(notificationStatus);
 	};
 
-	// funcoes para gestao de notificao
-	// remove a notificacao pelo botao
 	const removeNotification = () => {
 		setNotificationStatus(() => false);
 	};
 
-	// remove a notificacao por delay
 	const removeNotificationByDelay = (status) => {
 		if (status) return;
-
 		setTimeout(() => {
 			setNotificationStatus(() => false);
 		}, 3500);
 	};
 
-	// seta o icone e descricao da notificação
 	const configNotification = (info, icon) => {
 		setNotificationInfo(() => info);
 		setNotificationIcon(() => icon);

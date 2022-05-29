@@ -21,6 +21,10 @@ These are some in app screenshots:
 
 - Shows a non intrusive confirmation notification after doing some actions like deleting a note, restoring a note and wipping the trash.
 
+## Version 1.1.1 change log
+-  Fixed empty 
+object data bug that was preventing notes to be correctly updated.
+- Icon or text notification overflow on small screens (up to 280px) fixed.
 ## Version 1.1.0 change log
 
 - Upgraded react to version 18.0.0.
