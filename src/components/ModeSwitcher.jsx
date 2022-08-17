@@ -1,10 +1,10 @@
 import { ModeSwitcherStyles } from '../styles/modeSwitcher';
 import { HiSun } from 'react-icons/hi';
 import { useContext } from 'react';
-import { ThemeContext } from '../App';
+import { useThemeContext } from '../context/ThemeContext';
 
 const ModeSwitcher = ({ text }) => {
-	const { changeTheme } = useContext(ThemeContext);
+	const { changeTheme } = useThemeContext();
 
 	// defines the checkbox state based on saved theme
 	const checkboxState = () => {
