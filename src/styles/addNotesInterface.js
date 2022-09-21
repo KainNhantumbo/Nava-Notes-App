@@ -78,7 +78,7 @@ export const InterfaceStyles = styled.section`
 		margin: 0 auto;
 		width: 90%;
 		max-width: 400px;
-		border-radius: 0 0 5px 5px;
+		border-radius: 0 0 10px 10px;
 		padding: 8px 10px;
 		background: rgb(${({ theme }) => theme.background});
 

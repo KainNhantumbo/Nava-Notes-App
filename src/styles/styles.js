@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Message = styled.section`
+export const MessageContainer = styled.section`
 	position: relative;
 	display: flex;
 	width: 12em;
@@ -15,7 +15,7 @@ export const Message = styled.section`
 	border-radius: 50%;
 	user-select: none;
 	gap: 0.8em;
-	background-color: rgba(${({ theme }) => theme.text}, 0.1);
+	background-color: rgba(${({ theme }) => theme.secondary}, 0.1);
 
 	svg {
 		position: absolute;
@@ -24,14 +24,14 @@ export const Message = styled.section`
 		top: 1.2em;
 		left: calc(12em - 7.5em);
 		color: rgb(${({ theme }) => theme.text});
-		transform: rotate(45deg);
+		
 	}
 	span {
 		padding-top: 5em;
 		text-align: center;
 		font-weight: 600;
 		color: rgb(${({ theme }) => theme.text});
-		line-height: 1.2rem;
+		line-height: 1.4rem;
 	}
 `;
 

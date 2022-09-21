@@ -19,7 +19,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: 'Roboto Slab','PT Sans', 'Montserrat', monospace, sans-serif;
+    font-family: 'Roboto Slab', Inter,'PT Sans', 'Montserrat', sans-serif;
     background-color:rgb(${({ theme }) => theme.background});
     position: relative;
   }

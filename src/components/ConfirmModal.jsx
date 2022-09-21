@@ -1,13 +1,12 @@
-import { HiX } from 'react-icons/hi';
-import { ModalContainer } from '../styles/confirmModal';
-import { FaExclamationCircle, FaTrash } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ModalContainer as Container } from '../styles/confirmModal';
+import { FaExclamationCircle, FaTrash, HiX } from 'react-icons/all';
 
 const ConfirmModal = ({ accept, deny, status }) => (
 	<>
 		<AnimatePresence>
 			{status && (
-				<ModalContainer
+				<Container
 					className='main'
 					onClick={(e) => {
 						const target = e.target.classList;
@@ -47,7 +46,7 @@ const ConfirmModal = ({ accept, deny, status }) => (
 							</button>
 						</div>
 					</motion.div>
-				</ModalContainer>
+				</Container>
 			)}
 		</AnimatePresence>
 	</>

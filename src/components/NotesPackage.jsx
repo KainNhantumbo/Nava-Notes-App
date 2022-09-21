@@ -1,7 +1,7 @@
 import Note from './Note';
 import EmptyNotesMessage from './EmptyNotesMessage';
 import Greet from './Greet';
-import { HiPaperAirplane, TiTrash, TiEdit } from 'react-icons/all';
+import { HiPaperAirplane, TiTrash, TiEdit, HiLightBulb } from 'react-icons/all';
 
 const NotesPackage = ({
 	eventRemoveBtn,
@@ -47,9 +47,9 @@ const NotesPackage = ({
 
 			{renderNotes.length === 0 || null ? (
 				<EmptyNotesMessage
-					label={'Oh! Looks like we have nothing to show...'}
+					label={'Your saved notes will appear here.'}
 					message={`Add some notes!`}
-					icon={<HiPaperAirplane />}
+					icon={<HiLightBulb/>}
 				/>
 			) : (
 				renderNotes

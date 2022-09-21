@@ -1,4 +1,4 @@
-import { Message as Container } from '../styles/styles';
+import { MessageContainer as Container } from '../styles/styles';
 
 const EmptyNotesMessage = ({ message, label, icon }) => (
 	<Container>

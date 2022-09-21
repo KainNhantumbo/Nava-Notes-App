@@ -1,14 +1,14 @@
 import Note from './Note';
 import EmptyNotesMessage from './EmptyNotesMessage';
-import { HiNewspaper, BiHistory, TiTrash } from 'react-icons/all';
+import { BiHistory, TiTrash, HiSparkles } from 'react-icons/all';
 
 const TrashNotesPackage = ({ eventDelete, eventRestore, trashNotes }) => (
 	<section className='mainContainer'>
 		{trashNotes.length == 0 || null ? (
 			<EmptyNotesMessage
-				label={'Nothing to show!'}
-				message={`Looks like the trash is empty.`}
-				icon={<HiNewspaper />}
+				label={'Brilliant!'}
+				message={`Looks like the trash is empty`}
+				icon={<HiSparkles />}
 			/>
 		) : (
 			trashNotes.map((value, index) => (
