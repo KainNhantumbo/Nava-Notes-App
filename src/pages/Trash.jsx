@@ -1,21 +1,22 @@
-import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
-import Button from '../components/Button';
 import TrashNotesPackage from '../components/TrashNotesPackage';
 import Notification from '../components/Notification';
-import { MdDeleteForever } from 'react-icons/md';
-import { HiFire } from 'react-icons/hi';
-import { HiCheckCircle } from 'react-icons/hi';
+import ConfirmModal from '../components/ConfirmModal';
+import { useState, useEffect } from 'react';
+import {
+	HiFire,
+	HiCheckCircle,
+	FaTrashAlt,
+	MdDeleteForever,
+} from 'react-icons/all';
 import {
 	setDataToStorage,
 	sortNotes,
 	trashNotesPicker,
 	retrieveNotes,
 } from '../scripts/core-functions';
-import { FaTrashAlt } from 'react-icons/fa';
-import ConfirmModal from '../components/ConfirmModal';
 
-export default function Trash () {
+export default function Trash() {
 	// confirm modal states
 	const [modalState, setModalState] = useState(false);
 
@@ -112,13 +113,14 @@ export default function Trash () {
 			<Header
 				title={'Trash'}
 				child={
-					<Button
-						description='Permanently Delete All'
-						icon={<HiFire />}
-						event={(e) => {
+					<button
+						onClick={(e) => {
 							setModalState(true);
 						}}
-					/>
+					>
+						<HiFire />
+						<span>Permanently Delete All</span>
+					</button>
 				}
 				icon={<FaTrashAlt />}
 			/>
@@ -147,4 +149,4 @@ export default function Trash () {
 			/>
 		</>
 	);
-};
+}

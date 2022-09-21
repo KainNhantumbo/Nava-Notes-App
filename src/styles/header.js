@@ -25,7 +25,7 @@ export const HeaderStyled = styled.div`
 		svg {
 			width: 2em;
 			height: 2em;
-			color: rgb(${({ theme }) => theme.text});
+			color: rgb(${({ theme }) => theme.neutral});
 		}
 	}
 
@@ -35,7 +35,7 @@ export const HeaderStyled = styled.div`
 		user-select: none;
 		padding-left: 1.8em;
 		font-size: 1.6rem;
-		color: rgb(${({ theme }) => theme.text});
+		color: rgb(${({ theme }) => theme.neutral});
 	}
 
 	button {
@@ -52,8 +52,9 @@ export const HeaderStyled = styled.div`
 		background-color: rgb(${({ theme }) => theme.background});
 
 		:hover {
-			box-shadow: 0 0 5px rgba(${({ theme }) => theme.fullDark}, 0.6);
+			box-shadow: 0 0 20px 1px rgba(${({ theme }) => theme.shadows}, 0.5);
 			transition: 0.2s ease-out;
+			cursor: pointer;
 		}
 
 		svg {

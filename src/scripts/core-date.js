@@ -32,3 +32,16 @@ const monthPicker = (month) => {
 
   return monthNames[month];
 }
+
+export const greetings = () => {
+  const hours = new Date().getHours();
+  let message = '';
+  if (hours >= 0 && hours <= 12) {
+    message = 'Hello, good morning!';
+  } else if (hours >= 12 && hours <= 18) {
+    message = 'Wellcome, good afternoon.';
+  } else if (hours >= 18 && hours <= 23) {
+    message = 'Good evening, have a good sleep!';
+  }
+  return message;
+};

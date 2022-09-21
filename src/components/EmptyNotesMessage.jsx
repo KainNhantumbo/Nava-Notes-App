@@ -1,14 +1,13 @@
-import React from 'react';
-import { Message } from '../styles/styles';
+import { Message as Container } from '../styles/styles';
 
 const EmptyNotesMessage = ({ message, label, icon }) => (
-	<Message>
+	<Container>
 		{icon}
 		<span>
 			{label} <br />
 			{message}
 		</span>
-	</Message>
+	</Container>
 );
 
 export default EmptyNotesMessage;

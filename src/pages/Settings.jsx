@@ -1,9 +1,9 @@
 import Header from '../components/Header';
-import { SettingsContainer as Container } from '../styles/settings';
 import ModeSwitcher from '../components/ModeSwitcher';
 import SortOptions from '../components/SortOptions';
 import About from '../components/About';
 import { FaCogs } from 'react-icons/fa';
+import { SettingsContainer as Container } from '../styles/settings';
 
 export default function Settings() {
 	return (

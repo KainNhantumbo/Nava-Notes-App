@@ -1,27 +1,15 @@
-import { GreetContainer } from '../styles/greet';
+import { greetings } from '../scripts/core-date';
+import { useState, useEffect } from 'react';
+import { GreetContainer as Container } from '../styles/greet';
 
-const Greet = () => {
-  const hours = new Date().getHours();
-  
-  const setGreetings = () => {
-    let message = null;
-    if (hours >= 0 && hours <= 12) {
-      message = 'Hello, good morning!';
-    } else if (hours >= 12 && hours <= 18){
-      message = 'Wellcome, good afternoon.';
-    } else if (hours >= 18 && hours <= 23){
-      message = 'Good evening, have a good sleep!'
-    }
-    return message;
-  }
-
-  return ( 
-    <GreetContainer>
-      <span>
-        { setGreetings() }
-      </span>
-    </GreetContainer>
-  );
+export default function Greet() {
+	const [greeting, setGreeting] = useState('');
+	useEffect(() => {
+		setGreeting(() => greetings());
+	}, []);
+	return (
+		<Container>
+			<span>{greeting}</span>
+		</Container>
+	);
 }
- 
-export default Greet;

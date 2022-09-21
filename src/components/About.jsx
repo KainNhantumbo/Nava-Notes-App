@@ -1,9 +1,9 @@
-import { AboutContainer } from '../styles/about';
+import { AboutContainer as Container } from '../styles/about';
 import { HiCode, HiPuzzle } from 'react-icons/hi';
 import { FaGithub } from 'react-icons/fa';
 
 const About = () => (
-	<AboutContainer>
+	<Container>
 		<div>
 			<section>
 				<span>Copyright &copy; 2022 Nava Notes App</span>
@@ -13,7 +13,7 @@ const About = () => (
 					App Version:
 					<HiPuzzle />
 				</span>
-				1.2.1
+				1.2.2
 			</section>
 			<section>
 				<span>
@@ -36,7 +36,7 @@ const About = () => (
 			</section>
 			<section>Licensed under MIT License</section>
 		</div>
-	</AboutContainer>
+	</Container>
 );
 
 export default About;

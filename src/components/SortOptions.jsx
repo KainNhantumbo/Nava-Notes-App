@@ -53,7 +53,7 @@ export default function SortOptions() {
 		<Container>
 			{sortOptionsData.map(({ id, name, icon }) => (
 				<div key={id}>
-					<label htmlFor='decrescentTitle'>
+					<label htmlFor={id}>
 						{name}
 						{icon}
 					</label>

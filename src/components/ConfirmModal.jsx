@@ -1,4 +1,3 @@
-import HorizontalButtons from './HorizontalButtons';
 import { HiX } from 'react-icons/hi';
 import { ModalContainer } from '../styles/confirmModal';
 import { FaExclamationCircle, FaTrash } from 'react-icons/fa';
@@ -34,16 +33,18 @@ const ConfirmModal = ({ accept, deny, status }) => (
 						</div>
 						<span className={'info'}>Do you really want to delete?</span>
 						<div className='actions'>
-							<HorizontalButtons
-								event={accept}
-								icon={<FaTrash />}
-								description={'Confirm'}
-							/>
-							<HorizontalButtons
-								event={deny}
-								icon={<HiX />}
-								description={'Cancel'}
-							/>
+							<button onClick={accept}>
+								<div>
+									<FaTrash />
+								</div>
+								<span> Confirm </span>
+							</button>
+							<button onClick={deny}>
+								<div>
+									<HiX />
+								</div>
+								<span> Cancel </span>
+							</button>
 						</div>
 					</motion.div>
 				</ModalContainer>

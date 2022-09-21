@@ -4,22 +4,10 @@ export const ModalContainer = styled.div`
 	* {
 		box-sizing: border-box;
 	}
-
-	@keyframes slideUp {
-		from {
-			transform: scale(0.9);
-			opacity: 0;
-		}
-		to {
-			transform: scale(1);
-			opacity: 1;
-		}
-	}
-	animation: slideUp 300ms ease-out forwards;
 	width: 100vw;
 	height: 100vh;
 	z-index: 500;
-	background: rgba(${({ theme }) => theme.background}, 0.1);
+	background: rgba(${({ theme }) => theme.fullDark}, 0.4);
 	backdrop-filter: blur(2px);
 	position: fixed;
 	top: 0;
@@ -38,7 +26,7 @@ export const ModalContainer = styled.div`
 
 	.container {
 		background: rgb(${({ theme }) => theme.white});
-		box-shadow: 0 0 20px rgba(${({ theme }) => theme.shadows}, 0.5);
+		box-shadow: 0 0 20px 6px rgba(${({ theme }) => theme.shadows}, 0.5);
 		width: 265px;
 		height: fit-content;
 		border-radius: 10px;
@@ -73,6 +61,7 @@ export const ModalContainer = styled.div`
 			:hover {
 				background: rgba(${({ theme }) => theme.secondary}, 0.3);
 				transition: all 200ms ease-out;
+				cursor: pointer;
 			}
 
 			svg {

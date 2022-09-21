@@ -1,6 +1,6 @@
 import TextArea from './TextArea';
-import { InterfaceStyles as Container } from '../styles/addNotesInterface';
 import { HiChevronLeft, HiSave, HiX } from 'react-icons/hi';
+import { InterfaceStyles as Container } from '../styles/addNotesInterface';
 
 export default function NoteEditor(props) {
 	return (
