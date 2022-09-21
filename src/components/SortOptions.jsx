@@ -8,7 +8,30 @@ import {
 	HiArrowUp,
 } from 'react-icons/hi';
 
-const SortOptions = () => {
+const sortOptionsData = [
+	{
+		id: 'decrescentTitle',
+		name: 'By title (descending)',
+		icon: <HiSortDescending />,
+	},
+	{
+		id: 'crescentTitle',
+		name: 'By title (ascending)',
+		icon: <HiSortAscending />,
+	},
+	{
+		id: 'firstModification',
+		name: 'By first modification',
+		icon: <HiArrowUp />,
+	},
+	{
+		id: 'lastModification',
+		name: 'By last modification',
+		icon: <HiArrowDown />,
+	},
+];
+
+export default function SortOptions() {
 	const sortData = sortDataPicker();
 	const [value, setValue] = useState(sortData);
 
@@ -28,64 +51,22 @@ const SortOptions = () => {
 
 	return (
 		<Container>
-			<div>
-				<label htmlFor='decrescentTitle'>
-					By title (descending)
-					<HiSortDescending />
-				</label>
-				<input
-					type='radio'
-					name='sort'
-					id='decrescentTitle'
-					value='decrescentTitle'
-					defaultChecked={getSortConfig('decrescentTitle')}
-					onChange={(e) => setValue(e.target.value)}
-				/>
-			</div>
-			<div>
-				<label htmlFor='crescentTitle'>
-					By title (ascending)
-					<HiSortAscending />
-				</label>
-				<input
-					type='radio'
-					name='sort'
-					id='crescentTitle'
-					value='crescentTitle'
-					defaultChecked={getSortConfig('crescentTitle')}
-					onChange={(e) => setValue(e.target.value)}
-				/>
-			</div>
-			<div>
-				<label htmlFor='firstModification'>
-					By first modification
-					<HiArrowUp />
-				</label>
-				<input
-					type='radio'
-					name='sort'
-					id='firstModification'
-					value='firstModification'
-					defaultChecked={getSortConfig('firstModification')}
-					onChange={(e) => setValue(e.target.value)}
-				/>
-			</div>
-			<div>
-				<label htmlFor='lastModification'>
-					By last modification
-					<HiArrowDown />
-				</label>
-				<input
-					type='radio'
-					name='sort'
-					id='lastModification'
-					value='lastModification'
-					defaultChecked={getSortConfig('lastModification')}
-					onChange={(e) => setValue(e.target.value)}
-				/>
-			</div>
+			{sortOptionsData.map(({ id, name, icon }) => (
+				<div key={id}>
+					<label htmlFor='decrescentTitle'>
+						{name}
+						{icon}
+					</label>
+					<input
+						type='radio'
+						name='sort'
+						id={id}
+						value={id}
+						defaultChecked={getSortConfig(id)}
+						onChange={(e) => setValue(e.target.value)}
+					/>
+				</div>
+			))}
 		</Container>
 	);
-};
-
-export default SortOptions;
+}
