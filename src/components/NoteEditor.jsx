@@ -11,7 +11,7 @@ export default function NoteEditor(props) {
 						<button onClick={props.close}>
 							<HiChevronLeft />
 						</button>
-						<h5>{props.update ? 'Edit and Preview' : 'Add a note'}</h5>
+						<h5>{props.updateMode ? 'Edit and Preview' : 'Add a note'}</h5>
 					</section>
 					<TextArea
 						titleChangeEvent={props.titleValue}
@@ -21,13 +21,18 @@ export default function NoteEditor(props) {
 					/>
 					<section className='toolbar'>
 						<div>
-							<button onClick={props.save}>
+							<button
+								onClick={() => {
+									if (props.updateMode) return props.updateFn();
+									return props.saveFn();
+								}}
+							>
 								<HiSave />
-								<span>{props.update ? 'Update' : 'Save'}</span>
+								<span>{props.updateMode ? 'Update' : 'Save'}</span>
 							</button>
 							<button onClick={props.close}>
 								<HiX />
-								<span>{props.update ? 'Close' : 'Discard'}</span>
+								<span>{props.updateMode ? 'Close' : 'Discard'}</span>
 							</button>
 						</div>
 					</section>

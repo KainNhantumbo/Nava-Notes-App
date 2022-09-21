@@ -28,10 +28,11 @@ export default function Home() {
 	const [unsortedData, setData] = useState([]);
 	const data = sortNotes(unsortedData);
 
-	// cria a interface para criacao de novas notas
-	const [interfaceStatus, setInterfaceStatus] = useState(false);
+	// editor state management
+	const [isEditorOpen, setIsEditorOpen] = useState(false);
 	const [titleValue, setTitleValue] = useState('');
 	const [textValue, setTextValue] = useState('');
+	const [updateMode, setUpdateMode] = useState(false);
 
 	const renderAddNoteInterface = () => setInterfaceStatus(true);
 
@@ -99,7 +100,7 @@ export default function Home() {
 		setDataToStorage('notes', data);
 		setData(() => retrieveNotes('notes'));
 		setEditedNoteID('');
-		closeEditInterface();
+		closeEditor();
 	};
 
 	const renderEditInterface = (e) => {
@@ -107,9 +108,7 @@ export default function Home() {
 		noteToEdit(e);
 	};
 
-	const closeEditInterface = () => {
-		setEditInterfaceStatus(() => false);
-	};
+	const closeEditor = () => setIsEditorOpen(() => false);
 
 	const [seachedNotes, setSearchedNotes] = useState([]);
 	const searchNotes = (e) => {
@@ -189,22 +188,15 @@ export default function Home() {
 			/>
 
 			<NoteEditor
+				updateMode={updateMode}
 				titleValue={getTitleValue}
 				textValue={getTextValue}
-				close={closeEditInterface}
-				status={editInterfaceStatus}
+				close={closeEditor}
+				status={isEditorOpen}
 				inputValue={titleValue}
 				textAreaValue={textValue}
-				updateEvent={saveEditedNote}
-			/>
-
-			<AddNoteInterface
-				titleValue={getTitleValue}
-				textValue={getTextValue}
-				saveEvent={saveNote}
-				cancelEvent={discardNote}
-				interfaceExit={removeAddNoteInterface}
-				status={interfaceStatus}
+				saveFn={saveNote}
+				updateFn={saveEditedNote}
 			/>
 
 			<Notification
