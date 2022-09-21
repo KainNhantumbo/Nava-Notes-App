@@ -18,15 +18,12 @@ export const StyledLabelsContainer = styled.section`
 		line-height: 2em;
 		border-radius: 12px;
 		user-select: none;
-		box-shadow: 0 0 5px rgba(${({ theme }) => theme.fullDark}, 0.6);
-
-		border-left: 2px solid transparent;
-		border-right: 2px solid transparent;
+		box-shadow: 0 0 2px rgba(${({ theme }) => theme.shadows}, 1);
 		background: rgb(${({ theme }) => theme.white});
 
 		:hover {
-			border-left: 2px solid rgb(${({ theme }) => theme.text});
-			border-right: 2px solid rgb(${({ theme }) => theme.text});
+			box-shadow: 0 0 20px rgba(${({ theme }) => theme.shadows}, 0.5);
+			transition: all 200ms ease;
 		}
 
 		label {
@@ -36,6 +33,7 @@ export const StyledLabelsContainer = styled.section`
 
 			:hover {
 				color: rgb(${({ theme }) => theme.text});
+				cursor: pointer;
 			}
 
 			svg {
@@ -62,6 +60,9 @@ export const StyledLabelsContainer = styled.section`
 			display: grid;
 			place-content: center;
 
+			:hover {
+				cursor: pointer;
+			}
 			:checked::before {
 				content: '';
 				width: 8px;

@@ -11,6 +11,7 @@ export const SettingsContainer = styled.div`
 			color: rgb(${({ theme }) => theme.primary});
 			margin: 0 auto;
 			margin-top: 1.2em;
+			line-height: 1.8rem;
 			font-weight: 500;
 			background-color: rgb(${({ theme }) => theme.background});
 		}

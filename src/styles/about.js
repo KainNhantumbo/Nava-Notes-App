@@ -1,33 +1,6 @@
 import styled from 'styled-components';
 
 export const AboutContainer = styled.section`
-	@keyframes aboutAnimation {
-		0% {
-			border: 2px solid rgb(${({ theme }) => theme.primary});
-			transition: 0.5s ease-in-out;
-		}
-
-		25% {
-			border: 2px solid rgb(${({ theme }) => theme.secondary});
-			transition: 0.5s ease-in-out;
-		}
-
-		50% {
-			border: 2px solid rgb(${({ theme }) => theme.shadows});
-			transition: 0.5s ease-in-out;
-		}
-
-		75% {
-			border: 2px solid rgb(${({ theme }) => theme.text});
-			transition: 0.5s ease-in-out;
-		}
-
-		100% {
-			border: 2px solid rgb(${({ theme }) => theme.primary});
-			transition: 0.5s ease-in-out;
-		}
-	}
-
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -42,11 +15,9 @@ export const AboutContainer = styled.section`
 		line-height: 2em;
 		border-radius: 12px;
 		color: rgb(${({ theme }) => theme.text});
-		border: 2px solid transparent;
-		animation: aboutAnimation 3000ms ease-in-out forwards infinite;
 		user-select: none;
-		box-shadow: 0 0 5px rgb(${({ theme }) => theme.primary});
-		background: rgb(${({ theme }) => theme.background});
+		box-shadow: 0 0 20px rgba(${({ theme }) => theme.shadows}, 0.5);
+		background: rgb(${({ theme }) => theme.white});
 
 		section {
 			text-align: center;

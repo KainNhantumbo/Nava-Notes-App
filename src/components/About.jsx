@@ -12,25 +12,29 @@ const About = () => (
 				<span>
 					App Version:
 					<HiPuzzle />
-				</span>{' '}
+				</span>
 				1.2.0
 			</section>
 			<section>
 				<span>
 					Developer:
 					<HiCode />
-				</span>{' '}
+				</span>
 				Kain Nhantumbo
 			</section>
 			<section>
 				<span>
-					<a href='https://github.com/KainNhantumbo'>
+					<a
+						href='https://github.com/KainNhantumbo'
+						target={'_blank'}
+						rel={'noreferrer'}
+					>
 						github.com/KainNhantumbo
 					</a>
 					<FaGithub />
 				</span>
 			</section>
-			<section>Licensed by MIT</section>
+			<section>Licensed under MIT License</section>
 		</div>
 	</AboutContainer>
 );

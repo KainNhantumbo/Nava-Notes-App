@@ -18,14 +18,12 @@ export const ModeSwitcherStyles = styled.section`
 		line-height: 2em;
 		border-radius: 12px;
 		user-select: none;
-		box-shadow: 0 0 5px rgba(${({ theme }) => theme.fullDark}, 0.6);
-		border-left: 2px solid transparent;
-		border-right: 2px solid transparent;
+		box-shadow: 0 0 2px rgba(${({ theme }) => theme.shadows}, 1);
 		background: rgb(${({ theme }) => theme.white});
 
 		:hover {
-			border-left: 2px solid rgb(${({ theme }) => theme.text});
-			border-right: 2px solid rgb(${({ theme }) => theme.text});
+			box-shadow: 0 0 20px rgba(${({ theme }) => theme.shadows}, 0.5);
+			transition: all 200ms ease;
 		}
 
 		label {
@@ -35,6 +33,7 @@ export const ModeSwitcherStyles = styled.section`
 
 			:hover {
 				color: rgb(${({ theme }) => theme.text});
+				cursor: pointer;
 			}
 
 			svg {
@@ -60,6 +59,10 @@ export const ModeSwitcherStyles = styled.section`
 			transition: 0.5s ease;
 			margin-top: 0.4em;
 			margin-right: 0.2em;
+
+			:hover {
+				cursor: pointer;
+			}
 
 			:checked {
 				background: rgb(${({ theme }) => theme.primary});
