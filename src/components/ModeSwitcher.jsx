@@ -1,20 +1,15 @@
-import { ModeSwitcherStyles } from '../styles/modeSwitcher';
 import { HiSun } from 'react-icons/hi';
-import { useContext } from 'react';
+import { ModeSwitcherStyles as Container} from '../styles/modeSwitcher';
 import { useThemeContext } from '../context/ThemeContext';
 
 const ModeSwitcher = ({ text }) => {
-	const { changeTheme } = useThemeContext();
+	const { changeTheme, themeMode } = useThemeContext();
 
-	// defines the checkbox state based on saved theme
-	const checkboxState = () => {
-		const mode = JSON.parse(localStorage.getItem('mode'));
-		if (mode === 'light') return false;
-		return true;
-	};
+	// defines the checkbox state based on current theme
+	const checkboxState = () => (themeMode == 'light' ? false : true);
 
 	return (
-		<ModeSwitcherStyles>
+		<Container>
 			<div>
 				<label htmlFor='modeswitcher'>
 					{text}
@@ -27,7 +22,7 @@ const ModeSwitcher = ({ text }) => {
 					checked={checkboxState()}
 				/>
 			</div>
-		</ModeSwitcherStyles>
+		</Container>
 	);
 };
 

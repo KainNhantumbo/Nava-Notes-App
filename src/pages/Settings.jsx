@@ -1,5 +1,5 @@
 import Header from '../components/Header';
-import { SettingsContainer } from '../styles/settings';
+import { SettingsContainer as Container } from '../styles/settings';
 import ModeSwitcher from '../components/ModeSwitcher';
 import SortOptions from '../components/SortOptions';
 import About from '../components/About';
@@ -7,7 +7,7 @@ import { FaCogs } from 'react-icons/fa';
 
 export default function Settings() {
 	return (
-		<SettingsContainer>
+		<Container>
 			<Header title={'Settings'} icon={<FaCogs />} />
 			<div className='settingsBody'>
 				<h2> Mode Switcher </h2>
@@ -19,6 +19,6 @@ export default function Settings() {
 				<h2> About </h2>
 				<About />
 			</div>
-		</SettingsContainer>
+		</Container>
 	);
 }

@@ -15,7 +15,7 @@ import {
 import { FaTrashAlt } from 'react-icons/fa';
 import ConfirmModal from '../components/ConfirmModal';
 
-const Trash = () => {
+export default function Trash () {
 	// confirm modal states
 	const [modalState, setModalState] = useState(false);
 
@@ -148,5 +148,3 @@ const Trash = () => {
 		</>
 	);
 };
-
-export default Trash;

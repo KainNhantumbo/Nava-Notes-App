@@ -21,21 +21,18 @@ import {
 
 export const searchContext = createContext();
 
-const Home = () => {
+export default function Home () {
 	const { removeModal, removeNote, visible } = ShowModal();
 	const [notificationStatus, setNotificationStatus] = useState(false);
 
 	// pega os dados iniciais do localstorage
 	const [unsortedData, setData] = useState([]);
 	const data = sortNotes(unsortedData);
-	useEffect(() => {
-		setData(() => retrieveNotes('notes'));
-	}, []);
 
 	// cria a interface para criacao de novas notas
 	const [interfaceStatus, setInterfaceStatus] = useState(false);
-	const [titleValue, setTitleValue] = useState(() => '');
-	const [textValue, setTextValue] = useState(() => ``);
+	const [titleValue, setTitleValue] = useState('');
+	const [textValue, setTextValue] = useState('');
 
 	const renderAddNoteInterface = () => setInterfaceStatus(true);
 
@@ -56,8 +53,8 @@ const Home = () => {
 
 	// reseta os valores do state
 	const resetValues = () => {
-		setTextValue(() => '');
-		setTitleValue(() => '');
+		setTextValue('');
+		setTitleValue('');
 	};
 
 	const saveNote = () => {
@@ -83,12 +80,10 @@ const Home = () => {
 
 	const noteToEdit = (e) => {
 		const id = e.target.parentNode.parentNode.id;
-		const [temporary_note] = data.filter((element) => {
-			if (id === element.id) return element;
-		});
-		setTitleValue(temporary_note.title);
-		setTextValue(temporary_note.content);
-		setEditedNoteID(() => temporary_note.id);
+		const [tempNote] = data.filter((note) => (id === note.id ? note : null));
+		setTitleValue(tempNote.title);
+		setTextValue(tempNote.content);
+		setEditedNoteID(() => tempNote.id);
 	};
 
 	const saveEditedNote = () => {
@@ -167,6 +162,10 @@ const Home = () => {
 		}, 3500);
 	};
 
+	useEffect(() => {
+		setData(() => retrieveNotes('notes'));
+	}, []);
+
 	return (
 		<>
 			<searchContext.Provider value={searchNotes}>
@@ -224,5 +223,3 @@ const Home = () => {
 		</>
 	);
 };
-
-export default Home;

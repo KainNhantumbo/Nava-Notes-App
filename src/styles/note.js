@@ -6,7 +6,7 @@ export const NoteContainer = styled.div`
 	justify-content: space-between;
 	flex-direction: column;
 	background: rgb(${({ theme }) => theme.white});
-	box-shadow: 0 0 10px rgba(${({ theme }) => theme.shadows});
+	box-shadow: 0 0 20px rgba(${({ theme }) => theme.shadows}, 0.5);
 	margin-bottom: 0.5em;
 	padding: 1em;
 	border-radius: inherit;

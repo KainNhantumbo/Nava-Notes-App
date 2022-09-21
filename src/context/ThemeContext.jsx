@@ -1,4 +1,4 @@
-import { useContext, createContext, useState, useEffect } from 'react';
+import { useContext, createContext, useState } from 'react';
 import { darkTheme, lightTheme } from '../styles/colors';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from '../styles/globalstyles';
@@ -6,28 +6,27 @@ import { GlobalStyles } from '../styles/globalstyles';
 const context = createContext({});
 
 export default function ThemeContext(props) {
-  
-  // picks theme configuration from localStorage
-	const themeDataPicker = () => {
-    let themeMode = JSON.parse(localStorage.getItem('mode'));
-		if (!themeMode || themeMode === undefined) {
-      themeMode = 'light';
-			localStorage.setItem('mode', JSON.stringify(themeMode));
+	// picks theme configuration from localStorage
+	const themeModePicker = () => {
+		let mode = JSON.parse(localStorage.getItem('mode'));
+		if (!mode || mode === undefined) {
+			mode = 'light';
+			localStorage.setItem('mode', JSON.stringify(mode));
 		}
-		return themeMode;
+		return mode;
 	};
-  const themeData = themeDataPicker();
+	const themeMode = themeModePicker();
 
-  const [theme, setTheme] = useState(() => {
-    if (themeData == 'light') {
-      return lightTheme;
-    }
-    return darkTheme;
-  });
+	const [theme, setTheme] = useState(() => {
+		if (themeMode == 'light') {
+			return lightTheme;
+		}
+		return darkTheme;
+	});
 
 	// changes the theme
 	const changeTheme = () => {
-		if (themeData === 'light') {
+		if (themeMode === 'light') {
 			setTheme(() => darkTheme);
 			localStorage.setItem('mode', JSON.stringify('dark'));
 			return;
@@ -36,10 +35,8 @@ export default function ThemeContext(props) {
 		localStorage.setItem('mode', JSON.stringify('light'));
 	};
 
-	useEffect(() => {}, []);
-
 	return (
-		<context.Provider value={{ changeTheme }}>
+		<context.Provider value={{ changeTheme, themeMode }}>
 			<ThemeProvider theme={theme}>
 				<GlobalStyles />
 				{props.children}

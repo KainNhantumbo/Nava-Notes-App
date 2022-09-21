@@ -3,7 +3,6 @@ import Trash from './pages/Trash';
 import Settings from './pages/Settings';
 import Home from './pages/Home';
 import Footer from './components/Footer';
-import { useState } from 'react';
 import ThemeContext from './context/ThemeContext';
 
 const App = () => {
