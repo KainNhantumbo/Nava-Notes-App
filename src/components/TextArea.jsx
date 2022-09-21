@@ -1,9 +1,8 @@
-import React from 'react';
-import { StyledTextAreaContainer } from '../styles/textArea';
+import { StyledTextAreaContainer as Container } from '../styles/textArea';
 
 const TextArea = ({ titleChangeEvent, textChangeEvent, textAreaValue, inputValue }) => {
   return (
-    <StyledTextAreaContainer>
+    <Container>
       <input type="text"
         placeholder='Title...'
         value={inputValue}
@@ -14,7 +13,7 @@ const TextArea = ({ titleChangeEvent, textChangeEvent, textAreaValue, inputValue
         onChange={textChangeEvent}
         value={textAreaValue}
       />
-    </StyledTextAreaContainer>
+    </Container>
   );
 }
 

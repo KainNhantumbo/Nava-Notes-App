@@ -1,24 +1,22 @@
-import { v4 as uuidv4 } from 'uuid';
-import { useState, useEffect, createContext } from 'react';
 import Header from '../components/Header';
+import SearchBox from '../components/SearchBox';
 import NoteEditor from '../components/NoteEditor';
 import NotesPackage from '../components/NotesPackage';
 import ConfirmModal from '../components/ConfirmModal';
-import AddNoteInterface from '../components/AddNoteInterface';
 import Notification from '../components/Notification';
-import { HiCheckCircle } from 'react-icons/hi';
-import { FaEdit, FaFeather } from 'react-icons/fa';
-import { AddNoteButton } from '../styles/styles';
-import { ShowModal, trashNotesPicker } from '../scripts/core-functions';
 import { timeSetter } from '../scripts/core-date';
-import SearchBox from '../components/SearchBox';
+import { v4 as uuidv4 } from 'uuid';
+import { AddNoteButton } from '../styles/styles';
+import { useState, useEffect, createContext } from 'react';
+import { HiCheckCircle,FaEdit, FaFeather } from 'react-icons/all';
+import { ShowModal, trashNotesPicker } from '../scripts/core-functions';
 import {
 	retrieveNotes,
 	setDataToStorage,
 	sortNotes,
 } from '../scripts/core-functions';
 
-export const searchContext = createContext();
+export const searchContext = createContext({});
 
 export default function Home() {
 	const { removeModal, removeNote, visible } = ShowModal();
@@ -27,36 +25,40 @@ export default function Home() {
 	// pega os dados iniciais do localstorage
 	const [unsortedData, setData] = useState([]);
 	const data = sortNotes(unsortedData);
-
+	
 	// editor state management
 	const [isEditorOpen, setIsEditorOpen] = useState(false);
 	const [titleValue, setTitleValue] = useState('');
 	const [textValue, setTextValue] = useState('');
 	const [updateMode, setUpdateMode] = useState(false);
+	const [editedNoteID, setEditedNoteID] = useState('');
 
-	const renderAddNoteInterface = () => setInterfaceStatus(true);
-
-	const removeAddNoteInterface = () => {
-		resetValues();
-		setInterfaceStatus(false);
-	};
-
-	// remove a interface para adicionar nota
-	const discardNote = () => {
-		resetValues();
-		setInterfaceStatus(false);
-	};
-
-	// retorna o valor do state
 	const getTitleValue = (e) => setTitleValue(e.target.value);
 	const getTextValue = (e) => setTextValue(e.target.value);
 
-	// reseta os valores do state
-	const resetValues = () => {
+	const closeEditor = () => {
+		setIsEditorOpen(false);
+		setUpdateMode(false);
 		setTextValue('');
 		setTitleValue('');
 	};
+	const openEditor = () => {
+		setIsEditorOpen(true);
+	};
+	const renderEditEditor = (e) => {
+		openEditor();
+		setUpdateMode(true);
+		noteToEdit(e);
+	};
 
+	const noteToEdit = (e) => {
+		const id = e.target.parentNode.parentNode.id;
+		const [tempNote] = data.filter((note) => (id === note.id ? note : null));
+		setTitleValue(tempNote.title);
+		setTextValue(tempNote.content);
+		setEditedNoteID(() => tempNote.id);
+	};
+	
 	const saveNote = () => {
 		const id = uuidv4();
 		const date = timeSetter();
@@ -70,20 +72,8 @@ export default function Home() {
 		if (!new_note.title) return;
 		data.push(new_note);
 		setDataToStorage('notes', data);
-		removeAddNoteInterface();
+		closeEditor();
 		return data;
-	};
-
-	// interface de edicao e previsualizacao de notas
-	const [editInterfaceStatus, setEditInterfaceStatus] = useState(false);
-	const [editedNoteID, setEditedNoteID] = useState('');
-
-	const noteToEdit = (e) => {
-		const id = e.target.parentNode.parentNode.id;
-		const [tempNote] = data.filter((note) => (id === note.id ? note : null));
-		setTitleValue(tempNote.title);
-		setTextValue(tempNote.content);
-		setEditedNoteID(() => tempNote.id);
 	};
 
 	const saveEditedNote = () => {
@@ -102,31 +92,7 @@ export default function Home() {
 		setEditedNoteID('');
 		closeEditor();
 	};
-
-	const renderEditInterface = (e) => {
-		setEditInterfaceStatus(() => true);
-		noteToEdit(e);
-	};
-
-	const closeEditor = () => setIsEditorOpen(() => false);
-
-	const [seachedNotes, setSearchedNotes] = useState([]);
-	const searchNotes = (e) => {
-		const value = e.target.value.toLowerCase();
-		const newNotesData = data.filter((elements) => {
-			const notesTitle = elements.title.toLowerCase();
-			const notesContent = elements.content.toLowerCase();
-			if (notesTitle.includes(value) || notesContent.includes(value)) {
-				return elements;
-			}
-			return;
-		});
-		setSearchedNotes(newNotesData);
-		if (value.length < 1) {
-			setSearchedNotes(() => []);
-		}
-	};
-
+	
 	const moveNoteToTrash = (e) => {
 		const id = e.target.parentNode.parentNode.id;
 		const trashNotes = trashNotesPicker();
@@ -147,14 +113,32 @@ export default function Home() {
 		setNotificationStatus(() => true);
 		removeNotificationByDelay(notificationStatus);
 	};
+	
+	// =========== search notes functions ==========//
+	const [seachedNotes, setSearchedNotes] = useState([]);
+	const searchNotes = (e) => {
+		const value = e.target.value.toLowerCase();
+		const newNotesData = data.filter((elements) => {
+			const notesTitle = elements.title.toLowerCase();
+			const notesContent = elements.content.toLowerCase();
+			if (notesTitle.includes(value) || notesContent.includes(value)) {
+				return elements;
+			}
+			return;
+		});
+		setSearchedNotes(newNotesData);
+		if (value.length < 1) {
+			setSearchedNotes(() => []);
+		}
+	};
 
-	// funcoes para gestao de notificao
+	//======== notification management functions =========//
 	const removeNotification = () => {
 		setNotificationStatus(() => false);
 	};
 
 	const removeNotificationByDelay = (status) => {
-		if (status === true) return;
+		if (status) return;
 		setTimeout(() => {
 			setNotificationStatus(() => false);
 		}, 3500);
@@ -174,7 +158,7 @@ export default function Home() {
 				<button
 					title='Add a new note'
 					className='addNoteButton'
-					onClick={renderAddNoteInterface}
+					onClick={openEditor}
 				>
 					<FaFeather />
 				</button>
@@ -182,7 +166,7 @@ export default function Home() {
 
 			<NotesPackage
 				eventRemoveBtn={moveNoteToTrash}
-				eventDetailsBtn={renderEditInterface}
+				eventDetailsBtn={renderEditEditor}
 				searchedNotes={seachedNotes}
 				notesData={data}
 			/>

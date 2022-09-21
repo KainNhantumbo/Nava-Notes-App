@@ -1,6 +1,5 @@
-import React from 'react';
-import { StyledLabelsContainer } from '../styles/themeOptions';
 import { useState, useEffect } from 'react';
+import { StyledLabelsContainer as Container } from '../styles/themeOptions';
 import { sortDataPicker, setDataToStorage } from '../scripts/core-functions';
 import {
 	HiSortDescending,
@@ -19,9 +18,7 @@ const SortOptions = () => {
 		if (!sort_data || sort_data === undefined) {
 			sort_data = 'crescentTitle';
 		}
-		if (value === sort_data) {
-			return true;
-		}
+		if (value === sort_data) return true;
 		return false;
 	};
 
@@ -30,7 +27,7 @@ const SortOptions = () => {
 	}, [value]);
 
 	return (
-		<StyledLabelsContainer>
+		<Container>
 			<div>
 				<label htmlFor='decrescentTitle'>
 					By title (descending)
@@ -87,7 +84,7 @@ const SortOptions = () => {
 					onChange={(e) => setValue(e.target.value)}
 				/>
 			</div>
-		</StyledLabelsContainer>
+		</Container>
 	);
 };
 
