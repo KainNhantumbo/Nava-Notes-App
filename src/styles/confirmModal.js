@@ -19,8 +19,8 @@ export const ModalContainer = styled.div`
 	width: 100vw;
 	height: 100vh;
 	z-index: 500;
-	background: rgba(${({ theme }) => theme.background}, 0.2);
-	backdrop-filter: blur(5px);
+	background: rgba(${({ theme }) => theme.background}, 0.1);
+	backdrop-filter: blur(2px);
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -38,7 +38,7 @@ export const ModalContainer = styled.div`
 
 	.container {
 		background: rgb(${({ theme }) => theme.white});
-		box-shadow: 0 0 10px rgb(${({ theme }) => theme.shadows});
+		box-shadow: 0 0 20px rgba(${({ theme }) => theme.shadows}, 0.5);
 		width: 265px;
 		height: fit-content;
 		border-radius: 10px;

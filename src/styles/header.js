@@ -10,7 +10,7 @@ export const HeaderStyled = styled.div`
 		rgb(${({ theme }) => theme.secondary}) 12%,
 		rgb(${({ theme }) => theme.primary}) 160%
 	);
-	box-shadow: 0 0 5px rgba(${({ theme }) => theme.fullDark}, 0.6);
+	box-shadow: 0 0 20px rgba(${({ theme }) => theme.shadows}, 0.5);
 	position: fixed;
 	top: 0;
 	z-index: 50;

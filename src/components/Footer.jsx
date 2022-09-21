@@ -1,9 +1,7 @@
-import React from 'react';
-import LargerButtons from './LargerButtons';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { HiCollection } from 'react-icons/hi';
 import { FooterStyles as Container } from '../styles/footer';
-import { FaCogs, FaTrashAlt } from 'react-icons/fa';
+import { FaCogs, FaTrashAlt, HiCollection } from 'react-icons/all';
 
 const footerButtons = () => {
 	// dados e detalhes de cada botao no footer
@@ -39,7 +37,9 @@ const Footer = () => {
 		data.map(({ icon, description, path }, index) => (
 			<Link key={index} to={path}>
 				<div>
-					<LargerButtons icon={icon} />
+					<motion.button whileHover={{ scale: 1.18 }} whileTap={{ scale: 0.9 }}>
+						{icon}
+					</motion.button>
 					<span>{description}</span>
 				</div>
 			</Link>

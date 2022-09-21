@@ -17,7 +17,7 @@ export const FooterStyles = styled.footer`
 		align-items: center;
 		justify-content: space-evenly;
 		background: rgb(${({ theme }) => theme.white});
-		box-shadow: 0 0 5px rgba(${({ theme }) => theme.shadows});
+		box-shadow: 0 0 20px 1px rgba(${({ theme }) => theme.shadows}, 0.5);
 		border-radius: 12px;
 		margin-bottom: 0.8em;
 		padding: 0.2em 0;
@@ -50,11 +50,6 @@ export const FooterStyles = styled.footer`
 				width: 30px;
 				height: 30px;
 				margin: auto 0;
-
-				:hover {
-					transform: scale(1.1, 1.1);
-					transition: all 0.2s ease-out;
-				}
 
 				svg {
 					width: 20px;
