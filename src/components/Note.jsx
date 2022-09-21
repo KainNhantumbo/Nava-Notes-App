@@ -1,7 +1,7 @@
-import Button from './Button';
-import { NoteContainer } from '../styles/note';
+import { motion } from 'framer-motion';
+import { NoteContainer as Container } from '../styles/note';
 
-const Note = ({
+export default function Note({
 	id,
 	note,
 	eventDetailsBtn,
@@ -10,18 +10,28 @@ const Note = ({
 	noteDate,
 	firstIcon,
 	secondIcon,
-}) => {
+}) {
 	return (
-		<NoteContainer id={id}>
+		<Container id={id}>
 			<span className='noteTitle'> {note} </span>
-			<div className='noteContent'> {`${noteContent}`} </div>
+			<div className='noteContent'> {noteContent} </div>
 			<div className='noteDate'> {noteDate} </div>
 			<span className='buttonsContainer'>
-				<Button event={eventDetailsBtn} icon={firstIcon} />
-				<Button event={eventRemoveBtn} icon={secondIcon} />
+				<motion.button
+					whileHover={{ scale: 1.15 }}
+					whileTap={{ scale: 0.9 }}
+					onClick={eventDetailsBtn}
+				>
+					{firstIcon}
+				</motion.button>
+				<motion.button
+					whileHover={{ scale: 1.15 }}
+					whileTap={{ scale: 0.9 }}
+					onClick={eventRemoveBtn}
+				>
+					{secondIcon}
+				</motion.button>
 			</span>
-		</NoteContainer>
+		</Container>
 	);
-};
-
-export default Note;
+}

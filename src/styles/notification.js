@@ -1,17 +1,6 @@
-import Styled from 'styled-components';
+import styled from 'styled-components';
 
-export const NotificationContainer = Styled.section`
-  @keyframes slideUp {
-    from {
-      transform: translateY(7em);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
+export const NotificationContainer = styled.section`
   width: 100vw;
   height: 10vh;
   margin-top: 80vh;
@@ -23,22 +12,22 @@ export const NotificationContainer = Styled.section`
   display: grid;
   justify-items: center;
   align-items: center;
-  animation: slideUp 500ms ease-out forwards;
 
   section {
     width: 90%;
-    max-width: 400px;
+    max-width: 300px;
     height: 3em;
     border-radius: 12px;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: row;
     gap: 1.2em;
     position: relative;
     background: rgb(${({theme})=> theme.text});
-    box-shadow: 0 0 5px rgba(${({ theme }) => theme.fullDark}, .6);
+    box-shadow: 0 0 20px rgba(${({ theme }) => theme.shadows}, 0.5);
     background: rgb(${({ theme }) => theme.background});
+		border: 1px solid rgba(${({ theme }) => theme.primary}, 0.3);
 
     svg {
       position: absolute;
@@ -50,13 +39,15 @@ export const NotificationContainer = Styled.section`
     }
 
     span {
-      padding-left: 2em;
+      padding-left: 50px;
       font-weight: 500;
       color: rgb(${({ theme }) => theme.text});
     }
 
     button {
-      position: relative;
+      position: absolute;
+      top: calc(50% - 16px);
+      right: 10px;
       border-style: none;
       padding: .5em 1em;
       border-radius: 5px;
@@ -68,6 +59,7 @@ export const NotificationContainer = Styled.section`
       :hover {
         background: rgba(${({ theme }) => theme.primary}, .3);
         transition: all 100ms ease-out;
+        cursor: pointer;
       }
       
       span {

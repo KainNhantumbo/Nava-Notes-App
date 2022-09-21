@@ -1,7 +1,7 @@
 import Note from './Note';
 import EmptyNotesMessage from './EmptyNotesMessage';
-import { HiPaperAirplane, TiTrash, TiEdit } from 'react-icons/all';
 import Greet from './Greet';
+import { HiPaperAirplane, TiTrash, TiEdit } from 'react-icons/all';
 
 const NotesPackage = ({
 	eventRemoveBtn,
@@ -11,23 +11,7 @@ const NotesPackage = ({
 }) => {
 	const guest = (searchedNotes, notesData) => {
 		if (searchedNotes.length !== 0)
-			return searchedNotes.map((value, index) => {
-				return (
-					<Note
-						id={value.id}
-						key={index}
-						note={value.title}
-						noteContent={value.content}
-						noteDate={value.updatedAt}
-						eventDetailsBtn={eventDetailsBtn}
-						eventRemoveBtn={eventRemoveBtn}
-						firstIcon={<TiEdit />}
-						secondIcon={<TiTrash />}
-					/>
-				);
-			});
-		return notesData.map((value, index) => {
-			return (
+			return searchedNotes.map((value, index) => (
 				<Note
 					id={value.id}
 					key={index}
@@ -39,8 +23,20 @@ const NotesPackage = ({
 					firstIcon={<TiEdit />}
 					secondIcon={<TiTrash />}
 				/>
-			);
-		});
+			));
+		return notesData.map((value, index) => (
+			<Note
+				id={value.id}
+				key={index}
+				note={value.title}
+				noteContent={value.content}
+				noteDate={value.updatedAt}
+				eventDetailsBtn={eventDetailsBtn}
+				eventRemoveBtn={eventRemoveBtn}
+				firstIcon={<TiEdit />}
+				secondIcon={<TiTrash />}
+			/>
+		));
 	};
 
 	const renderNotes = guest(searchedNotes, notesData);

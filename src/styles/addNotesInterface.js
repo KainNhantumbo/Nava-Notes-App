@@ -32,7 +32,7 @@ export const InterfaceStyles = styled.section`
 		padding: 15px;
 		gap: 2em;
 		position: relative;
-		border-radius: 0 0 22px 22px;
+		border-radius: 0 0 12px 12px;
 
 		button {
 			width: 26px;
@@ -49,6 +49,7 @@ export const InterfaceStyles = styled.section`
 
 			:hover {
 				background: rgb(${({ theme }) => theme.text});
+				cursor: pointer;
 				svg {
 					color: rgb(${({ theme }) => theme.white});
 				}
@@ -97,7 +98,8 @@ export const InterfaceStyles = styled.section`
 
 				:hover {
 					background: rgba(${({ theme }) => theme.primary}, 0.3);
-					transition: all 100ms ease-out;
+					transition: all 200ms ease-out;
+					cursor: pointer;
 				}
 
 				svg {

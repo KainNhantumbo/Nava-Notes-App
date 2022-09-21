@@ -1,11 +1,10 @@
-import { useState, useEffect, createContext } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { useState, useEffect, createContext } from 'react';
 import Header from '../components/Header';
-import Button from '../components/Button';
+import NoteEditor from '../components/NoteEditor';
 import NotesPackage from '../components/NotesPackage';
 import ConfirmModal from '../components/ConfirmModal';
 import AddNoteInterface from '../components/AddNoteInterface';
-import EditNotesInterface from '../components/EditNotesInterface';
 import Notification from '../components/Notification';
 import { HiCheckCircle } from 'react-icons/hi';
 import { FaEdit, FaFeather } from 'react-icons/fa';
@@ -21,7 +20,7 @@ import {
 
 export const searchContext = createContext();
 
-export default function Home () {
+export default function Home() {
 	const { removeModal, removeNote, visible } = ShowModal();
 	const [notificationStatus, setNotificationStatus] = useState(false);
 
@@ -173,11 +172,13 @@ export default function Home () {
 			</searchContext.Provider>
 
 			<AddNoteButton>
-				<Button
+				<button
+					title='Add a new note'
 					className='addNoteButton'
-					event={renderAddNoteInterface}
-					icon={<FaFeather />}
-				/>
+					onClick={renderAddNoteInterface}
+				>
+					<FaFeather />
+				</button>
 			</AddNoteButton>
 
 			<NotesPackage
@@ -187,6 +188,16 @@ export default function Home () {
 				notesData={data}
 			/>
 
+			<NoteEditor
+				titleValue={getTitleValue}
+				textValue={getTextValue}
+				close={closeEditInterface}
+				status={editInterfaceStatus}
+				inputValue={titleValue}
+				textAreaValue={textValue}
+				updateEvent={saveEditedNote}
+			/>
+
 			<AddNoteInterface
 				titleValue={getTitleValue}
 				textValue={getTextValue}
@@ -194,17 +205,6 @@ export default function Home () {
 				cancelEvent={discardNote}
 				interfaceExit={removeAddNoteInterface}
 				status={interfaceStatus}
-			/>
-
-			<EditNotesInterface
-				titleValue={getTitleValue}
-				textValue={getTextValue}
-				exitEvent={closeEditInterface}
-				interfaceExit={closeEditInterface}
-				status={editInterfaceStatus}
-				inputValue={titleValue}
-				textAreaValue={textValue}
-				updateEvent={saveEditedNote}
 			/>
 
 			<Notification
@@ -222,4 +222,4 @@ export default function Home () {
 			/>
 		</>
 	);
-};
+}

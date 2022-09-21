@@ -17,7 +17,7 @@ export const NoteContainer = styled.div`
 	color: rgb(${({ theme }) => theme.text});
 
 	:hover {
-		border: 1px solid rgba(${({ theme }) => theme.primary}, 0.5);
+		border: 1px solid rgba(${({ theme }) => theme.primary}, 0.3);
 		transition: 0.2s ease-out;
 	}
 
@@ -62,16 +62,11 @@ export const NoteContainer = styled.div`
 			background: rgba(${({ theme }) => theme.shadows}, 0.5);
 			border-radius: 50%;
 			position: relative;
-			padding: 10px;
+			padding: 12px;
 			cursor: pointer;
 			display: grid;
 			place-content: center;
 
-			&:hover {
-				background-color: rgba(${({ theme }) => theme.primary}, 0.5);
-				transform: scale(1.1, 1.1);
-				transition: all 0.2s ease-out;
-			}
 			svg {
 				width: 20px;
 				height: 20px;

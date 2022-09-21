@@ -78,7 +78,7 @@ export const ModeSwitcherStyles = styled.section`
 				top: 0;
 				left: 0;
 				background: rgba(${({ theme }) => theme.primary}, 0.8);
-				box-shadow: 0 0 5px rgba(${({ theme }) => theme.fullDark}, 0.6);
+				box-shadow: 0 0 10px 5px rgba(${({ theme }) => theme.shadows}, 0.5);
 				transition: all 0.2s ease;
 			}
 

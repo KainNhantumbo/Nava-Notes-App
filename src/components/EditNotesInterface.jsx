@@ -1,4 +1,3 @@
-import React from 'react';
 import { InterfaceStyles } from '../styles/addNotesInterface';
 import LargerButtons from './LargerButtons';
 import TextArea from './TextArea';

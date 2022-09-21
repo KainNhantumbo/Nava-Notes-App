@@ -29,7 +29,7 @@ export const StyledTextAreaContainer = styled.section`
 		background: rgb(${({ theme }) => theme.white});
 
 		::placeholder {
-			color: rgba(${({ theme }) => theme.text}, .7);
+			color: rgba(${({ theme }) => theme.text}, .5);
 		}
 	}
 
