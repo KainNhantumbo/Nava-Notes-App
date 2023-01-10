@@ -11,27 +11,40 @@ export const timeSetter = () => {
 
   const fullDate = `${daySet}, ${date} ${monthSet} ${year} at ${hours}:${minutesSet}`;
   return fullDate;
-}
+};
 
-const timeFormatter = (time) => {
-  if (time >= 0 && time < 10) {
-    return '0' + time;
-  } else {
-    return time
-  }
-}
+const timeFormatter = (time) => (time >= 0 && time < 10 ? '0' + time : time);
 
 const dayPicker = (day) => {
-  const weeekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-
+  const weeekdays = [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+  ];
   return weeekdays[day];
-}
+};
 
 const monthPicker = (month) => {
-  const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
+  const monthNames = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
   return monthNames[month];
-}
+};
 
 export const greetings = () => {
   const hours = new Date().getHours();
