@@ -6,46 +6,32 @@ import { GlobalStyles } from '../styles/globalstyles';
 const context = createContext({});
 
 export default function ThemeContext(props) {
-	// picks theme configuration from localStorage
-	const themeModePicker = () => {
-		let mode = JSON.parse(localStorage.getItem('mode'));
-		if (!mode || mode === undefined) {
-			mode = 'light';
-			localStorage.setItem('mode', JSON.stringify(mode));
-		}
-		return mode;
-	};
-	const themeMode = themeModePicker();
+  // picks theme configuration from localStorage
+  const themeMode = JSON.parse(localStorage.getItem('mode')) || 'light';
 
-	const [theme, setTheme] = useState(() => {
-		if (themeMode == 'light') {
-			return lightTheme;
-		}
-		return darkTheme;
-	});
+  const [theme, setTheme] = useState(() =>
+    themeMode == 'light' ? lightTheme : darkTheme
+  );
 
-	// changes the theme
-	const changeTheme = () => {
-		if (themeMode === 'light') {
-			setTheme(() => darkTheme);
-			localStorage.setItem('mode', JSON.stringify('dark'));
-			return;
-		}
-		setTheme(() => lightTheme);
-		localStorage.setItem('mode', JSON.stringify('light'));
-	};
+  // changes the theme
+  const changeTheme = () => {
+    if (themeMode === 'light') {
+      setTheme(() => darkTheme);
+      localStorage.setItem('mode', JSON.stringify('dark'));
+      return;
+    }
+    setTheme(() => lightTheme);
+    localStorage.setItem('mode', JSON.stringify('light'));
+  };
 
-	return (
-		<context.Provider value={{ changeTheme, themeMode }}>
-			<ThemeProvider theme={theme}>
-				<GlobalStyles />
-				{props.children}
-			</ThemeProvider>
-		</context.Provider>
-	);
+  return (
+    <context.Provider value={{ changeTheme, themeMode }}>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        {props.children}
+      </ThemeProvider>
+    </context.Provider>
+  );
 }
 
-export const useThemeContext = () => {
-	const data = useContext(context);
-	return data;
-};
+export const useThemeContext = () => useContext(context);

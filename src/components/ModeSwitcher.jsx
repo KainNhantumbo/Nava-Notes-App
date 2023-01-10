@@ -4,8 +4,6 @@ import { useThemeContext } from '../context/ThemeContext';
 
 const ModeSwitcher = ({ text }) => {
 	const { changeTheme, themeMode } = useThemeContext();
-
-	// defines the checkbox state based on current theme
 	const checkboxState = () => (themeMode == 'light' ? false : true);
 
 	return (

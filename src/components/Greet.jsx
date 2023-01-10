@@ -4,17 +4,25 @@ import { GreetContainer as Container } from '../styles/greet';
 
 export default function Greet() {
   const [greeting, setGreeting] = useState('');
-	
+
   useEffect(() => {
     const revalidateGreet = setTimeout(() => {
       setGreeting(() => greetings());
     }, 1000);
     return () => clearTimeout(revalidateGreet);
   }, [greeting]);
-	
+
   return (
-    <Container>
-      <span>{greeting}</span>
-    </Container>
+    <>
+      {greeting ? (
+        <Container>
+          <span>{greeting}</span>
+        </Container>
+      ) : (
+        <Container>
+          <span>Hello!</span>
+        </Container>
+      )}
+    </>
   );
 }
