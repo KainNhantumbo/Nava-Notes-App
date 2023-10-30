@@ -1,7 +1,16 @@
 {
   "name": "nava-notes",
+  "description": "simple notes application",
   "private": true,
-  "version": "1.1.0",
+  "version": "1.1.1",
+  "url": "nava-notes-app.vercel.app",
+  "author": {
+    "name": "Kain Nhantumbo",
+    "email": "nhantombok@gmail.com",
+    "url": "codenut-dev.vercel.app",
+    "github": "https://github.com/KainNhantumbo"
+  },
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

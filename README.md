@@ -1,4 +1,4 @@
-# Nava Notes App
+# Nava Notes App (React.js)
 
 **Deployed version is now ready for usage and running at [https://nava-notes-app.vercel.app](https://nava-notes-app.vercel.app 'Use app')**
 
@@ -7,7 +7,7 @@ These are some in app screenshots:
 ![](./src/assets/capture00.jpeg 'App in light mode')
 ![](./src/assets/capture01.jpeg 'App in dark mode')
 
-## Features
+## Features changelog
 
 - This application can perform all CRUD operations to manipulate notes.
 
@@ -21,11 +21,11 @@ These are some in app screenshots:
 
 - Shows a non intrusive confirmation notification after doing some actions like deleting a note, restoring a note and wipping the trash.
 
-## Version 1.1.1 change log
+### Version 1.1.1 change log
 -  Fixed empty 
 object data bug that was preventing notes to be correctly updated.
 - Icon or text notification overflow on small screens (up to 280px) fixed.
-## Version 1.1.0 change log
+### Version 1.1.0 change log
 
 - Upgraded react to version 18.0.0.
 - Switched CRA to Vite as development Engine.
@@ -33,12 +33,12 @@ object data bug that was preventing notes to be correctly updated.
 - Note action buttons colorization follows the current active color theme.
 - sort by last or first modification strange ordenation bug fixed.
 
-## Version 1.0.1 change log
+### Version 1.0.1 change log
 
 - Added a confirmation dialog when trying to wipe the trash.
 - Minor styling bugs fixed.
 
-## Version 1.0.0 change log
+### Version 1.0.0 change log
 
 - Refreshing page to change themes is now fixed.
 - Improved appearence app colors in both dark and light themes.
@@ -47,7 +47,7 @@ object data bug that was preventing notes to be correctly updated.
 
 ## Known issues
 
-- You can't log into an cloud account to save notes, since the app is using localStorage. If you switch the browser you will not acess the notes. If the browser cache and storage are cleared, all application data and settings will be lost.
+- You can't log into an cloud account to save notes, since this app uses localStorage to store user data. If you switch browser, you will not be able to access saved notes. If the browser cache and storage is cleared, all application data and settings will be lost.
 
 ## Scripts for testing
 
@@ -75,7 +75,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 E-mail: [nhantumbok@gmail.com](nhantumbok@gmail.com 'Send an email')\
 Github: [https://github.com/KainNhantumbo](https://github.com/KainNhantumbo 'See my github profile')  
-Portifolio: [https://portifolio-dev-kainnhantumbo.vercel.app](https://portifolio-dev-kainnhantumbo.vercel.app 'See my github profile')
+Portfolio: [https://codenut-dev.vercel.app](https://codenut-dev.vercel.app 'See my github profile')
 
 ### If you like this project, please consider leaving a star on this repository so I can continue improving this app.
 
@@ -83,4 +83,5 @@ Portifolio: [https://portifolio-dev-kainnhantumbo.vercel.app](https://portifolio
 
 ## License
 
-Licensed under MIT License, Copyright &copy; 2022 Kain Nhantumbo.
+Licensed under MIT License\
+Copyright &copy; 2022 Kain Nhantumbo.

@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { FooterStyles as Container } from '../styles/footer';
 import { FaCogs, FaTrashAlt, HiCollection } from 'react-icons/all';
 
-const footerButtons = () =>
-  [
+export default function Footer() {
+  const buttonsData = [
     {
       icon: <FaCogs />,
       description: 'Settings',
@@ -25,12 +25,10 @@ const footerButtons = () =>
     return -1;
   });
 
-const Footer = () => {
-  const data = footerButtons();
   return (
     <Container>
       <section>
-        {data.map(({ icon, description, path }, index) => (
+        {buttonsData.map(({ icon, description, path }, index) => (
           <Link key={index} to={path}>
             <div>
               <motion.button
@@ -47,4 +45,3 @@ const Footer = () => {
   );
 };
 
-export default Footer;

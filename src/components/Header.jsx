@@ -1,11 +1,11 @@
-import { HeaderStyled } from '../styles/header';
+import { header as Container } from '../styles/header';
 
 const Header = ({ title, child, icon }) => (
-  <HeaderStyled className='headerContainer'>
+  <Container className='headerContainer'>
     <div>{icon}</div>
     <h1>{title}</h1>
     {child}
-  </HeaderStyled>
+  </Container>
 );
 
 export default Header;

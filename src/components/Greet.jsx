@@ -6,10 +6,10 @@ export default function Greet() {
   const [greeting, setGreeting] = useState('');
 
   useEffect(() => {
-    const revalidateGreet = setTimeout(() => {
+    const debounceTimer = setTimeout(() => {
       setGreeting(() => greetings());
     }, 1000);
-    return () => clearTimeout(revalidateGreet);
+    return () => clearTimeout(debounceTimer);
   }, [greeting]);
 
   return (
