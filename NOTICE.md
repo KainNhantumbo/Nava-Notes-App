@@ -1,11 +1,9 @@
-/*! *****************************************************************************
 Copyright (c) Kain Nhantumbo. All rights reserved.
-Licensed under the MIT (the "License"); 
-THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+Licensed under the MIT (the "License");
+THIS CODE IS PROVIDED ON AN _AS IS_ BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
 WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
 MERCHANTABLITY OR NON-INFRINGEMENT.
 
 See the MIT License for specific language governing permissions
 and limitations under the License.
-***************************************************************************** */

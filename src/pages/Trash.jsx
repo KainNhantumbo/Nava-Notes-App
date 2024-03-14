@@ -1,8 +1,3 @@
-import Header from '../components/Header';
-import TrashNotesPackage from '../components/TrashNotesPackage';
-import Notification from '../components/Notification';
-import ConfirmModal from '../components/ConfirmModal';
-import { useState, useEffect } from 'react';
 import {
 	HiFire,
 	HiCheckCircle,
@@ -15,6 +10,11 @@ import {
 	trashNotesPicker,
 	retrieveNotes,
 } from '../scripts/core-functions';
+import Header from '../components/Header';
+import TrashNotesPackage from '../components/TrashNotesPackage';
+import Notification from '../components/Notification';
+import ConfirmModal from '../components/ConfirmModal';
+import { useState, useEffect } from 'react';
 
 export default function Trash() {
 	// confirm modal states
