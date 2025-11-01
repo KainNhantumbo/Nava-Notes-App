@@ -24,7 +24,7 @@ export const MessageContainer = styled.section`
 		top: 1.2em;
 		left: calc(12em - 7.5em);
 		color: rgb(${({ theme }) => theme.text});
-		
+
 	}
 	span {
 		padding-top: 5em;
@@ -74,31 +74,31 @@ export const StyledSearch = styled.label`
 `;
 
 export const AddNoteButton = styled.div`
-	position: relative;
-	z-index: 60;
+  position: relative;
+  z-index: 60;
 
-	button {
-		border-style: none;
-		position: fixed;
-		top: 0.9em;
-		right: 1.2em;
-		width: 30px;
-		height: 30px;
-		border-radius: 30px;
-		display: grid;
-		place-content: center;
-		background: rgb(${({ theme }) => theme.inner});
+  button {
+    border-style: none;
+    position: fixed;
+    top: 0.9em;
+    right: 1.2em;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    display: grid;
+    place-content: center;
+    background: rgb(${({ theme }) => theme.inner});
 
-		:hover {
-			transform: scale(1.05);
-			transition: all 0.2s ease-out;
-			box-shadow: 0 0 5px rgb(${({ theme }) => theme.white});
-		}
+    &:hover {
+      transform: scale(1.05);
+      transition: all 0.2s ease-out;
+      box-shadow: 0 0 5px rgb(${({ theme }) => theme.white});
+    }
 
-		svg {
-			width: 20px;
-			height: 20px;
-			color: rgb(${({ theme }) => theme.primary});
-		}
-	}
+    svg {
+      width: 20px;
+      height: 20px;
+      color: rgb(${({ theme }) => theme.primary});
+    }
+  }
 `;

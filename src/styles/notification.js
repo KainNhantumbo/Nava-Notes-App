@@ -24,10 +24,10 @@ export const NotificationContainer = styled.section`
     flex-direction: row;
     gap: 1.2em;
     position: relative;
-    background: rgb(${({theme})=> theme.text});
+    background: rgb(${({ theme }) => theme.text});
     box-shadow: 0 0 20px rgba(${({ theme }) => theme.shadows}, 0.5);
     background: rgb(${({ theme }) => theme.background});
-		border: 1px solid rgba(${({ theme }) => theme.primary}, 0.3);
+    border: 1px solid rgba(${({ theme }) => theme.primary}, 0.3);
 
     svg {
       position: absolute;
@@ -49,19 +49,19 @@ export const NotificationContainer = styled.section`
       top: calc(50% - 16px);
       right: 10px;
       border-style: none;
-      padding: .5em 1em;
+      padding: 0.5em 1em;
       border-radius: 5px;
       font-weight: 600;
       background: transparent;
       outline: none;
       color: rgb(${({ theme }) => theme.text});
-      
-      :hover {
-        background: rgba(${({ theme }) => theme.primary}, .3);
+
+      &:hover {
+        background: rgba(${({ theme }) => theme.primary}, 0.3);
         transition: all 100ms ease-out;
         cursor: pointer;
       }
-      
+
       span {
         padding: 0;
         padding-right: 1.2em;
@@ -71,7 +71,7 @@ export const NotificationContainer = styled.section`
         width: 1.1em;
         height: 1.1em;
         position: absolute;
-        top: .6em;
+        top: 0.6em;
         left: 5.2em;
       }
     }

@@ -26,5 +26,3 @@ export const darkTheme = {
 	fullDark: '19, 26, 34',
 	white: '41, 42, 46',
 };
-
-let r = 'rgb(58, 103, 148)'
