@@ -46,17 +46,24 @@ export default [
     },
     plugins: {
       'react-hooks': reactHooks,
-      'eslint-plugin-jsx-a11y': eslintJsxA11y,
-      'eslint-plugin-import': eslintImports,
-      'eslint-plugin-react': eslintReact
+      'jsx-a11y': eslintJsxA11y,
+      import: eslintImports,
+      react: eslintReact
     },
     rules: {
-      ...reactHooks.configs.recommended.rules,
-      ...eslintReact.configs.recommended.rules,
+      ...reactHooks.configs.flat.recommended.rules,
+      ...eslintReact.configs.flat.recommended.rules,
       ...eslintJsxA11y.configs.recommended.rules,
-      ...eslintImports.configs.recommended.rules,
+      ...eslintImports.configs.react.rules,
       'react/no-unescaped-entities': 'off',
+      'react/prop-types': 'off',
+      'react/react-in-jsx-scope': 'off',
       'react-hooks/exhaustive-deps': 'warn'
+    },
+    settings: {
+      react: {
+        version: 'detect'
+      }
     }
   }
 ];
