@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { ModalContainer as Container } from '../styles/confirmModal';
-import { FaExclamationCircle, FaTrash, HiX } from 'react-icons/all';
+import { FaExclamationCircle, FaTrash } from 'react-icons/fa';
+import { HiX } from 'react-icons/hi';
 
 const ConfirmModal = ({ accept, deny, status }) => (
   <AnimatePresence>

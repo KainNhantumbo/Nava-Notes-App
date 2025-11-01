@@ -8,7 +8,8 @@ import { timeSetter } from '../scripts/core-date';
 import { v4 as uuidv4 } from 'uuid';
 import { AddNoteButton } from '../styles/styles';
 import { useState, useEffect, createContext } from 'react';
-import { HiCheckCircle, FaEdit, FaFeather } from 'react-icons/all';
+import {  FaEdit, FaFeather } from 'react-icons/fa';
+import { HiCheckCircle} from 'react-icons/hi';
 import { ShowModal, trashNotesPicker } from '../scripts/core-functions';
 import { retrieveNotes, setDataToStorage, sortNotes } from '../scripts/core-functions';
 

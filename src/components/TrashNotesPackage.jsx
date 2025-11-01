@@ -1,6 +1,8 @@
-import Note from './Note';
+import { BiHistory } from 'react-icons/bi';
+import { HiSparkles } from 'react-icons/hi';
+import { TiTrash } from 'react-icons/ti';
 import EmptyNotesMessage from './EmptyNotesMessage';
-import { BiHistory, TiTrash, HiSparkles } from 'react-icons/all';
+import Note from './Note';
 
 const TrashNotesPackage = ({ eventDelete, eventRestore, trashNotes }) => (
   <section className='mainContainer'>

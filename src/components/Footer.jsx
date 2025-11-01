@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FooterStyles as Container } from '../styles/footer';
-import { FaCogs, FaTrashAlt, HiCollection } from 'react-icons/all';
+import { HiCollection } from 'react-icons/hi';
+import { FaCogs, FaTrashAlt } from 'react-icons/fa';
 
 export default function Footer() {
   const buttonsData = [

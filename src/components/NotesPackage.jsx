@@ -1,13 +1,14 @@
-import Note from './Note';
+import { HiLightBulb } from 'react-icons/hi';
+import { TiEdit, TiTrash } from 'react-icons/ti';
 import EmptyNotesMessage from './EmptyNotesMessage';
 import Greet from './Greet';
-import { TiTrash, TiEdit, HiLightBulb } from 'react-icons/all';
+import Note from './Note';
 
 const NotesPackage = ({
   eventRemoveBtn,
   eventDetailsBtn,
   searchedNotes,
-  notesData,
+  notesData
 }) => {
   const guest = (searchedNotes, notesData) =>
     searchedNotes.length !== 0
