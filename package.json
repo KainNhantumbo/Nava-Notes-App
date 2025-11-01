@@ -14,7 +14,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "prettier --write \"**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,json}\" && eslint ."
   },
   "dependencies": {
     "framer-motion": "^12.23.24",
@@ -26,12 +27,18 @@
     "vite-pwa": "^1.0.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/eslint-parser": "^7.28.5",
+    "@babel/preset-react": "^7.28.5",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
     "@vitejs/plugin-react": "^5.1.0",
+    "eslint": "^9.39.0",
     "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "prettier": "^3.6.2",
     "sass": "^1.54.9",
     "vite": "^7.1.12",
     "vite-plugin-pwa": "^1.1.0",
