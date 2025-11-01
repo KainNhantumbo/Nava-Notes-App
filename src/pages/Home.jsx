@@ -1,17 +1,21 @@
+import { createContext, useEffect, useState } from 'react';
+import { FaEdit, FaFeather } from 'react-icons/fa';
+import { HiCheckCircle } from 'react-icons/hi';
+import ConfirmModal from '../components/ConfirmModal';
 import Header from '../components/Header';
-import SearchBox from '../components/SearchBox';
 import NoteEditor from '../components/NoteEditor';
 import NotesPackage from '../components/NotesPackage';
-import ConfirmModal from '../components/ConfirmModal';
 import Notification from '../components/Notification';
+import SearchBox from '../components/SearchBox';
 import { timeSetter } from '../scripts/core-date';
-import { v4 as uuidv4 } from 'uuid';
+import {
+  retrieveNotes,
+  setDataToStorage,
+  ShowModal,
+  sortNotes,
+  trashNotesPicker
+} from '../scripts/core-functions';
 import { AddNoteButton } from '../styles/styles';
-import { useState, useEffect, createContext } from 'react';
-import {  FaEdit, FaFeather } from 'react-icons/fa';
-import { HiCheckCircle} from 'react-icons/hi';
-import { ShowModal, trashNotesPicker } from '../scripts/core-functions';
-import { retrieveNotes, setDataToStorage, sortNotes } from '../scripts/core-functions';
 
 export const searchContext = createContext({});
 
@@ -57,14 +61,14 @@ export default function Home() {
   };
 
   const saveNote = () => {
-    const id = uuidv4();
+    const id = crypto.randomUUID();
     const date = timeSetter();
     const new_note = {
       id,
       title: titleValue,
       content: textValue,
       updatedAt: date,
-      date: new Date().toISOString(),
+      date: new Date().toISOString()
     };
     if (!new_note.title) return;
     data.push(new_note);
@@ -147,7 +151,10 @@ export default function Home() {
       </searchContext.Provider>
 
       <AddNoteButton>
-        <button title='Add a new note' className='addNoteButton' onClick={openEditor}>
+        <button
+          title='Add a new note'
+          className='addNoteButton'
+          onClick={openEditor}>
           <FaFeather />
         </button>
       </AddNoteButton>
@@ -179,7 +186,11 @@ export default function Home() {
         icon={<HiCheckCircle />}
       />
 
-      <ConfirmModal removeModal={removeModal} removeNote={removeNote} status={visible} />
+      <ConfirmModal
+        removeModal={removeModal}
+        removeNote={removeNote}
+        status={visible}
+      />
     </>
   );
 }
