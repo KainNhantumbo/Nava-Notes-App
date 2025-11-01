@@ -9,18 +9,18 @@ export default function Footer() {
     {
       icon: <FaCogs />,
       description: 'Settings',
-      path: '/pages/Settings',
+      path: '/pages/Settings'
     },
     {
       icon: <HiCollection />,
       description: 'Home',
-      path: '/',
+      path: '/'
     },
     {
       icon: <FaTrashAlt />,
       description: 'Trash',
-      path: '/pages/Trash',
-    },
+      path: '/pages/Trash'
+    }
   ].sort((a, b) => {
     if (a.description > b.description) return true;
     return -1;
@@ -44,5 +44,4 @@ export default function Footer() {
       </section>
     </Container>
   );
-};
-
+}

@@ -1,13 +1,13 @@
 import { MessageContainer as Container } from '../styles/styles';
 
 const EmptyNotesMessage = ({ message, label, icon }) => (
-	<Container>
-		{icon}
-		<span>
-			{label} <br />
-			{message}
-		</span>
-	</Container>
+  <Container>
+    {icon}
+    <span>
+      {label} <br />
+      {message}
+    </span>
+  </Container>
 );
 
 export default EmptyNotesMessage;

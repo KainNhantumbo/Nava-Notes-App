@@ -4,7 +4,7 @@ const TextArea = ({
   titleChangeEvent,
   textChangeEvent,
   textAreaValue,
-  inputValue,
+  inputValue
 }) => (
   <Container>
     <input

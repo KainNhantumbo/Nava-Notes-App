@@ -23,7 +23,7 @@ const dayPicker = (day) => {
     'Wednesday',
     'Thursday',
     'Friday',
-    'Saturday',
+    'Saturday'
   ];
   return weeekdays[day];
 };
@@ -41,7 +41,7 @@ const monthPicker = (month) => {
     'September',
     'October',
     'November',
-    'December',
+    'December'
   ];
   return monthNames[month];
 };

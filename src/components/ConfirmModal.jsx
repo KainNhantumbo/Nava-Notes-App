@@ -21,8 +21,8 @@ const ConfirmModal = ({ accept, deny, status }) => (
             opacity: 1,
             scale: 1,
             transition: {
-              duration: 0.3,
-            },
+              duration: 0.3
+            }
           }}
           exit={{ opacity: 0, scale: 0 }}>
           <div className='icon'>

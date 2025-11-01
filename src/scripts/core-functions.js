@@ -18,7 +18,7 @@ export function ShowModal() {
     renderConfirmModal,
     removeModal,
     removeNote,
-    visible,
+    visible
   };
 }
 

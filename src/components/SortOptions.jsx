@@ -5,30 +5,30 @@ import {
   HiSortDescending,
   HiSortAscending,
   HiArrowDown,
-  HiArrowUp,
+  HiArrowUp
 } from 'react-icons/hi';
 
 const sortOptionsData = [
   {
     id: 'decrescentTitle',
     name: 'By title (descending)',
-    icon: <HiSortDescending />,
+    icon: <HiSortDescending />
   },
   {
     id: 'crescentTitle',
     name: 'By title (ascending)',
-    icon: <HiSortAscending />,
+    icon: <HiSortAscending />
   },
   {
     id: 'firstModification',
     name: 'By first modification',
-    icon: <HiArrowUp />,
+    icon: <HiArrowUp />
   },
   {
     id: 'lastModification',
     name: 'By last modification',
-    icon: <HiArrowDown />,
-  },
+    icon: <HiArrowDown />
+  }
 ];
 
 export default function SortOptions() {

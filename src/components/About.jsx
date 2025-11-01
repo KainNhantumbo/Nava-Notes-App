@@ -1,7 +1,7 @@
 import { FaGithub } from 'react-icons/fa';
 import { HiCode, HiPuzzle } from 'react-icons/hi';
 import { AboutContainer as Container } from '../styles/about';
-import { version, author, license } from '../../package.json'
+import { version, author, license } from '../../package.json';
 
 const About = () => (
   <Container>
@@ -25,11 +25,7 @@ const About = () => (
       </section>
       <section>
         <span>
-          <a
-            href={author.github}
-            target={'_blank'}
-            rel={'noreferrer'}
-          >
+          <a href={author.github} target={'_blank'} rel={'noreferrer'}>
             {author.github}
           </a>
           <FaGithub />
