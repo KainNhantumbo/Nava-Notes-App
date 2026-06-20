@@ -27,7 +27,7 @@
     "vite-pwa": "^1.0.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.28.5",
+    "@babel/core": "^7.29.6",
     "@babel/eslint-parser": "^7.28.5",
     "@babel/preset-react": "^7.28.5",
     "@types/react": "^19.2.2",
